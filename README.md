@@ -8,17 +8,17 @@ Description
 These graphics files may be created from existing applications and will appear similar to the examples shown below.
 
 ### **install.png**
-<br>
+
 ![](readme_images/install.png)
-<br>
+
 ### **uninstall.png**
-<br>
+
 ![](readme_images/uninstall.png)
-<br>
+
 ### **uninstall_animated.png**
-<br>
+
 ![](readme_images/uninstall_animated.png)
-<br>
+
 
 
 
