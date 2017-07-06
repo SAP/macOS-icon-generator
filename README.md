@@ -36,22 +36,22 @@ Using Icons.app
 
 1. Open the **Icons** application.
 2. Drag the desired application into the first of the two panes.
-<br><br>
+
  ![](readme_images/drag_and_drop_source_image.gif)
-<br>
+
 3. Set the desired graphics size in pixels.
-<br>
+
 ![](readme_images/select_image_size.png)
+
 4. Once the desired graphics size has been set, click the **Save** button.
-<br>
+
 
 The **Icons** application will then ask where you want to save the new graphics files to, then create the graphics files.
 
-<br>
-![](readme_images/create_png_files.gif)
-<br>
 
-<br>
+![](readme_images/create_png_files.gif)
+
+
+
 ![](readme_images/images_generated.png)
-<br>
 
