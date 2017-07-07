@@ -55,3 +55,12 @@ The **Icons** application will then ask where you want to save the new graphics 
 
 ![](readme_images/images_generated.png)
 
+Support
+===================================
+This project is 'as-is' with no support, no changes being made.  You are welcome to make changes to improve it but we are not available for questions or support of any kind.
+
+License
+===================================
+
+Please note, the source code may reference an MIT license, this has been superceded by the Apache 2.0 license.  This change will be reflected in the source code shortly.  Please refer to the License file.
+https://github.com/SAP/macos-icon-generator/blob/master/LICENSE
