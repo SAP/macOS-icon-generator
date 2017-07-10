@@ -62,5 +62,4 @@ This project is 'as-is' with no support, no changes being made.  You are welcome
 License
 ===================================
 
-Please note, the source code may reference an MIT license, this has been superceded by the Apache 2.0 license.  This change will be reflected in the source code shortly.  Please refer to the License file.
-https://github.com/SAP/macos-icon-generator/blob/master/LICENSE
+[Apache License 2.0](LICENSE)
