@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E189a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14835.7"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -114,6 +113,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="141" y="202"/>
         </menu>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -133,8 +133,8 @@
                         </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="kD6-E1-CBH"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-vv-Gu6">
-                        <rect key="frame" x="45" y="90" width="92" height="85"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-vv-Gu6">
+                        <rect key="frame" x="45" y="92" width="92" height="80"/>
                         <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Drop an application bundle, a png file or a jpeg file here" id="Ryt-nE-7kl">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -158,14 +158,13 @@
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="h1o-8s-sxx"/>
                     </imageView>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3lC-rj-ch4">
-                        <rect key="frame" x="100" y="17" width="145" height="26"/>
+                        <rect key="frame" x="100" y="17" width="77" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="VES-m0-27F"/>
-                            <constraint firstAttribute="width" constant="140" id="nt9-qn-Nmr"/>
                         </constraints>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8zB-0A-DzZ" id="sMw-9Y-8gO">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
+                            <font key="font" metaFont="system"/>
                             <menu key="menu" id="3pA-lc-ez3">
                                 <items>
                                     <menuItem title="Item 1" state="on" id="8zB-0A-DzZ"/>
@@ -189,6 +188,9 @@
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" enabled="NO" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mnp-Fs-ROm">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="saveFiles:" target="Voe-Tx-rLC" id="FDD-ND-16p"/>
@@ -199,8 +201,8 @@
                             </binding>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG3-BW-vRh">
-                        <rect key="frame" x="18" y="23" width="78" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iG3-BW-vRh">
+                        <rect key="frame" x="18" y="24" width="78" height="16"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Output size:" id="bC7-58-YSP">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -228,6 +230,7 @@
                     <constraint firstItem="Xyp-UY-Xeo" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="qZn-Ef-cYs"/>
                     <constraint firstItem="jmv-by-6xL" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="sCa-Sf-zEt"/>
                     <constraint firstItem="jmv-by-6xL" firstAttribute="leading" secondItem="Xyp-UY-Xeo" secondAttribute="trailing" constant="19" id="t88-Wh-nW9"/>
+                    <constraint firstItem="Dyq-fd-kiR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3lC-rj-ch4" secondAttribute="trailing" constant="23" id="tSv-FF-ijG"/>
                     <constraint firstItem="Xyp-UY-Xeo" firstAttribute="height" secondItem="jmv-by-6xL" secondAttribute="height" id="vul-dE-bUq"/>
                     <constraint firstItem="Dyq-fd-kiR" firstAttribute="top" secondItem="Xyp-UY-Xeo" secondAttribute="bottom" constant="20" id="yJo-9K-QXH"/>
                     <constraint firstItem="Rma-vv-Gu6" firstAttribute="centerY" secondItem="Xyp-UY-Xeo" secondAttribute="centerY" id="ziW-pa-H8F"/>

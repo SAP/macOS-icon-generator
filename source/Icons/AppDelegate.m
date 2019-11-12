@@ -1,6 +1,6 @@
 /*
      AppDelegate.m
-     Copyright 2016-2017 SAP SE
+     Copyright 2016-2019 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@
                        nil];
     
     // define the standard output size
-    _imageOutputSize = 128;
+    _imageOutputSize = 512;
     
     // get the currently selected size or set the standard size
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"imageSize"]) {
@@ -94,16 +94,17 @@
         [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
         [originalImage drawInRect:NSMakeRect(imageSize.width * .04, 0, imageSize.width * .96, imageSize.height * .96)
                          fromRect:NSMakeRect(0, 0, originalImage.size.width, originalImage.size.height)
-                        operation:NSCompositeCopy
+                        operation:NSCompositingOperationCopy
                          fraction:1.0];
         
-        [removeOverlay drawAtPoint:NSMakePoint(0, imageSize.height - boxDiameter) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+        [removeOverlay drawAtPoint:NSMakePoint(0, imageSize.height - boxDiameter) fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
         [sizedImage unlockFocus];
+        [_processedImageView addSubview:[[NSView alloc] init]];
         [_processedImageView setImage:sizedImage];
         
         // let the icon shake once
         [_processedImageView setWantsLayer:YES];
-        [[_processedImageView layer] addAnimation:[self shakeIcon] forKey:@"transform.rotation.z"];
+        [[_processedImageView layer] addAnimation:[self shakeIcon] forKey:nil];
     }
 }
 
@@ -202,25 +203,45 @@
     [rotateTF translateXBy:-centerPoint.x yBy:-centerPoint.y];
     [rotateTF concat];
     
-    [sourceImage drawAtPoint:NSZeroPoint fromRect:NSMakeRect(0, 0, imageSize.width, imageSize.height) operation:NSCompositeSourceOver
+    [sourceImage drawAtPoint:NSZeroPoint fromRect:NSMakeRect(0, 0, imageSize.width, imageSize.height) operation:NSCompositingOperationSourceOver
                     fraction:1.0];
     [rotatedImage unlockFocus];
     
     return rotatedImage;
 }
 
-- (NSImage*)scaleImage:(NSImage*)sourceImage to:(NSSize)newSize
+- (NSImage*)scaleImage:(NSImage*)sourceImage toSize:(NSSize)newSize maintainAspectRatio:(BOOL)aspectRatio
 {
-    NSImage *sizedImage = [[NSImage alloc] initWithSize:newSize];
-    [sizedImage lockFocus];
-    [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
-    [sourceImage drawInRect:NSMakeRect(0, 0, newSize.width, newSize.height)
-                   fromRect:NSMakeRect(0, 0, sourceImage.size.width, sourceImage.size.height)
-                  operation:NSCompositeCopy
-                   fraction:1.0];
-    [sizedImage unlockFocus];
+    NSImage *scaledImage = [self scaleImage:sourceImage
+                                    toFrame:NSMakeRect(0, 0, newSize.width, newSize.height)
+                        maintainAspectRatio:aspectRatio
+                            ];
+    return scaledImage;
+}
 
-    return sizedImage;
+- (NSImage*)scaleImage:(NSImage*)sourceImage toFrame:(NSRect)targetFrame maintainAspectRatio:(BOOL)aspectRatio
+{
+    NSImage *scaledImage = nil;
+    NSImageRep *scaledImageRep = [sourceImage bestRepresentationForRect:targetFrame context:nil hints:nil];
+    
+    if (scaledImageRep) {
+        
+        NSSize targetSize = targetFrame.size;
+        NSPoint targetOrigin = targetFrame.origin;
+        
+        if (aspectRatio) {
+            
+            CGFloat scaleFactor = (sourceImage.size.width > sourceImage.size.height) ? targetFrame.size.width / sourceImage.size.width : targetFrame.size.height / sourceImage.size.height;
+            targetSize = NSMakeSize(sourceImage.size.width * scaleFactor, sourceImage.size.height * scaleFactor);
+            targetOrigin = NSMakePoint((targetFrame.size.width - targetSize.width)/2,(targetFrame.size.height - targetSize.height) / 2);
+        }
+
+        scaledImage = [NSImage imageWithSize:targetFrame.size flipped:NO drawingHandler:^BOOL(NSRect dstRect) {
+            return [scaledImageRep drawInRect:NSMakeRect(targetOrigin.x, targetOrigin.y, targetSize.width, targetSize.height)];
+        }];
+    }
+    
+    return scaledImage;
 }
 
 - (IBAction)saveFiles:(id)sender
@@ -233,7 +254,7 @@
     [panel setPrompt:@"Choose"];
     [panel beginSheetModalForWindow:_window completionHandler:^(NSInteger result) {
         
-        if (result == NSFileHandlingPanelOKButton) {
+        if (result == NSModalResponseOK) {
             
             // create a date string for the folder
             NSDateFormatter *dateformate = [[NSDateFormatter alloc] init];
@@ -251,20 +272,15 @@
             if (success) {
                 
                 // scale and save the install image
-                NSImage *installImage = [_dragDropView image];
-                installImage = [self scaleImage:installImage to:NSMakeSize(_imageOutputSize, _imageOutputSize)];
-                NSData *imageData = [installImage TIFFRepresentation];
-                NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
-                NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:NSImageInterlaced];
-                imageData = [imageRep representationUsingType:NSPNGFileType properties:imageProps];
+                NSImage *installImage = [self->_dragDropView image];
+                installImage = [self scaleImage:installImage toSize:NSMakeSize(self->_imageOutputSize, self->_imageOutputSize) maintainAspectRatio:YES];
+                NSData *imageData = [self pngDataFromNSImage:installImage];
                 [imageData writeToFile:[folderPath stringByAppendingPathComponent:@"install.png"] atomically:YES];
                 
                 // scale and save the uninstall image
-                NSImage *uninstallImage = [_processedImageView image];
-                uninstallImage = [self scaleImage:uninstallImage to:NSMakeSize(_imageOutputSize, _imageOutputSize)];
-                imageData = [uninstallImage TIFFRepresentation];
-                imageRep = [NSBitmapImageRep imageRepWithData:imageData];
-                imageData = [imageRep representationUsingType:NSPNGFileType properties:imageProps];
+                NSImage *uninstallImage = [self->_processedImageView image];
+                uninstallImage = [self scaleImage:uninstallImage toSize:NSMakeSize(self->_imageOutputSize, self->_imageOutputSize) maintainAspectRatio:YES];
+                imageData = [self pngDataFromNSImage:uninstallImage];
                 [imageData writeToFile:[folderPath stringByAppendingPathComponent:@"uninstall.png"] atomically:YES];
                 
                 // create and save the animated uninstall image
@@ -300,7 +316,11 @@
                 for (NSNumber *degrees in rotationPath) {
                     NSImage *rotatedImage = [self rotateImage:uninstallImage byDegrees:[degrees intValue]];
                     CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)[rotatedImage TIFFRepresentation], NULL);
-                    CGImageDestinationAddImage(imageDestination, CGImageSourceCreateImageAtIndex(imageSource, 0, NULL), (__bridge CFDictionaryRef)frameProperties);
+                    
+                    if (imageSource) {
+                        CGImageDestinationAddImage(imageDestination, CGImageSourceCreateImageAtIndex(imageSource, 0, NULL), (__bridge CFDictionaryRef)frameProperties);
+                        CFRelease(imageSource);
+                    }
                 }
                 
                 if  (!CGImageDestinationFinalize(imageDestination)) { NSLog(@"Failed to write image"); }
@@ -311,6 +331,20 @@
         
     }];
     
+}
+
+- (NSData*)pngDataFromNSImage:(NSImage*)sourceImage {
+    
+    NSData *imageData = nil;
+    
+    if (sourceImage) {
+        imageData = [sourceImage TIFFRepresentation];
+        NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
+        NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:NSImageInterlaced];
+        imageData = [imageRep representationUsingType:NSBitmapImageFileTypePNG properties:imageProps];
+    }
+    
+    return imageData;
 }
 
 - (void)updateUserDefaults:(NSNotification*)aNotification

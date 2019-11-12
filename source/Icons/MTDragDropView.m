@@ -1,6 +1,6 @@
 /*
     MTDragDropView.m
-    Copyright 2016-2017 SAP SE
+    Copyright 2016-2019 SAP SE
  
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -56,34 +56,38 @@
 
 - (BOOL)performDragOperation:(id < NSDraggingInfo >)sender
 {
+    NSArray *supportedExtensions = [NSArray arrayWithObjects:@"app", @"png", @"jpg", @"jpeg", nil];
     NSArray *draggedFilenames = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
-    NSString *pathExtension = [[draggedFilenames objectAtIndex:0] pathExtension];
+    NSString *pathExtension = [[draggedFilenames firstObject] pathExtension];
     
-    if ([pathExtension isEqual:@"app"] || [pathExtension isEqual:@"png"] || [pathExtension isEqual:@"jpg"] || [pathExtension isEqual:@"jpeg"]) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return ([supportedExtensions containsObject:pathExtension]) ? YES : NO;
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
     NSArray *draggedFilenames = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     NSString *itemPath = [draggedFilenames firstObject];
+    NSImage *currentImage = nil;
     
     if ([[itemPath pathExtension] isEqualToString:@"app"]) {
-        NSBundle *appBundle = [NSBundle bundleWithPath:itemPath];
-        NSString *iconName = [appBundle objectForInfoDictionaryKey:@"CFBundleIconFile"];
-        iconName = [[iconName componentsSeparatedByString:@"."] firstObject];
-
-        if (iconName) { itemPath = [appBundle pathForResource:iconName ofType:@"icns"]; }
+        currentImage = [[NSWorkspace sharedWorkspace] iconForFile:itemPath];
+        
+        if (currentImage) {
+            
+            // because NSWorkspace only gives us a icon with 32x32 pixels in size
+            // we get the highest available resolution here
+            NSImageRep *imageRep = [currentImage bestRepresentationForRect:CGRectInfinite
+                                                                   context:nil
+                                                                     hints:nil];
+            currentImage = [[NSImage alloc] initWithSize:[imageRep size]];
+            [currentImage addRepresentation: imageRep];
+        }
+        
+    } else if (itemPath) {
+        currentImage = [[NSImage alloc] initWithContentsOfFile:itemPath];
     }
     
-    if (itemPath) {
-                
-        NSImage *currentImage = [[NSImage alloc] initWithContentsOfFile:itemPath];
-        if (currentImage) { [self setImage:currentImage]; }
-    }
+    if (currentImage) { [self setImage:currentImage]; }
 }
 
 - (void)drawRect:(NSRect)rect
