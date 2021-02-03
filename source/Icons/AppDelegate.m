@@ -38,6 +38,7 @@
                        [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:128], @"value", @"128 x 128 pixels", @"name", nil],
                        [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:256], @"value", @"256 x 256 pixels", @"name", nil],
                        [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:512], @"value", @"512 x 512 pixels", @"name", nil],
+                       [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:1024], @"value", @"1024 x 1024 pixels", @"name", nil],
                        nil];
     
     // define the standard output size
