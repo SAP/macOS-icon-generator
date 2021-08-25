@@ -1,5 +1,0 @@
-Notice
-===================================
-Icons.app 
-
-Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.

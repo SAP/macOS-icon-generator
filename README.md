@@ -1,5 +1,7 @@
 # Icons.app
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/macOS-icon-generator)](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator)
+
 Description 
 ===================================
 
@@ -66,4 +68,4 @@ Found a security-related issue or vulnerability and want to notify us? Please co
 License
 ===================================
 
-[Apache License 2.0](LICENSE)
+Copyright 2017-2021 SAP SE or an SAP affiliate company and macOS-icon-generator contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator).
