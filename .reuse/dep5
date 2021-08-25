@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: macOS-icon-generator
+Upstream-Contact: macOS-icon-generator@sap.com
+Source: https://github.com/SAP/macOS-icon-generator
+
+Files:
+    *
+Copyright:  2021 SAP SE or an SAP affiliate company and macOS-icon-generator contributors
+License: Apache-2.0
