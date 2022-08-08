@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "arrow.up.arrow.down.circle.fill.svg",
+      "idiom" : "mac"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "arrow.up.arrow.down.circle.fill.dark.svg",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

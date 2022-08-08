@@ -3,61 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icons-16.png",
+      "filename" : "icons macOS 11-16.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icons-32.png",
+      "filename" : "icons macOS 11-32.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icons-32.png",
+      "filename" : "icons macOS 11-32.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icons-64.png",
+      "filename" : "icons macOS 11-64.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "icons-128.png",
+      "filename" : "icons macOS 11-128.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "icons-256.png",
+      "filename" : "icons macOS 11-256.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "icons-256.png",
+      "filename" : "icons macOS 11-256.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "icons-512.png",
+      "filename" : "icons macOS 11-512.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "icons-512.png",
+      "filename" : "icons macOS 11-512.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "icons-1024.png",
+      "filename" : "icons macOS 11-1024.png",
       "scale" : "2x"
     }
   ],

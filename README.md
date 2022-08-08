@@ -1,71 +1,124 @@
-# Icons.app
+![IconsBanner](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/icons_banner_github.gif)
+
+# Icons
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/macOS-icon-generator)](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator)
 
-Description 
-===================================
+**The easiest way to create customized app icons for your company's internal app store.**
 
-**Icons.app** is an application for macOS which enables you to create graphics files in PNG format, for use with management tools like Jamf Software's Jamf Pro or the open source Munki software installation tool.  
+Icons is an application for macOS which enables you to create standardized app icons in PNG format for your company. You don't need any graphic skills, just drag and drop the selected icon into the application and you get a full icons set with installer and uninstaller icons plus an animated version of the uninstaller icon.
 
-These graphics files may be created from existing applications and will appear similar to the examples shown below.
+As a Mac administrator you have multiple environments, e.g. development, test and production environments. With this helper tool you can create customized banner for your icon and save them for later. This application can be used for any management tools like Jamf Software's Jamf Pro or the open source Munki software installation tool. 
 
-### **install.png**
+**The Icons app supports the following features:**
 
-![](readme_images/install.png)
+🌟 Finder extension
 
-### **uninstall.png**
+🌈 Banner customization
 
-![](readme_images/uninstall.png)
+🖱️ Easy drag & drop function
 
-### **uninstall_animated.png**
+💾 Save labels for later 
 
-![](readme_images/uninstall_animated.png)
+📘 Standardized icons set
 
+✅ Install and uninstall icon
 
+❌ No graphic skills are needed
 
+🚀 Various sizes and setting options
 
-Installation
-===================================
+⌨️ Command line for automatization
 
-1. Download **Icons.app**.
-
-2. Copy **Icons.app** to to the Applications folder on your Mac.
-
-![](readme_images/install_icons_app_to_convenient_location.png)
-
-Using Icons.app
-===================================
-
-1. Open the **Icons** application.
-2. Drag the desired application into the first of the two panes.
-
- ![](readme_images/drag_and_drop_source_image.gif)
-
-3. Set the desired graphics size in pixels.
-
-![](readme_images/select_image_size.png)
-
-4. Once the desired graphics size has been set, click the **Save** button.
+💻 Supports the newest macOS version
 
 
-The **Icons** application will then ask where you want to save the new graphics files to, then create the graphics files.
+# Demo 🖥️
 
+Have a look at how easy it is to create a customized icon by drag and drop. This is only one demo shown, there are still many different variations possible to create an icon.
 
-![](readme_images/create_png_files.gif)
+![IconsDragAndDrop](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/Drag_and_Drop_Support_Install.gif)
 
 
 
-![](readme_images/images_generated.png)
+# Documentation 📚
 
-Support
-===================================
-This project is 'as-is' with no support, no changes being made.  You are welcome to make changes to improve it but we are not available for questions or support of any kind.
+You can find the following links also in the Wiki Page of Icons.
+* [Install and Uninstall Icons](https://LINK/)* [Using Icons](https://LINK/)* [FAQ](https://LINK/)
 
-Security
-===================================
-Found a security-related issue or vulnerability and want to notify us? Please contact us at [icons-security@sap.com](mailto:icons-security@sap.com)
+# Example 💡
 
-License
-===================================
+Here you can find an example how the icon set could look like. The icon set contains the following files. First image shows `install.png`, the second image shows the `uninstall.png` and the third is the `uninstall_animated.png` animated. All images are saved in PNG format.
 
-Copyright 2017-2021 SAP SE or an SAP affiliate company and macOS-icon-generator contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator).
+![IconsInstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/install.png) 
+![IconsUninstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall.png)
+![IconsUninstallAnimated](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall_animated.png) 
+
+# License 🏷️
+
+Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator contributors. Please see our [LICENSE](https://github.com/SAP/macOS-icon-generator/blob/main/LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator) tool.
+
+
+# Security 👮
+Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [icons-security@sap.com](mailto:icons-security@sap.com?subject=[GitHub]%20Source%20Han%20Sans)
+**The easiest way to create customized app icons for your company's internal app store.**
+
+Icons is an application for macOS which enables you to create standardized app icons in PNG format for your company. You don't need any graphic skills, just drag and drop the selected icon into the application and you get a full icons set with installer and uninstaller icons plus an animated version of the uninstaller icon.
+
+As a Mac administrator you have multiple environments, e.g. development, test and production environments. With this helper tool you can create customized banner for your icon and save them for later. This application can be used for any management tools like Jamf Software's Jamf Pro or the open source Munki software installation tool. 
+
+**The Icons app supports the following features:**
+
+🌟 Finder extension
+
+🌈 Banner customization
+
+🖱️ Easy drag & drop function
+
+💾 Save labels for later 
+
+📘 Standardized icons set
+
+✅ Install and uninstall icon
+
+❌ No graphic skills are needed
+
+🚀 Various sizes and setting options
+
+⌨️ Command line for automatization
+
+💻 Supports the newest macOS version
+
+
+# Demo 🖥️
+
+Have a look at how easy it is to create a customized icon by drag and drop. This is only one demo shown, there are still many different variations possible to create an icon.
+
+![IconsDragAndDrop](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/Drag_and_Drop_Support_Install.gif)
+
+
+
+# Documentation 📚
+
+You can find the following links also in the Wiki Page of Icons.
+* [Install and Uninstall Icons](https://LINK/)* [Using Icons](https://LINK/)* [FAQ](https://LINK/)
+
+# Example 💡
+
+Here you can find an example how the icon set could look like. The icon set contains the following files. First image shows `install.png`, the second image shows the `uninstall.png` and the third is the `uninstall_animated.png` animated. All images are saved in PNG format.
+
+![IconsInstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/install.png) 
+![IconsUninstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall.png)
+![IconsUninstallAnimated](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall_animated.png) 
+
+# License 🏷️
+
+Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator contributors. Please see our [LICENSE](https://github.com/SAP/macOS-icon-generator/blob/main/LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator) tool.
+
+
+# Security 👮
+Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [icons-security@sap.com](mailto:icons-security@sap.com?subject=[GitHub]%20Source%20Han%20Sans)
+
+# Support 🤓
+
+This project is 'as-is' with no support, no changes being made. You are welcome to make changes to improve it but we are not available for questions or support of any kind.

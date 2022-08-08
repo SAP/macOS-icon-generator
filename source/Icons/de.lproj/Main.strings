@@ -1,0 +1,147 @@
+
+/* Class = "NSMenuItem"; title = "Icons"; ObjectID = "1Vd-bA-2RI"; */
+"1Vd-bA-2RI.title" = "Icons";
+
+/* Class = "NSTextFieldCell"; title = "Select an existing banner"; ObjectID = "1jv-K9-S0J"; */
+"1jv-K9-S0J.title" = "Banner auswählen";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "5S7-8Z-bLv"; */
+"5S7-8Z-bLv.title" = "Dienste";
+
+/* Class = "NSMenuItem"; title = "About Icons"; ObjectID = "ALV-OD-UYI"; */
+"ALV-OD-UYI.title" = "Über Icons";
+
+/* Class = "NSMenuItem"; title = "Quit Icons"; ObjectID = "AiC-Vb-wZE"; */
+"AiC-Vb-wZE.title" = "Icons beenden";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "Gqr-8q-VDo"; */
+"Gqr-8q-VDo.title" = "Kopieren";
+
+/* Class = "NSButtonCell"; title = "Auto-select output size"; ObjectID = "Gx5-Go-S4V"; */
+"Gx5-Go-S4V.title" = "Ausgabegröße automatisch wählen";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "IM6-kP-SyW"; */
+"IM6-kP-SyW.title" = "Im Dock ablegen";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "K5d-ZT-jFZ"; */
+"K5d-ZT-jFZ.title" = "Ausschneiden";
+
+/* Class = "NSButtonCell"; title = "Auto-adjust image size"; ObjectID = "Nsh-td-3I7"; */
+"Nsh-td-3I7.title" = "Bildgröße automatisch anpassen";
+
+/* Class = "NSViewController"; title = "Install"; ObjectID = "Os8-hQ-WCq"; */
+"Os8-hQ-WCq.title" = "Installation";
+
+/* Class = "NSViewController"; title = "Uninstall"; ObjectID = "P9e-FD-zwO"; */
+"P9e-FD-zwO.title" = "Deinstallation";
+
+/* Class = "NSTextFieldCell"; title = "Banner Text:"; ObjectID = "Ri3-y0-h0V"; */
+"Ri3-y0-h0V.title" = "Bannertext:";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Rku-gC-nEr"; */
+"Rku-gC-nEr.title" = "Fenster";
+
+/* Class = "NSButtonCell"; title = "Save Banner"; ObjectID = "SVp-zH-BSL"; */
+"SVp-zH-BSL.title" = "Banner speichern";
+
+/* Class = "NSTextFieldCell"; title = "Text Color:"; ObjectID = "USH-6F-yYJ"; */
+"USH-6F-yYJ.title" = "Textfarbe:";
+
+/* Class = "NSWindow"; title = "Icons"; ObjectID = "Xb0-Eu-bGd"; */
+"Xb0-Eu-bGd.title" = "Icons";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Y71-vW-jJH"; */
+"Y71-vW-jJH.title" = "Andere ausblenden";
+
+/* Class = "NSMenuItem"; title = "Remove"; ObjectID = "YHI-YJ-40Z"; */
+"YHI-YJ-40Z.title" = "Löschen";
+
+/* Class = "NSMenuItem"; title = "Remove All"; ObjectID = "8nY-8W-o3C"; */
+"8nY-8W-o3C.title" = "Alle löschen";
+
+/* Class = "NSMenu"; title = "Icons"; ObjectID = "YvZ-ox-dev"; */
+"YvZ-ox-dev.title" = "Icons";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "Yyv-QL-wc5"; */
+"Yyv-QL-wc5.title" = "Alle nach vorne bringen";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "ZnS-AD-dq6"; */
+"ZnS-AD-dq6.title" = "Alle anzeigen";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Ztz-9r-Zol"; */
+"Ztz-9r-Zol.title" = "Einsetzen";
+
+/* Class = "NSTextFieldCell"; title = "Banner Color:"; ObjectID = "a6O-6P-Ueo"; */
+"a6O-6P-Ueo.title" = "Bannerfarbe:";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "c83-RA-LFS"; */
+"c83-RA-LFS.title" = "Wiederholen";
+
+/* Class = "NSTextFieldCell"; title = "Animation speed:"; ObjectID = "cn0-Zj-PVa"; */
+"cn0-Zj-PVa.title" = "Geschwindigkeit:";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "foJ-CK-Tju"; */
+"foJ-CK-Tju.title" = "Alles auswählen";
+
+/* Class = "NSMenuItem"; title = "Hide Icons"; ObjectID = "gVt-0y-AgP"; */
+"gVt-0y-AgP.title" = "Icons ausblenden";
+
+/* Class = "NSTextFieldCell"; title = "Create a new banner"; ObjectID = "jfy-6a-gu3"; */
+"jfy-6a-gu3.title" = "Neues Banner erstellen";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "kPM-FU-3OA"; */
+"kPM-FU-3OA.title" = "Zoomen";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "l37-3L-Ide"; */
+"l37-3L-Ide.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "l6E-Jg-96p"; */
+"l6E-Jg-96p.title" = "Widerrufen";
+
+/* Class = "NSMenuItem"; title = "Hide"; ObjectID = "lzl-pV-wCw"; */
+"lzl-pV-wCw.title" = "Ausblenden";
+
+/* Class = "NSButtonCell"; title = "Save Icon Set"; ObjectID = "mds-t3-5Wm"; */
+"mds-t3-5Wm.title" = "Icon-Set speichern";
+
+/* Class = "NSTextFieldCell"; title = "Adjust image size:"; ObjectID = "pTx-ab-4hu"; */
+"pTx-ab-4hu.title" = "Bildgröße anpassen:";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "rFu-7X-OBA"; */
+"rFu-7X-OBA.title" = "Fenster";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "uay-d7-LuW"; */
+"uay-d7-LuW.title" = "Löschen";
+
+/* Class = "NSTextFieldCell"; title = "Output size:"; ObjectID = "wvp-Oa-AeM"; */
+"wvp-Oa-AeM.title" = "Ausgabegröße:";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "zt8-gk-fN2"; */
+"zt8-gk-fN2.title" = "Bearbeiten";
+
+/* Class = "NSColorWell"; ibShadowedToolTip = "Click here to change the banner's color."; ObjectID = "Dve-9W-rkA"; */
+"Dve-9W-rkA.ibShadowedToolTip" = "Klicken Sie hier, um die Farbe des Banners zu ändern.";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Click here to switch banner color and text color."; ObjectID = "Jj2-0y-Tdt"; */
+"Jj2-0y-Tdt.ibShadowedToolTip" = "Klicken Sie hier, um die Farbe des Banners und die Textfarbe zu tauschen.";
+
+/* Class = "NSColorWell"; ibShadowedToolTip = "Click here to change the color of the banner's text."; ObjectID = "g77-ga-ERN"; */
+"g77-ga-ERN.ibShadowedToolTip" = "Klicken Sie hier, um die Textfarbe des Banners zu ändern.";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "NQ0-mD-d0X"; */
+"NQ0-mD-d0X.title" = "Ablage";
+
+/* Class = "NSMenuItem"; title = "Open…"; ObjectID = "ob8-PC-xsF"; */
+"ob8-PC-xsF.title" = "Öffnen…";
+
+/* Class = "NSMenuItem"; title = "Save Icon Set…"; ObjectID = "5it-B2-2fN"; */
+"5it-B2-2fN.title" = "Icon-Set speichern…";
+
+/* Class = "NSTextFieldCell"; title = "Position:"; ObjectID = "w3N-cI-ufw"; */
+"w3N-cI-ufw.title" = "Position:";
+
+/* Class = "NSButtonCell"; title = "left"; ObjectID = "L5d-iN-dbF"; */
+"L5d-iN-dbF.title" = "links";
+
+/* Class = "NSButtonCell"; title = "right"; ObjectID = "9zf-ec-lHw"; */
+"9zf-ec-lHw.title" = "rechts";
