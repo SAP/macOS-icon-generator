@@ -44,7 +44,8 @@ Have a look at how easy it is to create a customized icon by drag and drop. This
 # Documentation 📚
 
 You can find the following links also in the Wiki Page of Icons.
-* [Install and Uninstall Icons](https://LINK/)* [Using Icons](https://LINK/)* [FAQ](https://LINK/)
+* [Install Icons](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
+* [Uninstall Icons](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)* [Using Icons](https://github.com/SAP/macOS-icon-generator/wiki/Using-Icons)* [FAQ](https://github.com/SAP/macOS-icon-generator/wiki/Frequently-Asked-Questions)
 
 # Example 💡
 
