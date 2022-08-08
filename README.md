@@ -62,7 +62,6 @@ Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator c
 
 # Security 👮
 Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [icons-security@sap.com](mailto:icons-security@sap.com?subject=[GitHub]%20Source%20Han%20Sans)
-**The easiest way to create customized app icons for your company's internal app store.**
 
 # Support 🤓
 
