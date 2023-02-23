@@ -44,8 +44,11 @@ Have a look at how easy it is to create a customized icon by drag and drop. This
 # Documentation 📚
 
 You can find the following links also in the Wiki Page of Icons.
-* [Install Icons](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
-* [Uninstall Icons](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)* [Using Icons](https://github.com/SAP/macOS-icon-generator/wiki/Using-Icons)* [FAQ](https://github.com/SAP/macOS-icon-generator/wiki/Frequently-Asked-Questions)
+
+* [Install Icons](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
+* [Uninstall Icons](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)
+* [Using Icons](https://github.com/SAP/macOS-icon-generator/wiki/Using-Icons)
+* [FAQ](https://github.com/SAP/macOS-icon-generator/wiki/Frequently-Asked-Questions)
 
 # Example 💡
 
@@ -61,7 +64,7 @@ Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator c
 
 
 # Security 👮
-Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [icons-security@sap.com](mailto:icons-security@sap.com?subject=[GitHub]%20Source%20Han%20Sans)
+Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [icons-security@sap.com](mailto:icons-security@sap.com?subject=[GitHub]%20Icons%20Security%20Issue%20Report)
 
 # Support 🤓
 
