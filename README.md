@@ -64,7 +64,7 @@ Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator c
 
 
 # Security 👮
-Found a security-related issue or vulnerability and want to notify us? Please contact us at 📧 [macatsap-opensource-security@sap.com](mailto:macatsap-opensource-security@sap.com?subject=[GitHub]%20Icons%20Security%20Issue%20Report)
+Found a security-related issue or vulnerability and want to notify us? [Please see here for how to report it](https://github.com/SAP/macOS-icon-generator/security/policy).
 
 # Support 🤓
 
