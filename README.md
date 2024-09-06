@@ -60,7 +60,7 @@ Here you can find an example how the icon set could look like. The icon set cont
 
 # License 🏷️
 
-Copyright (c) 2022 SAP SE or an SAP affiliate company and macOS-icon-generator contributors. Please see our [LICENSE](https://github.com/SAP/macOS-icon-generator/blob/main/LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator) tool.
+Copyright (c) 2022 SAP SE or an SAP affiliate company and Icons contributors. Please see our [LICENSE](https://github.com/SAP/macOS-icon-generator/blob/main/LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator) tool.
 
 
 # Security 👮
