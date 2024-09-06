@@ -18,7 +18,7 @@ As a Mac administrator you have multiple environments, e.g. development, test an
 
 🖱️ Easy drag & drop function
 
-💾 Save labels for later 
+💾 Save banners for later 
 
 📘 Standardized icons set
 
