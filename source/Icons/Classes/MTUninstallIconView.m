@@ -1,6 +1,6 @@
 /*
      MTUninstallIconView.m
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@
     _containerView = [[NSView alloc] initWithFrame:[self bounds]];
     [_containerView setWantsLayer:YES];
     [_containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [[_containerView layer] setMasksToBounds:YES];
     [self addSubview:_containerView];
     
     // add constraints
@@ -181,11 +182,6 @@
     [self layoutSubtreeIfNeeded];
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-}
-
 - (void)setImage:(NSImage *)image
 {
     _image = image;
@@ -281,6 +277,7 @@
     
     return imageInset;
 }
+
 - (void)setImageInset:(CGFloat)imageInset
 {
     _imageInset = imageInset;

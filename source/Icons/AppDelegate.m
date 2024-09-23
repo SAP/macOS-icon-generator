@@ -1,6 +1,6 @@
 /*
      AppDelegate.m
-     Copyright 2016-2022 SAP SE
+     Copyright 2016-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,43 +17,29 @@
 
 #import "AppDelegate.h"
 #import "MTImage.h"
+#import "Constants.h"
 
 @implementation AppDelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-   
-}
 
 - (void)application:(NSApplication *)application openURLs:(nonnull NSArray<NSURL *> *)urls
 {
     NSURL *droppedFile = [urls firstObject];
-    
-    NSImage *sourceImage = [NSImage imageWithFileAtPath:[droppedFile path]];
+    NSImage *sourceImage = [NSImage imageWithFileAtURL:droppedFile];
 
     if ([sourceImage isValid]) {
         
         // post notifications so the install and uninstall
         // views can update the source image
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"corp.sap.Icons.installImageChangedNotification"
-                                                            object:sourceImage
-                                                          userInfo:nil
-        ];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"corp.sap.Icons.uninstallImageChangedNotification"
-                                                            object:sourceImage
-                                                          userInfo:nil
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
+                                                            object:self
+                                                          userInfo:([sourceImage isValid]) ? [NSDictionary dictionaryWithObject:droppedFile
+                                                                                                                         forKey:kMTNotificationKeyImageURL
+                                                                                             ] : nil
         ];
     }
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification
-{
-    
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)sender
+- (BOOL)applicationSupportsSecureRestorableState:(NSApplication *)app
 {
     return YES;
 }

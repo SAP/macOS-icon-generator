@@ -1,6 +1,6 @@
 /*
      MTIconSet.m
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 #import "MTIconSet.h"
 #import "Constants.h"
+#import <UniformTypeIdentifiers/UTCoreTypes.h>
 
 @implementation MTIconSet
 
@@ -56,9 +57,10 @@
         CFMutableDataRef data = CFDataCreateMutable(kCFAllocatorDefault, 0);
         
         if (data) {
+            
             CGImageDestinationRef imageDestination = CGImageDestinationCreateWithData(
                                                                                       data,
-                                                                                      kUTTypePNG,
+                                                                                      (CFStringRef)[UTTypePNG identifier],
                                                                                       [rotationPath count],
                                                                                       (__bridge CFDictionaryRef)fileProperties
                                                                                       );
@@ -125,11 +127,12 @@
 
 - (void)writeToFolder:(NSString *)path
          createFolder:(BOOL)createFolder
+         animatedOnly:(BOOL)animatedOnly
     completionHandler:(void (^) (BOOL success, NSString* path, NSError *error))completionHandler
 {
-    BOOL success = YES;
+    __block BOOL success = YES;
     NSString *folderPath = path;
-    __block NSError *error = nil;
+    NSError *error = nil;
         
     if (createFolder) {
         
@@ -142,44 +145,64 @@
     
     if (success) {
         
-        error = [NSError errorWithDomain:NSOSStatusErrorDomain code:writErr userInfo:nil];
-        
         // save the install image
         if ([_installIcon isValid]) {
-            success = [[_installIcon pngData] writeToFile:[folderPath stringByAppendingPathComponent:kMTFileNameInstall] atomically:YES];
+            
+            NSString *fileName = (_fileNamePrefix) ? [_fileNamePrefix stringByAppendingFormat:@"_%@", kMTFileNameInstall] : kMTFileNameInstall;
+            success = [[_installIcon pngData] writeToURL:[NSURL fileURLWithPath:[folderPath stringByAppendingPathComponent:fileName]]
+                                                 options:NSDataWritingAtomic
+                                                   error:&error
+            ];
         }
         
         // save the uninstall image
         if (success && [_uninstallIcon isValid]) {
-            success = [[_uninstallIcon pngData] writeToFile:[folderPath stringByAppendingPathComponent:kMTFileNameUninstall] atomically:YES];
             
-            if (success) {
-                    
-                if (_animationDuration > 0) {
+            if (!animatedOnly) {
                 
-                    // save the animated uninstall image
-                    [self uninstallAPNGWithCompletionHandler:^(NSData *imageData) {
-                        
-                        BOOL success = [imageData writeToFile:[folderPath stringByAppendingPathComponent:kMTFileNameUninstallAnimated] atomically:YES];
-                    
-                        if (completionHandler) {
-                            if (success) { error = [NSError errorWithDomain:NSOSStatusErrorDomain code:noErr userInfo:nil]; }
-                            completionHandler(success, folderPath, error);
-                        }
-                    }];
-                
-                } else {
-                    if (completionHandler) { completionHandler(success, folderPath, error); }
-                }
-                
-            } else {
-                if (completionHandler) { completionHandler(success, folderPath, error); }
+                NSString *fileName = (_fileNamePrefix) ? [_fileNamePrefix stringByAppendingFormat:@"_%@", kMTFileNameUninstall] : kMTFileNameUninstall;
+                success = [[_uninstallIcon pngData] writeToURL:[NSURL fileURLWithPath:[folderPath stringByAppendingPathComponent:fileName]]
+                                                       options:NSDataWritingAtomic
+                                                         error:&error
+                           ];
             }
-        }
+            
+            if (success && _animationDuration > 0) {
+                
+                // save the animated uninstall image
+                [self uninstallAPNGWithCompletionHandler:^(NSData *imageData) {
+                    
+                    NSError *error = nil;
+                    NSString *fileName = (self->_fileNamePrefix) ? [self->_fileNamePrefix stringByAppendingFormat:@"_%@", kMTFileNameUninstallAnimated] : kMTFileNameUninstallAnimated;
+                    success = [imageData writeToURL:[NSURL fileURLWithPath:[folderPath stringByAppendingPathComponent:fileName]]
+                                            options:NSDataWritingAtomic
+                                            error:&error
+                     ];
+                
+                    if (completionHandler) { completionHandler(success, folderPath, error); }
+                }];
+                
+            } else if (completionHandler) { completionHandler(success, folderPath, error); }
+            
+        } else if (completionHandler) { completionHandler(success, folderPath, error); }
         
-    } else {
-        if (completionHandler) { completionHandler(success, folderPath, error); }
+    } else if (completionHandler) {
+        
+        error = [NSError errorWithDomain:NSOSStatusErrorDomain code:writErr userInfo:nil];
+        completionHandler(success, folderPath, error); }
+}
+
++ (NSString *)fileNamePrefixWithString:(NSString *)prefix
+{
+    NSString *fileNamePrefix = prefix;
+    
+    if (prefix) {
+
+        NSCharacterSet *forbiddenCharacters = [NSCharacterSet characterSetWithCharactersInString:@":/"];
+        fileNamePrefix = [[prefix componentsSeparatedByCharactersInSet:forbiddenCharacters] componentsJoinedByString:@""];
     }
+    
+    return fileNamePrefix;
 }
 
 @end

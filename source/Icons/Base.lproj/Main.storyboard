@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23502" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23502"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +24,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="3lx-T4-V0i"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="Nny-mn-GoN">
+                                            <connections>
+                                                <action selector="showSettingsWindow:" target="bEO-Dp-n6G" id="MXX-3W-74o"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="aX7-mV-e6h"/>
                                         <menuItem title="Services" id="5S7-8Z-bLv">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Services" systemMenu="services" id="qoU-gt-mLc"/>
@@ -63,6 +70,12 @@
                                                 <action selector="openFile:" target="bEO-Dp-n6G" id="b35-AR-toL"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Add Overlay Image…" tag="1500" keyEquivalent="O" id="COO-KM-lep" userLabel="Add Overlay Image…">
+                                            <connections>
+                                                <action selector="addOverlayImage:" target="bEO-Dp-n6G" id="bgS-4t-07n"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="pZB-Df-xIi"/>
                                         <menuItem title="Save Icon Set…" tag="2000" keyEquivalent="s" id="5it-B2-2fN" userLabel="Save Icon Set…">
                                             <connections>
                                                 <action selector="saveFiles:" target="bEO-Dp-n6G" id="I5L-13-fL3"/>
@@ -130,11 +143,29 @@
                                                 <action selector="performZoom:" target="bEO-Dp-n6G" id="Nwj-h3-SFo"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Close" keyEquivalent="w" id="ej9-mk-pqT">
+                                            <connections>
+                                                <action selector="performClose:" target="bEO-Dp-n6G" id="lBQ-bk-kXk"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="es7-IW-Ula"/>
                                         <menuItem title="Bring All to Front" id="Yyv-QL-wc5">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="arrangeInFront:" target="bEO-Dp-n6G" id="HZF-Rf-TKj"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="JSB-Ec-Fkz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="87F-Dp-8uS">
+                                    <items>
+                                        <menuItem title="Icons on GitHub" id="iNf-9M-sqD" userLabel="Icons on GitHub">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openGitHub:" target="bEO-Dp-n6G" id="bbA-7E-1dT"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -154,7 +185,7 @@
         <!--Window Controller-->
         <scene sceneID="uLl-s9-Cnp">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="Vfv-Qb-xk8" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="Vfv-Qb-xk8" customClass="MTMainWindowController" sceneMemberID="viewController">
                     <window key="window" title="Icons" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="Xb0-Eu-bGd">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -221,7 +252,7 @@ DQ
         <!--Tab View Controller-->
         <scene sceneID="G2R-4p-Qfx">
             <objects>
-                <tabViewController selectedTabViewItemIndex="1" tabStyle="unspecified" id="VoQ-E3-u6v" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="VoQ-E3-u6v" customClass="MTTabViewController" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="corp.sap.Icons.Install" id="TcJ-Ad-Hx4" userLabel="Install"/>
                         <tabViewItem identifier="corp.sap.Icons.Uninstall" id="uFv-gC-p6I" userLabel="Uninstall"/>
@@ -249,41 +280,53 @@ DQ
             <objects>
                 <arrayController editable="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="bF2-Iv-11y"/>
                 <customObject id="SvP-3L-uUq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="gf0-7X-Q21" userLabel="Remove Saved Banner">
+                <menu id="gf0-7X-Q21" userLabel="Banner Context Menu">
                     <items>
-                        <menuItem title="Remove" id="YHI-YJ-40Z">
+                        <menuItem title="Use as Default" tag="1000" id="Bf0-r7-bm1">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="setDefaultBanner:" target="Os8-hQ-WCq" id="jeX-fI-Lz8"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Kug-RI-5OQ"/>
+                        <menuItem title="Remove" tag="2000" id="YHI-YJ-40Z">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="removeSavedBanner:" target="Os8-hQ-WCq" id="R8D-tF-TOJ"/>
-                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="enableRemoveBannerMenu" id="smc-SM-WMx"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Remove All" tag="1" alternate="YES" id="8nY-8W-o3C">
+                        <menuItem title="Remove All" tag="3000" alternate="YES" id="8nY-8W-o3C">
                             <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                             <connections>
                                 <action selector="removeSavedBanner:" target="Os8-hQ-WCq" id="ORU-yx-lgz"/>
-                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="enableRemoveBannerMenu" id="W5f-PT-ypw"/>
                             </connections>
                         </menuItem>
                     </items>
+                    <connections>
+                        <outlet property="delegate" destination="Os8-hQ-WCq" id="v4k-b1-b4k"/>
+                    </connections>
                 </menu>
                 <viewController title="Install" id="Os8-hQ-WCq" customClass="MTInstallViewController" sceneMemberID="viewController">
                     <view key="view" id="pUC-Lx-D6q">
-                        <rect key="frame" x="0.0" y="0.0" width="636" height="291"/>
+                        <rect key="frame" x="0.0" y="0.0" width="830" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="oDp-MP-QFn" customClass="MTInstallIconView">
-                                <rect key="frame" x="20" y="20" width="261" height="261"/>
+                                <rect key="frame" x="20" y="20" width="330" height="330"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="2By-O7-DP6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="330" id="2By-O7-DP6"/>
                                     <constraint firstAttribute="width" secondItem="oDp-MP-QFn" secondAttribute="height" multiplier="1:1" id="Wza-u2-0bG"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="cyk-od-w4R"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="cyk-od-w4R"/>
+                                    <constraint firstAttribute="width" secondItem="oDp-MP-QFn" secondAttribute="height" multiplier="1:1" id="fwk-6d-o6H"/>
                                 </constraints>
                                 <accessibility description="Install Icon"/>
                             </customView>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
-                                <rect key="frame" x="394" y="112" width="222" height="20"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="kZK-xy-xw0">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
+                                <rect key="frame" x="463" y="193" width="241" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="3Rf-Ch-5wk"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="kZK-xy-xw0">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -306,7 +349,7 @@ DQ
                                 </connections>
                             </textField>
                             <colorWell toolTip="Click here to change the banner's color." allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dve-9W-rkA" customClass="MTColorWell">
-                                <rect key="frame" x="394" y="56" width="44" height="23"/>
+                                <rect key="frame" x="460" y="74" width="50" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="NCw-1I-rJX"/>
                                     <constraint firstAttribute="height" constant="23" id="fAr-8d-R2L"/>
@@ -314,28 +357,28 @@ DQ
                                 <color key="color" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
                                 <accessibility description="Banner Color"/>
                                 <connections>
-                                    <action selector="updateBanner:" target="Os8-hQ-WCq" id="sBL-iQ-hMM"/>
+                                    <action selector="changeBannerColor:" target="Os8-hQ-WCq" id="vIj-IV-3vz"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="T8G-cb-VKe"/>
                                 </connections>
                             </colorWell>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
-                                <rect key="frame" x="299" y="113" width="87" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Banner Text:" id="Ri3-y0-h0V">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
+                                <rect key="frame" x="368" y="194" width="87" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text:" id="Ri3-y0-h0V">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
-                                <rect key="frame" x="299" y="60" width="87" height="16"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
+                                <rect key="frame" x="368" y="80" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Banner Color:" id="a6O-6P-Ueo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
-                                <rect key="frame" x="299" y="34" width="87" height="16"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
+                                <rect key="frame" x="517" y="80" width="70" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Color:" id="USH-6F-yYJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -343,7 +386,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <colorWell toolTip="Click here to change the color of the banner's text." tag="2" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g77-ga-ERN" customClass="MTColorWell">
-                                <rect key="frame" x="394" y="30" width="44" height="23"/>
+                                <rect key="frame" x="592" y="74" width="50" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Hxe-IH-mrC"/>
                                     <constraint firstAttribute="height" constant="23" id="oHZ-rz-stM"/>
@@ -351,108 +394,126 @@ DQ
                                 <color key="color" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <accessibility description="Banner Text Color"/>
                                 <connections>
-                                    <action selector="updateBanner:" target="Os8-hQ-WCq" id="TCf-Qf-jTK"/>
+                                    <action selector="changeBannerColor:" target="Os8-hQ-WCq" id="nc2-Pa-n46"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="8Pg-k3-zM7"/>
                                 </connections>
                             </colorWell>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
-                                <rect key="frame" x="299" y="255" width="164" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Select an existing banner" id="1jv-K9-S0J">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
+                                <rect key="frame" x="368" y="334" width="98" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Saved banners" id="1jv-K9-S0J">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
-                                <rect key="frame" x="299" y="139" width="134" height="16"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
+                                <rect key="frame" x="368" y="220" width="134" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Create a new banner" id="jfy-6a-gu3">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-rF-qxu">
-                                <rect key="frame" x="531" y="29" width="85" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Save Banner" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SVp-zH-BSL">
+                            <button toolTip="Click here to save the current banner." horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-rF-qxu">
+                                <rect key="frame" x="707" y="186" width="110" height="32"/>
+                                <buttonCell key="cell" type="push" title="Save Banner" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SVp-zH-BSL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <accessibility description="Save Banner"/>
                                 <connections>
                                     <action selector="saveBanner:" target="Os8-hQ-WCq" id="MuV-U5-3tB"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="6sk-pO-0M6"/>
                                 </connections>
                             </button>
                             <scrollView borderType="line" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-SA-B7c">
-                                <rect key="frame" x="301" y="175" width="315" height="70"/>
+                                <rect key="frame" x="370" y="256" width="440" height="70"/>
                                 <clipView key="contentView" ambiguous="YES" id="TIh-Ml-ItI">
-                                    <rect key="frame" x="1" y="1" width="313" height="68"/>
+                                    <rect key="frame" x="1" y="1" width="438" height="68"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="s1w-zX-2DX">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="68"/>
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="16" usesAutomaticRowHeights="YES" viewBased="YES" id="s1w-zX-2DX">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="68"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <size key="intercellSpacing" width="17" height="0.0"/>
+                                            <size key="intercellSpacing" width="17" height="8"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="307" minWidth="200" maxWidth="1000" id="KHB-5f-afm">
+                                                <tableColumn editable="NO" width="426" minWidth="200" maxWidth="9.2233720368547758e+18" id="KHB-5f-afm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" allowsUndo="NO" title="Text Cell" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="JAV-uq-ubO">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" allowsUndo="NO" alignment="center" title="Text Cell" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="JAV-uq-ubO">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="h8E-Rr-bRF">
-                                                            <rect key="frame" x="8" y="0.0" width="302" height="24"/>
+                                                        <tableCellView id="hT5-qc-jnA" customClass="MTTableCellView">
+                                                            <rect key="frame" x="8" y="4" width="421" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-Vx-BIi">
-                                                                    <rect key="frame" x="101" y="4" width="100" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Table View Cell" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="k4t-Rk-sbm">
+                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
+                                                                    <rect key="frame" x="-2" y="3" width="425" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" usesSingleLineMode="YES" id="YDw-vW-Bvb">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        <connections>
+                                                                            <binding destination="hT5-qc-jnA" name="textColor" keyPath="objectValue.bannerData" id="Pad-An-Thl">
+                                                                                <dictionary key="options">
+                                                                                    <string key="NSValueTransformerName">MTTextColorValueTransformer</string>
+                                                                                </dictionary>
+                                                                            </binding>
+                                                                            <binding destination="hT5-qc-jnA" name="value" keyPath="objectValue.bannerName" id="Ycu-bf-MCJ">
+                                                                                <dictionary key="options">
+                                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                                    <bool key="NSValidatesImmediately" value="YES"/>
+                                                                                </dictionary>
+                                                                            </binding>
+                                                                        </connections>
                                                                     </textFieldCell>
+                                                                </textField>
+                                                                <imageView toolTip="This is the default banner that is automatically added to the install icon." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkW-bu-dJ7">
+                                                                    <rect key="frame" x="399" y="-2" width="22.5" height="27"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="RkW-bu-dJ7" secondAttribute="height" multiplier="1:1" id="GNs-Hk-NXK"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="checkmark" catalog="system" id="Lcb-jV-d8X"/>
+                                                                    <symbolConfiguration key="symbolConfiguration" weight="semibold">
+                                                                        <nil key="locale"/>
+                                                                    </symbolConfiguration>
                                                                     <connections>
-                                                                        <binding destination="h8E-Rr-bRF" name="textColor" keyPath="objectValue.bannerData" id="nMN-xY-moc">
+                                                                        <binding destination="hT5-qc-jnA" name="hidden" keyPath="objectValue.IsDefault" id="4UB-Wd-iFC">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">MTTextColorValueTransformer</string>
-                                                                            </dictionary>
-                                                                        </binding>
-                                                                        <binding destination="h8E-Rr-bRF" name="value" keyPath="objectValue.bannerName" id="VSR-ur-YzM">
-                                                                            <dictionary key="options">
-                                                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                                             </dictionary>
                                                                         </binding>
                                                                     </connections>
-                                                                </textField>
+                                                                </imageView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="PUf-Vx-BIi" firstAttribute="centerY" secondItem="h8E-Rr-bRF" secondAttribute="centerY" id="xgG-du-0Cl"/>
-                                                                <constraint firstItem="PUf-Vx-BIi" firstAttribute="centerX" secondItem="h8E-Rr-bRF" secondAttribute="centerX" id="ynt-pd-3YO"/>
+                                                                <constraint firstItem="6PO-Sa-X9B" firstAttribute="leading" secondItem="hT5-qc-jnA" secondAttribute="leading" id="7V9-fl-X94"/>
+                                                                <constraint firstItem="RkW-bu-dJ7" firstAttribute="trailing" secondItem="6PO-Sa-X9B" secondAttribute="trailing" id="Q0L-5O-rh5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6PO-Sa-X9B" secondAttribute="trailing" id="X14-DS-5eS"/>
+                                                                <constraint firstItem="6PO-Sa-X9B" firstAttribute="centerY" secondItem="hT5-qc-jnA" secondAttribute="centerY" id="Ztr-TO-zh8"/>
+                                                                <constraint firstItem="RkW-bu-dJ7" firstAttribute="top" secondItem="hT5-qc-jnA" secondAttribute="top" id="hjd-nw-XtL"/>
+                                                                <constraint firstAttribute="bottom" secondItem="RkW-bu-dJ7" secondAttribute="bottom" id="uLg-jP-1RM"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="textField" destination="PUf-Vx-BIi" id="a2C-Bz-eJW"/>
+                                                                <outlet property="imageView" destination="RkW-bu-dJ7" id="F4m-NE-PuU"/>
+                                                                <outlet property="textField" destination="6PO-Sa-X9B" id="Wyk-0H-xAW"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
-                                                    <connections>
-                                                        <binding destination="bF2-Iv-11y" name="value" keyPath="arrangedObjects" id="DGB-Pm-1Cv">
-                                                            <dictionary key="options">
-                                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                                            </dictionary>
-                                                        </binding>
-                                                    </connections>
                                                 </tableColumn>
                                             </tableColumns>
                                             <accessibility description="Saved Banners Table"/>
                                             <connections>
                                                 <action selector="selectRow:" target="Os8-hQ-WCq" id="e1r-jD-GKz"/>
+                                                <binding destination="bF2-Iv-11y" name="content" keyPath="arrangedObjects" id="Nf8-X4-Veh"/>
                                                 <binding destination="Os8-hQ-WCq" name="enabled" keyPath="installIconView.image" id="epw-12-gGK">
                                                     <dictionary key="options">
                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -465,7 +526,7 @@ DQ
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="alR-aX-dya"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="HZg-Jt-Gt4"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="yt3-Ds-VMb"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="73v-Qx-uxn">
@@ -477,124 +538,321 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="NwO-IY-ZLb">
-                                <rect key="frame" x="442" y="30" width="24" height="49"/>
-                                <subviews>
-                                    <button toolTip="Click here to switch banner color and text color." allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jj2-0y-Tdt">
-                                        <rect key="frame" x="0.0" y="10" width="24" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="OQs-0U-bhN"/>
-                                            <constraint firstAttribute="width" constant="24" id="ubP-Ti-tdp"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrow.up.arrow.down.circle.fill" catalog="system" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vgk-6Q-ffX">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <accessibility description="Swap Banner Colors"/>
-                                        <connections>
-                                            <action selector="switchColors:" target="Os8-hQ-WCq" id="ZTg-v4-m6g"/>
-                                            <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="x6G-ZQ-rbf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Jj2-0y-Tdt" firstAttribute="centerY" secondItem="NwO-IY-ZLb" secondAttribute="centerY" id="CM2-xV-1yK"/>
-                                    <constraint firstItem="Jj2-0y-Tdt" firstAttribute="leading" secondItem="NwO-IY-ZLb" secondAttribute="leading" id="hb4-to-Hac"/>
-                                    <constraint firstAttribute="width" constant="24" id="qkK-N4-4GV"/>
-                                </constraints>
-                            </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
-                                <rect key="frame" x="299" y="87" width="87" height="16"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
+                                <rect key="frame" x="368" y="166" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Position:" id="w3N-cI-ufw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dt2-1P-GUo">
-                                <rect key="frame" x="394" y="86" width="46" height="18"/>
-                                <buttonCell key="cell" type="radio" title="left" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="L5d-iN-dbF">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
+                                <rect key="frame" x="368" y="30" width="124" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Overlay Image Size:" id="lDV-Sm-BrH">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfn-JT-1aD">
+                                <rect key="frame" x="498" y="21" width="314" height="28"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="10" maxValue="100" doubleValue="30" tickMarkPosition="above" numberOfTickMarks="10" sliderType="linear" id="hkG-2C-8r3"/>
+                                <accessibility description="Overlay Image Size Slider"/>
                                 <connections>
-                                    <action selector="bannerPosition:" target="Os8-hQ-WCq" id="9Qx-5Y-N0E"/>
-                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="Hyb-CP-TRH"/>
+                                    <action selector="updateOverlaySliderToolTip:" target="Os8-hQ-WCq" id="q9H-DX-npq"/>
+                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="installIconView.overlayImage" id="KSh-MY-9lt">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="Os8-hQ-WCq" name="value" keyPath="installIconView.overlayImageScalingFactor" id="KXe-EF-aOj">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="q1m-NW-DsJ">
-                                <rect key="frame" x="448" y="86" width="55" height="18"/>
-                                <buttonCell key="cell" type="radio" title="right" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9zf-ec-lHw">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            </slider>
+                            <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="e83-w3-gOm">
+                                <rect key="frame" x="463" y="159" width="210" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0wu-Ht-K1E"/>
+                                    <constraint firstItem="h9U-ap-mEC" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="Q4R-PG-gZX"/>
+                                    <constraint firstItem="RKA-bV-o1A" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="UDo-sS-kRt"/>
+                                    <constraint firstItem="OFv-i7-9fr" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="aWE-h4-3I6"/>
+                                    <constraint firstItem="uHX-L0-COc" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="eB4-HC-yHS"/>
+                                    <constraint firstItem="OS9-sa-jHq" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="f3V-dK-mWn"/>
+                                    <constraint firstItem="cT6-x9-MeA" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="qMJ-qy-bSR"/>
+                                </constraints>
+                                <rows>
+                                    <gridRow id="Lkg-Fl-pB1"/>
+                                </rows>
+                                <columns>
+                                    <gridColumn id="5Yd-rD-si1"/>
+                                    <gridColumn id="hrY-Ac-UXV"/>
+                                    <gridColumn id="UAt-qJ-WsU"/>
+                                    <gridColumn id="s8M-d5-5cE"/>
+                                    <gridColumn id="A48-rL-phI"/>
+                                    <gridColumn id="dxI-1J-hHX"/>
+                                </columns>
+                                <gridCells>
+                                    <gridCell row="Lkg-Fl-pB1" column="5Yd-rD-si1" id="D0u-G1-dqm">
+                                        <button key="contentView" toolTip="Top Left Corner" translatesAutoresizingMaskIntoConstraints="NO" id="h9U-ap-mEC">
+                                            <rect key="frame" x="0.0" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AXf-vp-WrH">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.inset.topleft.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="a6i-Av-vnI"/>
+                                            </constraints>
+                                            <accessibility description="Top Left Corner"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="WfF-ny-a9f"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="DqJ-lq-YdI"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="Lkg-Fl-pB1" column="hrY-Ac-UXV" id="Y69-oB-UCr">
+                                        <button key="contentView" toolTip="Top Right Corner" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-x9-MeA">
+                                            <rect key="frame" x="36" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ORm-aT-npk">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.inset.topright.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="oP6-Ks-tbh"/>
+                                            </constraints>
+                                            <accessibility description="Top Right Corner"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="uAc-DP-tWh"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="EYd-FD-VjG"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="Lkg-Fl-pB1" column="UAt-qJ-WsU" id="4Ow-px-xoU">
+                                        <button key="contentView" toolTip="Bottom Left Corner" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="OS9-sa-jHq">
+                                            <rect key="frame" x="72" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="bRd-fG-d6R">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.inset.bottomleft.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="vj6-IL-byD"/>
+                                            </constraints>
+                                            <accessibility description="Bottom Left Corner"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="CP4-1s-hfw"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="Mim-Nr-Nqv"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="Lkg-Fl-pB1" column="s8M-d5-5cE" id="hGa-r5-cx9">
+                                        <button key="contentView" toolTip="Bottom Right Corner" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="uHX-L0-COc">
+                                            <rect key="frame" x="108" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Cm4-Qs-uUv">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.inset.bottomright.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="bHW-4q-Z95"/>
+                                            </constraints>
+                                            <accessibility description="Bottom Right Corner"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="pdp-g8-BL2"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="lbS-9f-Ww2"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="Lkg-Fl-pB1" column="A48-rL-phI" id="gyD-Jg-Cg4">
+                                        <button key="contentView" toolTip="Top" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-bV-o1A">
+                                            <rect key="frame" x="144" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="e0y-3E-86T">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.topthird.inset.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="263-Rw-x5E"/>
+                                            </constraints>
+                                            <accessibility description="Top"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="h9j-2z-KZ5"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="wBP-QF-sdm"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="Lkg-Fl-pB1" column="dxI-1J-hHX" id="Kfw-TV-YKj">
+                                        <button key="contentView" toolTip="Bottom" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="OFv-i7-9fr">
+                                            <rect key="frame" x="180" y="-4.5" width="30.5" height="39"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="yCZ-Q3-g8k">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <imageReference key="image" image="rectangle.bottomthird.inset.fill" catalog="system" symbolScale="large"/>
+                                            </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="AEI-Or-cY9"/>
+                                            </constraints>
+                                            <accessibility description="Bottom"/>
+                                            <connections>
+                                                <action selector="updateBannerPosition:" target="Os8-hQ-WCq" id="Igo-TX-bDo"/>
+                                                <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="vqS-3Z-ttT"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                </gridCells>
+                            </gridView>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
+                                <rect key="frame" x="368" y="110" width="87" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Font:" id="rZY-vV-Lp9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-tO-lOa">
+                                <rect key="frame" x="460" y="103" width="39" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="i8E-IN-ibI" customClass="MTPopupButtonCell">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="message"/>
+                                    <menu key="menu" id="Hxx-0y-02E"/>
+                                </popUpButtonCell>
+                                <accessibility description="Font Menu"/>
+                                <connections>
+                                    <action selector="changeBannerFont:" target="Os8-hQ-WCq" id="Gb8-Pr-22U"/>
+                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="brb-xf-8Vn"/>
+                                </connections>
+                            </popUpButton>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
+                                <rect key="frame" x="368" y="138" width="87" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Margin:" id="ktj-KO-fqu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-Ny-khv">
+                                <rect key="frame" x="461" y="129" width="351" height="28"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="40" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="zXj-lZ-t6i"/>
+                                <accessibility description="Text Margin Slider"/>
+                                <connections>
+                                    <action selector="updateTextMarginSliderToolTip:" target="Os8-hQ-WCq" id="IbT-w5-xJF"/>
+                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="hH2-2j-CPp"/>
+                                    <binding destination="Os8-hQ-WCq" name="value" keyPath="installIconView.bannerTextMargin" id="Jhi-qw-3Av">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </slider>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="baj-Yz-Ny1" customClass="MTTableOverlayView">
+                                <rect key="frame" x="370" y="256" width="440" height="70"/>
+                                <connections>
+                                    <binding destination="Os8-hQ-WCq" name="hidden" keyPath="installIconView.image" id="RNl-jE-EeB">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </customView>
+                            <button toolTip="Click here to swap banner color and text color." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n6G-PL-35N">
+                                <rect key="frame" x="652" y="70" width="110" height="32"/>
+                                <buttonCell key="cell" type="push" title="Swap Colors" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gDc-Pz-PXw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <accessibility description="Swap Banner Colors"/>
                                 <connections>
-                                    <action selector="bannerPosition:" target="Os8-hQ-WCq" id="9B8-VJ-WjL"/>
-                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="S6I-LR-WHq"/>
+                                    <action selector="switchColors:" target="Os8-hQ-WCq" id="VlK-X8-Kfs"/>
+                                    <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="obs-n0-ROV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Dve-9W-rkA" firstAttribute="top" secondItem="Dt2-1P-GUo" secondAttribute="bottom" constant="8" id="0yS-SW-GXF"/>
+                            <constraint firstItem="ZA7-FQ-A9r" firstAttribute="trailing" secondItem="AFc-pG-bq3" secondAttribute="trailing" id="0YD-ko-8rQ"/>
+                            <constraint firstAttribute="trailing" secondItem="fh5-rF-qxu" secondAttribute="trailing" constant="20" id="0bP-EZ-ak5"/>
                             <constraint firstItem="g77-ga-ERN" firstAttribute="centerY" secondItem="aiu-iR-A2y" secondAttribute="centerY" id="22u-Rt-juO"/>
                             <constraint firstItem="oDp-MP-QFn" firstAttribute="leading" secondItem="pUC-Lx-D6q" secondAttribute="leading" constant="20" id="2VK-Mz-DoC"/>
-                            <constraint firstAttribute="trailing" secondItem="Zso-6W-g6l" secondAttribute="trailing" constant="20" id="4i1-GP-Gjj"/>
-                            <constraint firstItem="aiu-iR-A2y" firstAttribute="leading" secondItem="AFc-pG-bq3" secondAttribute="leading" id="83I-g4-azc"/>
+                            <constraint firstItem="vfn-JT-1aD" firstAttribute="leading" secondItem="StZ-xa-Zp2" secondAttribute="trailing" constant="10" id="38A-To-Pfx"/>
+                            <constraint firstItem="ZA7-FQ-A9r" firstAttribute="leading" secondItem="AFc-pG-bq3" secondAttribute="leading" id="5el-Wr-D3y"/>
+                            <constraint firstItem="G6w-SA-B7c" firstAttribute="leading" secondItem="9J5-Ev-kyz" secondAttribute="leading" id="5wc-sy-EcI"/>
+                            <constraint firstItem="baj-Yz-Ny1" firstAttribute="bottom" secondItem="G6w-SA-B7c" secondAttribute="bottom" id="8Ug-4j-LP4"/>
                             <constraint firstItem="gix-Pe-pVP" firstAttribute="leading" secondItem="AFc-pG-bq3" secondAttribute="leading" id="8rB-6I-BqV"/>
+                            <constraint firstItem="Dve-9W-rkA" firstAttribute="top" secondItem="Xdp-tO-lOa" secondAttribute="bottom" constant="8" id="A0v-vo-OBg"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cxc-5q-wHg" secondAttribute="trailing" constant="20" id="A4B-px-xVl"/>
-                            <constraint firstItem="AFc-pG-bq3" firstAttribute="leading" secondItem="oDp-MP-QFn" secondAttribute="trailing" constant="20" id="BEE-63-dla"/>
+                            <constraint firstItem="baj-Yz-Ny1" firstAttribute="top" secondItem="G6w-SA-B7c" secondAttribute="top" id="AVd-FN-qB5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n6G-PL-35N" secondAttribute="trailing" constant="20" id="BFt-Jm-UHG"/>
+                            <constraint firstItem="Qia-A9-NsD" firstAttribute="top" secondItem="gix-Pe-pVP" secondAttribute="bottom" constant="12" id="Bm6-6d-fVN"/>
+                            <constraint firstItem="XaY-Ny-khv" firstAttribute="leading" secondItem="Qia-A9-NsD" secondAttribute="trailing" constant="10" id="CGO-dN-qeN"/>
                             <constraint firstItem="gix-Pe-pVP" firstAttribute="trailing" secondItem="AFc-pG-bq3" secondAttribute="trailing" id="Dpr-sG-uO8"/>
-                            <constraint firstItem="fh5-rF-qxu" firstAttribute="bottom" secondItem="g77-ga-ERN" secondAttribute="bottom" id="EgC-WF-Xyz"/>
-                            <constraint firstItem="NwO-IY-ZLb" firstAttribute="bottom" secondItem="g77-ga-ERN" secondAttribute="bottom" id="Foh-lb-Qca"/>
-                            <constraint firstItem="aiu-iR-A2y" firstAttribute="top" secondItem="Og8-7B-Euf" secondAttribute="bottom" constant="10" id="Fxn-hv-EHx"/>
                             <constraint firstItem="oDp-MP-QFn" firstAttribute="top" secondItem="pUC-Lx-D6q" secondAttribute="top" constant="10" id="GNH-02-ZqX"/>
-                            <constraint firstItem="G6w-SA-B7c" firstAttribute="top" secondItem="9J5-Ev-kyz" secondAttribute="bottom" constant="10" id="GoB-LP-RXy"/>
+                            <constraint firstItem="G6w-SA-B7c" firstAttribute="top" secondItem="9J5-Ev-kyz" secondAttribute="bottom" constant="8" id="GoB-LP-RXy"/>
+                            <constraint firstItem="AFc-pG-bq3" firstAttribute="leading" secondItem="9J5-Ev-kyz" secondAttribute="leading" id="H0t-DB-Sdp"/>
+                            <constraint firstItem="Xdp-tO-lOa" firstAttribute="leading" secondItem="Zso-6W-g6l" secondAttribute="leading" id="H4d-SQ-efj"/>
                             <constraint firstItem="cxc-5q-wHg" firstAttribute="top" secondItem="G6w-SA-B7c" secondAttribute="bottom" constant="20" id="IoW-wo-zee"/>
                             <constraint firstItem="AFc-pG-bq3" firstAttribute="firstBaseline" secondItem="Zso-6W-g6l" secondAttribute="firstBaseline" id="JIg-Qc-sCx"/>
-                            <constraint firstItem="fh5-rF-qxu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NwO-IY-ZLb" secondAttribute="trailing" constant="20" id="KrH-DN-NmT"/>
-                            <constraint firstItem="q1m-NW-DsJ" firstAttribute="leading" secondItem="Dt2-1P-GUo" secondAttribute="trailing" constant="10" id="Mes-0L-cru"/>
-                            <constraint firstAttribute="bottom" secondItem="fh5-rF-qxu" secondAttribute="bottom" constant="30" id="NfI-ij-Wnk"/>
-                            <constraint firstItem="9J5-Ev-kyz" firstAttribute="top" secondItem="pUC-Lx-D6q" secondAttribute="top" constant="20" id="P5k-wK-jbq"/>
+                            <constraint firstItem="aiu-iR-A2y" firstAttribute="leading" secondItem="Dve-9W-rkA" secondAttribute="trailing" constant="12" id="KAb-ek-3zp"/>
+                            <constraint firstItem="StZ-xa-Zp2" firstAttribute="top" secondItem="g77-ga-ERN" secondAttribute="bottom" constant="30" id="Kso-YT-BOm"/>
+                            <constraint firstItem="Qia-A9-NsD" firstAttribute="trailing" secondItem="gix-Pe-pVP" secondAttribute="trailing" id="Mcs-XE-3yR"/>
+                            <constraint firstItem="baj-Yz-Ny1" firstAttribute="trailing" secondItem="G6w-SA-B7c" secondAttribute="trailing" id="OiN-gA-0jh"/>
+                            <constraint firstItem="n6G-PL-35N" firstAttribute="leading" secondItem="g77-ga-ERN" secondAttribute="trailing" constant="20" id="PGD-RC-Fiq"/>
                             <constraint firstItem="9J5-Ev-kyz" firstAttribute="leading" secondItem="oDp-MP-QFn" secondAttribute="trailing" constant="20" id="QdM-Gn-ghe"/>
-                            <constraint firstItem="q1m-NW-DsJ" firstAttribute="centerY" secondItem="gix-Pe-pVP" secondAttribute="centerY" id="RKC-gu-bPF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xdp-tO-lOa" secondAttribute="trailing" constant="20" id="SWi-XV-Ajl"/>
+                            <constraint firstItem="e83-w3-gOm" firstAttribute="leading" secondItem="Zso-6W-g6l" secondAttribute="leading" id="TK0-10-JJX"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dve-9W-rkA" secondAttribute="trailing" constant="20" id="ULn-0r-pCX"/>
-                            <constraint firstItem="gix-Pe-pVP" firstAttribute="top" secondItem="AFc-pG-bq3" secondAttribute="bottom" constant="10" id="Ykm-Ij-9aH"/>
-                            <constraint firstItem="cxc-5q-wHg" firstAttribute="leading" secondItem="oDp-MP-QFn" secondAttribute="trailing" constant="20" id="Yth-IX-sEg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e83-w3-gOm" secondAttribute="trailing" constant="20" id="XWs-nd-WW9"/>
+                            <constraint firstItem="Qia-A9-NsD" firstAttribute="leading" secondItem="gix-Pe-pVP" secondAttribute="leading" id="XoK-4z-I9p"/>
+                            <constraint firstItem="gix-Pe-pVP" firstAttribute="top" secondItem="AFc-pG-bq3" secondAttribute="bottom" constant="12" id="Ykm-Ij-9aH"/>
                             <constraint firstItem="Og8-7B-Euf" firstAttribute="trailing" secondItem="AFc-pG-bq3" secondAttribute="trailing" id="aHY-Mz-37P"/>
-                            <constraint firstItem="Dt2-1P-GUo" firstAttribute="leading" secondItem="gix-Pe-pVP" secondAttribute="trailing" constant="12" id="bAM-oT-HX4"/>
-                            <constraint firstAttribute="trailing" secondItem="fh5-rF-qxu" secondAttribute="trailing" constant="20" id="cF2-hT-N9I"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q1m-NW-DsJ" secondAttribute="trailing" constant="20" id="dZK-8G-FMD"/>
+                            <constraint firstItem="9J5-Ev-kyz" firstAttribute="top" secondItem="oDp-MP-QFn" secondAttribute="top" id="ccd-iw-c7P"/>
+                            <constraint firstItem="ZA7-FQ-A9r" firstAttribute="top" secondItem="Qia-A9-NsD" secondAttribute="bottom" constant="12" id="eq2-Wm-enM"/>
                             <constraint firstItem="Dve-9W-rkA" firstAttribute="leading" secondItem="Og8-7B-Euf" secondAttribute="trailing" constant="10" id="f2M-mk-5IE"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9J5-Ev-kyz" secondAttribute="trailing" constant="20" id="foW-hG-8Yn"/>
-                            <constraint firstItem="oDp-MP-QFn" firstAttribute="width" secondItem="oDp-MP-QFn" secondAttribute="height" multiplier="1:1" id="fwk-6d-o6H"/>
-                            <constraint firstItem="NwO-IY-ZLb" firstAttribute="leading" secondItem="Dve-9W-rkA" secondAttribute="trailing" constant="4" id="leY-zS-pYF"/>
-                            <constraint firstItem="NwO-IY-ZLb" firstAttribute="top" secondItem="Dve-9W-rkA" secondAttribute="top" id="mKL-IY-YyJ"/>
-                            <constraint firstItem="Dt2-1P-GUo" firstAttribute="centerY" secondItem="gix-Pe-pVP" secondAttribute="centerY" id="mey-bJ-RKV"/>
+                            <constraint firstItem="StZ-xa-Zp2" firstAttribute="leading" secondItem="9J5-Ev-kyz" secondAttribute="leading" id="gJC-RT-4dw"/>
+                            <constraint firstItem="fh5-rF-qxu" firstAttribute="leading" secondItem="Zso-6W-g6l" secondAttribute="trailing" constant="10" id="gTd-PZ-kaC"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDp-MP-QFn" secondAttribute="trailing" constant="480" id="hBP-qV-Sq0"/>
+                            <constraint firstItem="e83-w3-gOm" firstAttribute="centerY" secondItem="gix-Pe-pVP" secondAttribute="centerY" id="hER-hg-Lus"/>
+                            <constraint firstAttribute="bottom" secondItem="StZ-xa-Zp2" secondAttribute="bottom" constant="30" id="jhC-5f-gnd"/>
+                            <constraint firstItem="baj-Yz-Ny1" firstAttribute="leading" secondItem="G6w-SA-B7c" secondAttribute="leading" id="mLR-Z1-dEl"/>
+                            <constraint firstItem="cxc-5q-wHg" firstAttribute="leading" secondItem="9J5-Ev-kyz" secondAttribute="leading" id="mzD-yY-G8h"/>
+                            <constraint firstItem="fh5-rF-qxu" firstAttribute="centerY" secondItem="Zso-6W-g6l" secondAttribute="centerY" id="nAM-Vk-4q6"/>
                             <constraint firstItem="g77-ga-ERN" firstAttribute="leading" secondItem="aiu-iR-A2y" secondAttribute="trailing" constant="10" id="nJy-wo-2yh"/>
+                            <constraint firstItem="vfn-JT-1aD" firstAttribute="firstBaseline" secondItem="StZ-xa-Zp2" secondAttribute="firstBaseline" id="pbG-2j-7Yw"/>
                             <constraint firstItem="Zso-6W-g6l" firstAttribute="leading" secondItem="AFc-pG-bq3" secondAttribute="trailing" constant="10" id="qy8-qa-Z0i"/>
                             <constraint firstAttribute="bottom" secondItem="oDp-MP-QFn" secondAttribute="bottom" constant="20" id="rqX-9C-7mU"/>
+                            <constraint firstItem="n6G-PL-35N" firstAttribute="firstBaseline" secondItem="aiu-iR-A2y" secondAttribute="firstBaseline" id="sTb-Vx-YLk"/>
                             <constraint firstItem="AFc-pG-bq3" firstAttribute="top" secondItem="cxc-5q-wHg" secondAttribute="bottom" constant="10" id="tWg-ic-cfN"/>
-                            <constraint firstItem="aiu-iR-A2y" firstAttribute="trailing" secondItem="AFc-pG-bq3" secondAttribute="trailing" id="uf5-SO-w6M"/>
+                            <constraint firstItem="XaY-Ny-khv" firstAttribute="firstBaseline" secondItem="Qia-A9-NsD" secondAttribute="firstBaseline" id="tbK-dd-zU7"/>
+                            <constraint firstAttribute="trailing" secondItem="XaY-Ny-khv" secondAttribute="trailing" constant="20" id="ugz-nw-Wu9"/>
                             <constraint firstItem="Dve-9W-rkA" firstAttribute="centerY" secondItem="Og8-7B-Euf" secondAttribute="centerY" id="wBU-9Z-N0V"/>
                             <constraint firstAttribute="trailing" secondItem="G6w-SA-B7c" secondAttribute="trailing" constant="20" id="wZX-5W-L9T"/>
+                            <constraint firstItem="Xdp-tO-lOa" firstAttribute="firstBaseline" secondItem="ZA7-FQ-A9r" secondAttribute="firstBaseline" id="wuf-DV-Cil"/>
                             <constraint firstItem="Zso-6W-g6l" firstAttribute="baseline" secondItem="AFc-pG-bq3" secondAttribute="baseline" id="xuj-R2-GJt"/>
+                            <constraint firstAttribute="trailing" secondItem="vfn-JT-1aD" secondAttribute="trailing" constant="20" id="y07-Vm-suC"/>
                             <constraint firstItem="Og8-7B-Euf" firstAttribute="leading" secondItem="AFc-pG-bq3" secondAttribute="leading" id="yPc-0q-OSI"/>
-                            <constraint firstItem="G6w-SA-B7c" firstAttribute="leading" secondItem="oDp-MP-QFn" secondAttribute="trailing" constant="20" id="zGA-eS-aXC"/>
+                            <constraint firstItem="aiu-iR-A2y" firstAttribute="firstBaseline" secondItem="Og8-7B-Euf" secondAttribute="firstBaseline" id="zno-ls-0vF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bannerColorWell" destination="Dve-9W-rkA" id="bpT-Qj-m2E"/>
                         <outlet property="bannerTextColorWell" destination="g77-ga-ERN" id="nbi-12-bBf"/>
                         <outlet property="bannerTextField" destination="Zso-6W-g6l" id="rci-Bv-9GO"/>
+                        <outlet property="fontButton" destination="Xdp-tO-lOa" id="Oyx-0N-6cC"/>
                         <outlet property="installIconView" destination="oDp-MP-QFn" id="Foh-pp-NF6"/>
-                        <outlet property="positionLeftButton" destination="Dt2-1P-GUo" id="r9P-I6-sZq"/>
-                        <outlet property="positionRightButton" destination="q1m-NW-DsJ" id="bFQ-Wn-Ehz"/>
+                        <outlet property="overlaySlider" destination="vfn-JT-1aD" id="dwT-mQ-rhv"/>
+                        <outlet property="positionButtonGridView" destination="e83-w3-gOm" id="qjA-dF-g12"/>
                         <outlet property="savedBannersController" destination="bF2-Iv-11y" id="rRi-gY-W89"/>
                         <outlet property="savedBannersTable" destination="s1w-zX-2DX" id="3b5-JW-2t8"/>
+                        <outlet property="textMarginSlider" destination="XaY-Ny-khv" id="yHs-2H-2tZ"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="689" y="563.5"/>
+            <point key="canvasLocation" x="700" y="520"/>
         </scene>
         <!--Uninstall-->
         <scene sceneID="lye-C7-vA6">
@@ -602,21 +860,22 @@ DQ
                 <customObject id="ius-YJ-NKT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Uninstall" id="P9e-FD-zwO" customClass="MTUninstallViewController" sceneMemberID="viewController">
                     <view key="view" id="hjK-Ba-fpZ">
-                        <rect key="frame" x="0.0" y="0.0" width="636" height="291"/>
+                        <rect key="frame" x="0.0" y="0.0" width="830" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ySV-gN-eT9" customClass="MTUninstallIconView">
-                                <rect key="frame" x="20" y="20" width="261" height="261"/>
+                                <rect key="frame" x="20" y="20" width="330" height="330"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="6A0-Gx-VrD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="6A0-Gx-VrD"/>
                                     <constraint firstAttribute="width" secondItem="ySV-gN-eT9" secondAttribute="height" multiplier="1:1" id="Waa-lZ-9PH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="edU-5u-h6E"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="330" id="edU-5u-h6E"/>
                                 </constraints>
+                                <accessibility description="Uninstall Icon"/>
                             </customView>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-Mv-hBj" userLabel="Animation Speed Slider">
-                                <rect key="frame" x="419" y="246" width="199" height="28"/>
+                                <rect key="frame" x="498" y="315" width="314" height="28"/>
                                 <sliderCell key="cell" alignment="left" maxValue="2" doubleValue="1" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="9kz-AH-dcI"/>
-                                <accessibility description="Animation Speed Slider"/>
+                                <accessibility description="Animation Duration Slider"/>
                                 <connections>
                                     <action selector="updateSpeedSliderToolTip:" target="P9e-FD-zwO" id="4CC-4b-DOv"/>
                                     <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="q7Q-cX-uu5">
@@ -626,44 +885,24 @@ DQ
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
-                                <rect key="frame" x="299" y="255" width="114" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Animation speed:" id="cn0-Zj-PVa">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
+                                <rect key="frame" x="368" y="324" width="124" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Animation Duration:" id="cn0-Zj-PVa">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IM5-0p-bxw">
-                                <rect key="frame" x="418" y="126" width="39" height="25"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="k28-Jd-nlJ">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="FXz-cc-XuX">
-                                        <connections>
-                                            <outlet property="delegate" destination="P9e-FD-zwO" id="F9k-3r-X2m"/>
-                                        </connections>
-                                    </menu>
-                                </popUpButtonCell>
-                                <accessibility description="Icon Output Size"/>
-                                <connections>
-                                    <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="KnY-9j-oGQ">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSIsNotNil</string>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
-                                <rect key="frame" x="299" y="209" width="114" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Adjust image size:" id="pTx-ab-4hu">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
+                                <rect key="frame" x="368" y="288" width="124" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Adjust Image Size:" id="pTx-ab-4hu">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-Kl-FH0">
-                                <rect key="frame" x="419" y="200" width="199" height="28"/>
+                                <rect key="frame" x="498" y="279" width="314" height="28"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="eOo-KY-n5s"/>
                                 <accessibility description="Image Size Slider"/>
                                 <connections>
@@ -681,16 +920,8 @@ DQ
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-Fp-ogn">
-                                <rect key="frame" x="299" y="133" width="114" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Output size:" id="wvp-Oa-AeM">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rqz-7w-QUz">
-                                <rect key="frame" x="419" y="179" width="165" height="18"/>
+                                <rect key="frame" x="498" y="258" width="165" height="18"/>
                                 <buttonCell key="cell" type="check" title="Auto-adjust image size" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Nsh-td-3I7">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -705,79 +936,246 @@ DQ
                                     </binding>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33l-TO-2Ak" userLabel="Caution Image View">
-                                <rect key="frame" x="463" y="128" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="FWn-ld-079"/>
-                                    <constraint firstAttribute="height" constant="24" id="qTZ-0E-zgb"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="Med-QG-dSi"/>
-                            </imageView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fsP-nr-XXC">
-                                <rect key="frame" x="419" y="103" width="168" height="18"/>
-                                <buttonCell key="cell" type="check" title="Auto-select output size" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gx5-Go-S4V">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <accessibility description="Auto Output Size"/>
-                                <connections>
-                                    <action selector="setAutoOutputSize:" target="P9e-FD-zwO" id="Awe-GD-APq"/>
-                                    <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="Y0m-Hb-DtR">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSIsNotNil</string>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="33l-TO-2Ak" firstAttribute="leading" secondItem="IM5-0p-bxw" secondAttribute="trailing" constant="10" id="07r-Mn-q8p"/>
-                            <constraint firstItem="fsP-nr-XXC" firstAttribute="top" secondItem="IM5-0p-bxw" secondAttribute="bottom" constant="10" id="3c6-ec-rkZ"/>
                             <constraint firstItem="LYm-Kl-FH0" firstAttribute="leading" secondItem="8FT-Jx-u8K" secondAttribute="trailing" constant="10" id="5xx-Gq-r8J"/>
                             <constraint firstItem="LYm-Kl-FH0" firstAttribute="firstBaseline" secondItem="8FT-Jx-u8K" secondAttribute="firstBaseline" id="6ic-wl-q8k"/>
                             <constraint firstItem="Rqz-7w-QUz" firstAttribute="leading" secondItem="LYm-Kl-FH0" secondAttribute="leading" id="6z2-na-Osf"/>
                             <constraint firstItem="ySV-gN-eT9" firstAttribute="top" secondItem="hjK-Ba-fpZ" secondAttribute="top" constant="10" id="D7Y-AA-uSx"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rqz-7w-QUz" secondAttribute="bottom" constant="20" id="E7l-XR-CcC"/>
                             <constraint firstItem="iq1-Mv-hBj" firstAttribute="firstBaseline" secondItem="RUR-KE-j09" secondAttribute="firstBaseline" id="MMT-Kv-HTR"/>
                             <constraint firstItem="RUR-KE-j09" firstAttribute="top" secondItem="hjK-Ba-fpZ" secondAttribute="top" constant="20" id="Mm8-oW-fg0"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fsP-nr-XXC" secondAttribute="trailing" constant="20" id="OwS-00-vQb"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fsP-nr-XXC" secondAttribute="bottom" constant="20" id="PEh-nM-S9C"/>
                             <constraint firstItem="RUR-KE-j09" firstAttribute="leading" secondItem="ySV-gN-eT9" secondAttribute="trailing" constant="20" id="SdT-GI-VLX"/>
                             <constraint firstItem="ySV-gN-eT9" firstAttribute="leading" secondItem="hjK-Ba-fpZ" secondAttribute="leading" constant="20" id="Y69-Pj-2HQ"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="33l-TO-2Ak" secondAttribute="trailing" constant="20" id="aNL-XP-jPV"/>
-                            <constraint firstItem="Rhe-Fp-ogn" firstAttribute="trailing" secondItem="8FT-Jx-u8K" secondAttribute="trailing" id="c27-Hq-Fjk"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ySV-gN-eT9" secondAttribute="trailing" constant="480" id="d1D-2o-d89"/>
                             <constraint firstAttribute="trailing" secondItem="LYm-Kl-FH0" secondAttribute="trailing" constant="20" id="dFb-NO-nar"/>
-                            <constraint firstItem="IM5-0p-bxw" firstAttribute="leading" secondItem="Rhe-Fp-ogn" secondAttribute="trailing" constant="10" id="e8q-hs-rxN"/>
-                            <constraint firstItem="Rhe-Fp-ogn" firstAttribute="leading" secondItem="8FT-Jx-u8K" secondAttribute="leading" id="eqp-8n-PIz"/>
-                            <constraint firstItem="8FT-Jx-u8K" firstAttribute="top" secondItem="RUR-KE-j09" secondAttribute="bottom" constant="30" id="ggn-Ez-zrB"/>
+                            <constraint firstItem="8FT-Jx-u8K" firstAttribute="top" secondItem="RUR-KE-j09" secondAttribute="bottom" constant="20" id="ggn-Ez-zrB"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rqz-7w-QUz" secondAttribute="trailing" constant="20" id="gyK-T1-m6o"/>
-                            <constraint firstItem="IM5-0p-bxw" firstAttribute="top" secondItem="Rqz-7w-QUz" secondAttribute="bottom" constant="30" id="huc-nj-hUA"/>
                             <constraint firstItem="Rqz-7w-QUz" firstAttribute="top" secondItem="LYm-Kl-FH0" secondAttribute="bottom" constant="10" id="kRd-ND-zNI"/>
-                            <constraint firstItem="IM5-0p-bxw" firstAttribute="firstBaseline" secondItem="Rhe-Fp-ogn" secondAttribute="firstBaseline" id="lCL-IU-Ne4"/>
                             <constraint firstItem="8FT-Jx-u8K" firstAttribute="trailing" secondItem="RUR-KE-j09" secondAttribute="trailing" id="lox-7Q-8va"/>
                             <constraint firstItem="8FT-Jx-u8K" firstAttribute="leading" secondItem="RUR-KE-j09" secondAttribute="leading" id="nA2-C2-8rS"/>
                             <constraint firstItem="iq1-Mv-hBj" firstAttribute="leading" secondItem="RUR-KE-j09" secondAttribute="trailing" constant="10" id="rZb-Xh-UVb"/>
                             <constraint firstAttribute="bottom" secondItem="ySV-gN-eT9" secondAttribute="bottom" constant="20" id="sWz-KX-ffC"/>
-                            <constraint firstItem="33l-TO-2Ak" firstAttribute="centerY" secondItem="IM5-0p-bxw" secondAttribute="centerY" id="uv3-9k-u3W"/>
                             <constraint firstAttribute="trailing" secondItem="iq1-Mv-hBj" secondAttribute="trailing" constant="20" id="wTT-AL-xMY"/>
-                            <constraint firstItem="fsP-nr-XXC" firstAttribute="leading" secondItem="IM5-0p-bxw" secondAttribute="leading" id="znf-1z-vV3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="autoAdjustCheckbox" destination="Rqz-7w-QUz" id="v7i-9u-X9u"/>
-                        <outlet property="autoOutputSizeCheckbox" destination="fsP-nr-XXC" id="r4j-lx-Baf"/>
-                        <outlet property="cautionImageView" destination="33l-TO-2Ak" id="M8C-4m-l2q"/>
-                        <outlet property="outputSizeMenu" destination="IM5-0p-bxw" id="TiS-46-LMS"/>
                         <outlet property="scalingSlider" destination="LYm-Kl-FH0" id="jmL-EZ-XNx"/>
                         <outlet property="speedSlider" destination="iq1-Mv-hBj" id="o79-m2-B3b"/>
                         <outlet property="uninstallIconView" destination="ySV-gN-eT9" id="OHK-06-ZBu"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="689" y="922"/>
+            <point key="canvasLocation" x="700" y="955"/>
+        </scene>
+        <!--Settings Tab View Controller-->
+        <scene sceneID="zv4-n5-tQd">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="CIw-BS-bGG" customClass="MTSettingsTabViewController" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="General" identifier="" image="gearshape" catalog="system" id="b0m-ys-a59"/>
+                        <tabViewItem label="Extension" image="puzzlepiece.extension" catalog="system" id="Cgl-wg-nCL"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="kd2-Nv-avB">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="CIw-BS-bGG" id="8zX-iT-PZL"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="kd2-Nv-avB" id="oDc-3E-wUT"/>
+                        <segue destination="2gn-d9-3bX" kind="relationship" relationship="tabItems" id="o78-p5-Vi9"/>
+                        <segue destination="a7n-DE-KyM" kind="relationship" relationship="tabItems" id="YI7-DE-tOu"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="URb-qi-F80" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-867" y="774"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="no6-9q-JCi">
+            <objects>
+                <viewController title="General" id="2gn-d9-3bX" customClass="MTSettingsGeneralController" sceneMemberID="viewController">
+                    <view key="view" id="aZ4-Ze-dCh">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="318"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
+                                <rect key="frame" x="23" y="223" width="404" height="70"/>
+                                <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="dwS-Bc-ZLe">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <string key="title">If you frequently add overlay images to an install icon and the overlay images always have the same size and need to be displayed in the same position, Icons can remember the last size and position of the overlay image so you do not have to reposition it each time. Please enable the option below if you want Icons to remember the position.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qdd-jV-xag">
+                                <rect key="frame" x="23" y="186" width="324" height="18"/>
+                                <buttonCell key="cell" type="check" title="Remember size and position of the overlay image" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jQP-sC-z5V">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setRememberImagePosition:" target="2gn-d9-3bX" id="IQ7-ea-TkW"/>
+                                </connections>
+                            </button>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-st-zSd">
+                                <rect key="frame" x="25" y="164" width="400" height="5"/>
+                            </box>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
+                                <rect key="frame" x="23" y="90" width="404" height="56"/>
+                                <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Wek-xH-9Uy">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <string key="title">You can add a prefix to the icon files created by this application. Unless otherwise specified, the prefix is either the name of the application or the name of the image file you selected to create the icon set. If you want to add a prefix, please enable the option below.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-f8-kND">
+                                <rect key="frame" x="23" y="24" width="215" height="18"/>
+                                <buttonCell key="cell" type="check" title="Add prefix to the icon file name" bezelStyle="regularSquare" imagePosition="left" inset="2" id="5Io-2l-8VP">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
+                                <rect key="frame" x="23" y="52" width="43" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Prefix:" id="QoR-pP-czv">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
+                                <rect key="frame" x="72" y="49" width="353" height="21"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="xTE-uo-zdC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="2gn-d9-3bX" id="dIj-hJ-99G"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="R9d-7Q-dU7" secondAttribute="trailing" constant="25" id="4TQ-BR-y0b"/>
+                            <constraint firstAttribute="trailing" secondItem="XOa-EF-NTl" secondAttribute="trailing" constant="25" id="5cZ-Ag-oxI"/>
+                            <constraint firstAttribute="trailing" secondItem="ADm-st-zSd" secondAttribute="trailing" constant="25" id="6vZ-4h-AoP"/>
+                            <constraint firstItem="Kcy-Qn-ZId" firstAttribute="firstBaseline" secondItem="R9d-7Q-dU7" secondAttribute="firstBaseline" id="7rS-H2-OIY"/>
+                            <constraint firstAttribute="bottom" secondItem="pYe-f8-kND" secondAttribute="bottom" constant="25" id="HFA-tx-AXF"/>
+                            <constraint firstItem="R9d-7Q-dU7" firstAttribute="top" secondItem="kQW-ob-SQ7" secondAttribute="bottom" constant="20" id="HPD-dF-s2E"/>
+                            <constraint firstItem="kQW-ob-SQ7" firstAttribute="top" secondItem="ADm-st-zSd" secondAttribute="bottom" constant="20" id="HTM-GB-TEH"/>
+                            <constraint firstItem="Qdd-jV-xag" firstAttribute="top" secondItem="XOa-EF-NTl" secondAttribute="bottom" constant="20" id="SzX-TZ-CMO"/>
+                            <constraint firstItem="pYe-f8-kND" firstAttribute="top" secondItem="R9d-7Q-dU7" secondAttribute="bottom" constant="8" id="Uxq-PD-H4t"/>
+                            <constraint firstItem="ADm-st-zSd" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="WuU-Lf-Tev"/>
+                            <constraint firstItem="R9d-7Q-dU7" firstAttribute="leading" secondItem="Kcy-Qn-ZId" secondAttribute="trailing" constant="8" id="ZG7-yc-W1R"/>
+                            <constraint firstItem="Qdd-jV-xag" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="c1c-vh-dRv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pYe-f8-kND" secondAttribute="trailing" constant="25" id="cUM-Ag-Pba"/>
+                            <constraint firstItem="Kcy-Qn-ZId" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="exQ-X9-4HK"/>
+                            <constraint firstItem="pYe-f8-kND" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="h2T-fl-POv"/>
+                            <constraint firstItem="XOa-EF-NTl" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="k1b-li-HdQ"/>
+                            <constraint firstItem="kQW-ob-SQ7" firstAttribute="leading" secondItem="aZ4-Ze-dCh" secondAttribute="leading" constant="25" id="mih-7h-0y5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qdd-jV-xag" secondAttribute="trailing" constant="25" id="qzQ-Rg-zMt"/>
+                            <constraint firstItem="ADm-st-zSd" firstAttribute="top" secondItem="Qdd-jV-xag" secondAttribute="bottom" constant="20" id="tnz-Qo-5I3"/>
+                            <constraint firstAttribute="trailing" secondItem="kQW-ob-SQ7" secondAttribute="trailing" constant="25" id="tpV-np-abr"/>
+                            <constraint firstItem="XOa-EF-NTl" firstAttribute="top" secondItem="aZ4-Ze-dCh" secondAttribute="top" constant="25" id="xNL-Le-GhM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rememberOverlayCheckbox" destination="Qdd-jV-xag" id="CUb-W3-ihd"/>
+                        <outlet property="usePrefixCheckbox" destination="pYe-f8-kND" id="bhe-ms-D4V"/>
+                        <outlet property="userDefinedPrefix" destination="R9d-7Q-dU7" id="arv-N9-tTA"/>
+                    </connections>
+                </viewController>
+                <customObject id="gMB-BY-imA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1153" y="1273"/>
+        </scene>
+        <!--Settings Window Controller-->
+        <scene sceneID="nd0-bF-L5B">
+            <objects>
+                <windowController storyboardIdentifier="corp.sap.Icons.SettingsController" id="Rlg-A0-q8q" userLabel="Settings Window Controller" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="SettingsWindow" animationBehavior="default" id="joF-MB-AQJ">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="211" y="267" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+                        <view key="contentView" id="QuA-GG-TsH">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <accessibility description="Settings Window"/>
+                        <connections>
+                            <outlet property="delegate" destination="Rlg-A0-q8q" id="SgB-Yu-931"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="CIw-BS-bGG" kind="relationship" relationship="window.shadowedContentViewController" id="1yJ-Tb-FsR"/>
+                    </connections>
+                </windowController>
+                <customObject id="8M7-oG-1vB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-867" y="350"/>
+        </scene>
+        <!--Extension-->
+        <scene sceneID="vYe-Yc-lT5">
+            <objects>
+                <viewController title="Extension" id="a7n-DE-KyM" customClass="MTSettingsExtensionController" sceneMemberID="viewController">
+                    <view key="view" id="o92-bR-CNO">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="212"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
+                                <rect key="frame" x="23" y="61" width="404" height="126"/>
+                                <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Ee2-cC-Wmu">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <string key="title">This application comes with a Finder extension that allows you to create an icon set directly in the Finder by right-clicking an application or an image file. By default, the extension uses the settings made in the Icons application. So it applies the default banner, uses the selected output size and animation duration, and creates only the icon types selected in the application.
+
+If you do not want this and would rather have the extension create icon sets with the default settings instead, please activate the option below.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-Yg-lR2">
+                                <rect key="frame" x="23" y="24" width="272" height="18"/>
+                                <buttonCell key="cell" type="check" title="Use default settings for Finder extension" bezelStyle="regularSquare" imagePosition="left" inset="2" id="y1x-ul-4KX">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="V2C-Yg-lR2" secondAttribute="bottom" constant="25" id="B6A-1N-ZDm"/>
+                            <constraint firstItem="A8L-FJ-ekL" firstAttribute="top" secondItem="o92-bR-CNO" secondAttribute="top" constant="25" id="BpE-fC-LeP"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V2C-Yg-lR2" secondAttribute="trailing" constant="25" id="Lhc-f3-f1v"/>
+                            <constraint firstAttribute="trailing" secondItem="A8L-FJ-ekL" secondAttribute="trailing" constant="25" id="PjR-FT-c0v"/>
+                            <constraint firstItem="V2C-Yg-lR2" firstAttribute="leading" secondItem="o92-bR-CNO" secondAttribute="leading" constant="25" id="chP-2z-tL0"/>
+                            <constraint firstItem="A8L-FJ-ekL" firstAttribute="leading" secondItem="o92-bR-CNO" secondAttribute="leading" constant="25" id="qZb-Bg-kt8"/>
+                            <constraint firstItem="V2C-Yg-lR2" firstAttribute="top" secondItem="A8L-FJ-ekL" secondAttribute="bottom" constant="20" id="vvo-z5-4RY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="useDefaultSettingsCheckbox" destination="V2C-Yg-lR2" id="KnX-Lv-kXk"/>
+                    </connections>
+                </viewController>
+                <customObject id="qjB-XD-pZW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607" y="1220"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSCaution" width="32" height="32"/>
-        <image name="arrow.up.arrow.down.circle.fill" catalog="system" width="15" height="15"/>
+        <image name="checkmark" catalog="system" width="14" height="13"/>
+        <image name="gearshape" catalog="system" width="16" height="16"/>
+        <image name="puzzlepiece.extension" catalog="system" width="19" height="15"/>
+        <image name="rectangle.bottomthird.inset.fill" catalog="system" width="24" height="18"/>
+        <image name="rectangle.inset.bottomleft.fill" catalog="system" width="24" height="18"/>
+        <image name="rectangle.inset.bottomright.fill" catalog="system" width="24" height="18"/>
+        <image name="rectangle.inset.topleft.fill" catalog="system" width="24" height="18"/>
+        <image name="rectangle.inset.topright.fill" catalog="system" width="24" height="18"/>
+        <image name="rectangle.topthird.inset.fill" catalog="system" width="24" height="18"/>
     </resources>
 </document>

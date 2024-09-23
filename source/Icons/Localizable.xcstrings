@@ -1,0 +1,310 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "bannerExistsDialogMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Banner mit demselben Text und denselben Farben befindet sich bereits in der Liste der gespeicherten Banner. Möchtest Du wirklich das exakt selbe Banner noch einmal speichern?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A banner with the same text and colors is already in the list of saved banners. Do you really want to save the exact same banner again?"
+          }
+        }
+      }
+    },
+    "bannerExistsDialogTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Banner wurde bereits gespeichert. Möchtest Du es noch einmal speichern?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This banner is already saved. Do you want to save it again?"
+          }
+        }
+      }
+    },
+    "cancelButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "dropViewLabel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehe ein Programm oder eine Bilddatei hierher"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drop an application or an image file here"
+          }
+        }
+      }
+    },
+    "okButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "openButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open"
+          }
+        }
+      }
+    },
+    "outputSize" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pixel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pixels"
+          }
+        }
+      }
+    },
+    "overlayImageTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um dieses Überlagerungsbild zu entfernen, ziehe es einfach aus dieser Bildansicht heraus."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To remove this overlay image, simply drag it out of this image view."
+          }
+        }
+      }
+    },
+    "overlaySliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit diesem Schieberegler kannst Du die Größe des Überlagerungsbildes ändern. Derzeit ist sie auf %@ der maximalen Größe eingestellt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to change the size of the overlay image. It is currently set to %@ of the maximum size."
+          }
+        }
+      }
+    },
+    "prefixSetAutomatically" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        }
+      }
+    },
+    "saveButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "saveDialogMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte wähle den Ort aus, an dem Du das Icon-Set speichern möchtest, und klicke dann unten auf die Taste „Speichern”."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please select the location where you would like to save the icon set and then click the \u001e„Save” button below."
+          }
+        }
+      }
+    },
+    "saveErrorInfo" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Speichern der Icons ist ein Fehler aufgetreten. Bitte stelle sicher, dass Du Schreibrechte für den gewählten Speicherort hast und versuche es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while saving your icon files. Please make sure you have write permissions to the selected folder and try again."
+          }
+        }
+      }
+    },
+    "saveErrorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre Icons konnten nicht gespeichert werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to save your icons."
+          }
+        }
+      }
+    },
+    "scalingSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um die Größe des Bildes zu verringern. Aktuell ist das Bild um %@ verkleinert."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to reduce the size of the image. It is currently reduced by %@."
+          }
+        }
+      }
+    },
+    "setDefaultBanner" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Standard benutzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use as Default"
+          }
+        }
+      }
+    },
+    "speedSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um die Dauer der Animation des animierten Deinstallations-Icons zu ändern. Derzeit beträgt die Dauer der Animation %@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to change the duration of the animation of the animated uninstall icon. Current animation duration is %@."
+          }
+        }
+      }
+    },
+    "textMarginSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um die Größe des Textrandes des Banners zu ändern. Derzeit ist der Rand auf %@ der Höhe des Banners eingestellt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to change the size of the banner text margin. It is currently set to %@ of the banner height."
+          }
+        }
+      }
+    },
+    "unsetDefaultBanner" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht mehr als Standard benutzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Longer Use as Default"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

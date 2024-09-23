@@ -1,0 +1,1767 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1jv-K9-S0J.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Saved banners\"; ObjectID = \"1jv-K9-S0J\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gespeicherte Banner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Saved banners"
+          }
+        }
+      }
+    },
+    "1Vd-bA-2RI.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Icons\"; ObjectID = \"1Vd-bA-2RI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Icons"
+          }
+        }
+      }
+    },
+    "2gn-d9-3bX.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"General\"; ObjectID = \"2gn-d9-3bX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "General"
+          }
+        }
+      }
+    },
+    "5Io-2l-8VP.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Add prefix to the icon file name\"; ObjectID = \"5Io-2l-8VP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Präfix zu Icon-Dateinamen hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add prefix to the icon file name"
+          }
+        }
+      }
+    },
+    "5it-B2-2fN.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Save Icon Set…\"; ObjectID = \"5it-B2-2fN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon-Set speichern…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Icon Set…"
+          }
+        }
+      }
+    },
+    "5S7-8Z-bLv.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Services\"; ObjectID = \"5S7-8Z-bLv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dienste"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Services"
+          }
+        }
+      }
+    },
+    "8nY-8W-o3C.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Remove All\"; ObjectID = \"8nY-8W-o3C\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove All"
+          }
+        }
+      }
+    },
+    "8Qh-uX-87h.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Main Menu\"; ObjectID = \"8Qh-uX-87h\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Main Menu"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "87F-Dp-8uS.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Help\"; ObjectID = \"87F-Dp-8uS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hilfe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Help"
+          }
+        }
+      }
+    },
+    "a6O-6P-Ueo.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Banner Color:\"; ObjectID = \"a6O-6P-Ueo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bannerfarbe:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Banner Color:"
+          }
+        }
+      }
+    },
+    "a7n-DE-KyM.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Extension\"; ObjectID = \"a7n-DE-KyM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erweiterung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extension"
+          }
+        }
+      }
+    },
+    "AiC-Vb-wZE.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Quit Icons\"; ObjectID = \"AiC-Vb-wZE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons beenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quit Icons"
+          }
+        }
+      }
+    },
+    "ALV-OD-UYI.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"About Icons\"; ObjectID = \"ALV-OD-UYI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über Icons"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About Icons"
+          }
+        }
+      }
+    },
+    "b0m-ys-a59.label" : {
+      "comment" : "Class = \"NSTabViewItem\"; label = \"General\"; ObjectID = \"b0m-ys-a59\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "General"
+          }
+        }
+      }
+    },
+    "Bf0-r7-bm1.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Use as Default\"; ObjectID = \"Bf0-r7-bm1\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use as Default"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "c83-RA-LFS.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Redo\"; ObjectID = \"c83-RA-LFS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redo"
+          }
+        }
+      }
+    },
+    "Cgl-wg-nCL.label" : {
+      "comment" : "Class = \"NSTabViewItem\"; label = \"Extension\"; ObjectID = \"Cgl-wg-nCL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erweiterung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extension"
+          }
+        }
+      }
+    },
+    "cn0-Zj-PVa.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Animation Duration:\"; ObjectID = \"cn0-Zj-PVa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animationsdauer:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Animation Duration:"
+          }
+        }
+      }
+    },
+    "COO-KM-lep.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Add Overlay Image…\"; ObjectID = \"COO-KM-lep\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überlagerungsbild hinzufügen …"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Overlay Image…"
+          }
+        }
+      }
+    },
+    "cT6-x9-MeA.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Top Right Corner\"; ObjectID = \"cT6-x9-MeA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Right Corner"
+          }
+        }
+      }
+    },
+    "cT6-x9-MeA.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Top Right Corner\"; ObjectID = \"cT6-x9-MeA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Right Corner"
+          }
+        }
+      }
+    },
+    "cZH-3n-btx.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"File\"; ObjectID = \"cZH-3n-btx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ablage"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "File"
+          }
+        }
+      }
+    },
+    "Dve-9W-rkA.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Color\"; ObjectID = \"Dve-9W-rkA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farbe des Banners"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Banner Color"
+          }
+        }
+      }
+    },
+    "Dve-9W-rkA.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSColorWell\"; ibShadowedToolTip = \"Click here to change the banner's color.\"; ObjectID = \"Dve-9W-rkA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke hier, um die Farbe des Banners zu ändern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Click here to change the banner's color."
+          }
+        }
+      }
+    },
+    "dwS-Bc-ZLe.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"If you frequently add overlay images to an install icon and the overlay images always have the same size and need to be displayed in the same position, Icons can remember the last size and position of the overlay image so you do not have to reposition it each time. Please enable the option below if you want Icons to remember the position.\"; ObjectID = \"dwS-Bc-ZLe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Du häufig Überlagerungsbilder zu einem Installations-Icon hinzufügst und diese immer die gleiche Größe haben und in der gleichen Position angezeigt werden sollen, kann Icons die letzte Größe und Position des Überlagerungsbildes speichern, so dass Du es nicht jedes Mal neu positionieren musst. Bitte aktiviere die untenstehende Option, wenn Du möchtest, dass sich Icons die Position merkt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "If you frequently add overlay images to an install icon and the overlay images always have the same size and need to be displayed in the same position, Icons can remember the last size and position of the overlay image so you do not have to reposition it each time. Please enable the option below if you want Icons to remember the position."
+          }
+        }
+      }
+    },
+    "Ee2-cC-Wmu.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"This application comes with a Finder extension that allows you to create an icon set directly in the Finder by right-clicking an application or an image file. By default, the extension uses the settings made in the Icons application. So it applies the default banner, uses the selected output size and animation duration, and creates only the icon types selected in the application.\\n\\nIf you do not want this and would rather have the extension create icon sets with the default settings instead, please activate the option below.\"; ObjectID = \"Ee2-cC-Wmu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Programm enthält eine Finder-Erweiterung, die es Dir ermöglicht, ein Icon-Set direkt im Finder zu erstellen, indem Du mit der rechten Maustaste auf ein Programm oder eine Bilddatei klickst. Standardmäßig verwendet die Erweiterung die Einstellungen, die im Programm Icons vorgenommen wurden. Sie wendet also das Standardbanner an, verwendet die ausgewählte Ausgabegröße und Animationsdauer und erstellt nur die, in der Anwendung ausgewählten, Icon-Typen.\n\nWenn Du das nicht möchtest und die Erweiterung stattdessen lieber Icon-Sets mit den Standardeinstellungen erstellen soll, aktiviere bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This application comes with a Finder extension that allows you to create an icon set directly in the Finder by right-clicking an application or an image file. By default, the extension uses the settings made in the Icons application. So it applies the default banner, uses the selected output size and animation duration, and creates only the icon types selected in the application.\n\nIf you do not want this and would rather have the extension create icon sets with the default settings instead, please activate the option below."
+          }
+        }
+      }
+    },
+    "ej9-mk-pqT.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Close\"; ObjectID = \"ej9-mk-pqT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "fh5-rF-qxu.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Save Banner\"; ObjectID = \"fh5-rF-qxu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banner speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Banner"
+          }
+        }
+      }
+    },
+    "fh5-rF-qxu.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Click here to save the current banner.\"; ObjectID = \"fh5-rF-qxu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke hier, um das aktuelle Banner zu speichern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Click here to save the current banner."
+          }
+        }
+      }
+    },
+    "foJ-CK-Tju.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Select All\"; ObjectID = \"foJ-CK-Tju\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles auswählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select All"
+          }
+        }
+      }
+    },
+    "g77-ga-ERN.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Text Color\"; ObjectID = \"g77-ga-ERN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farbe des Bannertextes"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Banner Text Color"
+          }
+        }
+      }
+    },
+    "g77-ga-ERN.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSColorWell\"; ibShadowedToolTip = \"Click here to change the color of the banner's text.\"; ObjectID = \"g77-ga-ERN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke hier, um die Textfarbe des Banners zu ändern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Click here to change the color of the banner's text."
+          }
+        }
+      }
+    },
+    "gDc-Pz-PXw.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Swap Colors\"; ObjectID = \"gDc-Pz-PXw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farben tauschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swap Colors"
+          }
+        }
+      }
+    },
+    "Gqr-8q-VDo.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Copy\"; ObjectID = \"Gqr-8q-VDo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Copy"
+          }
+        }
+      }
+    },
+    "gVt-0y-AgP.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Hide Icons\"; ObjectID = \"gVt-0y-AgP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide Icons"
+          }
+        }
+      }
+    },
+    "h9U-ap-mEC.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Top Left Corner\"; ObjectID = \"h9U-ap-mEC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Left Corner"
+          }
+        }
+      }
+    },
+    "h9U-ap-mEC.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Top Left Corner\"; ObjectID = \"h9U-ap-mEC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Left Corner"
+          }
+        }
+      }
+    },
+    "IM6-kP-SyW.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Minimize\"; ObjectID = \"IM6-kP-SyW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Im Dock ablegen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Minimize"
+          }
+        }
+      }
+    },
+    "iNf-9M-sqD.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Icons on GitHub\"; ObjectID = \"iNf-9M-sqD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons auf GitHub"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Icons on GitHub"
+          }
+        }
+      }
+    },
+    "iq1-Mv-hBj.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Animation Duration Slider\"; ObjectID = \"iq1-Mv-hBj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schieberegler für die Animationsdauer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Animation Duration Slider"
+          }
+        }
+      }
+    },
+    "jfy-6a-gu3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Create a new banner\"; ObjectID = \"jfy-6a-gu3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neues Banner erstellen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create a new banner"
+          }
+        }
+      }
+    },
+    "joF-MB-AQJ.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSWindow\"; ibExternalAccessibilityDescription = \"Settings Window\"; ObjectID = \"joF-MB-AQJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings Window"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "jQP-sC-z5V.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Remember size and position of the overlay image\"; ObjectID = \"jQP-sC-z5V\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Größe und Position des Überlagerungsbildes speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remember size and position of the overlay image"
+          }
+        }
+      }
+    },
+    "JSB-Ec-Fkz.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Help\"; ObjectID = \"JSB-Ec-Fkz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hilfe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Help"
+          }
+        }
+      }
+    },
+    "K5d-ZT-jFZ.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Cut\"; ObjectID = \"K5d-ZT-jFZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausschneiden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cut"
+          }
+        }
+      }
+    },
+    "kPM-FU-3OA.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Zoom\"; ObjectID = \"kPM-FU-3OA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoomen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Zoom"
+          }
+        }
+      }
+    },
+    "ktj-KO-fqu.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Margin:\"; ObjectID = \"ktj-KO-fqu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rand:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Margin:"
+          }
+        }
+      }
+    },
+    "l6E-Jg-96p.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Undo\"; ObjectID = \"l6E-Jg-96p\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widerrufen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Undo"
+          }
+        }
+      }
+    },
+    "l37-3L-Ide.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Edit\"; ObjectID = \"l37-3L-Ide\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "lDV-Sm-BrH.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Overlay Image Size:\"; ObjectID = \"lDV-Sm-BrH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Größe des Überlagerungsbildes:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Overlay Image Size:"
+          }
+        }
+      }
+    },
+    "LYm-Kl-FH0.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Image Size Slider\"; ObjectID = \"LYm-Kl-FH0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schieberegler für die Bildgröße"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Image Size Slider"
+          }
+        }
+      }
+    },
+    "lzl-pV-wCw.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Hide\"; ObjectID = \"lzl-pV-wCw\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausblenden"
+          }
+        }
+      }
+    },
+    "mds-t3-5Wm.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Save Icon Set\"; ObjectID = \"mds-t3-5Wm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon-Set speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Icon Set"
+          }
+        }
+      }
+    },
+    "n6G-PL-35N.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Swap Banner Colors\"; ObjectID = \"n6G-PL-35N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farben des Banners tauschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swap Banner Colors"
+          }
+        }
+      }
+    },
+    "n6G-PL-35N.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Click here to swap banner color and text color.\"; ObjectID = \"n6G-PL-35N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke hier, um die Farbe des Banners und die Textfarbe zu tauschen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Click here to swap banner color and text color."
+          }
+        }
+      }
+    },
+    "Nny-mn-GoN.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Preferences…\"; ObjectID = \"Nny-mn-GoN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen …"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preferences…"
+          }
+        }
+      }
+    },
+    "NQ0-mD-d0X.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"File\"; ObjectID = \"NQ0-mD-d0X\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ablage"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "File"
+          }
+        }
+      }
+    },
+    "Nsh-td-3I7.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Auto-adjust image size\"; ObjectID = \"Nsh-td-3I7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildgröße automatisch anpassen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto-adjust image size"
+          }
+        }
+      }
+    },
+    "ob8-PC-xsF.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Open…\"; ObjectID = \"ob8-PC-xsF\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnen…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open…"
+          }
+        }
+      }
+    },
+    "oDp-MP-QFn.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSView\"; ibExternalAccessibilityDescription = \"Install Icon\"; ObjectID = \"oDp-MP-QFn\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Install Icon"
+          }
+        }
+      }
+    },
+    "OFv-i7-9fr.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Bottom\"; ObjectID = \"OFv-i7-9fr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom"
+          }
+        }
+      }
+    },
+    "OFv-i7-9fr.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Bottom\"; ObjectID = \"OFv-i7-9fr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom"
+          }
+        }
+      }
+    },
+    "Os8-hQ-WCq.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Install\"; ObjectID = \"Os8-hQ-WCq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installation"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Install"
+          }
+        }
+      }
+    },
+    "OS9-sa-jHq.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Bottom Left Corner\"; ObjectID = \"OS9-sa-jHq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Left Corner"
+          }
+        }
+      }
+    },
+    "OS9-sa-jHq.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Bottom Left Corner\"; ObjectID = \"OS9-sa-jHq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Left Corner"
+          }
+        }
+      }
+    },
+    "P9e-FD-zwO.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Uninstall\"; ObjectID = \"P9e-FD-zwO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deinstallation"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uninstall"
+          }
+        }
+      }
+    },
+    "pTx-ab-4hu.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Adjust Image Size:\"; ObjectID = \"pTx-ab-4hu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildgröße anpassen:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Adjust Image Size:"
+          }
+        }
+      }
+    },
+    "QoR-pP-czv.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Prefix:\"; ObjectID = \"QoR-pP-czv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Präfix:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Prefix:"
+          }
+        }
+      }
+    },
+    "qoU-gt-mLc.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Services\"; ObjectID = \"qoU-gt-mLc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dienste"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Services"
+          }
+        }
+      }
+    },
+    "rFu-7X-OBA.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Window\"; ObjectID = \"rFu-7X-OBA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fenster"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Window"
+          }
+        }
+      }
+    },
+    "Ri3-y0-h0V.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text:\"; ObjectID = \"Ri3-y0-h0V\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text:"
+          }
+        }
+      }
+    },
+    "RKA-bV-o1A.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Top\"; ObjectID = \"RKA-bV-o1A\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top"
+          }
+        }
+      }
+    },
+    "RKA-bV-o1A.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Top\"; ObjectID = \"RKA-bV-o1A\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top"
+          }
+        }
+      }
+    },
+    "Rku-gC-nEr.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Window\"; ObjectID = \"Rku-gC-nEr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fenster"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Window"
+          }
+        }
+      }
+    },
+    "RkW-bu-dJ7.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSImageView\"; ibShadowedToolTip = \"This is the default banner that is automatically added to the install icon.\"; ObjectID = \"RkW-bu-dJ7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dies ist das Standardbanner, das dem Installations-Icon automatisch hinzugefügt wird."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This is the default banner that is automatically added to the install icon."
+          }
+        }
+      }
+    },
+    "Rqz-7w-QUz.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Auto Image Size\"; ObjectID = \"Rqz-7w-QUz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatische Bildgröße"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto Image Size"
+          }
+        }
+      }
+    },
+    "rZY-vV-Lp9.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Font:\"; ObjectID = \"rZY-vV-Lp9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schrift:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Font:"
+          }
+        }
+      }
+    },
+    "s1w-zX-2DX.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSTableView\"; ibExternalAccessibilityDescription = \"Saved Banners Table\"; ObjectID = \"s1w-zX-2DX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tabelle mit gespeicherten Bannern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Saved Banners Table"
+          }
+        }
+      }
+    },
+    "SVp-zH-BSL.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Save Banner\"; ObjectID = \"SVp-zH-BSL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banner speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Banner"
+          }
+        }
+      }
+    },
+    "uay-d7-LuW.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Delete\"; ObjectID = \"uay-d7-LuW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "uHX-L0-COc.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Bottom Right Corner\"; ObjectID = \"uHX-L0-COc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Right Corner"
+          }
+        }
+      }
+    },
+    "uHX-L0-COc.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Bottom Right Corner\"; ObjectID = \"uHX-L0-COc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Right Corner"
+          }
+        }
+      }
+    },
+    "USH-6F-yYJ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Color:\"; ObjectID = \"USH-6F-yYJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Textfarbe:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Color:"
+          }
+        }
+      }
+    },
+    "vfn-JT-1aD.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Overlay Image Size Slider\"; ObjectID = \"vfn-JT-1aD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schieberegler für die Größe des Überlagerungsbildes"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Overlay Image Size Slider"
+          }
+        }
+      }
+    },
+    "w3N-cI-ufw.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Position:\"; ObjectID = \"w3N-cI-ufw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Position:"
+          }
+        }
+      }
+    },
+    "Wek-xH-9Uy.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"You can add a prefix to the icon files created by this application. Unless otherwise specified, the prefix is either the name of the application or the name of the image file you selected to create the icon set. If you want to add a prefix, please enable the option below.\"; ObjectID = \"Wek-xH-9Uy\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst den von diesem Programm erstellten Icons ein Präfix hinzufügen. Falls nicht anderweitig angegeben, ist das Präfix entweder der Name des Programms oder der Name der Bilddatei, die Du für die Erstellung des Icon-Sets ausgewählt hast. Wenn Du ein Präfix hinzufügen möchtest, aktiviere bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can add a prefix to the icon files created by this application. Unless otherwise specified, the prefix is either the name of the application or the name of the image file you selected to create the icon set. If you want to add a prefix, please enable the option below."
+          }
+        }
+      }
+    },
+    "XaY-Ny-khv.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Text Margin Slider\"; ObjectID = \"XaY-Ny-khv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schieberegler für den Textrand"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Margin Slider"
+          }
+        }
+      }
+    },
+    "Xb0-Eu-bGd.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Icons\"; ObjectID = \"Xb0-Eu-bGd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Icons"
+          }
+        }
+      }
+    },
+    "Xdp-tO-lOa.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Font Menu\"; ObjectID = \"Xdp-tO-lOa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schrift-Menü"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Font Menu"
+          }
+        }
+      }
+    },
+    "y1x-ul-4KX.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Use default settings for Finder extension\"; ObjectID = \"y1x-ul-4KX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardeinstellungen für Finder-Erweiterung benutzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use default settings for Finder extension"
+          }
+        }
+      }
+    },
+    "Y71-vW-jJH.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Hide Others\"; ObjectID = \"Y71-vW-jJH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Andere ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide Others"
+          }
+        }
+      }
+    },
+    "YHI-YJ-40Z.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Remove\"; ObjectID = \"YHI-YJ-40Z\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove"
+          }
+        }
+      }
+    },
+    "ySV-gN-eT9.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSView\"; ibExternalAccessibilityDescription = \"Uninstall Icon\"; ObjectID = \"ySV-gN-eT9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deinstallations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uninstall Icon"
+          }
+        }
+      }
+    },
+    "YvZ-ox-dev.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Icons\"; ObjectID = \"YvZ-ox-dev\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Icons"
+          }
+        }
+      }
+    },
+    "Yyv-QL-wc5.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Bring All to Front\"; ObjectID = \"Yyv-QL-wc5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle nach vorne bringen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bring All to Front"
+          }
+        }
+      }
+    },
+    "ZnS-AD-dq6.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Show All\"; ObjectID = \"ZnS-AD-dq6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show All"
+          }
+        }
+      }
+    },
+    "Zso-6W-g6l.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSTextField\"; ibExternalAccessibilityDescription = \"Banner Text\"; ObjectID = \"Zso-6W-g6l\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text des Banners"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Banner Text"
+          }
+        }
+      }
+    },
+    "zt8-gk-fN2.title" : {
+      "comment" : "Class = \"NSMenu\"; title = \"Edit\"; ObjectID = \"zt8-gk-fN2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "Ztz-9r-Zol.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Paste\"; ObjectID = \"Ztz-9r-Zol\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einsetzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Paste"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

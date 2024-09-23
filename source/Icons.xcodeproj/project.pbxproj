@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,43 +13,57 @@
 		AD14AF8227BF83FD00089D32 /* MTInstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */; };
 		AD14AF8327BF83FD00089D32 /* MTInstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */; };
 		AD1583BC27CBF1A3000B1886 /* MTColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1583BB27CBF1A3000B1886 /* MTColorWell.m */; };
-		AD32F1372770B77F00562DF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD32F1392770B77F00562DF4 /* Localizable.strings */; };
-		AD35E1282795DE3F008F51F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD35E12A2795DE3F008F51F2 /* InfoPlist.strings */; };
-		AD4425D6278C548D0027E5C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4425C1278C52DC0027E5C1 /* Cocoa.framework */; };
-		AD4425D9278C548D0027E5C1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4425D8278C548D0027E5C1 /* Media.xcassets */; };
+		AD1675922C52307B007DB0B3 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */; };
+		AD1DB83C2AD7ED8000E130D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */; };
+		AD315E132C4E6FF600CE3C43 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD315E122C4E6FF600CE3C43 /* InfoPlist.xcstrings */; };
+		AD315E162C4E6FF600CE3C43 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */; };
+		AD3AE6AD2C4FBBB000D1FA31 /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3AE6AC2C4FBBB000D1FA31 /* MTTabViewController.m */; };
+		AD3C4A6D2C63C33C0015E1C3 /* MTAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = AD709B6827C69F2E00D81465 /* MTAttributedString.m */; };
+		AD3C4A6E2C63C35B0015E1C3 /* MTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8278127C194DD004B3C82 /* MTColor.m */; };
 		AD4425DC278C548D0027E5C1 /* ActionRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4425DB278C548D0027E5C1 /* ActionRequestHandler.m */; };
-		AD4425E1278C548D0027E5C1 /* Make Icon Set.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD4425E1278C548D0027E5C1 /* Make Icon Set.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD4425E6278C6C120027E5C1 /* MTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0577D7276A1F9B00B6032F /* MTImage.m */; };
+		AD4E858B2C50F4DB00239344 /* MTSavePanelAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */; };
+		AD4E858E2C50FF8700239344 /* MTSavePanelAccessoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */; };
 		AD58682427C929D20082CC42 /* MTInstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58682327C929D20082CC42 /* MTInstallViewController.m */; };
 		AD58682927C92F170082CC42 /* MTUninstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58682727C92F170082CC42 /* MTUninstallViewController.m */; };
 		AD59698427C38572008ED2D4 /* MTTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */; };
 		AD61C09727C676D0004823B5 /* MTColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */; };
 		AD61C09827C678C7004823B5 /* MTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8278127C194DD004B3C82 /* MTColor.m */; };
+		AD6AE2582C63ABAE001A9A50 /* MTTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AE2572C63ABAE001A9A50 /* MTTableCellView.m */; };
 		AD709B6927C69F2E00D81465 /* MTAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = AD709B6827C69F2E00D81465 /* MTAttributedString.m */; };
 		AD709B6A27C69F2E00D81465 /* MTAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = AD709B6827C69F2E00D81465 /* MTAttributedString.m */; };
+		AD78D8F42C85A317005C3FC6 /* MTSettingsExtensionController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78D8F32C85A317005C3FC6 /* MTSettingsExtensionController.m */; };
 		AD7A690B27BF72430079F8B5 /* MTDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A690A27BF72430079F8B5 /* MTDropView.m */; };
 		AD7A690C27BF72430079F8B5 /* MTDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A690A27BF72430079F8B5 /* MTDropView.m */; };
 		AD7A690D27BF72430079F8B5 /* MTDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A690A27BF72430079F8B5 /* MTDropView.m */; };
 		AD7B8CDF278F0C4F004561C1 /* MTBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B8CDE278F0C4F004561C1 /* MTBundle.m */; };
 		AD7B8CE0278F0C58004561C1 /* MTBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B8CDE278F0C4F004561C1 /* MTBundle.m */; };
 		AD7B8CE1278F0C59004561C1 /* MTBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B8CDE278F0C4F004561C1 /* MTBundle.m */; };
+		AD7BAFF72C53B2630019A1F8 /* MTSettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAFF62C53B2630019A1F8 /* MTSettingsTabViewController.m */; };
+		AD7BAFFA2C53B32C0019A1F8 /* MTSettingsGeneralController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAFF92C53B32C0019A1F8 /* MTSettingsGeneralController.m */; };
+		AD7F09712C7CF7A700145AD2 /* MTMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7F09702C7CF7A700145AD2 /* MTMainWindowController.m */; };
 		AD86B09B27EA276100BF600A /* IconsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD86B09A27EA276100BF600A /* IconsUITests.m */; };
 		AD90AEBD27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBE27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBF27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD98394A27C23A9D00F871DD /* MTIconSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98394927C23A9D00F871DD /* MTIconSetViewController.m */; };
-		AD9A480B27D2557800715848 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD9A480927D2557800715848 /* Localizable.strings */; };
 		AD9EE94527C2A41200B89FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9EE94327C2A41200B89FDE /* Main.storyboard */; };
+		ADB156F52C78DEC6009B5472 /* icons_cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADCCBE7C2770FBE300F0582F /* icons_cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		ADC8278227C194DD004B3C82 /* MTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8278127C194DD004B3C82 /* MTColor.m */; };
+		ADC9AF882C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
+		ADC9AF892C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
+		ADC9AF8A2C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
 		ADCCBE7F2770FBE300F0582F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCBE7E2770FBE300F0582F /* main.m */; };
-		ADCCBE852770FCB300F0582F /* icons_cli in Resources */ = {isa = PBXBuildFile; fileRef = ADCCBE7C2770FBE300F0582F /* icons_cli */; };
 		ADCCBE872771DDB200F0582F /* MTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0577D7276A1F9B00B6032F /* MTImage.m */; };
+		ADCF04C02C6CC722009FA2B2 /* MTPopupButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCF04BF2C6CC722009FA2B2 /* MTPopupButtonCell.m */; };
 		ADD3247527C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
 		ADD3247627C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
 		ADD3247727C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
 		ADE6870327BEAE3600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
 		ADE6870427BEAE3600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
 		ADE6870527BEB20600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
+		ADEF31402C7C724E006F1813 /* MTTableOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */; };
 		ADFBC31F1D15E1E400A5011F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBC31E1D15E1E400A5011F /* AppDelegate.m */; };
 		ADFBC3221D15E1E400A5011F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBC3211D15E1E400A5011F /* main.m */; };
 		ADFBC3241D15E1E400A5011F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFBC3231D15E1E400A5011F /* Assets.xcassets */; };
@@ -81,25 +95,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ADA625CA278EC429001F1CE3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADC89627278C2C8D008C3446 /* Embed App Extensions */ = {
+		ADC89627278C2C8D008C3446 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AD4425E1278C548D0027E5C1 /* Make Icon Set.appex in Embed App Extensions */,
+				AD4425E1278C548D0027E5C1 /* Make Icon Set.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADCCBE7A2770FBE300F0582F /* CopyFiles */ = {
@@ -111,28 +115,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADDB27AD2C78DE9400F5F94A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				ADB156F52C78DEC6009B5472 /* icons_cli in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD0577D6276A1F9B00B6032F /* MTImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTImage.h; sourceTree = "<group>"; };
 		AD0577D7276A1F9B00B6032F /* MTImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTImage.m; sourceTree = "<group>"; };
-		AD11425327D1102800EAF7EF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		AD14AF7F27BF83FD00089D32 /* MTInstallIconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTInstallIconView.h; sourceTree = "<group>"; };
 		AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTInstallIconView.m; sourceTree = "<group>"; };
 		AD1583BA27CBF1A3000B1886 /* MTColorWell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTColorWell.h; sourceTree = "<group>"; };
 		AD1583BB27CBF1A3000B1886 /* MTColorWell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTColorWell.m; sourceTree = "<group>"; };
+		AD1675912C52307B007DB0B3 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/InfoPlist.xcstrings; sourceTree = "<group>"; };
+		AD1DB83D2AD7ED8000E130D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AD1DB83F2AD7ED8100E130D2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
 		AD2A39E31E5F2BA500A68CA5 /* Icons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icons.entitlements; sourceTree = "<group>"; };
-		AD32F1382770B77F00562DF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AD32F13A2770B78100562DF4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD315E122C4E6FF600CE3C43 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		AD315E142C4E6FF600CE3C43 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
+		AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AD35E1242795DC5E008F51F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD35E1292795DE3F008F51F2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD35E12B2795DEED008F51F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD4425C1278C52DC0027E5C1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AD3AE6AB2C4FBBB000D1FA31 /* MTTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTabViewController.h; sourceTree = "<group>"; };
+		AD3AE6AC2C4FBBB000D1FA31 /* MTTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTabViewController.m; sourceTree = "<group>"; };
 		AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Make Icon Set.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD4425D8278C548D0027E5C1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AD4425DA278C548D0027E5C1 /* ActionRequestHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionRequestHandler.h; sourceTree = "<group>"; };
 		AD4425DB278C548D0027E5C1 /* ActionRequestHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionRequestHandler.m; sourceTree = "<group>"; };
 		AD4425DE278C548D0027E5C1 /* Make_Icon_Set.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Make_Icon_Set.entitlements; sourceTree = "<group>"; };
+		AD4E858A2C50F4DB00239344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MTSavePanelAccessory.xib; sourceTree = "<group>"; };
+		AD4E858C2C50FF8700239344 /* MTSavePanelAccessoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSavePanelAccessoryController.h; sourceTree = "<group>"; };
+		AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSavePanelAccessoryController.m; sourceTree = "<group>"; };
 		AD58682227C929D20082CC42 /* MTInstallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTInstallViewController.h; sourceTree = "<group>"; };
 		AD58682327C929D20082CC42 /* MTInstallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTInstallViewController.m; sourceTree = "<group>"; };
 		AD58682627C92F170082CC42 /* MTUninstallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUninstallViewController.h; sourceTree = "<group>"; };
@@ -140,34 +158,48 @@
 		AD589D27278B53D8001BFB84 /* closebox.pdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = closebox.pdf.h; sourceTree = "<group>"; };
 		AD59698227C38572008ED2D4 /* MTTextColorValueTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTextColorValueTransformer.h; sourceTree = "<group>"; };
 		AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTextColorValueTransformer.m; sourceTree = "<group>"; };
+		AD5B5B4B2C514EAD009BC228 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/MTSavePanelAccessory.xcstrings; sourceTree = "<group>"; };
 		AD61C09527C676D0004823B5 /* MTColorValueTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTColorValueTransformer.h; sourceTree = "<group>"; };
 		AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTColorValueTransformer.m; sourceTree = "<group>"; };
+		AD6AE2562C63ABAE001A9A50 /* MTTableCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTableCellView.h; sourceTree = "<group>"; };
+		AD6AE2572C63ABAE001A9A50 /* MTTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTableCellView.m; sourceTree = "<group>"; };
 		AD709B6727C69F2E00D81465 /* MTAttributedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAttributedString.h; sourceTree = "<group>"; };
 		AD709B6827C69F2E00D81465 /* MTAttributedString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAttributedString.m; sourceTree = "<group>"; };
+		AD78D8F22C85A317005C3FC6 /* MTSettingsExtensionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSettingsExtensionController.h; sourceTree = "<group>"; };
+		AD78D8F32C85A317005C3FC6 /* MTSettingsExtensionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsExtensionController.m; sourceTree = "<group>"; };
 		AD7A690927BF72430079F8B5 /* MTDropView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTDropView.h; sourceTree = "<group>"; };
 		AD7A690A27BF72430079F8B5 /* MTDropView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTDropView.m; sourceTree = "<group>"; };
 		AD7B8CDD278F0C4F004561C1 /* MTBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTBundle.h; sourceTree = "<group>"; };
 		AD7B8CDE278F0C4F004561C1 /* MTBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTBundle.m; sourceTree = "<group>"; };
+		AD7BAFF52C53B2630019A1F8 /* MTSettingsTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSettingsTabViewController.h; sourceTree = "<group>"; };
+		AD7BAFF62C53B2630019A1F8 /* MTSettingsTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsTabViewController.m; sourceTree = "<group>"; };
+		AD7BAFF82C53B32C0019A1F8 /* MTSettingsGeneralController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSettingsGeneralController.h; sourceTree = "<group>"; };
+		AD7BAFF92C53B32C0019A1F8 /* MTSettingsGeneralController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsGeneralController.m; sourceTree = "<group>"; };
+		AD7F096F2C7CF7A700145AD2 /* MTMainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMainWindowController.h; sourceTree = "<group>"; };
+		AD7F09702C7CF7A700145AD2 /* MTMainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTMainWindowController.m; sourceTree = "<group>"; };
 		AD86B09827EA276100BF600A /* IconsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD86B09A27EA276100BF600A /* IconsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconsUITests.m; sourceTree = "<group>"; };
 		AD90AEBB27BFF0B80099797A /* MTUninstallIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUninstallIconView.h; sourceTree = "<group>"; };
 		AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUninstallIconView.m; sourceTree = "<group>"; };
-		AD98394827C23A9D00F871DD /* MTIconSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTIconSetViewController.h; path = "Icons/Classes/View Controllers/MTIconSetViewController.h"; sourceTree = SOURCE_ROOT; };
-		AD98394927C23A9D00F871DD /* MTIconSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTIconSetViewController.m; path = "Icons/Classes/View Controllers/MTIconSetViewController.m"; sourceTree = SOURCE_ROOT; };
-		AD9A480A27D2557800715848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AD9A480C27D2558100715848 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD98394827C23A9D00F871DD /* MTIconSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTIconSetViewController.h; path = "Icons/View Controllers/MTIconSetViewController.h"; sourceTree = SOURCE_ROOT; };
+		AD98394927C23A9D00F871DD /* MTIconSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTIconSetViewController.m; path = "Icons/View Controllers/MTIconSetViewController.m"; sourceTree = SOURCE_ROOT; };
 		AD9EE94427C2A41200B89FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADA3B75D27722F2C00726835 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		ADC8278027C194DD004B3C82 /* MTColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTColor.h; path = Icons/Classes/MTColor.h; sourceTree = SOURCE_ROOT; };
 		ADC8278127C194DD004B3C82 /* MTColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTColor.m; path = Icons/Classes/MTColor.m; sourceTree = SOURCE_ROOT; };
-		ADC8961A278C2C8D008C3446 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		ADC9AF862C4E94CD003FEDD3 /* MTOverlayImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTOverlayImageView.h; sourceTree = "<group>"; };
+		ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTOverlayImageView.m; sourceTree = "<group>"; };
 		ADCCBE7C2770FBE300F0582F /* icons_cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icons_cli; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCCBE7E2770FBE300F0582F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADCCBE882771FAF100F0582F /* icons_cli-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "icons_cli-Info.plist"; sourceTree = "<group>"; };
+		ADCF04BE2C6CC722009FA2B2 /* MTPopupButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPopupButtonCell.h; sourceTree = "<group>"; };
+		ADCF04BF2C6CC722009FA2B2 /* MTPopupButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPopupButtonCell.m; sourceTree = "<group>"; };
 		ADD3247327C0F0510061B4C4 /* MTIconSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTIconSet.h; sourceTree = "<group>"; };
 		ADD3247427C0F0510061B4C4 /* MTIconSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTIconSet.m; sourceTree = "<group>"; };
 		ADE6870127BEAE3600CE2707 /* MTBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBannerView.h; sourceTree = "<group>"; };
 		ADE6870227BEAE3600CE2707 /* MTBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBannerView.m; sourceTree = "<group>"; };
+		ADEF313E2C7C724E006F1813 /* MTTableOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTableOverlayView.h; sourceTree = "<group>"; };
+		ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTableOverlayView.m; sourceTree = "<group>"; };
 		ADFBC31A1D15E1E400A5011F /* Icons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBC31D1D15E1E400A5011F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ADFBC31E1D15E1E400A5011F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,7 +215,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD4425D6278C548D0027E5C1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,13 +265,22 @@
 				AD0577D7276A1F9B00B6032F /* MTImage.m */,
 				AD14AF7F27BF83FD00089D32 /* MTInstallIconView.h */,
 				AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */,
+				AD7F096F2C7CF7A700145AD2 /* MTMainWindowController.h */,
+				AD7F09702C7CF7A700145AD2 /* MTMainWindowController.m */,
+				ADC9AF862C4E94CD003FEDD3 /* MTOverlayImageView.h */,
+				ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */,
+				ADCF04BE2C6CC722009FA2B2 /* MTPopupButtonCell.h */,
+				ADCF04BF2C6CC722009FA2B2 /* MTPopupButtonCell.m */,
+				AD6AE2562C63ABAE001A9A50 /* MTTableCellView.h */,
+				AD6AE2572C63ABAE001A9A50 /* MTTableCellView.m */,
+				ADEF313E2C7C724E006F1813 /* MTTableOverlayView.h */,
+				ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */,
 				ADFD19BC27C7ED1F003C6D64 /* MTTableRowView.h */,
 				ADFD19BD27C7ED1F003C6D64 /* MTTableRowView.m */,
 				AD59698227C38572008ED2D4 /* MTTextColorValueTransformer.h */,
 				AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */,
 				AD90AEBB27BFF0B80099797A /* MTUninstallIconView.h */,
 				AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */,
-				AD58682527C929DF0082CC42 /* View Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,12 +288,10 @@
 		AD4425D7278C548D0027E5C1 /* Make Icon Set */ = {
 			isa = PBXGroup;
 			children = (
-				AD4425D8278C548D0027E5C1 /* Media.xcassets */,
 				AD4425DA278C548D0027E5C1 /* ActionRequestHandler.h */,
 				AD4425DB278C548D0027E5C1 /* ActionRequestHandler.m */,
 				AD35E1242795DC5E008F51F2 /* Info.plist */,
-				AD9A480927D2557800715848 /* Localizable.strings */,
-				AD35E12A2795DE3F008F51F2 /* InfoPlist.strings */,
+				AD315E122C4E6FF600CE3C43 /* InfoPlist.xcstrings */,
 				AD4425DE278C548D0027E5C1 /* Make_Icon_Set.entitlements */,
 			);
 			path = "Make Icon Set";
@@ -266,6 +304,16 @@
 				AD98394927C23A9D00F871DD /* MTIconSetViewController.m */,
 				AD58682227C929D20082CC42 /* MTInstallViewController.h */,
 				AD58682327C929D20082CC42 /* MTInstallViewController.m */,
+				AD4E858C2C50FF8700239344 /* MTSavePanelAccessoryController.h */,
+				AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */,
+				AD78D8F22C85A317005C3FC6 /* MTSettingsExtensionController.h */,
+				AD78D8F32C85A317005C3FC6 /* MTSettingsExtensionController.m */,
+				AD7BAFF82C53B32C0019A1F8 /* MTSettingsGeneralController.h */,
+				AD7BAFF92C53B32C0019A1F8 /* MTSettingsGeneralController.m */,
+				AD7BAFF52C53B2630019A1F8 /* MTSettingsTabViewController.h */,
+				AD7BAFF62C53B2630019A1F8 /* MTSettingsTabViewController.m */,
+				AD3AE6AB2C4FBBB000D1FA31 /* MTTabViewController.h */,
+				AD3AE6AC2C4FBBB000D1FA31 /* MTTabViewController.m */,
 				AD58682627C92F170082CC42 /* MTUninstallViewController.h */,
 				AD58682727C92F170082CC42 /* MTUninstallViewController.m */,
 			);
@@ -283,8 +331,6 @@
 		AD8F8A912769DD1A00B8A33E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADC8961A278C2C8D008C3446 /* Intents.framework */,
-				AD4425C1278C52DC0027E5C1 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,13 +372,17 @@
 			isa = PBXGroup;
 			children = (
 				AD0577D9276A3DFB00B6032F /* Classes */,
+				AD58682527C929DF0082CC42 /* View Controllers */,
 				AD2A39E31E5F2BA500A68CA5 /* Icons.entitlements */,
 				ADFBC31D1D15E1E400A5011F /* AppDelegate.h */,
 				ADFBC31E1D15E1E400A5011F /* AppDelegate.m */,
-				AD32F1392770B77F00562DF4 /* Localizable.strings */,
+				AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */,
+				AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */,
 				ADFBC3231D15E1E400A5011F /* Assets.xcassets */,
 				AD9EE94327C2A41200B89FDE /* Main.storyboard */,
+				AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */,
 				ADFBC3281D15E1E400A5011F /* Info.plist */,
+				AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */,
 				ADFBC3201D15E1E400A5011F /* Supporting Files */,
 			);
 			path = Icons;
@@ -409,8 +459,8 @@
 				ADFBC3161D15E1E400A5011F /* Sources */,
 				ADFBC3171D15E1E400A5011F /* Frameworks */,
 				ADFBC3181D15E1E400A5011F /* Resources */,
-				ADC89627278C2C8D008C3446 /* Embed App Extensions */,
-				ADA625CA278EC429001F1CE3 /* Embed Frameworks */,
+				ADDB27AD2C78DE9400F5F94A /* CopyFiles */,
+				ADC89627278C2C8D008C3446 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -429,7 +479,8 @@
 		ADFBC3121D15E1E400A5011F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1310;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "SAP SE";
 				TargetAttributes = {
 					AD4425D4278C548D0027E5C1 = {
@@ -454,7 +505,7 @@
 				};
 			};
 			buildConfigurationList = ADFBC3151D15E1E400A5011F /* Build configuration list for PBXProject "Icons" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -480,9 +531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD35E1282795DE3F008F51F2 /* InfoPlist.strings in Resources */,
-				AD9A480B27D2557800715848 /* Localizable.strings in Resources */,
-				AD4425D9278C548D0027E5C1 /* Media.xcassets in Resources */,
+				AD315E132C4E6FF600CE3C43 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,9 +547,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADCCBE852770FCB300F0582F /* icons_cli in Resources */,
+				AD1DB83C2AD7ED8000E130D2 /* Credits.rtf in Resources */,
+				AD1675922C52307B007DB0B3 /* InfoPlist.xcstrings in Resources */,
+				AD4E858B2C50F4DB00239344 /* MTSavePanelAccessory.xib in Resources */,
+				AD315E162C4E6FF600CE3C43 /* Localizable.xcstrings in Resources */,
 				ADFBC3241D15E1E400A5011F /* Assets.xcassets in Resources */,
-				AD32F1372770B77F00562DF4 /* Localizable.strings in Resources */,
 				AD9EE94527C2A41200B89FDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,8 +563,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC9AF892C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
 				AD7B8CE1278F0C59004561C1 /* MTBundle.m in Sources */,
 				AD90AEBF27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
+				AD3C4A6E2C63C35B0015E1C3 /* MTColor.m in Sources */,
+				AD3C4A6D2C63C33C0015E1C3 /* MTAttributedString.m in Sources */,
 				AD14AF8327BF83FD00089D32 /* MTInstallIconView.m in Sources */,
 				AD7A690D27BF72430079F8B5 /* MTDropView.m in Sources */,
 				AD4425E6278C6C120027E5C1 /* MTImage.m in Sources */,
@@ -536,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7B8CE0278F0C58004561C1 /* MTBundle.m in Sources */,
+				ADC9AF8A2C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
 				AD90AEBE27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
 				AD14AF8227BF83FD00089D32 /* MTInstallIconView.m in Sources */,
 				AD709B6A27C69F2E00D81465 /* MTAttributedString.m in Sources */,
@@ -552,24 +607,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6AE2582C63ABAE001A9A50 /* MTTableCellView.m in Sources */,
 				AD7A690B27BF72430079F8B5 /* MTDropView.m in Sources */,
 				AD98394A27C23A9D00F871DD /* MTIconSetViewController.m in Sources */,
 				AD1583BC27CBF1A3000B1886 /* MTColorWell.m in Sources */,
+				AD7F09712C7CF7A700145AD2 /* MTMainWindowController.m in Sources */,
 				AD7B8CDF278F0C4F004561C1 /* MTBundle.m in Sources */,
 				AD0577D8276A1F9B00B6032F /* MTImage.m in Sources */,
 				ADFD19BE27C7ED1F003C6D64 /* MTTableRowView.m in Sources */,
+				ADEF31402C7C724E006F1813 /* MTTableOverlayView.m in Sources */,
+				AD78D8F42C85A317005C3FC6 /* MTSettingsExtensionController.m in Sources */,
 				AD58682927C92F170082CC42 /* MTUninstallViewController.m in Sources */,
+				ADC9AF882C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
 				AD61C09727C676D0004823B5 /* MTColorValueTransformer.m in Sources */,
+				AD4E858E2C50FF8700239344 /* MTSavePanelAccessoryController.m in Sources */,
+				ADCF04C02C6CC722009FA2B2 /* MTPopupButtonCell.m in Sources */,
 				AD61C09827C678C7004823B5 /* MTColor.m in Sources */,
+				AD7BAFFA2C53B32C0019A1F8 /* MTSettingsGeneralController.m in Sources */,
 				AD14AF8127BF83FD00089D32 /* MTInstallIconView.m in Sources */,
 				AD59698427C38572008ED2D4 /* MTTextColorValueTransformer.m in Sources */,
 				ADFBC3221D15E1E400A5011F /* main.m in Sources */,
+				AD7BAFF72C53B2630019A1F8 /* MTSettingsTabViewController.m in Sources */,
 				ADE6870327BEAE3600CE2707 /* MTBannerView.m in Sources */,
 				AD58682427C929D20082CC42 /* MTInstallViewController.m in Sources */,
 				ADFBC31F1D15E1E400A5011F /* AppDelegate.m in Sources */,
 				ADD3247527C0F0510061B4C4 /* MTIconSet.m in Sources */,
 				AD90AEBD27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
 				AD709B6927C69F2E00D81465 /* MTAttributedString.m in Sources */,
+				AD3AE6AD2C4FBBB000D1FA31 /* MTTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,38 +659,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD32F1392770B77F00562DF4 /* Localizable.strings */ = {
+		AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD32F1382770B77F00562DF4 /* en */,
-				AD32F13A2770B78100562DF4 /* de */,
+				AD1675912C52307B007DB0B3 /* mul */,
 			);
-			name = Localizable.strings;
+			name = InfoPlist.xcstrings;
 			sourceTree = "<group>";
 		};
-		AD35E12A2795DE3F008F51F2 /* InfoPlist.strings */ = {
+		AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD35E1292795DE3F008F51F2 /* de */,
-				AD35E12B2795DEED008F51F2 /* en */,
+				AD1DB83D2AD7ED8000E130D2 /* Base */,
+				AD1DB83F2AD7ED8100E130D2 /* de */,
 			);
-			name = InfoPlist.strings;
+			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		AD9A480927D2557800715848 /* Localizable.strings */ = {
+		AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD9A480A27D2557800715848 /* en */,
-				AD9A480C27D2558100715848 /* de */,
+				AD4E858A2C50F4DB00239344 /* Base */,
+				AD5B5B4B2C514EAD009BC228 /* mul */,
 			);
-			name = Localizable.strings;
+			name = MTSavePanelAccessory.xib;
 			sourceTree = "<group>";
 		};
 		AD9EE94327C2A41200B89FDE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AD9EE94427C2A41200B89FDE /* Base */,
-				AD11425327D1102800EAF7EF /* de */,
+				AD315E142C4E6FF600CE3C43 /* mul */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -645,21 +709,22 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 549;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Make Icon Set";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2024 SAP SE. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
@@ -681,21 +746,22 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 549;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Make Icon Set";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2024 SAP SE. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -714,10 +780,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -738,10 +805,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.IconsUITests;
@@ -763,13 +831,15 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 137;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
@@ -790,13 +860,15 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 137;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,6 +880,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -836,9 +909,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -853,10 +928,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
 		};
@@ -864,6 +941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -892,9 +970,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -903,9 +983,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -917,16 +999,23 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 549;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Icons/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2024 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -941,16 +1030,23 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 549;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Icons/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2024 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";

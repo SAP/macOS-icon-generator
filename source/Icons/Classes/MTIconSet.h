@@ -1,6 +1,6 @@
 /*
      MTIconSet.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,7 +25,14 @@
  @abstract      The duration for the animated uninstall image's animation.
  @discussion    The value of this property is a float value, specifying the duration of the animation.
  */
-@property (nonatomic, assign) CGFloat animationDuration;
+@property (assign) CGFloat animationDuration;
+
+/*!
+ @property      fileNamePrefix
+ @abstract      The prefix that should be used for the icon files.
+ @discussion    The value of this property is NSString.
+ */
+@property (nonatomic, strong, readwrite) NSString *fileNamePrefix;
 
 /*!
  @property      installIcon
@@ -58,12 +65,23 @@
  @abstract      Write the icon set (install, uninstall and animated uninstall icon) to file.
  @param         path The path where the images should be created at.
  @param         createFolder If set to YES, a folder (containing the images) is created at the given path.
+ @param         animatedOnly If set to YES and a valid uninstall image is set, only the animated version of the uninstall
+                image is written and the regular uninstall image is skipped.
  @param         completionHandler The completion handler to call when the request is complete.
  @discussion    Returns a boolean indicating if the request was successful, the path where the images have been actually
- created and a NSError object containing the underlying error if the request failed.
+                created and a NSError object containing the underlying error if the request failed.
  */
 - (void)writeToFolder:(NSString *)path
          createFolder:(BOOL)createFolder
+         animatedOnly:(BOOL)animatedOnly
     completionHandler:(void (^) (BOOL success, NSString* path, NSError *error))completionHandler;
+
+/*!
+ @method        fileNamePrefixWithString:
+ @abstract      Returns the given string but removes charactes not allowed in file names.
+ @param         prefix A string specifying the prefix that should be used.
+ @discussion    Returns a NSString object containing a given string, but with invalid characters removed.
+ */
++ (NSString*)fileNamePrefixWithString:(NSString*)prefix;
 
 @end

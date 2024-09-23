@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23091" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23091"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MTSavePanelAccessoryController">
+            <connections>
+                <outlet property="autoOutputSizeCheckbox" destination="tHD-MO-AmH" id="ZYL-AZ-tM0"/>
+                <outlet property="outputSizeMenu" destination="2b8-O0-7jW" id="cQg-ob-QpC"/>
+                <outlet property="saveAnimatedUninstallIconCheckbox" destination="i1v-jY-TZB" id="Iqp-Wu-PvJ"/>
+                <outlet property="saveInstallIconCheckbox" destination="6O9-Ew-txX" id="aEA-YW-wC4"/>
+                <outlet property="saveUninstallIconCheckbox" destination="WVZ-Ag-E9H" id="pCd-nT-7Ko"/>
+                <outlet property="view" destination="c22-O7-iKe" id="fh6-8j-gAG"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="172"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="LpR-77-IvB">
+                    <rect key="frame" x="40" y="20" width="251" height="132"/>
+                    <subviews>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-O0-7jW">
+                            <rect key="frame" x="81" y="22" width="39" height="25"/>
+                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="eTi-gK-LKW">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="message"/>
+                                <menu key="menu" id="I4O-rg-i32">
+                                    <connections>
+                                        <outlet property="delegate" destination="-2" id="Yeo-CL-c3z"/>
+                                    </connections>
+                                </menu>
+                            </popUpButtonCell>
+                            <accessibility description="Icon Output Size"/>
+                        </popUpButton>
+                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-n8-GZe">
+                            <rect key="frame" x="-2" y="28" width="78" height="16"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Output size:" id="zep-dZ-sKO">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bkp-gt-Dfp" userLabel="Caution Image View">
+                            <rect key="frame" x="126" y="24" width="24" height="24"/>
+                            <string key="toolTip">The size of the source image is too small for the selected output size. Therefore the image has to be upscaled and the output image may appear blurry.</string>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="Hvh-GD-h81"/>
+                                <constraint firstAttribute="height" constant="24" id="jSd-qv-L6a"/>
+                            </constraints>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSCaution" id="uQY-NO-O7D"/>
+                            <connections>
+                                <binding destination="-2" name="hidden" keyPath="upscaleWarning" id="6PG-ff-SMz">
+                                    <dictionary key="options">
+                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </imageView>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tHD-MO-AmH">
+                            <rect key="frame" x="82" y="-1" width="168" height="18"/>
+                            <buttonCell key="cell" type="check" title="Auto-select output size" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2Qz-Bg-Fmo">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <accessibility description="Auto Output Size"/>
+                            <connections>
+                                <action selector="setAutoOutputSize:" target="-2" id="twZ-8A-s8K"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6O9-Ew-txX">
+                            <rect key="frame" x="82" y="115" width="92" height="18"/>
+                            <buttonCell key="cell" type="check" title="Install Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cMJ-b6-fOA">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <accessibility description="Install Icon"/>
+                            <connections>
+                                <action selector="setIconTypes:" target="-2" id="ghL-BA-0dw"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WVZ-Ag-E9H">
+                            <rect key="frame" x="82" y="91" width="108" height="18"/>
+                            <buttonCell key="cell" type="check" title="Uninstall Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hcj-ys-2e3">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <accessibility description="Uninstall Icon"/>
+                            <connections>
+                                <action selector="setIconTypes:" target="-2" id="8WG-Yy-ewy"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-jY-TZB">
+                            <rect key="frame" x="82" y="67" width="169" height="18"/>
+                            <buttonCell key="cell" type="check" title="Animated Uninstall Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jOE-3F-TAi">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <accessibility description="Animated Uninstall Icon"/>
+                            <connections>
+                                <action selector="setIconTypes:" target="-2" id="Ag5-oR-Buv"/>
+                            </connections>
+                        </button>
+                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3n7-bZ-5em">
+                            <rect key="frame" x="-2" y="116" width="78" height="16"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Create:" id="xNv-j1-Lth">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3n7-bZ-5em" firstAttribute="leading" secondItem="z2z-n8-GZe" secondAttribute="leading" id="2Gr-n0-YFT"/>
+                        <constraint firstItem="z2z-n8-GZe" firstAttribute="centerY" secondItem="2b8-O0-7jW" secondAttribute="centerY" id="2wi-02-8Ya"/>
+                        <constraint firstItem="Bkp-gt-Dfp" firstAttribute="centerY" secondItem="2b8-O0-7jW" secondAttribute="centerY" id="3JD-mR-E6L"/>
+                        <constraint firstItem="z2z-n8-GZe" firstAttribute="leading" secondItem="LpR-77-IvB" secondAttribute="leading" id="3gj-2O-zka"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6O9-Ew-txX" secondAttribute="trailing" id="5pR-aY-1Hy"/>
+                        <constraint firstAttribute="bottom" secondItem="tHD-MO-AmH" secondAttribute="bottom" id="7CM-cb-VVC"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WVZ-Ag-E9H" secondAttribute="trailing" id="7LF-dh-H7o"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="BhQ-vn-Rhw"/>
+                        <constraint firstItem="WVZ-Ag-E9H" firstAttribute="top" secondItem="6O9-Ew-txX" secondAttribute="bottom" constant="8" id="FPL-GU-QeT"/>
+                        <constraint firstItem="3n7-bZ-5em" firstAttribute="firstBaseline" secondItem="6O9-Ew-txX" secondAttribute="firstBaseline" id="Pdb-JY-SKf"/>
+                        <constraint firstItem="WVZ-Ag-E9H" firstAttribute="leading" secondItem="2b8-O0-7jW" secondAttribute="leading" id="WLw-aX-0pc"/>
+                        <constraint firstItem="Bkp-gt-Dfp" firstAttribute="top" secondItem="i1v-jY-TZB" secondAttribute="bottom" constant="20" id="Xi2-5o-Z4P"/>
+                        <constraint firstItem="6O9-Ew-txX" firstAttribute="top" secondItem="LpR-77-IvB" secondAttribute="top" id="aT1-9i-ae6"/>
+                        <constraint firstItem="6O9-Ew-txX" firstAttribute="leading" secondItem="2b8-O0-7jW" secondAttribute="leading" id="chE-jV-W3f"/>
+                        <constraint firstItem="i1v-jY-TZB" firstAttribute="leading" secondItem="2b8-O0-7jW" secondAttribute="leading" id="f4m-Wq-NIQ"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bkp-gt-Dfp" secondAttribute="trailing" id="f8y-He-AkN"/>
+                        <constraint firstItem="3n7-bZ-5em" firstAttribute="trailing" secondItem="z2z-n8-GZe" secondAttribute="trailing" id="fVt-FJ-QVp"/>
+                        <constraint firstItem="i1v-jY-TZB" firstAttribute="top" secondItem="WVZ-Ag-E9H" secondAttribute="bottom" constant="8" id="g42-m0-YT1"/>
+                        <constraint firstItem="tHD-MO-AmH" firstAttribute="leading" secondItem="2b8-O0-7jW" secondAttribute="leading" id="iGw-QB-kQn"/>
+                        <constraint firstItem="2b8-O0-7jW" firstAttribute="leading" secondItem="z2z-n8-GZe" secondAttribute="trailing" constant="10" id="lHV-Xu-WWR"/>
+                        <constraint firstItem="tHD-MO-AmH" firstAttribute="top" secondItem="2b8-O0-7jW" secondAttribute="bottom" constant="10" id="nGH-j5-lrG"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tHD-MO-AmH" secondAttribute="trailing" id="nro-c4-P0d"/>
+                        <constraint firstItem="Bkp-gt-Dfp" firstAttribute="leading" secondItem="2b8-O0-7jW" secondAttribute="trailing" constant="10" id="ogt-gB-nEw"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i1v-jY-TZB" secondAttribute="trailing" id="unC-Sp-lsp"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="DQn-AL-8j7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LpR-77-IvB" secondAttribute="trailing" constant="40" id="Hkg-h9-Q6h"/>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="40" id="Ux6-UV-VlY"/>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="u42-Pw-CYw"/>
+                <constraint firstAttribute="bottom" secondItem="LpR-77-IvB" secondAttribute="bottom" constant="20" id="wbI-DQ-bMp"/>
+            </constraints>
+            <point key="canvasLocation" x="1" y="132"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="1Qh-uU-1Ky"/>
+    </objects>
+    <resources>
+        <image name="NSCaution" width="32" height="32"/>
+    </resources>
+</document>

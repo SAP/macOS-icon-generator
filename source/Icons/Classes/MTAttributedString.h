@@ -1,6 +1,6 @@
 /*
      MTAttributedString.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -83,13 +83,30 @@
 - (NSFont*)font;
 
 /*!
- @method        fontSizeToFitInRect:withMinimumFontSize:
- @abstract      Returns the maximum font size for the attributed string to fit in the given rect.
+ @method        fontSizeToFitInRect:minimumFontSize:maximumFontSize:useImageBounds:
+ @abstract      Returns the optimal font size for the attributed string to fit in the given rect.
  @param         rect The rect to draw the attributed sting in.
  @param         minFontSize The minimum font size.
- @discussion    Returns the maximum font size that can be used to draw the string into the given
- rect without truncating the string.
+ @param         maxFontSize The maximum font size.
+ @param         imageBounds If set to YES, the image bounds will be used to calculate
+                the font size, otherwise the typographic bounds are used.
+ @discussion    Returns the optimal font size that can be used to draw the string into the given
+                rect without truncating the string. If the string should be drawn using the drawInRect:
+                method, make sure @c useImageBounds is set to NO. Otherwise the font size might
+                be much bigger than expected. If you set @c useImageBounds to YES, please use
+                Core Type to draw the string.
  */
-- (CGFloat)fontSizeToFitInRect:(NSRect)rect withMinimumFontSize:(CGFloat)minFontSize;
+- (CGFloat)fontSizeToFitInRect:(NSRect)rect
+               minimumFontSize:(CGFloat)minFontSize
+               maximumFontSize:(CGFloat)maxFontSize
+                useImageBounds:(BOOL)imageBounds;
+
+/*!
+ @method        imageBounds
+ @abstract      Returns the image bounds for the string.
+ @discussion    Returns a rectangle that tightly encloses the paths of the string's glyphs, or, if the string
+                or context is invalid, CGRectNull.
+ */
+- (CGRect)imageBounds;
 
 @end

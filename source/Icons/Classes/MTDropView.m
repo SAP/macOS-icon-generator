@@ -1,6 +1,6 @@
 /*
      MTDropView.m
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 #import "MTDropView.h"
 #import "MTImage.h"
+#import <UniformTypeIdentifiers/UTCoreTypes.h>
 
 @interface MTDropView ()
 @property (nonatomic, strong, readwrite) NSImage *image;
@@ -43,7 +44,7 @@
 
 - (void)setUpView
 {
-    [self registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+    [self registerForDraggedTypes:[NSArray arrayWithObject:NSPasteboardTypeFileURL]];
     
     // add our dummy image view to get the nice bezel
     NSImageView *bezelImageView = [[NSImageView alloc] initWithFrame:[self bounds]];
@@ -121,14 +122,15 @@
     [self addConstraints:[NSArray arrayWithObjects:labelCenterX, labelCenterY, labelRatio, nil]];
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect
+{
     [super drawRect:dirtyRect];
     
     if (_highlight) {
         
         [[[NSColor blackColor] colorWithAlphaComponent:0.3] set];
         [NSBezierPath setDefaultLineWidth:5];
-        NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect:NSInsetRect(dirtyRect, 3, 3) xRadius:5 yRadius:5];
+        NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect:NSInsetRect([self bounds], 3, 3) xRadius:5 yRadius:5];
         [roundedPath fill];
     }
 }
@@ -148,16 +150,49 @@
     _highlight = NO;
     
     NSPasteboard *pboard = [sender draggingPasteboard];
-    NSArray *supportedFileTypes = [[NSImage imageTypes] arrayByAddingObject:(NSString*)kUTTypeApplicationBundle];
-    
+    NSArray *supportedFileTypes = [NSArray arrayWithObjects:UTTypeImage, UTTypeApplicationBundle, nil];
+
     if ([[pboard types] containsObject:NSPasteboardTypeFileURL]) {
-        NSString *fileURL = [[NSURL URLFromPasteboard:pboard] path];
-        NSString *UTI = [[NSWorkspace sharedWorkspace] typeOfFile:fileURL error:nil];
         
-        if (UTI && [supportedFileTypes containsObject:UTI]) {
-            dragOperation = NSDragOperationCopy;
-            _highlight = YES;
+        NSURL *imageURL = [NSURL URLFromPasteboard:pboard];
+        id utiValue = nil;
+        [imageURL getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
+
+        if (utiValue) {
+            
+            BOOL isSupported = NO;
+            
+            UTType *fileType = [UTType typeWithIdentifier:utiValue];
+            
+            for (UTType *type in supportedFileTypes) {
+                
+                if ([fileType conformsToType:type]) {
+                    
+                    isSupported = YES;
+                    break;
+                }
+            }
+
+            if (isSupported){
+                
+                dragOperation = NSDragOperationCopy;
+                _highlight = YES;
+            }
         }
+        
+    } else if ([[pboard types] containsObject:NSPasteboardTypeTIFF]) {
+        
+        [sender enumerateDraggingItemsWithOptions:NSDraggingItemEnumerationConcurrent
+                                          forView:self
+                                          classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
+                                    searchOptions:[NSDictionary new]
+                                       usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop) {
+            
+            // make sure our dragging item's image remains the correct size
+            [draggingItem setDraggingFrame:[[[draggingItem imageComponents] firstObject] frame]];
+        }];
+        
+        dragOperation = NSDragOperationMove;
     }
     
     [self setNeedsDisplay:YES];
@@ -183,16 +218,15 @@
 {
     BOOL success = NO;
     
-    NSArray *draggedFilenames = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
-    NSString *itemPath = [draggedFilenames firstObject];
-    NSImage *currentImage = [NSImage imageWithFileAtPath:itemPath];
+    NSURL *imageURL = [NSURL URLFromPasteboard:[sender draggingPasteboard]];
+    NSImage *currentImage = [NSImage imageWithFileAtURL:imageURL];
 
     if ([currentImage isValid]) {
         
         [self setImage:currentImage];
         
-        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImage:)]) {
-            [_delegate view:self didChangeImage:currentImage];
+        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImageAtURL:)]) {
+            [_delegate view:self didChangeImageAtURL:imageURL];
         }
         
         [self setNeedsDisplay:YES];

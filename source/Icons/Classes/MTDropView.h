@@ -1,6 +1,6 @@
 /*
      MTDropView.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,18 +21,19 @@
 
 /*!
  @protocol      MTDropViewDelegate
- @abstract      Defines an interface for delegates of MTDropView to receive to be notified if the view's source picture has changed.
+ @abstract      Defines an interface for delegates of MTDropView to be notified if the view's source picture has changed.
 */
 @protocol MTDropViewDelegate <NSObject>
+@optional
 
 /*!
- @method        view:didChangeImage:
+ @method        view:didChangeImageAtURL:
  @abstract      Called whenever the view's source image has changed.
  @param         view The MTDropView instance whose source image has changed.
- @param         image A NSImage object containing the image data of the source image.
+ @param         url The file url of the source image.
  @discussion    Delegates receive this message whenever the view's source image has changed.
  */
-- (void)view:(MTDropView*)view didChangeImage:(NSImage*)image;
+- (void)view:(MTDropView*)view didChangeImageAtURL:(NSURL*)url;
 
 @end
 

@@ -1,6 +1,6 @@
 /*
      MTImage.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@
 - (NSData*)pngData;
 
 /*!
- @method        imageWithFileAtPath:
+ @method        imageWithFileAtURL:
  @abstract      Get a NSImage object from the file at the given path.
- @param         path The path to the image file or app bundle.
+ @param         url The file url to the image file or app bundle.
  @discussion    Returns an NSImage object of the given file or nil if an error occurred. In contrast to
  NSImage's "initWithContentsOfFile:" method, this method also returns an icon image from a given app bundle.
  */
-+ (NSImage*)imageWithFileAtPath:(NSString*)path;
++ (NSImage*)imageWithFileAtURL:(NSURL*)url;
 
 /*!
  @method        imageWithView:size

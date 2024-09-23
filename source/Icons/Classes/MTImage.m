@@ -1,6 +1,6 @@
 /*
      MTImage.m
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 */
 
 #import "MTImage.h"
+#import <UniformTypeIdentifiers/UTCoreTypes.h>
 
 @implementation NSImage (MTImage)
 
@@ -129,20 +130,20 @@
     return imageData;
 }
 
-+ (NSImage*)imageWithFileAtPath:(NSString*)path
++ (NSImage*)imageWithFileAtURL:(NSURL*)url
 {
     NSImage *returnImage = nil;
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
         
         NSImage *sourceImage = nil;
         
         id utiValue = nil;
-        NSURL *fileURL = [NSURL fileURLWithPath:path];
-        [fileURL getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
+        [url getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
         
-        if ([utiValue isEqualTo:(NSString*)kUTTypeApplicationBundle]) {
-            sourceImage = [[NSWorkspace sharedWorkspace] iconForFile:path];
+        if ([utiValue isEqualTo:[UTTypeApplicationBundle identifier]]) {
+            
+            sourceImage = [[NSWorkspace sharedWorkspace] iconForFile:[url path]];
             
             if ([sourceImage isValid]) {
                 
@@ -154,7 +155,7 @@
             }
             
         } else {
-            sourceImage = [[NSImage alloc] initWithContentsOfFile:path];
+            sourceImage = [[NSImage alloc] initWithContentsOfURL:url];
         }
         
         if ([sourceImage isValid]) { returnImage = sourceImage; }
@@ -166,11 +167,12 @@
 + (NSImage*)imageWithView:(NSView*)view size:(NSSize)size;
 {
     NSData *pdfData = [view dataWithPDFInsideRect:[view bounds]];
-    NSPDFImageRep* pdfImageRep = [NSPDFImageRep imageRepWithData:pdfData];
+    NSPDFImageRep *pdfImageRep = [NSPDFImageRep imageRepWithData:pdfData];
     
     NSImage* scaledImage = [NSImage imageWithSize:size
                                           flipped:NO
                                    drawingHandler:^BOOL(NSRect dstRect) {
+        
             [pdfImageRep drawInRect:dstRect];
             return YES;
         }

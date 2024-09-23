@@ -1,6 +1,6 @@
 /*
      MTBannerView.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,6 +21,25 @@
 @interface MTBannerView : NSView
 
 /*!
+ @enum          MTBannerPosition
+ @abstract      Specifies the position of the banner.
+ @constant      MTBannerPositionTopLeft Specifies the top left position.
+ @constant      MTBannerPositionTopRight Specifies the top right position.
+ @constant      MTBannerPositionBottomLeft Specifies the bottom left position.
+ @constant      MTBannerPositionBottomRight Specifies the bottom right position.
+ @constant      MTBannerPositionTop Specifies a position at the top.
+ @constant      MTBannerPositionBottom Specifies a position at the bottom.
+*/
+typedef enum {
+    MTBannerPositionTopLeft     = 0,
+    MTBannerPositionTopRight    = 1,
+    MTBannerPositionBottomLeft  = 2,
+    MTBannerPositionBottomRight = 3,
+    MTBannerPositionTop         = 4,
+    MTBannerPositionBottom      = 5
+} MTBannerPosition;
+
+/*!
  @property      isTruncatingText
  @abstract      A boolean value indicating whether the banner's text has been truncated.
  @discussion    Returns YES if the text has been truncated, otherwise returns NO.
@@ -28,23 +47,38 @@
 @property (assign, readonly) BOOL isTruncatingText;
 
 /*!
- @property      isMirrored
- @abstract      Specifies if the banner should be drawn on the upper left or the upper right corner of the view.
- @discussion    The value of this property is a boolean. If set to NO, the banner is drawn
- on the upper left side of the view, otherwise the banner is drawn on the upper right corner of the view.
+ @property      bannerPosition
+ @abstract      Specifies the position the banner should be drawn at.
+ @discussion    The value of this property is MTBannerPosition.
 */
-@property (nonatomic, assign, readwrite) BOOL isMirrored;
+@property (nonatomic, assign) MTBannerPosition bannerPosition;
+
+/*!
+ @property      debugDrawingEnabled
+ @abstract      If set to YES, enables drawing of the text container and the rectange where the banner
+                text is acutally drawn into.
+ @discussion    The value of this property is boolen.
+*/
+@property (assign) BOOL debugDrawingEnabled;
+
+/*!
+ @property      minimumTextMargin
+ @abstract      Specifies the minimum distance between the edge of the banner and the text as a percentage.
+ @discussion    The value of this property is a float between 0.0 and 0.4. Values below 0.0 are interpreted as 0.0,
+                and values above 0.4 are interpreted as 0.4.
+*/
+@property (nonatomic, assign) CGFloat minimumTextMargin;
 
 /*!
  @method        setAttributes:
  @abstract      Set the attributes for a banner.
  @param         attributedString A NSAttributedString object containing the attributes for the
- banner. This should be at least the text, font, text color (NSForegroundColorAttributeName) and the
- banner color (NSBackgroundColorAttributeName).
+                banner. This should be at least the text, font, text color (NSForegroundColorAttributeName) and the
+                banner color (NSBackgroundColorAttributeName).
  @discussion    If the NSAttributedString object contains other attributes as the ones described
- above, they are removed from the string to make sure it contains just the needed attributes and to
- avoid misplacement.
- */
+                above, they are removed from the string to make sure it contains just the needed attributes and to
+                avoid misplacement.
+*/
 - (void)setAttributes:(NSAttributedString*)attributedString;
 
 @end

@@ -1,0 +1,222 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "2b8-O0-7jW.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Icon Output Size\"; ObjectID = \"2b8-O0-7jW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon Ausgabegröße"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Icon Output Size"
+          }
+        }
+      }
+    },
+    "2Qz-Bg-Fmo.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Auto-select output size\"; ObjectID = \"2Qz-Bg-Fmo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgabegröße automatisch wählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto-select output size"
+          }
+        }
+      }
+    },
+    "6O9-Ew-txX.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Install Icon\"; ObjectID = \"6O9-Ew-txX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Install Icon"
+          }
+        }
+      }
+    },
+    "Bkp-gt-Dfp.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSImageView\"; ibShadowedToolTip = \"The size of the source image is too small for the selected output size. Therefore the image has to be upscaled and the output image may appear blurry.\"; ObjectID = \"Bkp-gt-Dfp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Größe des Originalbildes ist zu gering für die ausgewählte Ausgabegröße. Deshalb wird das Bild vergrößert und das Ausgabebild kann deshalb etwas unscharf aussehen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The size of the source image is too small for the selected output size. Therefore the image has to be upscaled and the output image may appear blurry."
+          }
+        }
+      }
+    },
+    "cMJ-b6-fOA.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Install Icon\"; ObjectID = \"cMJ-b6-fOA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Install Icon"
+          }
+        }
+      }
+    },
+    "hcj-ys-2e3.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Uninstall Icon\"; ObjectID = \"hcj-ys-2e3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deinstallations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uninstall Icon"
+          }
+        }
+      }
+    },
+    "i1v-jY-TZB.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Animated Uninstall Icon\"; ObjectID = \"i1v-jY-TZB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animiertes Deinstallations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Animated Uninstall Icon"
+          }
+        }
+      }
+    },
+    "jOE-3F-TAi.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Animated Uninstall Icon\"; ObjectID = \"jOE-3F-TAi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animiertes Deinstallations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Animated Uninstall Icon"
+          }
+        }
+      }
+    },
+    "tHD-MO-AmH.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Auto Output Size\"; ObjectID = \"tHD-MO-AmH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatische Ausgabegröße"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto Output Size"
+          }
+        }
+      }
+    },
+    "WVZ-Ag-E9H.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Uninstall Icon\"; ObjectID = \"WVZ-Ag-E9H\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deinstallations-Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uninstall Icon"
+          }
+        }
+      }
+    },
+    "xNv-j1-Lth.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Create:\"; ObjectID = \"xNv-j1-Lth\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellen:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create:"
+          }
+        }
+      }
+    },
+    "zep-dZ-sKO.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Output size:\"; ObjectID = \"zep-dZ-sKO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgabegröße:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Output size:"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

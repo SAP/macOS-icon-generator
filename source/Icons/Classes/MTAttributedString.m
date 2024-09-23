@@ -1,6 +1,6 @@
 /*
      MTAttributedString.m
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -73,30 +73,58 @@
     return attrString;
 }
 
-- (CGFloat)fontSizeToFitInRect:(NSRect)rect withMinimumFontSize:(CGFloat)minFontSize
+- (CGFloat)fontSizeToFitInRect:(NSRect)rect
+               minimumFontSize:(CGFloat)minFontSize
+               maximumFontSize:(CGFloat)maxFontSize
+                useImageBounds:(BOOL)imageBounds
 {
-    CGFloat fontSize = NSHeight(rect);
-    CGFloat textHeight = FLT_MAX;
-    CGFloat textWidth = FLT_MAX;
-    NSFont *font = ([self font]) ? [self font] : [NSFont systemFontOfSize:13.0];
-        
+    CGFloat fontSize = (maxFontSize > minFontSize) ? maxFontSize : NSHeight(rect) * 2;
+    CGFloat textHeight = CGFLOAT_MAX;
+    CGFloat textWidth = CGFLOAT_MAX;
+
     while ((textHeight > NSHeight(rect) || textWidth > NSWidth(rect)) && fontSize >= minFontSize) {
 
-        font = [[NSFontManager sharedFontManager] convertFont:font toSize:fontSize--];
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithAttributedString:self];
+        [attrString addAttribute:NSFontAttributeName
+                           value:[[NSFontManager sharedFontManager] convertFont:[self font] toSize:--fontSize]
+                           range:NSMakeRange(0, [[self string] length])
+        ];
+
+        CGRect usedRect = CGRectZero;
         
-        NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self];
-        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithContainerSize: NSMakeSize(FLT_MAX, FLT_MAX)];
-        NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
-        [layoutManager addTextContainer:textContainer];
-        [textStorage addLayoutManager:layoutManager];
-        [textStorage addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, [textStorage length])];
-        [textContainer setLineFragmentPadding:0.0];
-        [layoutManager glyphRangeForTextContainer:textContainer];
-        textHeight = [layoutManager usedRectForTextContainer:textContainer].size.height;
-        textWidth = [layoutManager usedRectForTextContainer:textContainer].size.width;
+        if (imageBounds) {
+            
+            usedRect = [attrString imageBounds];
+            
+        } else {
+            
+            usedRect = [attrString boundingRectWithSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)
+                                                options:0
+                                                context:nil
+            ];
+        }
+        
+        textHeight = ceil(NSHeight(usedRect));
+        textWidth = ceil(NSWidth(usedRect));
+    }
+
+    return fontSize;
+}
+
+- (CGRect)imageBounds
+{
+    CGRect usedRect = CGRectZero;
+    
+    CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)self);
+    
+    if (line) {
+        
+        CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
+        usedRect = CTLineGetImageBounds(line, context);
+        CFRelease(line);
     }
     
-    return ++fontSize;
+    return usedRect;
 }
 
 @end

@@ -1,6 +1,6 @@
 /*
      MTInstallIconView.h
-     Copyright 2022 SAP SE
+     Copyright 2022-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,23 +17,54 @@
 
 #import "MTDropView.h"
 #import "MTBannerView.h"
+#import "MTOverlayImageView.h"
 
-@interface MTInstallIconView : MTDropView
+@interface MTInstallIconView : MTDropView <MTOverlayImageViewDelegate>
+
+/*!
+ @property      overlayImageScalingFactor
+ @abstract      Specifies the scaling factor of the overlay image in percent.
+ @discussion    The value of this property is float.
+*/
+@property (nonatomic, assign) CGFloat overlayImageScalingFactor;
+
+/*!
+ @property      overlayImageAspectRatio
+ @abstract      Specifies the aspect ratio of the overlay image.
+ @discussion    The value of this property is float.
+*/
+@property (nonatomic, assign) CGFloat overlayImageAspectRatio;
+
+/*!
+ @property      overlayPosition
+ @abstract      Specifies the position of the overlay image. A value of {0, 0} specifies
+                the center of the view. The x/y values of the point can be between -1 and 1.
+ @discussion    The value of this property is NSPoint.
+*/
+@property (nonatomic, assign) NSPoint overlayPosition;
 
 /*!
  @property      bannerAttributes
  @abstract      The attributes for the banner (color, text and text color).
  @discussion    The value of this property is a NSAttributedString object.
 */
-@property (nonatomic, strong, readwrite) NSAttributedString *bannerAttributes;
+@property (nonatomic, strong) NSAttributedString *bannerAttributes;
 
 /*!
- @property      bannerIsMirrored
- @abstract      Specifies if the banner should be drawn on the upper left or the upper right corner of the view.
- @discussion    The value of this property is a boolean. If set to NO, the banner is drawn
- on the upper left side of the view, otherwise the banner is drawn on the upper right corner of the view.
+ @property      bannerPosition
+ @abstract      Specifies the position the banner should be drawn at.
+ @discussion    The value of this property is MTBannerPosition.
 */
-@property (nonatomic, assign, readwrite) BOOL bannerIsMirrored;
+@property (nonatomic, assign) MTBannerPosition bannerPosition;
+
+/*!
+ @property      bannerTextMargin
+ @abstract      Specifies the minimum distance between the edge of the
+                banner and the text as a percentage.
+ @discussion    The value of this property is a float between 0.0 and 0.4. Values below 0.0 are interpreted as 0.0,
+                and values above 0.4 are interpreted as 0.4.
+*/
+@property (nonatomic, assign) CGFloat bannerTextMargin;
 
 /*!
  @method        setImage:
@@ -41,6 +72,19 @@
  @param         image A NSImage object (may be nil).
  */
 - (void)setImage:(NSImage *)image;
+
+/*!
+ @method        setOverlayImage:
+ @abstract      Set the view's overlay image.
+ @param         image A NSImage object (may be nil).
+ */
+- (void)setOverlayImage:(NSImage *)image;
+
+/*!
+ @method        overlayImage
+ @abstract      Returns the view's overlay image.
+ */
+- (NSImage*)overlayImage;
 
 /*!
  @method        icon
