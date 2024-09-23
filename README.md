@@ -4,11 +4,11 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/macOS-icon-generator)](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator)
 
-**The easiest way to create customized app icons for your company's internal app store.**
+**The easiest way to create customized Icons for your app!**
 
-Icons is an application for macOS which enables you to create standardized app icons in PNG format for your company. You don't need any graphic skills, just drag and drop the selected icon into the application and you get a full icons set with installer and uninstaller icons plus an animated version of the uninstaller icon.
+_Icons_ is an application for macOS which enables you to create standardized app icons in PNG format. No graphic skills are needed! Just drag and drop your desired image into the application to create a full icon set, including installer and uninstaller icon, as well as an animated version of the uninstaller icon!
 
-As a Mac administrator you have multiple environments, e.g. development, test and production environments. With this helper tool you can create customized banner for your icon and save them for later. This application can be used for any management tools like Jamf Software's Jamf Pro or the open source Munki software installation tool. 
+For Mac administrators: When working in multiple environments, e.g. development, test and production environments, the _Icons_ app helps you to keep track of your app versions, by giving the option to add banners to the icons. The _Icons_ can be used for any management tools like Jamf Software's Jamf Pro or the open source _Munki_ software installation tool.
 
 **The Icons app supports the following features:**
 
@@ -18,15 +18,9 @@ As a Mac administrator you have multiple environments, e.g. development, test an
 
 🖱️ Easy drag & drop function
 
-💾 Save banners for later 
-
-📘 Standardized icons set
-
-✅ Install and uninstall icon
+✅ Install and animated uninstall icon
 
 ❌ No graphic skills are needed
-
-🚀 Various sizes and setting options
 
 ⌨️ Command line for automatization
 
@@ -35,7 +29,7 @@ As a Mac administrator you have multiple environments, e.g. development, test an
 
 # Demo 🖥️
 
-Have a look at how easy it is to create a customized icon by drag and drop. This is only one demo shown, there are still many different variations possible to create an icon.
+⚡️Have a look at how quick and easy an icon set can be created by drag and drop:
 
 ![IconsDragAndDrop](readme_images/DemoIcons.gif)
 
