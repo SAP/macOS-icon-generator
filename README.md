@@ -37,7 +37,7 @@ As a Mac administrator you have multiple environments, e.g. development, test an
 
 Have a look at how easy it is to create a customized icon by drag and drop. This is only one demo shown, there are still many different variations possible to create an icon.
 
-![IconsDragAndDrop](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/Drag_and_Drop_Support_Install.gif)
+![IconsDragAndDrop](readme_images/DemoIcons.gif)
 
 
 
