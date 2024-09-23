@@ -37,7 +37,7 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 # Documentation 📚
 
-You can find the following links also in the Wiki Page of Icons.
+If you want to learn more about SapMachine Manager's features, make sure to take a look at our [wiki](https://github.com/SAP/macOS-icon-generator/wiki) or the links below:
 
 * [Install Icons](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
 * [Uninstall Icons](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)
