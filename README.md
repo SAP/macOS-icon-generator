@@ -4,7 +4,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/macOS-icon-generator)](https://api.reuse.software/info/github.com/SAP/macOS-icon-generator)
 
-**The easiest way to create customized Icons for your app!**
+**The easiest way to create customized icons for your app!**
 
 _Icons_ is an application for macOS which enables you to create standardized app icons in PNG format. No graphic skills are needed! Just drag and drop your desired image into the application to create a full icon set, including installer and uninstaller icon, as well as an animated version of the uninstaller icon!
 
