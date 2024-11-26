@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23502" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -321,7 +321,7 @@ DQ
                                 </constraints>
                                 <accessibility description="Install Icon"/>
                             </customView>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
                                 <rect key="frame" x="463" y="193" width="241" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="3Rf-Ch-5wk"/>
@@ -361,7 +361,7 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="T8G-cb-VKe"/>
                                 </connections>
                             </colorWell>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
                                 <rect key="frame" x="368" y="194" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text:" id="Ri3-y0-h0V">
                                     <font key="font" metaFont="system"/>
@@ -369,7 +369,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
                                 <rect key="frame" x="368" y="80" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Banner Color:" id="a6O-6P-Ueo">
                                     <font key="font" metaFont="system"/>
@@ -377,7 +377,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
                                 <rect key="frame" x="517" y="80" width="70" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Color:" id="USH-6F-yYJ">
                                     <font key="font" metaFont="system"/>
@@ -398,7 +398,7 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="8Pg-k3-zM7"/>
                                 </connections>
                             </colorWell>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
                                 <rect key="frame" x="368" y="334" width="98" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Saved banners" id="1jv-K9-S0J">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -406,7 +406,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
                                 <rect key="frame" x="368" y="220" width="134" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Create a new banner" id="jfy-6a-gu3">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -455,7 +455,7 @@ DQ
                                                             <rect key="frame" x="8" y="4" width="421" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
                                                                     <rect key="frame" x="-2" y="3" width="425" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" usesSingleLineMode="YES" id="YDw-vW-Bvb">
                                                                         <font key="font" metaFont="system"/>
@@ -538,7 +538,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
                                 <rect key="frame" x="368" y="166" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Position:" id="w3N-cI-ufw">
                                     <font key="font" metaFont="system"/>
@@ -546,7 +546,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
                                 <rect key="frame" x="368" y="30" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Overlay Image Size:" id="lDV-Sm-BrH">
                                     <font key="font" metaFont="system"/>
@@ -706,7 +706,7 @@ DQ
                                     </gridCell>
                                 </gridCells>
                             </gridView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
                                 <rect key="frame" x="368" y="110" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Font:" id="rZY-vV-Lp9">
                                     <font key="font" metaFont="system"/>
@@ -727,7 +727,7 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="brb-xf-8Vn"/>
                                 </connections>
                             </popUpButton>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
                                 <rect key="frame" x="368" y="138" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Margin:" id="ktj-KO-fqu">
                                     <font key="font" metaFont="system"/>
@@ -885,7 +885,7 @@ DQ
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
                                 <rect key="frame" x="368" y="324" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Animation Duration:" id="cn0-Zj-PVa">
                                     <font key="font" metaFont="system"/>
@@ -893,7 +893,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
                                 <rect key="frame" x="368" y="288" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Adjust Image Size:" id="pTx-ab-4hu">
                                     <font key="font" metaFont="system"/>
@@ -1003,7 +1003,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="450" height="318"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
                                 <rect key="frame" x="23" y="223" width="404" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="dwS-Bc-ZLe">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1025,7 +1025,7 @@ DQ
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-st-zSd">
                                 <rect key="frame" x="25" y="164" width="400" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
                                 <rect key="frame" x="23" y="90" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Wek-xH-9Uy">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1041,7 +1041,7 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
                                 <rect key="frame" x="23" y="52" width="43" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Prefix:" id="QoR-pP-czv">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -1049,7 +1049,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
                                 <rect key="frame" x="72" y="49" width="353" height="21"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="xTE-uo-zdC">
                                     <font key="font" metaFont="system"/>
@@ -1129,7 +1129,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="450" height="212"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
                                 <rect key="frame" x="23" y="61" width="404" height="126"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Ee2-cC-Wmu">
                                     <font key="font" metaFont="smallSystem"/>

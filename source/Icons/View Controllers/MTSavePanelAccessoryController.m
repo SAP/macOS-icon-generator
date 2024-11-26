@@ -84,8 +84,6 @@
               withKeyPath:[@"values." stringByAppendingString:kMTDefaultsOutputSizeKey]
                   options:nil
     ];
-    
-    [self setAutoOutputSize:nil];
 }
 
 - (void)viewWillAppear
@@ -108,6 +106,8 @@
     
     // make sure at least the install icon is selected
     if (![self outputFileSelected]) { [_userDefaults setBool: YES forKey:kMTDefaultsSaveInstallIconKey]; }
+    
+    [self setAutoOutputSize:nil];
 }
 
 - (IBAction)setAutoOutputSize:(id)sender
