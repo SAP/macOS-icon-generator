@@ -58,6 +58,8 @@
                               nil
                              ]
      ];
+    
+    [_userDefinedPrefix setAccessibilityLabel:@"Prefix"];
 }
 
 - (void)viewWillDisappear

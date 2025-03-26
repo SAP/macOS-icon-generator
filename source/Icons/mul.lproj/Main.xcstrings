@@ -389,7 +389,7 @@
     },
     "Dve-9W-rkA.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Color\"; ObjectID = \"Dve-9W-rkA\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -533,7 +533,7 @@
     },
     "g77-ga-ERN.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Text Color\"; ObjectID = \"g77-ga-ERN\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -695,7 +695,7 @@
     },
     "iq1-Mv-hBj.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Animation Duration Slider\"; ObjectID = \"iq1-Mv-hBj\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -888,7 +888,7 @@
     },
     "LYm-Kl-FH0.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Image Size Slider\"; ObjectID = \"LYm-Kl-FH0\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -936,7 +936,7 @@
     },
     "n6G-PL-35N.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Swap Banner Colors\"; ObjectID = \"n6G-PL-35N\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1332,7 +1332,7 @@
     },
     "Rqz-7w-QUz.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Auto Image Size\"; ObjectID = \"Rqz-7w-QUz\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1367,19 +1367,19 @@
       }
     },
     "s1w-zX-2DX.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSTableView\"; ibExternalAccessibilityDescription = \"Saved Banners Table\"; ObjectID = \"s1w-zX-2DX\";",
+      "comment" : "Class = \"NSTableView\"; ibExternalAccessibilityDescription = \"Saved Banners\"; ObjectID = \"s1w-zX-2DX\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Tabelle mit gespeicherten Bannern"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Saved Banners Table"
+            "value" : "Saved Banners"
           }
         }
       }
@@ -1476,7 +1476,7 @@
     },
     "vfn-JT-1aD.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Overlay Image Size Slider\"; ObjectID = \"vfn-JT-1aD\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1530,7 +1530,7 @@
     },
     "XaY-Ny-khv.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Text Margin Slider\"; ObjectID = \"XaY-Ny-khv\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1565,19 +1565,19 @@
       }
     },
     "Xdp-tO-lOa.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Font Menu\"; ObjectID = \"Xdp-tO-lOa\";",
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Banner Font\"; ObjectID = \"Xdp-tO-lOa\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Schrift-Menü"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Font Menu"
+            "value" : "Banner Font"
           }
         }
       }

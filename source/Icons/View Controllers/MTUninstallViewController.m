@@ -40,6 +40,7 @@
     _defaultsController = [[NSUserDefaultsController alloc] initWithDefaults:_userDefaults initialValues:nil];
 
     [_uninstallIconView setDelegate:self];
+    [_uninstallIconView setAccessibilityChildren:nil];
     [_uninstallIconView setAutoInsetEnabled:[_userDefaults boolForKey:kMTDefaultsAutoImageSizeKey]];
     [_uninstallIconView setImageInset:[_userDefaults floatForKey:kMTDefaultsImageSizeAdjustmentKey]];
 

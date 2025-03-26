@@ -67,6 +67,7 @@
     [_overlaySlider setDoubleValue:(scaling >= kMTOverlayImageScalingMin && scaling <= kMTOverlayImageScalingMax) ? scaling : kMTOverlayImageScalingDefault];
 
     [_installIconView setDelegate:self];
+    [_installIconView setAccessibilityChildren:nil];
     
     // enable the correct position button
     [self enablePositionButtonAtIndex:[_userDefaults integerForKey:kMTDefaultsPositionDefaultKey]];

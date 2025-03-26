@@ -321,7 +321,7 @@ DQ
                                 </constraints>
                                 <accessibility description="Install Icon"/>
                             </customView>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
                                 <rect key="frame" x="463" y="193" width="241" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="3Rf-Ch-5wk"/>
@@ -355,13 +355,12 @@ DQ
                                     <constraint firstAttribute="height" constant="23" id="fAr-8d-R2L"/>
                                 </constraints>
                                 <color key="color" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
-                                <accessibility description="Banner Color"/>
                                 <connections>
                                     <action selector="changeBannerColor:" target="Os8-hQ-WCq" id="vIj-IV-3vz"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="T8G-cb-VKe"/>
                                 </connections>
                             </colorWell>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
                                 <rect key="frame" x="368" y="194" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text:" id="Ri3-y0-h0V">
                                     <font key="font" metaFont="system"/>
@@ -369,7 +368,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
                                 <rect key="frame" x="368" y="80" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Banner Color:" id="a6O-6P-Ueo">
                                     <font key="font" metaFont="system"/>
@@ -377,7 +376,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
                                 <rect key="frame" x="517" y="80" width="70" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Color:" id="USH-6F-yYJ">
                                     <font key="font" metaFont="system"/>
@@ -392,13 +391,12 @@ DQ
                                     <constraint firstAttribute="height" constant="23" id="oHZ-rz-stM"/>
                                 </constraints>
                                 <color key="color" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <accessibility description="Banner Text Color"/>
                                 <connections>
                                     <action selector="changeBannerColor:" target="Os8-hQ-WCq" id="nc2-Pa-n46"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="8Pg-k3-zM7"/>
                                 </connections>
                             </colorWell>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
                                 <rect key="frame" x="368" y="334" width="98" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Saved banners" id="1jv-K9-S0J">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -406,7 +404,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
                                 <rect key="frame" x="368" y="220" width="134" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Create a new banner" id="jfy-6a-gu3">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -455,7 +453,7 @@ DQ
                                                             <rect key="frame" x="8" y="4" width="421" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
+                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
                                                                     <rect key="frame" x="-2" y="3" width="425" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" usesSingleLineMode="YES" id="YDw-vW-Bvb">
                                                                         <font key="font" metaFont="system"/>
@@ -510,7 +508,7 @@ DQ
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
-                                            <accessibility description="Saved Banners Table"/>
+                                            <accessibility description="Saved Banners"/>
                                             <connections>
                                                 <action selector="selectRow:" target="Os8-hQ-WCq" id="e1r-jD-GKz"/>
                                                 <binding destination="bF2-Iv-11y" name="content" keyPath="arrangedObjects" id="Nf8-X4-Veh"/>
@@ -538,7 +536,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
                                 <rect key="frame" x="368" y="166" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Position:" id="w3N-cI-ufw">
                                     <font key="font" metaFont="system"/>
@@ -546,7 +544,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
                                 <rect key="frame" x="368" y="30" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Overlay Image Size:" id="lDV-Sm-BrH">
                                     <font key="font" metaFont="system"/>
@@ -557,7 +555,6 @@ DQ
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfn-JT-1aD">
                                 <rect key="frame" x="498" y="21" width="314" height="28"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="10" maxValue="100" doubleValue="30" tickMarkPosition="above" numberOfTickMarks="10" sliderType="linear" id="hkG-2C-8r3"/>
-                                <accessibility description="Overlay Image Size Slider"/>
                                 <connections>
                                     <action selector="updateOverlaySliderToolTip:" target="Os8-hQ-WCq" id="q9H-DX-npq"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="installIconView.overlayImage" id="KSh-MY-9lt">
@@ -706,7 +703,7 @@ DQ
                                     </gridCell>
                                 </gridCells>
                             </gridView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
                                 <rect key="frame" x="368" y="110" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Font:" id="rZY-vV-Lp9">
                                     <font key="font" metaFont="system"/>
@@ -721,13 +718,13 @@ DQ
                                     <font key="font" metaFont="message"/>
                                     <menu key="menu" id="Hxx-0y-02E"/>
                                 </popUpButtonCell>
-                                <accessibility description="Font Menu"/>
+                                <accessibility description="Banner Font"/>
                                 <connections>
                                     <action selector="changeBannerFont:" target="Os8-hQ-WCq" id="Gb8-Pr-22U"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="brb-xf-8Vn"/>
                                 </connections>
                             </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
                                 <rect key="frame" x="368" y="138" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Margin:" id="ktj-KO-fqu">
                                     <font key="font" metaFont="system"/>
@@ -738,7 +735,6 @@ DQ
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-Ny-khv">
                                 <rect key="frame" x="461" y="129" width="351" height="28"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="40" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="zXj-lZ-t6i"/>
-                                <accessibility description="Text Margin Slider"/>
                                 <connections>
                                     <action selector="updateTextMarginSliderToolTip:" target="Os8-hQ-WCq" id="IbT-w5-xJF"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="hH2-2j-CPp"/>
@@ -766,7 +762,6 @@ DQ
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <accessibility description="Swap Banner Colors"/>
                                 <connections>
                                     <action selector="switchColors:" target="Os8-hQ-WCq" id="VlK-X8-Kfs"/>
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="obs-n0-ROV"/>
@@ -875,7 +870,6 @@ DQ
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-Mv-hBj" userLabel="Animation Speed Slider">
                                 <rect key="frame" x="498" y="315" width="314" height="28"/>
                                 <sliderCell key="cell" alignment="left" maxValue="2" doubleValue="1" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="9kz-AH-dcI"/>
-                                <accessibility description="Animation Duration Slider"/>
                                 <connections>
                                     <action selector="updateSpeedSliderToolTip:" target="P9e-FD-zwO" id="4CC-4b-DOv"/>
                                     <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="q7Q-cX-uu5">
@@ -885,7 +879,7 @@ DQ
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
                                 <rect key="frame" x="368" y="324" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Animation Duration:" id="cn0-Zj-PVa">
                                     <font key="font" metaFont="system"/>
@@ -893,7 +887,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
                                 <rect key="frame" x="368" y="288" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Adjust Image Size:" id="pTx-ab-4hu">
                                     <font key="font" metaFont="system"/>
@@ -904,7 +898,6 @@ DQ
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-Kl-FH0">
                                 <rect key="frame" x="498" y="279" width="314" height="28"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="eOo-KY-n5s"/>
-                                <accessibility description="Image Size Slider"/>
                                 <connections>
                                     <action selector="updateScalingSliderToolTip:" target="P9e-FD-zwO" id="8v8-XC-l6N"/>
                                     <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="jNg-wl-MZW">
@@ -926,7 +919,6 @@ DQ
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <accessibility description="Auto Image Size"/>
                                 <connections>
                                     <action selector="setAutoAdjust:" target="P9e-FD-zwO" id="xhT-Tl-y10"/>
                                     <binding destination="P9e-FD-zwO" name="enabled" keyPath="uninstallIconView.image" id="NU6-ux-4NJ">
@@ -1003,7 +995,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="450" height="318"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
                                 <rect key="frame" x="23" y="223" width="404" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="dwS-Bc-ZLe">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1025,7 +1017,7 @@ DQ
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-st-zSd">
                                 <rect key="frame" x="25" y="164" width="400" height="5"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
                                 <rect key="frame" x="23" y="90" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Wek-xH-9Uy">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1041,7 +1033,7 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
                                 <rect key="frame" x="23" y="52" width="43" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Prefix:" id="QoR-pP-czv">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -1049,7 +1041,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
                                 <rect key="frame" x="72" y="49" width="353" height="21"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="xTE-uo-zdC">
                                     <font key="font" metaFont="system"/>
@@ -1129,7 +1121,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="450" height="212"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
                                 <rect key="frame" x="23" y="61" width="404" height="126"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Ee2-cC-Wmu">
                                     <font key="font" metaFont="smallSystem"/>
