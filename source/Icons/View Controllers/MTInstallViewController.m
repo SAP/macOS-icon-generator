@@ -1,6 +1,6 @@
 /*
      MTInstallViewController.m
-     Copyright 2022-2024 SAP SE
+     Copyright 2022-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@
 @property (weak) IBOutlet NSSlider *overlaySlider;
 @property (weak) IBOutlet NSSlider *textMarginSlider;
 @property (weak) IBOutlet NSPopUpButton *fontButton;
+@property (weak) IBOutlet NSPopUpButton *fontFaceButton;
 
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (nonatomic, strong, readwrite) NSUserDefaultsController *defaultsController;
@@ -47,12 +48,27 @@
     
     // create the font menu…
     [self updateFontMenu];
+    NSString *fontFamily = [_fontButton titleOfSelectedItem];
+    if (fontFamily) { [self updateFontFacesForFamily:fontFamily]; }
     
     // …and select the last font used
     if ([_userDefaults objectForKey:kMTDefaultsSelectedFontKey]) {
         
-        NSString *selectedFont = [_userDefaults stringForKey:kMTDefaultsSelectedFontKey];
-        if ([_fontButton indexOfItemWithTitle:selectedFont] != -1) { [_fontButton selectItemWithTitle:selectedFont]; }
+        NSString *selectedFontName = [_userDefaults stringForKey:kMTDefaultsSelectedFontKey];
+        NSString *fontFamily = nil;
+        
+        if (selectedFontName) {
+            
+            NSFont *selectedFont = [NSFont fontWithName:selectedFontName size:0];
+            
+            if (selectedFont) {
+                
+                NSFontDescriptor *fontDescriptor = [selectedFont fontDescriptor];
+                fontFamily = [fontDescriptor objectForKey:NSFontFamilyAttribute];
+            }
+        }
+        
+        [self selectFontButtonsWithFamilyName:fontFamily fontFace:selectedFontName];
     }
     
     CGFloat margin = [_userDefaults floatForKey:kMTDefaultsTextMarginDefaultKey];
@@ -177,11 +193,16 @@
             ];
 
             [self.bannerTextField setStringValue:[bannerText string]];
-            [self.fontButton selectItemWithTitle:[[bannerText font] familyName]];
             [self enablePositionButtonAtIndex:[[bannerDict valueForKey:kMTDefaultsBannerPositionKey] integerValue]];
             [_bannerTextColorWell setColor:[bannerText textColor]];
             [_bannerColorWell setColor:[bannerText backgroundColor]];
             [_installIconView setBannerAttributes:bannerText];
+
+            // select the font and type face
+            NSFontDescriptor *fontDescriptor = [[bannerText font] fontDescriptor];
+            NSString *fontFamily = [fontDescriptor objectForKey:NSFontFamilyAttribute];
+            NSString *fontFace = [fontDescriptor objectForKey:NSFontNameAttribute];
+            [self selectFontButtonsWithFamilyName:fontFamily fontFace:fontFace];
             
             NSUInteger bannerPosition = [[bannerDict valueForKey:kMTDefaultsBannerPositionKey] integerValue];
             [_installIconView setBannerPosition:(MTBannerPosition)bannerPosition];
@@ -213,8 +234,12 @@
 
 - (NSAttributedString*)currentBannerText
 {
+    NSString *fontName = [[_fontFaceButton selectedItem] representedObject];
+    NSFont *bannerFont = [NSFont fontWithName:fontName size:0];
+    if (!bannerFont) { bannerFont = [NSFont systemFontOfSize:0]; }
+          
     NSAttributedString *bannerText = [[NSAttributedString alloc] initWithString:[_bannerTextField stringValue]
-                                                                           font:[NSFont fontWithName:[_fontButton titleOfSelectedItem] size:0]
+                                                                           font:bannerFont
                                                                 foregroundColor:[_bannerTextColorWell color]
                                                                 backgroundColor:[_bannerColorWell color]
     ];
@@ -250,6 +275,98 @@
     [_installIconView setBannerPosition:(MTBannerPosition)[_userDefaults integerForKey:kMTDefaultsPositionDefaultKey]];
 }
 
+- (void)updateFontMenu
+{
+    [[_fontButton menu] removeAllItems];
+    
+    // create the font menu
+    NSFontCollection *userFonts = [NSFontCollection fontCollectionWithName:NSFontCollectionUser];
+    NSMutableSet *fontFamilies = [[NSMutableSet alloc] init];
+
+    for (NSFontDescriptor *fontDescriptor in [userFonts matchingDescriptors]) {
+        
+        NSString *fontFamily = [fontDescriptor objectForKey:NSFontFamilyAttribute];
+        [fontFamilies addObject:fontFamily];
+    }
+    
+    for (NSString *familyName in [[fontFamilies allObjects] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]) {
+                
+        NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+        [menuItem setAttributedTitle:[self attributedFontMenuTitle:familyName fontName:familyName]];
+        [[_fontButton menu] addItem:menuItem];
+    }
+}
+
+- (NSAttributedString*)attributedFontMenuTitle:(NSString*)fontTitle fontName:(NSString*)fontName
+{
+    CGFloat viewHeight = 20;
+    CGFloat fontSize = [NSFont systemFontSize] + 2;
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:fontName size:fontSize] forKey:NSFontAttributeName];
+    
+    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:fontTitle
+                                                                                       attributes:attributes
+    ];
+
+    CGFloat adjustedFontSize = [attributedName fontSizeToFitInRect:NSMakeRect(0, 0, CGFLOAT_MAX, viewHeight)
+                                                   minimumFontSize:3
+                                                   maximumFontSize:fontSize
+                                                    useImageBounds:NO
+    ];
+    [attributedName addAttribute:NSFontAttributeName
+                           value:[[NSFontManager sharedFontManager] convertFont:[attributedName font] toSize:adjustedFontSize]
+                           range:NSMakeRange(0, [attributedName length])
+    ];
+    
+    return attributedName;
+}
+
+- (void)updateFontFacesForFamily:(NSString*)familyName
+{
+    [self.fontFaceButton removeAllItems];
+    
+    NSFontManager *fontManager = [NSFontManager sharedFontManager];
+    NSArray *fontNames = [fontManager availableMembersOfFontFamily:familyName];
+    
+    for (NSArray *fontInfo in fontNames) {
+
+        NSString *fontName = [fontInfo firstObject];
+        NSString *fontFace = [fontInfo objectAtIndex:1];
+
+        // if fontFace is empty, use "Regular" as the standard
+        if ([fontFace length] == 0) { fontFace = @"Regular"; }
+
+        NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+        [menuItem setAttributedTitle:[self attributedFontMenuTitle:[fontManager localizedNameForFamily:familyName face:fontFace]
+                                                          fontName:fontName
+                                     ]
+        ];
+        [menuItem setRepresentedObject:fontName];
+        [[self.fontFaceButton menu] addItem:menuItem];
+    }
+    
+    // select the first item if available
+    if ([self.fontFaceButton numberOfItems] > 0) { [self.fontFaceButton selectItemAtIndex:0]; }
+}
+
+- (void)selectFontButtonsWithFamilyName:(NSString*)fontFamily fontFace:(NSString*)fontFace
+{
+    if (!fontFamily || [self.fontButton indexOfItemWithTitle:fontFamily] == -1) { fontFamily = [self.fontButton itemTitleAtIndex:0]; }
+        
+    [self.fontButton selectItemWithTitle:fontFamily];
+    [self updateFontFacesForFamily:fontFamily];
+        
+    NSUInteger itemIndex = [self.fontFaceButton indexOfItemWithRepresentedObject:fontFace];
+
+    if (itemIndex != -1) {
+        
+        [self.fontFaceButton selectItemAtIndex:itemIndex];
+        
+    } else {
+        
+        [self.fontFaceButton selectItemAtIndex:0];
+    }
+}
+
 #pragma mark NSTableViewDelegate
 
 - (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
@@ -263,48 +380,6 @@
         if (bannerText) {
             [rowView setBackgroundColor:[bannerText backgroundColor]];
         }
-    }
-}
-
-- (void)updateFontMenu
-{
-    [[_fontButton menu] removeAllItems];
-    
-    // create the font menu
-    NSFontCollection *userFonts = [NSFontCollection fontCollectionWithName:NSFontCollectionUser];
-    NSMutableSet *fontFamilies = [[NSMutableSet alloc] init];
-    
-    for (NSFontDescriptor *fontDescriptor in [userFonts matchingDescriptors]) {
-        
-        NSString *familyName = [fontDescriptor objectForKey:NSFontFamilyAttribute];
-        [fontFamilies addObject:familyName];
-    }
-    
-    for (NSString *familyName in [[fontFamilies allObjects] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]) {
-        
-        NSMenuItem *menuItem = [[NSMenuItem alloc] init];
-        
-        CGFloat viewHeight = 20;
-        CGFloat fontSize = [NSFont systemFontSize] + 2;
-        NSDictionary *attributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:familyName size:fontSize]
-                                                               forKey:NSFontAttributeName
-        ];
-        NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:familyName
-                                                                                           attributes:attributes
-        ];
-    
-        CGFloat adjustedFontSize = [attributedName fontSizeToFitInRect:NSMakeRect(0, 0, CGFLOAT_MAX, viewHeight)
-                                                       minimumFontSize:3
-                                                       maximumFontSize:fontSize
-                                                        useImageBounds:NO
-        ];
-        [attributedName addAttribute:NSFontAttributeName
-                               value:[[NSFontManager sharedFontManager] convertFont:[attributedName font] toSize:adjustedFontSize]
-                               range:NSMakeRange(0, [attributedName length])
-        ];
-
-        [menuItem setAttributedTitle:attributedName];
-        [[_fontButton menu] addItem:menuItem];
     }
 }
 
@@ -372,8 +447,11 @@
     if (clickedRow >= 0) {
         
         if (clickedRow == selectedRow) {
+            
             [_savedBannersTable deselectRow:selectedRow];
+            
         } else {
+            
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:clickedRow];
             [_savedBannersTable selectRowIndexes:indexSet byExtendingSelection:NO];
         }
@@ -494,7 +572,12 @@
 
 - (IBAction)changeBannerFont:(id)sender
 {
-    [_userDefaults setValue:[sender titleOfSelectedItem] forKey:kMTDefaultsSelectedFontKey];
+    NSString *selectedFamilyName = [_fontButton titleOfSelectedItem];
+    if ([sender isEqualTo:_fontButton]) { [self updateFontFacesForFamily:selectedFamilyName]; }
+    NSString *selectedFontFace = [[_fontFaceButton selectedItem] representedObject];
+
+    [_userDefaults setObject:selectedFontFace forKey:kMTDefaultsSelectedFontKey];
+    
     [self updateBanner];
 }
 
@@ -633,6 +716,7 @@
 - (void)fontSetChanged:(NSNotification*)aNotification
 {
     NSString *selectedFont = [self->_fontButton titleOfSelectedItem];
+    NSString *selectedFontFace = [[self->_fontFaceButton selectedItem] representedObject];
     
     dispatch_async(dispatch_get_main_queue(), ^{
     
@@ -640,14 +724,7 @@
         [self updateFontMenu];
         
         // …and select the last font used
-        if ([self->_fontButton indexOfItemWithTitle:selectedFont] != -1) {
-                
-            [self->_fontButton selectItemWithTitle:selectedFont];
-                
-        } else {
-                
-            [self->_fontButton selectItemAtIndex:0];
-        }
+        [self selectFontButtonsWithFamilyName:selectedFont fontFace:selectedFontFace];
         
         [self updateBanner];
     });

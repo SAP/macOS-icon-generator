@@ -109,6 +109,24 @@
         }
       }
     },
+    "6UY-Tt-Cei.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Menu for selecting the banner's font face\"; ObjectID = \"6UY-Tt-Cei\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü für die Auswahl der Schrift"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Menu for selecting the banner's font face"
+          }
+        }
+      }
+    },
     "8nY-8W-o3C.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Remove All\"; ObjectID = \"8nY-8W-o3C\";",
       "extractionState" : "extracted_with_value",
@@ -387,24 +405,6 @@
         }
       }
     },
-    "Dve-9W-rkA.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Color\"; ObjectID = \"Dve-9W-rkA\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbe des Banners"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Banner Color"
-          }
-        }
-      }
-    },
     "Dve-9W-rkA.ibShadowedToolTip" : {
       "comment" : "Class = \"NSColorWell\"; ibShadowedToolTip = \"Click here to change the banner's color.\"; ObjectID = \"Dve-9W-rkA\";",
       "extractionState" : "extracted_with_value",
@@ -527,24 +527,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Select All"
-          }
-        }
-      }
-    },
-    "g77-ga-ERN.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSColorWell\"; ibExternalAccessibilityDescription = \"Banner Text Color\"; ObjectID = \"g77-ga-ERN\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbe des Bannertextes"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Banner Text Color"
           }
         }
       }
@@ -689,24 +671,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Icons on GitHub"
-          }
-        }
-      }
-    },
-    "iq1-Mv-hBj.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Animation Duration Slider\"; ObjectID = \"iq1-Mv-hBj\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schieberegler für die Animationsdauer"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Animation Duration Slider"
           }
         }
       }
@@ -886,24 +850,6 @@
         }
       }
     },
-    "LYm-Kl-FH0.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Image Size Slider\"; ObjectID = \"LYm-Kl-FH0\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schieberegler für die Bildgröße"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Image Size Slider"
-          }
-        }
-      }
-    },
     "lzl-pV-wCw.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Hide\"; ObjectID = \"lzl-pV-wCw\";",
       "extractionState" : "manual",
@@ -930,24 +876,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Save Icon Set"
-          }
-        }
-      }
-    },
-    "n6G-PL-35N.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Swap Banner Colors\"; ObjectID = \"n6G-PL-35N\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farben des Banners tauschen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Swap Banner Colors"
           }
         }
       }
@@ -1330,24 +1258,6 @@
         }
       }
     },
-    "Rqz-7w-QUz.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Auto Image Size\"; ObjectID = \"Rqz-7w-QUz\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatische Bildgröße"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Auto Image Size"
-          }
-        }
-      }
-    },
     "rZY-vV-Lp9.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Font:\"; ObjectID = \"rZY-vV-Lp9\";",
       "extractionState" : "extracted_with_value",
@@ -1372,7 +1282,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Tabelle mit gespeicherten Bannern"
           }
         },
@@ -1474,24 +1384,6 @@
         }
       }
     },
-    "vfn-JT-1aD.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Overlay Image Size Slider\"; ObjectID = \"vfn-JT-1aD\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schieberegler für die Größe des Überlagerungsbildes"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Overlay Image Size Slider"
-          }
-        }
-      }
-    },
     "w3N-cI-ufw.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Position:\"; ObjectID = \"w3N-cI-ufw\";",
       "extractionState" : "extracted_with_value",
@@ -1528,24 +1420,6 @@
         }
       }
     },
-    "XaY-Ny-khv.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSSlider\"; ibExternalAccessibilityDescription = \"Text Margin Slider\"; ObjectID = \"XaY-Ny-khv\";",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schieberegler für den Textrand"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Margin Slider"
-          }
-        }
-      }
-    },
     "Xb0-Eu-bGd.title" : {
       "comment" : "Class = \"NSWindow\"; title = \"Icons\"; ObjectID = \"Xb0-Eu-bGd\";",
       "extractionState" : "extracted_with_value",
@@ -1565,19 +1439,19 @@
       }
     },
     "Xdp-tO-lOa.ibExternalAccessibilityDescription" : {
-      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Banner Font\"; ObjectID = \"Xdp-tO-lOa\";",
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Menu for selecting the banner's font family\"; ObjectID = \"Xdp-tO-lOa\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Schrift-Menü"
+            "state" : "translated",
+            "value" : "Menü für die Auswahl der Schriftfamilie"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Banner Font"
+            "value" : "Menu for selecting the banner's font family"
           }
         }
       }
