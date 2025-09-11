@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24123.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24123.1"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -212,13 +212,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-Iu-W4U">
-                                <rect key="frame" x="20" y="60" width="478" height="311"/>
+                                <rect key="frame" x="20" y="64" width="478" height="307"/>
                                 <connections>
                                     <segue destination="VoQ-E3-u6v" kind="embed" id="vFb-17-dal"/>
                                 </connections>
                             </containerView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-5g-m8N">
-                                <rect key="frame" x="388" y="13" width="117" height="32"/>
+                                <rect key="frame" x="392" y="20" width="106" height="24"/>
                                 <buttonCell key="cell" type="push" title="Save Icon Set" bezelStyle="rounded" alignment="center" enabled="NO" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mds-t3-5Wm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -308,11 +308,11 @@ DQ
                 </menu>
                 <viewController title="Install" id="Os8-hQ-WCq" customClass="MTInstallViewController" sceneMemberID="viewController">
                     <view key="view" id="pUC-Lx-D6q">
-                        <rect key="frame" x="0.0" y="0.0" width="858" height="384"/>
+                        <rect key="frame" x="0.0" y="0.0" width="860" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="oDp-MP-QFn" customClass="MTInstallIconView">
-                                <rect key="frame" x="20" y="20" width="354" height="354"/>
+                                <rect key="frame" x="20" y="20" width="360" height="360"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="330" id="2By-O7-DP6"/>
                                     <constraint firstAttribute="width" secondItem="oDp-MP-QFn" secondAttribute="height" multiplier="1:1" id="Wza-u2-0bG"/>
@@ -321,8 +321,8 @@ DQ
                                 </constraints>
                                 <accessibility description="Install Icon"/>
                             </customView>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
-                                <rect key="frame" x="487" y="217" width="245" height="20"/>
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-6W-g6l">
+                                <rect key="frame" x="493" y="223" width="237" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="3Rf-Ch-5wk"/>
                                 </constraints>
@@ -349,7 +349,7 @@ DQ
                                 </connections>
                             </textField>
                             <colorWell toolTip="Click here to change the banner's color." allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dve-9W-rkA" customClass="MTColorWell">
-                                <rect key="frame" x="484" y="74" width="50" height="27"/>
+                                <rect key="frame" x="493" y="76" width="44" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="NCw-1I-rJX"/>
                                     <constraint firstAttribute="height" constant="23" id="fAr-8d-R2L"/>
@@ -360,24 +360,24 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="T8G-cb-VKe"/>
                                 </connections>
                             </colorWell>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
-                                <rect key="frame" x="392" y="218" width="87" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-pG-bq3">
+                                <rect key="frame" x="398" y="224" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text:" id="Ri3-y0-h0V">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
-                                <rect key="frame" x="392" y="80" width="87" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-7B-Euf">
+                                <rect key="frame" x="398" y="80" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Banner Color:" id="a6O-6P-Ueo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
-                                <rect key="frame" x="541" y="80" width="70" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-iR-A2y">
+                                <rect key="frame" x="547" y="80" width="70" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Color:" id="USH-6F-yYJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -385,7 +385,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <colorWell toolTip="Click here to change the color of the banner's text." tag="2" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g77-ga-ERN" customClass="MTColorWell">
-                                <rect key="frame" x="616" y="74" width="50" height="27"/>
+                                <rect key="frame" x="625" y="76" width="44" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Hxe-IH-mrC"/>
                                     <constraint firstAttribute="height" constant="23" id="oHZ-rz-stM"/>
@@ -396,16 +396,16 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="8Pg-k3-zM7"/>
                                 </connections>
                             </colorWell>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
-                                <rect key="frame" x="392" y="358" width="98" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Ev-kyz">
+                                <rect key="frame" x="398" y="364" width="98" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Saved banners" id="1jv-K9-S0J">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
-                                <rect key="frame" x="392" y="244" width="134" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-5q-wHg">
+                                <rect key="frame" x="398" y="250" width="134" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Create a new banner" id="jfy-6a-gu3">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -413,7 +413,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <button toolTip="Click here to save the current banner." horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-rF-qxu">
-                                <rect key="frame" x="735" y="210" width="110" height="32"/>
+                                <rect key="frame" x="740" y="221" width="100" height="24"/>
                                 <buttonCell key="cell" type="push" title="Save Banner" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SVp-zH-BSL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -425,9 +425,9 @@ DQ
                                 </connections>
                             </button>
                             <scrollView borderType="line" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-SA-B7c">
-                                <rect key="frame" x="394" y="280" width="444" height="70"/>
+                                <rect key="frame" x="400" y="286" width="440" height="70"/>
                                 <clipView key="contentView" ambiguous="YES" id="TIh-Ml-ItI">
-                                    <rect key="frame" x="1" y="1" width="442" height="68"/>
+                                    <rect key="frame" x="1" y="1" width="438" height="68"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="16" usesAutomaticRowHeights="YES" viewBased="YES" id="s1w-zX-2DX">
@@ -453,7 +453,7 @@ DQ
                                                             <rect key="frame" x="8" y="4" width="425" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Sa-X9B">
                                                                     <rect key="frame" x="-2" y="3" width="429" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" usesSingleLineMode="YES" id="YDw-vW-Bvb">
                                                                         <font key="font" metaFont="system"/>
@@ -536,16 +536,16 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
-                                <rect key="frame" x="392" y="190" width="87" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gix-Pe-pVP">
+                                <rect key="frame" x="398" y="196" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Position:" id="w3N-cI-ufw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
-                                <rect key="frame" x="392" y="30" width="124" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="StZ-xa-Zp2">
+                                <rect key="frame" x="398" y="30" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Overlay Image Size:" id="lDV-Sm-BrH">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -553,7 +553,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfn-JT-1aD">
-                                <rect key="frame" x="522" y="21" width="318" height="28"/>
+                                <rect key="frame" x="530" y="31" width="310" height="16"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="10" maxValue="100" doubleValue="30" tickMarkPosition="above" numberOfTickMarks="10" sliderType="linear" id="hkG-2C-8r3"/>
                                 <connections>
                                     <action selector="updateOverlaySliderToolTip:" target="Os8-hQ-WCq" id="q9H-DX-npq"/>
@@ -571,7 +571,7 @@ DQ
                                 </connections>
                             </slider>
                             <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="e83-w3-gOm">
-                                <rect key="frame" x="487" y="183" width="210" height="30"/>
+                                <rect key="frame" x="493" y="189" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0wu-Ht-K1E"/>
                                     <constraint firstItem="h9U-ap-mEC" firstAttribute="top" secondItem="e83-w3-gOm" secondAttribute="top" id="Q4R-PG-gZX"/>
@@ -703,8 +703,8 @@ DQ
                                     </gridCell>
                                 </gridCells>
                             </gridView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
-                                <rect key="frame" x="392" y="134" width="87" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-FQ-A9r">
+                                <rect key="frame" x="398" y="140" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Font:" id="rZY-vV-Lp9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -712,7 +712,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-tO-lOa">
-                                <rect key="frame" x="484" y="127" width="39" height="25"/>
+                                <rect key="frame" x="493" y="135" width="45" height="24"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="i8E-IN-ibI" customClass="MTPopupButtonCell">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="message"/>
@@ -725,7 +725,7 @@ DQ
                                 </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6UY-Tt-Cei">
-                                <rect key="frame" x="484" y="103" width="39" height="25"/>
+                                <rect key="frame" x="493" y="107" width="45" height="24"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="0vg-9N-1eD" customClass="MTPopupButtonCell">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="message"/>
@@ -737,8 +737,8 @@ DQ
                                     <binding destination="Os8-hQ-WCq" name="enabled" keyPath="bannerText.length" id="x1j-9h-vPz"/>
                                 </connections>
                             </popUpButton>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
-                                <rect key="frame" x="392" y="162" width="87" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-A9-NsD">
+                                <rect key="frame" x="398" y="168" width="87" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Margin:" id="ktj-KO-fqu">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -746,7 +746,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-Ny-khv">
-                                <rect key="frame" x="485" y="153" width="355" height="28"/>
+                                <rect key="frame" x="493" y="169" width="347" height="16"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="40" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="zXj-lZ-t6i"/>
                                 <connections>
                                     <action selector="updateTextMarginSliderToolTip:" target="Os8-hQ-WCq" id="IbT-w5-xJF"/>
@@ -760,7 +760,7 @@ DQ
                                 </connections>
                             </slider>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="baj-Yz-Ny1" customClass="MTTableOverlayView">
-                                <rect key="frame" x="394" y="280" width="444" height="70"/>
+                                <rect key="frame" x="400" y="286" width="440" height="70"/>
                                 <connections>
                                     <binding destination="Os8-hQ-WCq" name="hidden" keyPath="installIconView.image" id="RNl-jE-EeB">
                                         <dictionary key="options">
@@ -770,7 +770,7 @@ DQ
                                 </connections>
                             </customView>
                             <button toolTip="Click here to swap banner color and text color." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n6G-PL-35N">
-                                <rect key="frame" x="676" y="70" width="110" height="32"/>
+                                <rect key="frame" x="689" y="76" width="100" height="24"/>
                                 <buttonCell key="cell" type="push" title="Swap Colors" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gDc-Pz-PXw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -885,7 +885,7 @@ DQ
                                 <accessibility description="Uninstall Icon"/>
                             </customView>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-Mv-hBj" userLabel="Animation Speed Slider">
-                                <rect key="frame" x="522" y="339" width="318" height="28"/>
+                                <rect key="frame" x="524" y="349" width="314" height="16"/>
                                 <sliderCell key="cell" alignment="left" maxValue="2" doubleValue="1" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="9kz-AH-dcI"/>
                                 <connections>
                                     <action selector="updateSpeedSliderToolTip:" target="P9e-FD-zwO" id="4CC-4b-DOv"/>
@@ -896,7 +896,7 @@ DQ
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-KE-j09">
                                 <rect key="frame" x="392" y="348" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Animation Duration:" id="cn0-Zj-PVa">
                                     <font key="font" metaFont="system"/>
@@ -904,7 +904,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-Jx-u8K">
                                 <rect key="frame" x="392" y="312" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Adjust Image Size:" id="pTx-ab-4hu">
                                     <font key="font" metaFont="system"/>
@@ -913,7 +913,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-Kl-FH0">
-                                <rect key="frame" x="522" y="303" width="318" height="28"/>
+                                <rect key="frame" x="524" y="313" width="314" height="16"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="eOo-KY-n5s"/>
                                 <connections>
                                     <action selector="updateScalingSliderToolTip:" target="P9e-FD-zwO" id="8v8-XC-l6N"/>
@@ -931,7 +931,7 @@ DQ
                                 </connections>
                             </slider>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rqz-7w-QUz">
-                                <rect key="frame" x="522" y="282" width="165" height="18"/>
+                                <rect key="frame" x="524" y="287" width="161" height="16"/>
                                 <buttonCell key="cell" type="check" title="Auto-adjust image size" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Nsh-td-3I7">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1009,11 +1009,11 @@ DQ
             <objects>
                 <viewController title="General" id="2gn-d9-3bX" customClass="MTSettingsGeneralController" sceneMemberID="viewController">
                     <view key="view" id="aZ4-Ze-dCh">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="318"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="321"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
-                                <rect key="frame" x="23" y="223" width="404" height="70"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-EF-NTl">
+                                <rect key="frame" x="23" y="226" width="404" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="dwS-Bc-ZLe">
                                     <font key="font" metaFont="smallSystem"/>
                                     <string key="title">If you frequently add overlay images to an install icon and the overlay images always have the same size and need to be displayed in the same position, Icons can remember the last size and position of the overlay image so you do not have to reposition it each time. Please enable the option below if you want Icons to remember the position.</string>
@@ -1022,7 +1022,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qdd-jV-xag">
-                                <rect key="frame" x="23" y="186" width="324" height="18"/>
+                                <rect key="frame" x="25" y="190" width="320" height="16"/>
                                 <buttonCell key="cell" type="check" title="Remember size and position of the overlay image" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jQP-sC-z5V">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1032,10 +1032,10 @@ DQ
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-st-zSd">
-                                <rect key="frame" x="25" y="164" width="400" height="5"/>
+                                <rect key="frame" x="25" y="167" width="400" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
-                                <rect key="frame" x="23" y="90" width="404" height="56"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-ob-SQ7">
+                                <rect key="frame" x="23" y="93" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Wek-xH-9Uy">
                                     <font key="font" metaFont="smallSystem"/>
                                     <string key="title">You can add a prefix to the icon files created by this application. Unless otherwise specified, the prefix is either the name of the application or the name of the image file you selected to create the icon set. If you want to add a prefix, please enable the option below.</string>
@@ -1044,22 +1044,22 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-f8-kND">
-                                <rect key="frame" x="23" y="24" width="215" height="18"/>
+                                <rect key="frame" x="25" y="25" width="211" height="16"/>
                                 <buttonCell key="cell" type="check" title="Add prefix to the icon file name" bezelStyle="regularSquare" imagePosition="left" inset="2" id="5Io-2l-8VP">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
-                                <rect key="frame" x="23" y="52" width="43" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-Qn-ZId">
+                                <rect key="frame" x="23" y="53" width="43" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Prefix:" id="QoR-pP-czv">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
-                                <rect key="frame" x="72" y="49" width="353" height="21"/>
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-7Q-dU7">
+                                <rect key="frame" x="72" y="49" width="353" height="24"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="xTE-uo-zdC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1138,7 +1138,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="450" height="212"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-FJ-ekL">
                                 <rect key="frame" x="23" y="61" width="404" height="126"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Ee2-cC-Wmu">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1150,7 +1150,7 @@ If you do not want this and would rather have the extension create icon sets wit
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-Yg-lR2">
-                                <rect key="frame" x="23" y="24" width="272" height="18"/>
+                                <rect key="frame" x="25" y="25" width="268" height="16"/>
                                 <buttonCell key="cell" type="check" title="Use default settings for Finder extension" bezelStyle="regularSquare" imagePosition="left" inset="2" id="y1x-ul-4KX">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>

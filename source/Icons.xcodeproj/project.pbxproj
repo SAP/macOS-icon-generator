@@ -47,6 +47,7 @@
 		AD90AEBD27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBE27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBF27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
+		AD9473DF2E4B813A0064C895 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = AD9473DE2E4B813A0064C895 /* AppIcon.icon */; };
 		AD98394A27C23A9D00F871DD /* MTIconSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98394927C23A9D00F871DD /* MTIconSetViewController.m */; };
 		AD9EE94527C2A41200B89FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9EE94327C2A41200B89FDE /* Main.storyboard */; };
 		ADB156F52C78DEC6009B5472 /* icons_cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADCCBE7C2770FBE300F0582F /* icons_cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -181,6 +182,7 @@
 		AD86B09A27EA276100BF600A /* IconsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconsUITests.m; sourceTree = "<group>"; };
 		AD90AEBB27BFF0B80099797A /* MTUninstallIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUninstallIconView.h; sourceTree = "<group>"; };
 		AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUninstallIconView.m; sourceTree = "<group>"; };
+		AD9473DE2E4B813A0064C895 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		AD98394827C23A9D00F871DD /* MTIconSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTIconSetViewController.h; path = "Icons/View Controllers/MTIconSetViewController.h"; sourceTree = SOURCE_ROOT; };
 		AD98394927C23A9D00F871DD /* MTIconSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTIconSetViewController.m; path = "Icons/View Controllers/MTIconSetViewController.m"; sourceTree = SOURCE_ROOT; };
 		AD9EE94427C2A41200B89FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */,
 				AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */,
 				ADFBC3231D15E1E400A5011F /* Assets.xcassets */,
+				AD9473DE2E4B813A0064C895 /* AppIcon.icon */,
 				AD9EE94327C2A41200B89FDE /* Main.storyboard */,
 				AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */,
 				ADFBC3281D15E1E400A5011F /* Info.plist */,
@@ -480,7 +483,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "SAP SE";
 				TargetAttributes = {
 					AD4425D4278C548D0027E5C1 = {
@@ -550,6 +553,7 @@
 				AD1DB83C2AD7ED8000E130D2 /* Credits.rtf in Resources */,
 				AD1675922C52307B007DB0B3 /* InfoPlist.xcstrings in Resources */,
 				AD4E858B2C50F4DB00239344 /* MTSavePanelAccessory.xib in Resources */,
+				AD9473DF2E4B813A0064C895 /* AppIcon.icon in Resources */,
 				AD315E162C4E6FF600CE3C43 /* Localizable.xcstrings in Resources */,
 				ADFBC3241D15E1E400A5011F /* Assets.xcassets in Resources */,
 				AD9EE94527C2A41200B89FDE /* Main.storyboard in Resources */,
@@ -709,9 +713,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 565;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
@@ -723,7 +729,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
@@ -746,9 +752,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 565;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
@@ -760,7 +768,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,7 +791,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -807,7 +815,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.IconsUITests;
@@ -829,14 +837,14 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 143;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
@@ -857,14 +865,14 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 143;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -930,6 +938,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
@@ -985,6 +994,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
@@ -997,9 +1007,21 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 565;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Icons/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
@@ -1012,7 +1034,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1028,9 +1050,21 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 565;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Icons/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
@@ -1043,7 +1077,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";

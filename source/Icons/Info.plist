@@ -37,8 +37,8 @@
 			<string>Binary</string>
 		</dict>
 	</array>
-	<key>CFBundleIconFile</key>
-	<string></string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>LSMinimumSystemVersion</key>
