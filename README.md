@@ -61,7 +61,7 @@ If you want to learn more about _Icons_ features, make sure to take a look at ou
 
 Here you can find an example how the icon set could look like. The icon set contains the following files. First image shows `install.png`, the second image shows the `uninstall.png` and the third is the `uninstall_animated.png` animated. All images are saved in PNG format.
 
-<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/install.png" width="225"><img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall.png" width="225"><img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall_animated.png" width="225">
+<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/install.png" width="256"><img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall.png" width="256"><img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall_animated.png" width="256">
 
 <br/>
 
