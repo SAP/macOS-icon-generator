@@ -1,4 +1,4 @@
-<img src="https://github.com/SAP/macOS-enterprise-privileges/blob/main/readme_images/icons_banner_github.png" width="879"><br/>
+<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/icons_banner_github.png" width="879"><br/>
 
 <br/>
 
