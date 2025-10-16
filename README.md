@@ -42,7 +42,7 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 Have a look at how quick and easy an icon set can be created by drag and drop:
 
-![IconsDragAndDrop](readme_images/DemoIcons.gif)
+https://github.com/user-attachments/assets/b4886507-3a57-43f1-8916-38254b44adea
 
 <br/>
 
