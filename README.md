@@ -40,7 +40,7 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 # Demo
 
-⚡️Have a look at how quick and easy an icon set can be created by drag and drop:
+Have a look at how quick and easy an icon set can be created by drag and drop:
 
 ![IconsDragAndDrop](readme_images/DemoIcons.gif)
 
@@ -61,9 +61,9 @@ If you want to learn more about _Icons_ features, make sure to take a look at ou
 
 Here you can find an example how the icon set could look like. The icon set contains the following files. First image shows `install.png`, the second image shows the `uninstall.png` and the third is the `uninstall_animated.png` animated. All images are saved in PNG format.
 
-![IconsInstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/install.png) 
-![IconsUninstall](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall.png)
-![IconsUninstallAnimated](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/uninstall_animated.png) 
+<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/install.png" width="256">
+<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall.png" width="256">
+<img src="https://github.com/SAP/macOS-icon-generator/blob/main/readme_images/uninstall_animated.png" width="256">
 
 <br/>
 
