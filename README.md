@@ -1,4 +1,6 @@
-![IconsBanner](https://raw.githubusercontent.com/SAP/macOS-icon-generator/main/readme_images/icons_banner_github.png)
+<img src="https://github.com/SAP/macOS-enterprise-privileges/blob/main/readme_images/icons_banner_github" width="879"><br/>
+
+<br/>
 
 # Icons
 
