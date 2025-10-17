@@ -12,14 +12,6 @@ _Icons_ is an application for macOS which enables you to create standardized app
 
 For Mac administrators: When working in multiple environments, e.g. development, test and production environments, the _Icons_ app helps you to keep track of your app versions, by giving the option to add banners to the icons. The _Icons_ can be used for any management tools like Jamf Software's Jamf Pro or the open source _Munki_ software installation tool.
 
-**_Icons_ supports the following macOS versions:**
-
-* macOS 26.x
-* macOS 15.x
-* macOS 14.x
-* macOS 13.x
-* macOS 12.x
-
 <br/>
 
 # Features
@@ -35,6 +27,8 @@ For Mac administrators: When working in multiple environments, e.g. development,
 ❌ No graphic skills are needed
 
 ⌨️ Command line for automatization
+
+💻 For macOS 12 and newer
 
 <br/>
 
