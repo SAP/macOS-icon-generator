@@ -44,9 +44,9 @@ https://github.com/user-attachments/assets/b4886507-3a57-43f1-8916-38254b44adea
 
 To learn more about _Icons_ features, make sure to take a look at our [wiki](https://github.com/SAP/macOS-icon-generator/wiki) or the links below:
 
-* [Install Icons](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
-* [Uninstall Icons](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)
-* [Using Icons](https://github.com/SAP/macOS-icon-generator/wiki/Using-Icons)
+* [Installation](https://github.com/SAP/macOS-icon-generator/wiki/Installation)
+* [Uninstallation](https://github.com/SAP/macOS-icon-generator/wiki/Uninstallation)
+* [Using _Icons_](https://github.com/SAP/macOS-icon-generator/wiki/Using-Icons)
 * [FAQ](https://github.com/SAP/macOS-icon-generator/wiki/Frequently-Asked-Questions)
 
 <br/>
