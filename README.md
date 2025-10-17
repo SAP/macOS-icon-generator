@@ -26,7 +26,7 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 ❌ No graphic skills are needed
 
-⌨️ Command line for automatization
+⌨️ Command line for automation
 
 💻 For macOS 12 and newer
 
