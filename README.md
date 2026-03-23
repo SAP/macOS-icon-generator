@@ -18,17 +18,19 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 🌟 Finder extension
 
-🌈 Banner customization
+🌈 Highly customizable banner
 
 🖱️ Easy drag & drop function
 
 ✅ Install and animated uninstall icon
 
-❌ No graphic skills are needed
+🗑️ Custom delete badge for uninstall icon
+
+❌ No graphic skills needed
 
 ⌨️ Command line for automation
 
-💻 For macOS 12 and newer
+💻 For macOS 13 and newer
 
 <br/>
 
