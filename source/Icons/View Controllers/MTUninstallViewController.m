@@ -589,7 +589,7 @@
 {
     [_uninstallIconView setApplyIconShape:[_userDefaults boolForKey:kMTDefaultsRenderImagesInIconShapeKey]];
     [_uninstallIconView setUsesOldIconShape:[_userDefaults boolForKey:kMTDefaultsUseOldIconShapeKey]];
-    [_uninstallIconView setImage:[_uninstallIconView unmodifiedImage]];
+    if ([[_uninstallIconView unmodifiedImage] isValid]) { [_uninstallIconView setImage:[_uninstallIconView unmodifiedImage]]; }
 }
 
 - (void)dealloc

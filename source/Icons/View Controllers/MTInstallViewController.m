@@ -934,12 +934,12 @@
 - (void)iconShapeSettingsChanged:(NSNotification*)aNotification
 {
     BOOL renderInIconShape = [_userDefaults boolForKey:kMTDefaultsRenderImagesInIconShapeKey];
-    
+        
     [_installIconView setApplyIconShape:renderInIconShape];
     [_installIconView setUsesOldIconShape:[_userDefaults boolForKey:kMTDefaultsUseOldIconShapeKey]];
     [_installIconView setDrawBannerInIconShape:(renderInIconShape && [_userDefaults boolForKey:kMTDefaultsDrawBannerInIconShapeKey] && ![_installIconView isAppBundle])];
-    [_installIconView setImage:[_installIconView unmodifiedImage]];
-   
+    if ([[_installIconView unmodifiedImage] isValid]) { [_installIconView setImage:[_installIconView unmodifiedImage]]; }
+        
     [self updateBanner];
 }
 
