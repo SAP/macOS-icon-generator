@@ -1,6 +1,118 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "accessibilityLabelPrefix" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Präfix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        }
+      }
+    },
+    "badgeIconMarginSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um den Abstand des Löschsymbols von der Ecke anzupassen. Aktuell beträgt der Abstand %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the margin between the badge icon and the corner. The margin is currently %@ of the icon size."
+          }
+        }
+      }
+    },
+    "badgeIconSizeSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um die Größe des Löschsymbols anzupassen. Aktuell beträgt die Größe %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the size of the badge icon. It is currently set to %@ of the icon size."
+          }
+        }
+      }
+    },
+    "badgeShadowAngleSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Regler, um den Winkel des Schattens des Überlagerungsbildes anzupassen. Aktuell beträgt der Winkel %@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the angle of the badge’s shadow. The angle is currently %@."
+          }
+        }
+      }
+    },
+    "badgeShadowOffsetSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um den Versatz des Schattens des Überlagerungsbildes anzupassen. Aktuell beträgt der Versatz %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the offset of the badge’s shadow. It is currently set to %@ of the icon size."
+          }
+        }
+      }
+    },
+    "badgeShadowRadiusSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um den Radius des Schattens des Überlagerungsbildes anzupassen. Aktuell beträgt der Versatz %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the radius of the badge’s shadow. It is currently set to %@ of the icon size."
+          }
+        }
+      }
+    },
+    "bannerAngleSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um den Winkel des Banners anzupassen. Aktuell beträgt der Winkel %@."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the angle of the banner. The angle is currently %@."
+          }
+        }
+      }
+    },
     "bannerExistsDialogMessage" : {
       "localizations" : {
         "de" : {
@@ -33,6 +145,38 @@
         }
       }
     },
+    "bannerHeightSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Schieberegler, um die Höhe des Banners anzupassen. Aktuell beträgt die Höhe %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the height of the banner. It is currently set to %@ of the icon size."
+          }
+        }
+      }
+    },
+    "bannerMarginSliderTooltip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwende diesen Regler, um den Abstand des Banners von der Ecke anzupassen. Aktuell beträgt der Abstand %@ der Größe des Icons."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this slider to adjust the margin between the banner and the corner. The margin is currently %@ of the icon size."
+          }
+        }
+      }
+    },
     "cancelButton" : {
       "localizations" : {
         "de" : {
@@ -61,6 +205,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drop an application or an image file here"
+          }
+        }
+      }
+    },
+    "dropViewLabelPlayground" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehe ein Programm oder eine Bilddatei hierher oder klicke, um Image Playground zu öffnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drop an application or an image file here, or click to open Image Playground"
+          }
+        }
+      }
+    },
+    "imageErrorInfo" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das ausgewählte Bild ist ungültig und kann daher nicht verwendet werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected image is invalid and therefore cannot be used."
+          }
+        }
+      }
+    },
+    "imageErrorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Bild kann nicht verwendet werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This image cannot be used."
           }
         }
       }
@@ -134,13 +326,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mit diesem Schieberegler kannst Du die Größe des Überlagerungsbildes ändern. Derzeit ist sie auf %@ der maximalen Größe eingestellt."
+            "value" : "Mit diesem Schieberegler kannst Du die Größe des Überlagerungsbildes anpassen. Derzeit ist sie auf %@ der maximalen Größe eingestellt."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use this slider to change the size of the overlay image. It is currently set to %@ of the maximum size."
+            "value" : "Use this slider to adjust the size of the overlay image. It is currently set to %@ of the maximum size."
           }
         }
       }
@@ -214,7 +406,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ihre Icons konnten nicht gespeichert werden."
+            "value" : "Deine Icons konnten nicht gespeichert werden."
           }
         },
         "en" : {
@@ -241,18 +433,34 @@
         }
       }
     },
-    "setDefaultBanner" : {
+    "selectButton" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Als Standard benutzen"
+            "value" : "Auswählen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use as Default"
+            "value" : "Select"
+          }
+        }
+      }
+    },
+    "sfSymbolMenuEntry" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SF Symbol"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SF Symbol"
           }
         }
       }
@@ -262,13 +470,45 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwende diesen Schieberegler, um die Dauer der Animation des animierten Deinstallations-Icons zu ändern. Derzeit beträgt die Dauer der Animation %@."
+            "value" : "Verwende diesen Schieberegler, um die Dauer der Animation des animierten Deinstallations-Icons anzupassen. Derzeit beträgt die Dauer der Animation %@."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use this slider to change the duration of the animation of the animated uninstall icon. Current animation duration is %@."
+            "value" : "Use this slider to adjust the duration of the animation of the animated uninstall icon. Current animation duration is %@."
+          }
+        }
+      }
+    },
+    "symbolErrorInfo" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das ausgewählte Symbol ist ungültig und kann daher nicht verwendet werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected symbol is invalid and therefore cannot be used."
+          }
+        }
+      }
+    },
+    "symbolErrorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Symbol kann nicht verwendet werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This symbol cannot be used."
           }
         }
       }
@@ -278,29 +518,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwende diesen Schieberegler, um die Größe des Textrandes des Banners zu ändern. Derzeit ist der Rand auf %@ der Höhe des Banners eingestellt."
+            "value" : "Verwende diesen Schieberegler, um die minimale Größe des Textrandes des Banners anzupassen. Derzeit ist der Rand auf %@ der Höhe des Banners eingestellt."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use this slider to change the size of the banner text margin. It is currently set to %@ of the banner height."
-          }
-        }
-      }
-    },
-    "unsetDefaultBanner" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht mehr als Standard benutzen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Longer Use as Default"
+            "value" : "Use this slider to adjust the minimum size of the banner text margin. It is currently set to %@ of the banner height."
           }
         }
       }

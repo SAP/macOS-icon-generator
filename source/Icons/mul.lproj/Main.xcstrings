@@ -19,6 +19,24 @@
         }
       }
     },
+    "1qj-KL-XqY.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Draw banner inside the icon shape\"; ObjectID = \"1qj-KL-XqY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banner innerhalb der Icon-Form zeichnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Draw banner inside the icon shape"
+          }
+        }
+      }
+    },
     "1Vd-bA-2RI.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Icons\"; ObjectID = \"1Vd-bA-2RI\";",
       "extractionState" : "extracted_with_value",
@@ -33,6 +51,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Icons"
+          }
+        }
+      }
+    },
+    "2f9-TA-aPC.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"2f9-TA-aPC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Min"
           }
         }
       }
@@ -109,6 +145,96 @@
         }
       }
     },
+    "5T0-ai-oyW.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Render images in icon shape\"; ObjectID = \"5T0-ai-oyW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilder in Icon-Form zeichnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Render images in icon shape"
+          }
+        }
+      }
+    },
+    "5YE-9E-y47.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"5YE-9E-y47\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Min"
+          }
+        }
+      }
+    },
+    "6fh-wH-VVN.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"None\"; ObjectID = \"6fh-wH-VVN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keiner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "None"
+          }
+        }
+      }
+    },
+    "6ij-0h-ke8.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"6ij-0h-ke8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "6mV-zF-dXd.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Short\"; ObjectID = \"6mV-zF-dXd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurz"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Short"
+          }
+        }
+      }
+    },
     "6UY-Tt-Cei.ibExternalAccessibilityDescription" : {
       "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Menu for selecting the banner's font face\"; ObjectID = \"6UY-Tt-Cei\";",
       "extractionState" : "extracted_with_value",
@@ -123,6 +249,42 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Menu for selecting the banner's font face"
+          }
+        }
+      }
+    },
+    "7F7-A4-VjP.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Paste from SF Symbols\"; ObjectID = \"7F7-A4-VjP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einfügen aus SF Symbols"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Paste from SF Symbols"
+          }
+        }
+      }
+    },
+    "8dq-Ex-FOA.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Image Playground…\"; ObjectID = \"8dq-Ex-FOA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image Playground …"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Image Playground…"
           }
         }
       }
@@ -145,6 +307,42 @@
         }
       }
     },
+    "8OF-yD-VoW.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Top Left Corner\"; ObjectID = \"8OF-yD-VoW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Left Corner"
+          }
+        }
+      }
+    },
+    "8OF-yD-VoW.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Top Left Corner\"; ObjectID = \"8OF-yD-VoW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Left Corner"
+          }
+        }
+      }
+    },
     "8Qh-uX-87h.title" : {
       "comment" : "Class = \"NSMenu\"; title = \"Main Menu\"; ObjectID = \"8Qh-uX-87h\";",
       "extractionState" : "extracted_with_value",
@@ -157,6 +355,60 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "9KG-rg-Vd3.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Bottom Left Corner\"; ObjectID = \"9KG-rg-Vd3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Left Corner"
+          }
+        }
+      }
+    },
+    "9KG-rg-Vd3.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Bottom Left Corner\"; ObjectID = \"9KG-rg-Vd3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere linke Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Left Corner"
+          }
+        }
+      }
+    },
+    "12o-8G-kU0.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"12o-8G-kU0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
     },
     "87F-Dp-8uS.title" : {
       "comment" : "Class = \"NSMenu\"; title = \"Help\"; ObjectID = \"87F-Dp-8uS\";",
@@ -177,19 +429,37 @@
       }
     },
     "a6O-6P-Ueo.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Banner Color:\"; ObjectID = \"a6O-6P-Ueo\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Banner Color\"; ObjectID = \"a6O-6P-Ueo\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bannerfarbe:"
+            "value" : "Bannerfarbe"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Banner Color:"
+            "value" : "Banner Color"
+          }
+        }
+      }
+    },
+    "A7I-Lc-sjC.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Badge Size\"; ObjectID = \"A7I-Lc-sjC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbolgröße"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Badge Size"
           }
         }
       }
@@ -266,18 +536,113 @@
         }
       }
     },
+    "Bat-gB-YKN.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"When creating an icon based on an image or using the Image Playground feature, you can choose whether the banner should be drawn over or inside the icon. Please enable or disable the option below based on your needs.\"; ObjectID = \"Bat-gB-YKN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Du ein Icon auf Basis eines Bildes erstellst oder die Funktion „Image Playground“ verwendest, kannst Du wählen, ob das Banner über oder innerhalb des Icons gezeichnet werden soll. Bitte aktiviere oder deaktiviere die unten stehende Option entsprechend Deinen Anforderungen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "When creating an icon based on an image or using the Image Playground feature, you can choose whether the banner should be drawn over or inside the icon. Please enable or disable the option below based on your needs."
+          }
+        }
+      }
+    },
+    "bbn-DI-Q7p.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"bbn-DI-Q7p\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Min"
+          }
+        }
+      }
+    },
     "Bf0-r7-bm1.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Use as Default\"; ObjectID = \"Bf0-r7-bm1\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Standard verwenden"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Use as Default"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
+    },
+    "Bg0-bW-FdG.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"Bg0-bW-FdG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "bud-Lk-sAc.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Copy Icon\"; ObjectID = \"bud-Lk-sAc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon kopieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Copy Icon"
+          }
+        }
+      }
+    },
+    "c1m-y3-Zol.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Margin\"; ObjectID = \"c1m-y3-Zol\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abstand"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Margin"
+          }
+        }
+      }
     },
     "c83-RA-LFS.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Redo\"; ObjectID = \"c83-RA-LFS\";",
@@ -293,6 +658,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Redo"
+          }
+        }
+      }
+    },
+    "cAg-d5-MOr.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Large\"; ObjectID = \"cAg-d5-MOr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groß"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Large"
           }
         }
       }
@@ -316,19 +699,19 @@
       }
     },
     "cn0-Zj-PVa.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Animation Duration:\"; ObjectID = \"cn0-Zj-PVa\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Animation Duration\"; ObjectID = \"cn0-Zj-PVa\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Animationsdauer:"
+            "value" : "Animationsdauer"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Animation Duration:"
+            "value" : "Animation Duration"
           }
         }
       }
@@ -405,6 +788,24 @@
         }
       }
     },
+    "dbj-ax-scM.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Shadow Color\"; ObjectID = \"dbj-ax-scM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schattenfarbe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shadow Color"
+          }
+        }
+      }
+    },
     "Dve-9W-rkA.ibShadowedToolTip" : {
       "comment" : "Class = \"NSColorWell\"; ibShadowedToolTip = \"Click here to change the banner's color.\"; ObjectID = \"Dve-9W-rkA\";",
       "extractionState" : "extracted_with_value",
@@ -430,13 +831,49 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn Du häufig Überlagerungsbilder zu einem Installations-Icon hinzufügst und diese immer die gleiche Größe haben und in der gleichen Position angezeigt werden sollen, kann Icons die letzte Größe und Position des Überlagerungsbildes speichern, so dass Du es nicht jedes Mal neu positionieren musst. Bitte aktiviere die untenstehende Option, wenn Du möchtest, dass sich Icons die Position merkt."
+            "value" : "Wenn Du häufig Überlagerungsbilder zu einem Installations-Icon hinzufügst und diese immer die gleiche Größe haben und in der gleichen Position angezeigt werden sollen, kann Icons die letzte Größe und Position des Überlagerungsbildes speichern, so dass Du es nicht jedes Mal neu positionieren musst. Bitte aktiviere die unten stehende Option, wenn Du möchtest, dass sich Icons die Position merkt."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "If you frequently add overlay images to an install icon and the overlay images always have the same size and need to be displayed in the same position, Icons can remember the last size and position of the overlay image so you do not have to reposition it each time. Please enable the option below if you want Icons to remember the position."
+          }
+        }
+      }
+    },
+    "Dwv-bm-otT.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"Dwv-bm-otT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Min"
+          }
+        }
+      }
+    },
+    "E13-eJ-aBj.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Choose…\"; ObjectID = \"E13-eJ-aBj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen …"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose…"
           }
         }
       }
@@ -473,6 +910,96 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Close"
+          }
+        }
+      }
+    },
+    "ERO-1i-i7j.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Off\"; ObjectID = \"ERO-1i-i7j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Off"
+          }
+        }
+      }
+    },
+    "F0p-P9-Eh6.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Top Right Corner\"; ObjectID = \"F0p-P9-Eh6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Right Corner"
+          }
+        }
+      }
+    },
+    "F0p-P9-Eh6.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Top Right Corner\"; ObjectID = \"F0p-P9-Eh6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Top Right Corner"
+          }
+        }
+      }
+    },
+    "f3z-FN-AoI.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"If you create an icon based on an image or using the Image Playground feature, the icon will be shaped like those introduced in macOS 26. To use the older icon shape from before macOS 26, please enable the option below.\"; ObjectID = \"f3z-FN-AoI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Du ein Icon auf Basis eines Bildes oder mithilfe der Funktion „Image Playground“ erstellst, bekommt das Icon die in macOS 26 eingeführte Form. Um die ältere Form aus der Zeit vor macOS 26 zu verwenden, aktiviere bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "If you create an icon based on an image or using the Image Playground feature, the icon will be shaped like those introduced in macOS 26. To use the older icon shape from before macOS 26, please enable the option below."
+          }
+        }
+      }
+    },
+    "f7D-Hm-x9d.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Image Playground\"; ObjectID = \"f7D-Hm-x9d\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image Playground"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Image Playground"
           }
         }
       }
@@ -549,6 +1076,24 @@
         }
       }
     },
+    "Gar-Em-Roc.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"None\"; ObjectID = \"Gar-Em-Roc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keiner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "None"
+          }
+        }
+      }
+    },
     "gDc-Pz-PXw.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Swap Colors\"; ObjectID = \"gDc-Pz-PXw\";",
       "extractionState" : "extracted_with_value",
@@ -567,6 +1112,24 @@
         }
       }
     },
+    "gEF-rQ-xvA.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Shadow Angle\"; ObjectID = \"gEF-rQ-xvA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schattenwinkel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shadow Angle"
+          }
+        }
+      }
+    },
     "Gqr-8q-VDo.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Copy\"; ObjectID = \"Gqr-8q-VDo\";",
       "extractionState" : "extracted_with_value",
@@ -581,6 +1144,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Copy"
+          }
+        }
+      }
+    },
+    "GrI-aZ-HNY.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Overlay Image\"; ObjectID = \"GrI-aZ-HNY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überlagerungsbild"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Overlay Image"
           }
         }
       }
@@ -639,6 +1220,24 @@
         }
       }
     },
+    "iLX-rB-R1d.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Use pre-macOS 26 icon shape\"; ObjectID = \"iLX-rB-R1d\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alte Icon-Form verwenden (wie vor macOS 26)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use pre-macOS 26 icon shape"
+          }
+        }
+      }
+    },
     "IM6-kP-SyW.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Minimize\"; ObjectID = \"IM6-kP-SyW\";",
       "extractionState" : "extracted_with_value",
@@ -676,19 +1275,19 @@
       }
     },
     "jfy-6a-gu3.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Create a new banner\"; ObjectID = \"jfy-6a-gu3\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Banner\"; ObjectID = \"jfy-6a-gu3\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neues Banner erstellen"
+            "value" : "Banner"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Create a new banner"
+            "value" : "Banner"
           }
         }
       }
@@ -705,6 +1304,24 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "JPg-8e-AJZ.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Default\"; ObjectID = \"JPg-8e-AJZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Default"
+          }
+        }
+      }
     },
     "jQP-sC-z5V.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Remember size and position of the overlay image\"; ObjectID = \"jQP-sC-z5V\";",
@@ -760,6 +1377,24 @@
         }
       }
     },
+    "kpj-bK-CdJ.label" : {
+      "comment" : "Class = \"NSTabViewItem\"; label = \"Composing\"; ObjectID = \"kpj-bK-CdJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Composing"
+          }
+        }
+      }
+    },
     "kPM-FU-3OA.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Zoom\"; ObjectID = \"kPM-FU-3OA\";",
       "extractionState" : "extracted_with_value",
@@ -779,19 +1414,37 @@
       }
     },
     "ktj-KO-fqu.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Margin:\"; ObjectID = \"ktj-KO-fqu\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Minimum Text Margin\"; ObjectID = \"ktj-KO-fqu\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rand:"
+            "value" : "Minimaler Textrand"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Margin:"
+            "value" : "Minimum Text Margin"
+          }
+        }
+      }
+    },
+    "Kyc-tm-u7m.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"By default, this application uses the image as it is when creating an icon based on an image. To render your images in a macOS icon shape instead, please enable the option below.\"; ObjectID = \"Kyc-tm-u7m\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardmäßig verwendet dieses Programm das Bild unverändert, wenn ein Icon auf Basis eines Bildes erstellt wird. Um Deine Bilder stattdessen in der Form eines macOS Icons darzustellen, aktiviere bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "By default, this application uses the image as it is when creating an icon based on an image. To render your images in a macOS icon shape instead, please enable the option below."
           }
         }
       }
@@ -833,19 +1486,68 @@
       }
     },
     "lDV-Sm-BrH.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Overlay Image Size:\"; ObjectID = \"lDV-Sm-BrH\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Image Size\"; ObjectID = \"lDV-Sm-BrH\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Größe des Überlagerungsbildes:"
+            "value" : "Bildgröße"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Overlay Image Size:"
+            "value" : "Image Size"
+          }
+        }
+      }
+    },
+    "LHY-eK-IWs.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"LHY-eK-IWs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "LKq-zL-3wC.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"None\"; ObjectID = \"LKq-zL-3wC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keiner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "None"
+          }
+        }
+      }
+    },
+    "LNq-xg-qtk.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Custom Delete Badge\"; ObjectID = \"LNq-xg-qtk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzerdefiniertes Löschsymbol"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Custom Delete Badge"
           }
         }
       }
@@ -898,6 +1600,24 @@
         }
       }
     },
+    "nLh-yK-jr0.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Off\"; ObjectID = \"nLh-yK-jr0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Off"
+          }
+        }
+      }
+    },
     "Nny-mn-GoN.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Preferences…\"; ObjectID = \"Nny-mn-GoN\";",
       "extractionState" : "extracted_with_value",
@@ -912,6 +1632,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Preferences…"
+          }
+        }
+      }
+    },
+    "nOk-my-Y6N.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Angle\"; ObjectID = \"nOk-my-Y6N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winkel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Angle"
           }
         }
       }
@@ -934,8 +1672,26 @@
         }
       }
     },
+    "nRL-du-1jh.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Margin\"; ObjectID = \"nRL-du-1jh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rand"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Margin"
+          }
+        }
+      }
+    },
     "Nsh-td-3I7.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Auto-adjust image size\"; ObjectID = \"Nsh-td-3I7\";",
+      "comment" : "Class = \"NSButtonCell\"; title = \"Auto-adjust Image Size\"; ObjectID = \"Nsh-td-3I7\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
@@ -947,7 +1703,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Auto-adjust image size"
+            "value" : "Auto-adjust Image Size"
           }
         }
       }
@@ -1024,6 +1780,24 @@
         }
       }
     },
+    "OlS-Tr-pkb.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"OlS-Tr-pkb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
     "Os8-hQ-WCq.title" : {
       "comment" : "Class = \"NSViewController\"; title = \"Install\"; ObjectID = \"Os8-hQ-WCq\";",
       "extractionState" : "extracted_with_value",
@@ -1096,20 +1870,92 @@
         }
       }
     },
-    "pTx-ab-4hu.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Adjust Image Size:\"; ObjectID = \"pTx-ab-4hu\";",
+    "P9O-mJ-1gA.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"P9O-mJ-1gA\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bildgröße anpassen:"
+            "value" : "Max"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Adjust Image Size:"
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "PHb-yo-cnr.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Delete badge:\"; ObjectID = \"PHb-yo-cnr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschsymbol:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete badge:"
+          }
+        }
+      }
+    },
+    "pTx-ab-4hu.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Reduce Image Size\"; ObjectID = \"pTx-ab-4hu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild verkleinern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reduce Image Size"
+          }
+        }
+      }
+    },
+    "Qaf-qR-mve.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSColorWell\"; ibShadowedToolTip = \"Click here to change the color of the shadow.\"; ObjectID = \"Qaf-qR-mve\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke hier, um die Farbe des Schattens zu ändern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Click here to change the color of the shadow."
+          }
+        }
+      }
+    },
+    "qKc-WC-fQN.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Paste Image\"; ObjectID = \"qKc-WC-fQN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild einsetzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Paste Image"
           }
         }
       }
@@ -1168,20 +2014,38 @@
         }
       }
     },
-    "Ri3-y0-h0V.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text:\"; ObjectID = \"Ri3-y0-h0V\";",
+    "rGn-7h-N8J.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"rGn-7h-N8J\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text:"
+            "value" : "Min"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Text:"
+            "value" : "Min"
+          }
+        }
+      }
+    },
+    "Ri3-y0-h0V.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text\"; ObjectID = \"Ri3-y0-h0V\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text"
           }
         }
       }
@@ -1259,19 +2123,19 @@
       }
     },
     "rZY-vV-Lp9.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Font:\"; ObjectID = \"rZY-vV-Lp9\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Font\"; ObjectID = \"rZY-vV-Lp9\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schrift:"
+            "value" : "Schrift"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Font:"
+            "value" : "Font"
           }
         }
       }
@@ -1308,6 +2172,114 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Save Banner"
+          }
+        }
+      }
+    },
+    "sZk-7E-296.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Add Drop Shadow\"; ObjectID = \"sZk-7E-296\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schlagschatten hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Drop Shadow"
+          }
+        }
+      }
+    },
+    "t5e-4j-fxj.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Shadow Radius\"; ObjectID = \"t5e-4j-fxj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schattenradius"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shadow Radius"
+          }
+        }
+      }
+    },
+    "tdK-fa-1VB.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSButton\"; ibExternalAccessibilityDescription = \"Bottom Right Corner\"; ObjectID = \"tdK-fa-1VB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Right Corner"
+          }
+        }
+      }
+    },
+    "tdK-fa-1VB.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Bottom Right Corner\"; ObjectID = \"tdK-fa-1VB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untere rechte Ecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottom Right Corner"
+          }
+        }
+      }
+    },
+    "TiL-Lm-OqJ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"TiL-Lm-OqJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "ua7-88-kVx.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"General\"; ObjectID = \"ua7-88-kVx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "General"
           }
         }
       }
@@ -1366,38 +2338,128 @@
         }
       }
     },
-    "USH-6F-yYJ.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Color:\"; ObjectID = \"USH-6F-yYJ\";",
+    "uOB-qK-m2o.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Min\"; ObjectID = \"uOB-qK-m2o\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Textfarbe:"
+            "value" : "Min"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Text Color:"
+            "value" : "Min"
+          }
+        }
+      }
+    },
+    "USH-6F-yYJ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Color\"; ObjectID = \"USH-6F-yYJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Textfarbe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Color"
+          }
+        }
+      }
+    },
+    "v6S-ey-SlQ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"v6S-ey-SlQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "vG7-Nd-MIE.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Long\"; ObjectID = \"vG7-Nd-MIE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lang"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long"
+          }
+        }
+      }
+    },
+    "VQR-wR-IOK.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Position\"; ObjectID = \"VQR-wR-IOK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Position"
+          }
+        }
+      }
+    },
+    "w0g-f9-7OD.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Height\"; ObjectID = \"w0g-f9-7OD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Höhe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Height"
           }
         }
       }
     },
     "w3N-cI-ufw.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Position:\"; ObjectID = \"w3N-cI-ufw\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Position\"; ObjectID = \"w3N-cI-ufw\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Position:"
+            "value" : "Position"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Position:"
+            "value" : "Position"
           }
         }
       }
@@ -1416,6 +2478,42 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "You can add a prefix to the icon files created by this application. Unless otherwise specified, the prefix is either the name of the application or the name of the image file you selected to create the icon set. If you want to add a prefix, please enable the option below."
+          }
+        }
+      }
+    },
+    "Wj1-si-iY6.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"Wj1-si-iY6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "wka-K8-1eZ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"This application adds a delete badge to the uninstall icon in the top left corner. To use your own badge instead of the default one, please select an image file using the menu below or paste an SVG symbol that you previously copied from SF Symbols.\\n\\nSF Symbols can be obtained for free directly from Apple. To download it, go to https://developer.apple.com/sf-symbols/.\"; ObjectID = \"wka-K8-1eZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Programm fügt dem Deinstallations-Icon oben links ein Löschsymbol hinzu. Wenn Du anstatt des Standardsymbols Dein eigenes Symbol verwenden möchtest, dann wähle bitte eine Bilddatei über das unten stehende Menü aus, oder füge ein SVG-Symbol ein, welches Du vorher in SF Symbols kopiert hast.\n\nSF Symbols kann kostenlos direkt von Apple bezogen werden. Gehe einfach auf https://developer.apple.com/sf-symbols/, um es herunterzuladen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This application adds a delete badge to the uninstall icon in the top left corner. To use your own badge instead of the default one, please select an image file using the menu below or paste an SVG symbol that you previously copied from SF Symbols.\n\nSF Symbols can be obtained for free directly from Apple. To download it, go to https://developer.apple.com/sf-symbols/."
           }
         }
       }
@@ -1456,6 +2554,24 @@
         }
       }
     },
+    "Xq1-8h-tBx.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Shadow Offset\"; ObjectID = \"Xq1-8h-tBx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versatz des Schattens"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shadow Offset"
+          }
+        }
+      }
+    },
     "y1x-ul-4KX.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Use default settings for Finder extension\"; ObjectID = \"y1x-ul-4KX\";",
       "extractionState" : "extracted_with_value",
@@ -1463,7 +2579,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Standardeinstellungen für Finder-Erweiterung benutzen"
+            "value" : "Standardeinstellungen für Finder-Erweiterung verwenden"
           }
         },
         "en" : {
@@ -1632,6 +2748,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Paste"
+          }
+        }
+      }
+    },
+    "ZYI-0i-tSd.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Max\"; ObjectID = \"ZYI-0i-tSd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max"
           }
         }
       }

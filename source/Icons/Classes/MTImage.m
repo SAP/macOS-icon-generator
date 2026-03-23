@@ -1,18 +1,18 @@
 /*
-     MTImage.m
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTImage.m
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTImage.h"
@@ -123,9 +123,12 @@
     
     NSBitmapImageRep *bitmapData = [[NSBitmapImageRep alloc] initWithData:[self TIFFRepresentation]];
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0]
-                                                               forKey:NSImageCompressionFactor];
+                                                           forKey:NSImageCompressionFactor
+    ];
+    
     imageData = [bitmapData representationUsingType:NSBitmapImageFileTypePNG
-                                         properties:imageProps];
+                                         properties:imageProps
+    ];
     
     return imageData;
 }
@@ -133,6 +136,7 @@
 + (NSImage*)imageWithFileAtURL:(NSURL*)url
 {
     NSImage *returnImage = nil;
+    url = [url URLByResolvingSymlinksInPath];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
         
@@ -166,19 +170,38 @@
 
 + (NSImage*)imageWithView:(NSView*)view size:(NSSize)size;
 {
-    NSData *pdfData = [view dataWithPDFInsideRect:[view bounds]];
-    NSPDFImageRep *pdfImageRep = [NSPDFImageRep imageRepWithData:pdfData];
+    NSImage* scaledImage = nil;
     
-    NSImage* scaledImage = [NSImage imageWithSize:size
-                                          flipped:NO
-                                   drawingHandler:^BOOL(NSRect dstRect) {
+    if (view) {
         
-            [pdfImageRep drawInRect:dstRect];
+        NSRect rect = [view bounds];
+        
+        NSBitmapImageRep *imageRep = [view bitmapImageRepForCachingDisplayInRect:rect];
+        [view cacheDisplayInRect:rect toBitmapImageRep:imageRep];
+        
+        scaledImage = [NSImage imageWithSize:size
+                                     flipped:NO
+                              drawingHandler:^BOOL(NSRect dstRect) {
+            
+            [imageRep drawInRect:dstRect];
             return YES;
         }
-    ];
-
+        ];
+    }
+    
     return scaledImage;
+}
+
++ (void)imageWithView:(NSView*)view size:(NSSize)size completionHandler:(void (^)(NSImage *image))completionHandler
+{
+    if (completionHandler) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSImage* scaledImage = [self imageWithView:view size:size];
+            completionHandler(scaledImage);
+        });
+    }
 }
 
 @end

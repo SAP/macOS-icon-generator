@@ -1,18 +1,18 @@
 /*
-     MTInstallIconView.m
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTInstallIconView.m
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTInstallIconView.h"
@@ -24,14 +24,13 @@
 @property (nonatomic, strong, readwrite) MTOverlayImageView *overlayImageView;
 @property (nonatomic, strong, readwrite) MTBannerView *bannerView;
 @property (nonatomic, strong, readwrite) NSImage *image;
-@property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @end
 
 @implementation MTInstallIconView
 
 @dynamic image;
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) { [self setUpViews]; }
@@ -39,64 +38,65 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super initWithCoder:coder];
     if (self) { [self setUpViews]; }
 
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    MTInstallIconView *copiedView = [[[self class] allocWithZone:zone] initWithFrame:[self frame]];
+
+    if (copiedView) {
+        
+        [copiedView setOverlayImageScalingFactor:_overlayImageScalingFactor];
+        [copiedView setOverlayImageAspectRatio:_overlayImageAspectRatio];
+        [copiedView setOverlayPosition:_overlayPosition];
+        [copiedView setBannerAttributes:_bannerAttributes];
+        [copiedView setBannerPosition:_bannerPosition];
+        [copiedView setBannerTextMargin:_bannerTextMargin];
+        [copiedView setBannerAngle:_bannerAngle];
+        [copiedView setBannerHeight:_bannerHeight];
+        [copiedView setBannerMargin:_bannerMargin];
+        [copiedView setOverlayImage:[[_overlayImageView image] copyWithZone:zone]];
+        
+        // to make sure we don't get an icon shape in an icon shape
+        [copiedView setApplyIconShape:NO];
+        [copiedView setImage:[_image copyWithZone:zone]];
+        [copiedView setApplyIconShape:_applyIconShape];
+        [copiedView setUsesOldIconShape:_usesOldIconShape];
+        [copiedView setIsAppBundle:_isAppBundle];
+        [copiedView setDrawBannerInIconShape:_drawBannerInIconShape];
+        [copiedView setUnmodifiedImage:[_unmodifiedImage copyWithZone:zone]];
+    }
+    
+    return copiedView;
+}
+
 - (void)setUpViews
 {
-    _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"7R5ZEU67FQ.corp.sap.Icons"];
-    
+    // for the overlay image…
     [self registerForDraggedTypes:[NSImage imageTypes]];
     
     // add our container view that holds our images
     _containerView = [[NSView alloc] initWithFrame:[self bounds]];
     [_containerView setWantsLayer:YES];
     [_containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [[_containerView layer] setMasksToBounds:YES];
     [self addSubview:_containerView];
     
     // add constraints
-    NSLayoutConstraint *containerLeft = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                    multiplier:1
-                                                                      constant:7];
-    
-    NSLayoutConstraint *containerRight = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                     multiplier:1
-                                                                       constant:-7];
-    
-    NSLayoutConstraint *containerTop = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                    attribute:NSLayoutAttributeTop
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self
-                                                                    attribute:NSLayoutAttributeTop
-                                                                   multiplier:1
-                                                                     constant:7];
-    
-    NSLayoutConstraint *containerBottom = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:self
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                      multiplier:1
-                                                                        constant:-7];
-    
+    NSLayoutConstraint *containerLeft = [[_containerView leadingAnchor] constraintEqualToAnchor:[self leadingAnchor] constant:7];
+    NSLayoutConstraint *containerRight = [[_containerView trailingAnchor] constraintEqualToAnchor:[self trailingAnchor] constant:-7];
+    NSLayoutConstraint *containerTop = [[_containerView topAnchor] constraintEqualToAnchor:[self topAnchor] constant:7];
+    NSLayoutConstraint *containerBottom = [[_containerView bottomAnchor] constraintEqualToAnchor:[self bottomAnchor] constant:-7];
     [self addConstraints:[NSArray arrayWithObjects:containerLeft, containerRight, containerTop, containerBottom, nil]];
     
     // create the icon image
     _imageView = [[NSImageView alloc] initWithFrame:[_containerView bounds]];
+    [_imageView setWantsLayer:YES];
     [_imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_imageView setImageScaling:NSImageScaleProportionallyUpOrDown];
     [_imageView unregisterDraggedTypes];
@@ -107,43 +107,16 @@
     [_containerView addSubview:_imageView];
     
     // add constraints
-    NSLayoutConstraint *imageCenterX = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1
-                                                                     constant:0];
-    
-    NSLayoutConstraint *imageCenterY = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1
-                                                                     constant:0];
-    
-    NSLayoutConstraint *imageWidth = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:_containerView
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                 multiplier:3
-                                                                   constant:0];
-    
-    NSLayoutConstraint *imageHeight = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:_containerView
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                  multiplier:1
-                                                                    constant:0];
-    
+    NSLayoutConstraint *imageCenterX = [[_imageView centerXAnchor] constraintEqualToAnchor:[_containerView centerXAnchor]];
+    NSLayoutConstraint *imageCenterY = [[_imageView centerYAnchor] constraintEqualToAnchor:[_containerView centerYAnchor]];
+    NSLayoutConstraint *imageWidth = [[_imageView widthAnchor] constraintEqualToAnchor:[_containerView widthAnchor] multiplier:1];
+    NSLayoutConstraint *imageHeight = [[_imageView heightAnchor] constraintEqualToAnchor:[_containerView heightAnchor] multiplier:1];
     [_containerView addConstraints:[NSArray arrayWithObjects:imageCenterX, imageCenterY, imageWidth, imageHeight, nil]];
     
     // add the overlay view
     _overlayImageView = [[MTOverlayImageView alloc] initWithFrame:[_containerView bounds]];
     [_overlayImageView setDelegate:self];
+    [_overlayImageView setWantsLayer:YES];
     [_overlayImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_overlayImageView setImageScaling:NSImageScaleProportionallyUpOrDown];
     [_overlayImageView unregisterDraggedTypes];
@@ -155,95 +128,27 @@
     _overlayPosition = NSMakePoint(1, 1);
     _overlayImageScalingFactor = kMTOverlayImageScalingDefault;
     _overlayImageAspectRatio = 1;
-    
-    if ([_userDefaults boolForKey:kMTDefaultsRememberOverlayPositionKey]) {
-
-        _overlayImageScalingFactor = ([_userDefaults floatForKey:kMTDefaultsOverlayScalingKey] > 0) ? [_userDefaults floatForKey:kMTDefaultsOverlayScalingKey] : _overlayImageScalingFactor;
-        
-        NSString *storedPositionString = [_userDefaults stringForKey:kMTDefaultsOverlayPositionKey];
-        
-        if (storedPositionString) {
-            
-            NSPoint storedPosition = NSPointFromString(storedPositionString);
-            if (storedPosition.x > 0 && storedPosition.y > 0) { _overlayPosition = storedPosition; }
-        }
-    }
   
     // add constraints
-    NSLayoutConstraint *overlayCenterX = [NSLayoutConstraint constraintWithItem:_overlayImageView
-                                                                      attribute:NSLayoutAttributeCenterX
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:_containerView
-                                                                      attribute:NSLayoutAttributeCenterX
-                                                                     multiplier:_overlayPosition.x
-                                                                       constant:0
-    ];
-    
-    NSLayoutConstraint *overlayCenterY = [NSLayoutConstraint constraintWithItem:_overlayImageView
-                                                                      attribute:NSLayoutAttributeCenterY
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:_containerView
-                                                                      attribute:NSLayoutAttributeCenterY
-                                                                     multiplier:_overlayPosition.y
-                                                                       constant:0
-    ];
-    
-    NSLayoutConstraint *overlayWidth = [NSLayoutConstraint constraintWithItem:_overlayImageView
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                   multiplier:_overlayImageScalingFactor
-                                                                     constant:0
-    ];
-    
+    NSLayoutConstraint *overlayCenterX = [[_overlayImageView centerXAnchor] constraintEqualToAnchor:[_containerView centerXAnchor]];
+    NSLayoutConstraint *overlayCenterY = [[_overlayImageView centerYAnchor] constraintEqualToAnchor:[_containerView centerYAnchor]];
+    NSLayoutConstraint *overlayWidth = [[_overlayImageView widthAnchor] constraintEqualToAnchor:[_containerView widthAnchor] multiplier:_overlayImageScalingFactor];
 
     [_containerView addSubview:_overlayImageView];
     [_containerView addConstraints:[NSArray arrayWithObjects:overlayCenterX, overlayCenterY, overlayWidth, nil]];
     
     // add the banner overlay
     _bannerView = [[MTBannerView alloc] initWithFrame:[_containerView bounds]];
+    [_bannerView setWantsLayer:YES];
     [_bannerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_bannerView setMinimumTextMargin:kMTBannerTextMarginDefault];
     [_containerView addSubview:_bannerView];
     
     // add constraints
-    NSLayoutConstraint *bannerLeft = [NSLayoutConstraint constraintWithItem:_bannerView
-                                                                  attribute:NSLayoutAttributeLeading
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:_containerView
-                                                                  attribute:NSLayoutAttributeLeading
-                                                                 multiplier:1
-                                                                   constant:0
-    ];
-    
-    NSLayoutConstraint *bannerTop = [NSLayoutConstraint constraintWithItem:_bannerView
-                                                                 attribute:NSLayoutAttributeTop
-                                                                 relatedBy:NSLayoutRelationEqual
-                                                                    toItem:_containerView
-                                                                 attribute:NSLayoutAttributeTop
-                                                                multiplier:1
-                                                                  constant:0
-    ];
-    
-    NSLayoutConstraint *bannerWidth = [NSLayoutConstraint constraintWithItem:_bannerView
-                                                                   attribute:NSLayoutAttributeTrailing
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:_containerView
-                                                                   attribute:NSLayoutAttributeTrailing
-                                                                  multiplier:1
-                                                                    constant:0
-    ];
-    
-    NSLayoutConstraint *bannerHeight = [NSLayoutConstraint constraintWithItem:_bannerView
-                                                                    attribute:NSLayoutAttributeBottom
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeBottom
-                                                                   multiplier:1
-                                                                     constant:0
-    ];
-    
+    NSLayoutConstraint *bannerLeft = [[_bannerView leadingAnchor] constraintEqualToAnchor:[_containerView leadingAnchor]];
+    NSLayoutConstraint *bannerTop = [[_bannerView topAnchor] constraintEqualToAnchor:[_containerView topAnchor]];
+    NSLayoutConstraint *bannerWidth = [[_bannerView trailingAnchor] constraintEqualToAnchor:[_containerView trailingAnchor]];
+    NSLayoutConstraint *bannerHeight = [[_bannerView bottomAnchor] constraintEqualToAnchor:[_containerView bottomAnchor]];
     [_containerView addConstraints:[NSArray arrayWithObjects:bannerLeft, bannerTop, bannerWidth, bannerHeight, nil]];
     
     [self layoutSubtreeIfNeeded];
@@ -251,11 +156,8 @@
 
 - (void)setImage:(NSImage *)image
 {
-    // make sure the MTDropView's layer with tag 1 is hidden
-    [[self viewWithTag:1] setHidden:YES];
-    
-    _image = image;
-    [_imageView setImage:image];
+    [super setImage:image];
+    [_imageView setImage:_image];
 }
 
 - (NSImage*)overlayImage
@@ -272,34 +174,7 @@
         
         [_overlayImageView setImage:image];
         [self setOverlayImageAspectRatio:aspectRatio];
-        
-        // reset size and position
-        if (![_userDefaults boolForKey:kMTDefaultsRememberOverlayPositionKey]) {
-            
-            [self setOverlayImageScalingFactor:kMTOverlayImageScalingDefault];
-            
-            CGFloat overlayInitialWidth = NSWidth([_containerView bounds]) * _overlayImageScalingFactor;
-            NSPoint initialPosition = [self overlayMultiplierWithRect:NSMakeRect(
-                                                                                 NSMidX([_containerView bounds]) - (overlayInitialWidth / 2),
-                                                                                 NSMidY([_containerView bounds]) - (overlayInitialWidth / 2),
-                                                                                 overlayInitialWidth,
-                                                                                 overlayInitialWidth
-                                                                                 )
-            ];
-            
-            [self setOverlayPosition:(NSPoint)initialPosition];
-        }
     }
-}
-
-- (NSPoint)overlayMultiplierWithRect:(NSRect)rect
-{
-    NSPoint multiplier = {1, 1};
-
-    multiplier.x = (rect.origin.x * 2 + NSWidth(rect)) / NSWidth([_containerView frame]);
-    multiplier.y = (2 * (rect.origin.y - (NSHeight([_containerView frame]) - (NSHeight(rect) / 2)))) / -NSHeight([_containerView frame]);
-
-    return multiplier;
 }
 
 - (void)setBannerAttributes:(NSAttributedString*)attributedString
@@ -320,6 +195,30 @@
     [_bannerView setMinimumTextMargin:margin];
 }
 
+- (void)setBannerHeight:(CGFloat)height
+{
+    _bannerHeight = height;
+    [_bannerView setHeight:height];
+}
+
+- (void)setBannerAngle:(CGFloat)angle
+{
+    _bannerAngle = angle;
+    [_bannerView setAngle:angle];
+}
+
+- (void)setBannerMargin:(CGFloat)margin
+{
+    _bannerMargin = margin;
+    [_bannerView setMargin:margin];
+}
+
+- (void)setDrawBannerInIconShape:(BOOL)drawBannerInIconShape
+{
+    _drawBannerInIconShape = drawBannerInIconShape;
+    [_bannerView setClipToIconShape:drawBannerInIconShape];
+}
+
 - (void)setOverlayImageScalingFactor:(CGFloat)scalingFactor
 {
     _overlayImageScalingFactor = scalingFactor;
@@ -328,7 +227,6 @@
     NSArray *containerViewConstraints = [_containerView constraints];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstItem == %@ AND (firstAttribute == %d OR firstAttribute == %d)", _overlayImageView, NSLayoutAttributeWidth, NSLayoutAttributeHeight];
     NSArray *filteredArray = [containerViewConstraints filteredArrayUsingPredicate:predicate];
-    CGFloat newMultiplier = scalingFactor;
 
     for (NSLayoutConstraint *existingConstraint in filteredArray) {
 
@@ -337,7 +235,7 @@
                                                                          relatedBy:[existingConstraint relation]
                                                                             toItem:[existingConstraint secondItem]
                                                                          attribute:[existingConstraint secondAttribute]
-                                                                        multiplier:newMultiplier
+                                                                        multiplier:scalingFactor
                                                                           constant:[existingConstraint constant]
         ];
         [newConstraint setPriority:[existingConstraint priority]];
@@ -443,14 +341,19 @@
 
 - (NSView*)icon
 {
-    return _containerView;
+    // make sure we use an off-screen copy of the view
+    return [[self copy] containerView];
 }
 
 #pragma mark MTOverlayImageViewDelegate
 
 - (void)view:(MTOverlayImageView *)view didEndDraggingAtPoint:(NSPoint)point
 {
-    NSPoint newPoint = [self overlayMultiplierWithRect:NSMakeRect(point.x, point.y, NSWidth([view frame]), NSHeight([view frame]))];
+    NSPoint newPoint = NSMakePoint(
+                                   (point.x * 2.0 + NSWidth([view frame])) / NSWidth([_containerView frame]),
+                                   (2 * (point.y - (NSHeight([_containerView frame]) - (NSHeight([view frame]) / 2.0)))) / -NSHeight([_containerView frame])
+                                   );
+    
     [self setOverlayPosition:newPoint];
 }
 

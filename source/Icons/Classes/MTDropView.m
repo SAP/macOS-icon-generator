@@ -1,27 +1,29 @@
 /*
-     MTDropView.m
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTDropView.m
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTDropView.h"
 #import "MTImage.h"
+#import "Constants.h"
 #import <UniformTypeIdentifiers/UTCoreTypes.h>
 
 @interface MTDropView ()
-@property (nonatomic, strong, readwrite) NSImage *image;
+@property (nonatomic, strong, readwrite) NSView *dropZoneView;
 @property (nonatomic, assign) BOOL highlight;
+
 @end
 
 @implementation MTDropView
@@ -54,72 +56,56 @@
     [self addSubview:bezelImageView];
     
     // add constraints
-    NSLayoutConstraint *bezelViewLeft = [NSLayoutConstraint constraintWithItem:bezelImageView
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                    multiplier:1
-                                                                      constant:2];
-        
-    NSLayoutConstraint *bezelViewRight = [NSLayoutConstraint constraintWithItem:bezelImageView
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                     multiplier:1
-                                                                       constant:-2];
-    
-    NSLayoutConstraint *bezelViewTop = [NSLayoutConstraint constraintWithItem:bezelImageView
-                                                                    attribute:NSLayoutAttributeTop
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self
-                                                                    attribute:NSLayoutAttributeTop
-                                                                   multiplier:1
-                                                                     constant:2];
-
-    NSLayoutConstraint *bezelViewBottom = [NSLayoutConstraint constraintWithItem:bezelImageView
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:self
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                      multiplier:1
-                                                                        constant:-2];
-
+    NSLayoutConstraint *bezelViewLeft = [[bezelImageView leadingAnchor] constraintEqualToAnchor:[self leadingAnchor] constant:2.0];
+    NSLayoutConstraint *bezelViewRight = [[bezelImageView trailingAnchor] constraintEqualToAnchor:[self trailingAnchor] constant:-2.0];
+    NSLayoutConstraint *bezelViewTop = [[bezelImageView topAnchor] constraintEqualToAnchor:[self topAnchor] constant:2.0];
+    NSLayoutConstraint *bezelViewBottom = [[bezelImageView bottomAnchor] constraintEqualToAnchor:[self bottomAnchor] constant:-2.0];
     [self addConstraints:[NSArray arrayWithObjects:bezelViewLeft, bezelViewRight, bezelViewTop, bezelViewBottom, nil]];
     
-    NSTextField *dropLabelText = [NSTextField wrappingLabelWithString:NSLocalizedString(@"dropViewLabel", nil)];
-    [dropLabelText setAlignment:NSTextAlignmentCenter];
-    [dropLabelText setTag:1];
-    [dropLabelText setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self addSubview:dropLabelText];
+    _dropZoneView = [[NSView alloc] initWithFrame:[self bounds]];
+    [_dropZoneView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_dropZoneView unregisterDraggedTypes];
+    
+    NSImage *dropImage = [NSImage imageWithSystemSymbolName:@"photo.on.rectangle.angled" accessibilityDescription:nil];
+    NSImageView *dropImageView = [NSImageView imageViewWithImage:dropImage];
+    [dropImageView setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [dropImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [dropImageView unregisterDraggedTypes];
+    [_dropZoneView addSubview:dropImageView];
     
     // add constraints
-    NSLayoutConstraint *labelCenterX = [NSLayoutConstraint constraintWithItem:dropLabelText
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1
-                                                                     constant:0];
-        
-    NSLayoutConstraint *labelCenterY = [NSLayoutConstraint constraintWithItem:dropLabelText
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1
-                                                                     constant:0];
+    NSLayoutConstraint *imageTop = [[dropImageView topAnchor] constraintEqualToAnchor:[_dropZoneView topAnchor]];
+    NSLayoutConstraint *imageWidth = [[dropImageView widthAnchor] constraintEqualToAnchor:[_dropZoneView widthAnchor] multiplier:.2];
+    NSLayoutConstraint *imageHeight = [[dropImageView heightAnchor] constraintEqualToAnchor:[dropImageView widthAnchor]];
+    NSLayoutConstraint *imageCenterX = [[dropImageView centerXAnchor] constraintEqualToAnchor:[_dropZoneView centerXAnchor]];
+    [_dropZoneView addConstraints:[NSArray arrayWithObjects:imageTop, imageWidth, imageHeight, imageCenterX, nil]];
     
-    NSLayoutConstraint *labelRatio = [NSLayoutConstraint constraintWithItem:dropLabelText
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self
-                                                                  attribute:NSLayoutAttributeHeight
-                                                                 multiplier:.6
-                                                                   constant:0];
-
-    [self addConstraints:[NSArray arrayWithObjects:labelCenterX, labelCenterY, labelRatio, nil]];
+    NSTextField *dropLabelText = nil;
+    
+    if (@available(macOS 15.1, *)) {
+        dropLabelText = [NSTextField wrappingLabelWithString:NSLocalizedString(@"dropViewLabelPlayground", nil)];
+    } else {
+        dropLabelText = [NSTextField wrappingLabelWithString:NSLocalizedString(@"dropViewLabel", nil)];
+    }
+    
+    [dropLabelText setAlignment:NSTextAlignmentCenter];
+    [dropLabelText setSelectable:NO];
+    [dropLabelText setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_dropZoneView addSubview:dropLabelText];
+    
+    // add constraints
+    NSLayoutConstraint *labelTop = [[dropLabelText topAnchor] constraintEqualToAnchor:[dropImageView bottomAnchor]];
+    NSLayoutConstraint *labelBottom = [[dropLabelText bottomAnchor] constraintEqualToAnchor:[_dropZoneView bottomAnchor]];
+    NSLayoutConstraint *labelLeading = [[dropLabelText leadingAnchor] constraintEqualToAnchor:[_dropZoneView leadingAnchor]];
+    NSLayoutConstraint *labelTrailing = [[dropLabelText trailingAnchor] constraintEqualToAnchor:[_dropZoneView trailingAnchor]];
+    [_dropZoneView addConstraints:[NSArray arrayWithObjects:labelTop, labelBottom, labelLeading, labelTrailing, nil]];
+    
+    [self addSubview:_dropZoneView];
+    
+    NSLayoutConstraint *dropZoneViewCenterX = [[_dropZoneView centerXAnchor] constraintEqualToAnchor:[self centerXAnchor]];
+    NSLayoutConstraint *dropZoneViewCenterY = [[_dropZoneView centerYAnchor] constraintEqualToAnchor:[self centerYAnchor]];
+    NSLayoutConstraint *dropZoneViewWidthRatio = [[_dropZoneView widthAnchor] constraintEqualToAnchor:[self widthAnchor] multiplier:.6];
+    [self addConstraints:[NSArray arrayWithObjects:dropZoneViewCenterX, dropZoneViewCenterY, dropZoneViewWidthRatio, nil]];
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -137,10 +123,29 @@
 
 - (void)setImage:(NSImage *)image
 {
-    [[self viewWithTag:1] setHidden:YES];
-    _image = image;
+    [_dropZoneView setHidden:YES];
+    _unmodifiedImage = image;
+    
+    if (!_isAppBundle && _applyIconShape) {
+        
+        MTIconView *iconView = [[MTIconView alloc] initWithFrame:NSMakeRect(0, 0, kMTOutputSizeMax, kMTOutputSizeMax)];
+        [iconView setUsesOldIconShape:_usesOldIconShape];
+        [iconView setImage:image];
+                
+        _image = [NSImage imageWithView:iconView size:NSMakeSize(kMTOutputSizeMax, kMTOutputSizeMax)];
+       
+    } else {
+        
+        _image = image;
+    }
 }
 
+- (void)mouseDown:(NSEvent *)event
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(view:hasBeenClickedAtLocation:)]) {
+        [_delegate view:self hasBeenClickedAtLocation:[event locationInWindow]];
+    }
+}
 
 #pragma mark dragging methods
 
@@ -150,20 +155,21 @@
     _highlight = NO;
     
     NSPasteboard *pboard = [sender draggingPasteboard];
-    NSArray *supportedFileTypes = [NSArray arrayWithObjects:UTTypeImage, UTTypeApplicationBundle, nil];
+    NSArray *supportedFileTypes = [NSArray arrayWithObjects:UTTypeImage, UTTypePDF, UTTypeApplicationBundle, nil];
 
     if ([[pboard types] containsObject:NSPasteboardTypeFileURL]) {
         
         NSURL *imageURL = [NSURL URLFromPasteboard:pboard];
+        imageURL = [imageURL URLByResolvingSymlinksInPath];
+        
         id utiValue = nil;
         [imageURL getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
 
         if (utiValue) {
             
             BOOL isSupported = NO;
-            
             UTType *fileType = [UTType typeWithIdentifier:utiValue];
-            
+
             for (UTType *type in supportedFileTypes) {
                 
                 if ([fileType conformsToType:type]) {
@@ -214,7 +220,7 @@
     return YES;
 }
 
-- (BOOL)performDragOperation:(id < NSDraggingInfo >)sender
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
     BOOL success = NO;
     
@@ -223,12 +229,16 @@
 
     if ([currentImage isValid]) {
         
+        id utiValue = nil;
+        [imageURL getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
+        _isAppBundle = [utiValue isEqualTo:[UTTypeApplicationBundle identifier]];
+        
         [self setImage:currentImage];
         
-        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImageAtURL:)]) {
-            [_delegate view:self didChangeImageAtURL:imageURL];
+        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImage:applicationBundle:)]) {
+            [_delegate view:self didChangeImage:[currentImage copy] applicationBundle:_isAppBundle];
         }
-        
+                
         [self setNeedsDisplay:YES];
         success = YES;
     }

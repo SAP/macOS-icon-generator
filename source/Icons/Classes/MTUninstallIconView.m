@@ -1,34 +1,35 @@
 /*
-     MTUninstallIconView.m
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTUninstallIconView.m
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTUninstallIconView.h"
+#import "MTColorValueTransformer.h"
 
 @interface MTUninstallIconView ()
 @property (nonatomic, strong, readwrite) NSView *containerView;
 @property (nonatomic, strong, readwrite) NSImageView *imageView;
-@property (nonatomic, strong, readwrite) NSImageView *closeBoxView;
 @property (nonatomic, strong, readwrite) NSImage *image;
+@property (assign) BOOL hasCustomDeleteBadge;
 @end
 
 @implementation MTUninstallIconView
 
 @dynamic image;
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) { [self setUpViews]; }
@@ -36,16 +37,41 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super initWithCoder:coder];
     if (self) { [self setUpViews]; }
 
     return self;
 }
 
-- (void)setUpViews
+- (id)copyWithZone:(NSZone *)zone
 {
+    MTUninstallIconView *copiedView = [[[self class] allocWithZone:zone] initWithFrame:[self frame]];
+    
+    if (copiedView) {
+        
+        // to make sure we don't get an icon shape in an icon shape
+        [copiedView setApplyIconShape:NO];
+        [copiedView setImage:[_image copyWithZone:zone]];
+        [copiedView setApplyIconShape:_applyIconShape];
+        [copiedView setUsesOldIconShape:_usesOldIconShape];
+        [copiedView setIsAppBundle:_isAppBundle];
+        [copiedView setUnmodifiedImage:[_unmodifiedImage copyWithZone:zone]];
+        
+        [copiedView setImageInset:_imageInset];
+        [copiedView setBadgeSize:_badgeSize];
+        [copiedView setBadgePosition:_badgePosition];
+        [copiedView setBadgeMargin:_badgeMargin];
+        [copiedView setAutoInsetEnabled:_autoInsetEnabled];
+        [copiedView setDeleteBadge:_deleteBadge];
+    }
+    
+    return copiedView;
+}
+
+- (void)setUpViews
+{    
     // add our container view that holds our images
     _containerView = [[NSView alloc] initWithFrame:[self bounds]];
     [_containerView setWantsLayer:YES];
@@ -54,42 +80,15 @@
     [self addSubview:_containerView];
     
     // add constraints
-    NSLayoutConstraint *containerLeft = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                    multiplier:1
-                                                                      constant:7];
-        
-    NSLayoutConstraint *containerRight = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                     multiplier:1
-                                                                       constant:-7];
-    
-    NSLayoutConstraint *containerTop = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                    attribute:NSLayoutAttributeTop
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self
-                                                                    attribute:NSLayoutAttributeTop
-                                                                   multiplier:1
-                                                                     constant:7];
-
-    NSLayoutConstraint *containerBottom = [NSLayoutConstraint constraintWithItem:_containerView
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:self
-                                                                       attribute:NSLayoutAttributeBottom
-                                                                      multiplier:1
-                                                                        constant:-7];
-
+    NSLayoutConstraint *containerLeft = [[_containerView leadingAnchor] constraintEqualToAnchor:[self leadingAnchor] constant:7];
+    NSLayoutConstraint *containerRight = [[_containerView trailingAnchor] constraintEqualToAnchor:[self trailingAnchor] constant:-7];
+    NSLayoutConstraint *containerTop = [[_containerView topAnchor] constraintEqualToAnchor:[self topAnchor] constant:7];
+    NSLayoutConstraint *containerBottom = [[_containerView bottomAnchor] constraintEqualToAnchor:[self bottomAnchor] constant:-7];
     [self addConstraints:[NSArray arrayWithObjects:containerLeft, containerRight, containerTop, containerBottom, nil]];
     
     // create the icon image
     _imageView = [[NSImageView alloc] initWithFrame:[_containerView bounds]];
+    [_imageView setWantsLayer:YES];
     [_imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_imageView setImageScaling:NSImageScaleProportionallyUpOrDown];
     [_imageView unregisterDraggedTypes];
@@ -100,99 +99,40 @@
     [_containerView addSubview:_imageView];
     
     // add constraints
-    NSLayoutConstraint *imageCenterX = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1
-                                                                     constant:0];
-        
-    NSLayoutConstraint *imageCenterY = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1
-                                                                     constant:0];
-    
-    NSLayoutConstraint *imageWidth = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:_containerView
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                 multiplier:1
-                                                                   constant:0];
-
-    NSLayoutConstraint *imageHeight = [NSLayoutConstraint constraintWithItem:_imageView
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:_containerView
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                  multiplier:1
-                                                                    constant:0];
-
+    NSLayoutConstraint *imageCenterX = [[_imageView centerXAnchor] constraintEqualToAnchor:[_containerView centerXAnchor]];
+    NSLayoutConstraint *imageCenterY = [[_imageView centerYAnchor] constraintEqualToAnchor:[_containerView centerYAnchor]];
+    NSLayoutConstraint *imageWidth = [[_imageView widthAnchor] constraintEqualToAnchor:[_containerView widthAnchor] multiplier:1];
+    NSLayoutConstraint *imageHeight = [[_imageView heightAnchor] constraintEqualToAnchor:[_containerView heightAnchor] multiplier:1];
     [_containerView addConstraints:[NSArray arrayWithObjects:imageCenterX, imageCenterY, imageWidth, imageHeight, nil]];
 
-    NSImage *closeBoxImage = [[NSBundle containerBundleForClass:[self class]] imageForResource:@"closebox"];
+    _deleteBadge = [[MTDeleteBadgeView alloc] initWithFrame:[_containerView bounds]];
+    [self setDeleteBadge:nil];
+    [_deleteBadge setHidden:YES];
+    [_deleteBadge setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_deleteBadge setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [_deleteBadge setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow forOrientation:NSLayoutConstraintOrientationHorizontal];
+    [_deleteBadge setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow forOrientation:NSLayoutConstraintOrientationVertical];
+    [_containerView addSubview:_deleteBadge];
+    
+    // add constraints for width and height
+    NSLayoutConstraint *deleteBadgeWidth = [[_deleteBadge widthAnchor] constraintEqualToAnchor:[_containerView widthAnchor] multiplier:kMTBadgeIconSizeDefault];
+    NSLayoutConstraint *deleteBadgeHeight = [[_deleteBadge heightAnchor] constraintEqualToAnchor:[_containerView heightAnchor] multiplier:kMTBadgeIconSizeDefault];
+    [_containerView addConstraints:[NSArray arrayWithObjects:deleteBadgeWidth, deleteBadgeHeight, nil]];
+    
+    // add constraints for the badge position
+    [self setBadgePosition:MTBadgePositionTopLeft];
 
-    _closeBoxView = [[NSImageView alloc] initWithFrame:[_containerView bounds]];
-    [_closeBoxView setImage:closeBoxImage];
-    [_closeBoxView setHidden:YES];
-    [_closeBoxView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [_closeBoxView setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow forOrientation:NSLayoutConstraintOrientationHorizontal];
-    [_closeBoxView setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow forOrientation:NSLayoutConstraintOrientationVertical];
-    [_containerView addSubview:_closeBoxView];
-    
-    // add constraints
-    NSLayoutConstraint *overlayLeft = [NSLayoutConstraint constraintWithItem:_closeBoxView
-                                                                   attribute:NSLayoutAttributeLeading
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:_containerView
-                                                                   attribute:NSLayoutAttributeLeading
-                                                                  multiplier:1
-                                                                    constant:0];
-    
-    NSLayoutConstraint *overlayTop = [NSLayoutConstraint constraintWithItem:_closeBoxView
-                                                                  attribute:NSLayoutAttributeTop
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:_containerView
-                                                                  attribute:NSLayoutAttributeTop
-                                                                 multiplier:1
-                                                                   constant:0];
-
-    NSLayoutConstraint *overlayWidth = [NSLayoutConstraint constraintWithItem:_closeBoxView
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:_containerView
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                   multiplier:0.23
-                                                                     constant:0];
-    
-    NSLayoutConstraint *overlayHeight = [NSLayoutConstraint constraintWithItem:_closeBoxView
-                                                                     attribute:NSLayoutAttributeHeight
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:_containerView
-                                                                     attribute:NSLayoutAttributeHeight
-                                                                    multiplier:0.23
-                                                                      constant:0];
-
-    [_containerView addConstraints:[NSArray arrayWithObjects:overlayLeft, overlayTop, overlayWidth, overlayHeight, nil]];
-    
     [self layoutSubtreeIfNeeded];
 }
 
 - (void)setImage:(NSImage *)image
 {
-    _image = image;
+    [super setImage:image];
     
     if ([_image isValid]) {
-        
-        // make sure the MTDropView's layer with tag 1 is hidden
-        [[self viewWithTag:1] setHidden:YES];
     
         [_imageView setImage:_image];
-        [_closeBoxView setHidden:NO];
+        [_deleteBadge setHidden:NO];
     
         // inset
         if (_autoInsetEnabled) { [self setImageInset:[self autoInset]]; }
@@ -225,6 +165,7 @@
                 CGImageRef imageRef =  CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
 
                 if (imageRef) {
+                    
                     size_t imageWidth = CGImageGetWidth(imageRef);
                     size_t imageHeight = CGImageGetHeight(imageRef);
 
@@ -283,10 +224,9 @@
     _imageInset = imageInset;
 
     // update the image view
-    NSArray *imageViewConstraints = [_containerView constraints];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstItem == %@ AND (firstAttribute = %d OR firstAttribute = %d)", _imageView, NSLayoutAttributeWidth, NSLayoutAttributeHeight];
-    NSArray *filteredArray = [imageViewConstraints filteredArrayUsingPredicate:predicate];
-    CGFloat newMultiplier = 1.0 - imageInset;
+    NSArray *constraints = [_containerView constraints];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstItem == %@ AND (firstAttribute == %d OR firstAttribute == %d)", _imageView, NSLayoutAttributeWidth, NSLayoutAttributeHeight];
+    NSArray *filteredArray = [constraints filteredArrayUsingPredicate:predicate];
 
     for (NSLayoutConstraint *existingConstraint in filteredArray) {
 
@@ -295,7 +235,7 @@
                                                                          relatedBy:[existingConstraint relation]
                                                                             toItem:[existingConstraint secondItem]
                                                                          attribute:[existingConstraint secondAttribute]
-                                                                        multiplier:newMultiplier
+                                                                        multiplier:1.0 - imageInset
                                                                           constant:[existingConstraint constant]
         ];
         [newConstraint setPriority:[existingConstraint priority]];
@@ -308,6 +248,142 @@
         
         [self layoutSubtreeIfNeeded];
     }
+}
+
+- (void)setBadgeSize:(CGFloat)badgeSize
+{
+    _badgeSize = badgeSize;
+
+    NSArray *constraints = [_containerView constraints];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstItem == %@ AND (firstAttribute == %d OR firstAttribute == %d)", _deleteBadge, NSLayoutAttributeWidth, NSLayoutAttributeHeight];
+    NSArray *filteredArray = [constraints filteredArrayUsingPredicate:predicate];
+
+    for (NSLayoutConstraint *existingConstraint in filteredArray) {
+
+        NSLayoutConstraint *newConstraint = [NSLayoutConstraint constraintWithItem:[existingConstraint firstItem]
+                                                                         attribute:[existingConstraint firstAttribute]
+                                                                         relatedBy:[existingConstraint relation]
+                                                                            toItem:[existingConstraint secondItem]
+                                                                         attribute:[existingConstraint secondAttribute]
+                                                                        multiplier:badgeSize
+                                                                          constant:[existingConstraint constant]
+        ];
+        [newConstraint setPriority:[existingConstraint priority]];
+        [newConstraint setIdentifier:[existingConstraint identifier]];
+        [newConstraint setShouldBeArchived:[existingConstraint shouldBeArchived]];
+
+        // deactivate the existing contraint and activate the new one
+        [NSLayoutConstraint deactivateConstraints:[NSArray arrayWithObject:existingConstraint]];
+        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObject:newConstraint]];
+        
+        [self layoutSubtreeIfNeeded];
+    }
+}
+
+- (void)setBadgeMargin:(CGFloat)badgeMargin
+{
+    _badgeMargin = badgeMargin;
+    
+    NSArray *constraints = [_containerView constraints];
+    NSArray *filteredArray = [constraints filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSLayoutConstraint *constraint, NSDictionary *bindings) {
+        return ([[constraint firstItem] isKindOfClass:[NSLayoutGuide class]] &&
+                ([constraint firstAttribute] == NSLayoutAttributeWidth || [constraint firstAttribute] == NSLayoutAttributeHeight));
+     }]];
+
+    for (NSLayoutConstraint *existingConstraint in filteredArray) {
+
+        NSLayoutConstraint *newConstraint = [NSLayoutConstraint constraintWithItem:[existingConstraint firstItem]
+                                                                         attribute:[existingConstraint firstAttribute]
+                                                                         relatedBy:[existingConstraint relation]
+                                                                            toItem:[existingConstraint secondItem]
+                                                                         attribute:[existingConstraint secondAttribute]
+                                                                        multiplier:badgeMargin
+                                                                          constant:[existingConstraint constant]
+        ];
+        [newConstraint setPriority:[existingConstraint priority]];
+        [newConstraint setIdentifier:[existingConstraint identifier]];
+        [newConstraint setShouldBeArchived:[existingConstraint shouldBeArchived]];
+
+        // deactivate the existing contraint and activate the new one
+        [NSLayoutConstraint deactivateConstraints:[NSArray arrayWithObject:existingConstraint]];
+        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObject:newConstraint]];
+        
+        [self layoutSubtreeIfNeeded];
+    }
+}
+
+- (void)setBadgePosition:(MTBadgePosition)badgePosition
+{
+    _badgePosition = badgePosition;
+    
+    // remove all position constraints
+    NSArray *constraints = [_containerView constraints];
+    NSArray *filteredArray = [constraints filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSLayoutConstraint *constraint, NSDictionary *bindings) {
+        return ([[constraint firstItem] isKindOfClass:[NSLayoutGuide class]] ||
+                ([constraint firstItem] == self->_deleteBadge && ([constraint firstAttribute] != NSLayoutAttributeWidth && [constraint firstAttribute] != NSLayoutAttributeHeight)));
+     }]];
+    [_containerView removeConstraints:filteredArray];
+    
+    // layout guide
+    NSLayoutGuide *marginGuide = [[NSLayoutGuide alloc] init];
+    [_containerView addLayoutGuide:marginGuide];
+    
+    // width/height = multiplier * width/height of the container
+    NSLayoutConstraint *layoutGuideWidth = [[marginGuide widthAnchor] constraintEqualToAnchor:[_containerView widthAnchor]
+                                                                                   multiplier:(_badgeMargin >= kMTBadgeIconMarginMin) ? _badgeMargin : kMTBadgeIconMarginMin];
+    NSLayoutConstraint *layoutGuideHeight = [[marginGuide heightAnchor] constraintEqualToAnchor:[_containerView heightAnchor]
+                                                                                     multiplier:(_badgeMargin >= kMTBadgeIconMarginMin) ? _badgeMargin : kMTBadgeIconMarginMin];
+    [_containerView addConstraints:[NSArray arrayWithObjects:layoutGuideWidth, layoutGuideHeight, nil]];
+    
+    switch (badgePosition) {
+            
+        case MTBadgePositionTopLeft:
+        default: {
+            
+            NSLayoutConstraint *layoutGuideLeading = [[marginGuide leadingAnchor] constraintEqualToAnchor:[_containerView leadingAnchor]];
+            NSLayoutConstraint *layoutGuideTop = [[marginGuide topAnchor] constraintEqualToAnchor:[_containerView topAnchor]];
+            NSLayoutConstraint *deleteBadgeLeading = [[_deleteBadge leadingAnchor] constraintEqualToAnchor:[marginGuide trailingAnchor]];
+            NSLayoutConstraint *deleteBadgeTop = [[_deleteBadge topAnchor] constraintEqualToAnchor:[marginGuide bottomAnchor]];
+            [_containerView addConstraints:[NSArray arrayWithObjects:layoutGuideLeading, layoutGuideTop, deleteBadgeLeading, deleteBadgeTop, nil]];
+            
+            break;
+        }
+            
+        case MTBadgePositionTopRight: {
+            
+            NSLayoutConstraint *layoutGuideTrailing = [[marginGuide trailingAnchor] constraintEqualToAnchor:[_containerView trailingAnchor]];
+            NSLayoutConstraint *layoutGuideTop = [[marginGuide topAnchor] constraintEqualToAnchor:[_containerView topAnchor]];
+            NSLayoutConstraint *deleteBadgeTrailing = [[_deleteBadge trailingAnchor] constraintEqualToAnchor:[marginGuide leadingAnchor]];
+            NSLayoutConstraint *deleteBadgeTop = [[_deleteBadge topAnchor] constraintEqualToAnchor:[marginGuide bottomAnchor]];
+            [_containerView addConstraints:[NSArray arrayWithObjects:layoutGuideTrailing, layoutGuideTop, deleteBadgeTrailing, deleteBadgeTop, nil]];
+            
+            break;
+        }
+            
+        case MTBadgePositionBottomLeft: {
+            
+            NSLayoutConstraint *layoutGuideLeading = [[marginGuide leadingAnchor] constraintEqualToAnchor:[_containerView leadingAnchor]];
+            NSLayoutConstraint *layoutGuideBottom = [[marginGuide bottomAnchor] constraintEqualToAnchor:[_containerView bottomAnchor]];
+            NSLayoutConstraint *deleteBadgeLeading = [[_deleteBadge leadingAnchor] constraintEqualToAnchor:[marginGuide trailingAnchor]];
+            NSLayoutConstraint *deleteBadgeBottom = [[_deleteBadge bottomAnchor] constraintEqualToAnchor:[marginGuide topAnchor]];
+            [_containerView addConstraints:[NSArray arrayWithObjects:layoutGuideLeading, layoutGuideBottom, deleteBadgeLeading, deleteBadgeBottom, nil]];
+            
+            break;
+        }
+            
+        case MTBadgePositionBottomRight: {
+            
+            NSLayoutConstraint *layoutGuideTrailing = [[marginGuide trailingAnchor] constraintEqualToAnchor:[_containerView trailingAnchor]];
+            NSLayoutConstraint *layoutGuideBottom = [[marginGuide bottomAnchor] constraintEqualToAnchor:[_containerView bottomAnchor]];
+            NSLayoutConstraint *deleteBadgeTrailing = [[_deleteBadge trailingAnchor] constraintEqualToAnchor:[marginGuide leadingAnchor]];
+            NSLayoutConstraint *deleteBadgeBottom = [[_deleteBadge bottomAnchor] constraintEqualToAnchor:[marginGuide topAnchor]];
+            [_containerView addConstraints:[NSArray arrayWithObjects:layoutGuideTrailing, layoutGuideBottom, deleteBadgeTrailing, deleteBadgeBottom, nil]];
+            
+            break;
+        }
+    }
+    
+    [self layoutSubtreeIfNeeded];
 }
 
 - (void)animateWithDuration:(NSTimeInterval)duration repeatCount:(NSInteger)repeatCount
@@ -347,19 +423,39 @@
     }
 }
 
-- (void)setCloseBox:(NSImage *)closeBox
+- (void)setDeleteBadge:(MTDeleteBadgeView*)deleteBadge
 {
-    [_closeBoxView setImage:closeBox];
-}
+    self.hasCustomDeleteBadge = [[deleteBadge image] isValid];
+    
+    if (_hasCustomDeleteBadge) {
+        
+        [_deleteBadge setImage:[deleteBadge image]];
+        [_deleteBadge setShowsShadow:[deleteBadge showsShadow]];
+        [_deleteBadge setShadowOffset:[deleteBadge shadowOffset]];
+        [_deleteBadge setShadowAngle:[deleteBadge shadowAngle]];
+        [_deleteBadge setShadowColor:[deleteBadge shadowColor]];
+        [_deleteBadge setShadowRadius:[deleteBadge shadowRadius]];
+        
+        [self layoutSubtreeIfNeeded];
 
-- (NSImage*)closeBox
-{
-    return [_closeBoxView image];
+    } else {
+        
+        NSImage *defaultImage = [[NSBundle containerBundleForClass:[self class]] imageForResource:@"DeleteBadge"];
+        [_deleteBadge setImage:defaultImage];
+        [_deleteBadge setShowsShadow:YES];
+        [_deleteBadge setShadowOffset:kMTBadgeShadowOffsetDefault];
+        [_deleteBadge setShadowAngle:kMTBadgeShadowAngleDefault];
+        [_deleteBadge setShadowColor:nil];
+        [_deleteBadge setShadowRadius:kMTBadgeShadowRadiusDefault];
+        [self setBadgeSize:kMTBadgeIconSizeDefault];
+        [self setBadgeMargin:kMTBadgeIconMarginDefault];
+    }
 }
 
 - (NSView*)icon
 {
-    return _containerView;
+    // make sure we use an off-screen copy of the view
+    return [[self copy] containerView];
 }
 
 @end

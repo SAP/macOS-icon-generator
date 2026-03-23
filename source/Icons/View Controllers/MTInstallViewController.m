@@ -1,22 +1,23 @@
 /*
-     MTInstallViewController.m
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTInstallViewController.m
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTInstallViewController.h"
 #import "MTAttributedString.h"
+#import "MTGroupDefaults.h"
 
 @interface MTInstallViewController ()
 @property (weak) IBOutlet MTInstallIconView *installIconView;
@@ -28,6 +29,9 @@
 @property (weak) IBOutlet NSArrayController *savedBannersController;
 @property (weak) IBOutlet NSSlider *overlaySlider;
 @property (weak) IBOutlet NSSlider *textMarginSlider;
+@property (weak) IBOutlet NSSlider *bannerAngleSlider;
+@property (weak) IBOutlet NSSlider *bannerHeightSlider;
+@property (weak) IBOutlet NSSlider *bannerMarginSlider;
 @property (weak) IBOutlet NSPopUpButton *fontButton;
 @property (weak) IBOutlet NSPopUpButton *fontFaceButton;
 
@@ -43,9 +47,9 @@
     [super viewDidLoad];
     
     // initialize some stuff
-    _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"7R5ZEU67FQ.corp.sap.Icons"];
-    _defaultsController = [[NSUserDefaultsController alloc] initWithDefaults:_userDefaults initialValues:nil];
-    
+    _userDefaults = [MTGroupDefaults sharedDefaults];
+    _defaultsController = [MTGroupDefaults sharedDefaultsController];
+        
     // create the font menu…
     [self updateFontMenu];
     NSString *fontFamily = [_fontButton titleOfSelectedItem];
@@ -71,24 +75,66 @@
         [self selectFontButtonsWithFamilyName:fontFamily fontFace:selectedFontName];
     }
     
-    CGFloat margin = [_userDefaults floatForKey:kMTDefaultsTextMarginDefaultKey];
+#pragma mark - Slider setup
+    
     [_textMarginSlider setMinValue:kMTBannerTextMarginMin];
     [_textMarginSlider setMaxValue:kMTBannerTextMarginMax];
-    [_textMarginSlider setDoubleValue:(margin >= kMTBannerTextMarginMin && margin <= kMTBannerTextMarginMax) ? margin : kMTBannerTextMarginDefault];
-    [_installIconView setBannerTextMargin:[_textMarginSlider doubleValue]];
+    CGFloat textMargin = [_userDefaults floatForKey:kMTDefaultsTextMarginDefaultKey];
+    CGFloat clampedTextMargin = fminf(fmaxf(textMargin, kMTBannerTextMarginMin), kMTBannerTextMarginMax);
+    if (fabs(textMargin - clampedTextMargin) > FLT_EPSILON) { [_userDefaults setFloat:clampedTextMargin forKey:kMTDefaultsTextMarginDefaultKey]; }
+    [_installIconView setBannerTextMargin:clampedTextMargin];
     
-    CGFloat scaling = [_userDefaults floatForKey:kMTDefaultsOverlayScalingKey];
+    [_bannerAngleSlider setMinValue:kMTBannerAngleMin];
+    [_bannerAngleSlider setMaxValue:kMTBannerAngleMax];
+    CGFloat bannerAngle = [_userDefaults floatForKey:kMTDefaultsBannerAngleDefaultKey];
+    CGFloat clampedBannerAngle = fminf(fmaxf(bannerAngle, kMTBannerAngleMin), kMTBannerAngleMax);
+    if (fabs(bannerAngle - clampedBannerAngle) > FLT_EPSILON) { [_userDefaults setFloat:clampedBannerAngle forKey:kMTDefaultsBannerAngleDefaultKey]; }
+    [_installIconView setBannerAngle:clampedBannerAngle];
+    
+    [_bannerHeightSlider setMinValue:kMTBannerHeightMin];
+    [_bannerHeightSlider setMaxValue:kMTBannerHeightMax];
+    CGFloat bannerHeight = [_userDefaults floatForKey:kMTDefaultsBannerHeightDefaultKey];
+    CGFloat clampedBannerHeight = fminf(fmaxf(bannerHeight, kMTBannerHeightMin), kMTBannerHeightMax);
+    if (fabs(bannerHeight - clampedBannerHeight) > FLT_EPSILON) { [_userDefaults setFloat:clampedBannerHeight forKey:kMTDefaultsBannerHeightDefaultKey]; }
+    [_installIconView setBannerHeight:clampedBannerHeight];
+    
+    [_bannerMarginSlider setMinValue:kMTBannerMarginMin];
+    [_bannerMarginSlider setMaxValue:kMTBannerMarginMax];
+    CGFloat bannerMargin = [_userDefaults floatForKey:kMTDefaultsBannerMarginDefaultKey];
+    CGFloat clampedBannerMargin = fminf(fmaxf(bannerMargin, kMTBannerMarginMin), kMTBannerMarginMax);
+    if (fabs(bannerMargin - clampedBannerMargin) > FLT_EPSILON) { [_userDefaults setFloat:clampedBannerMargin forKey:kMTDefaultsBannerMarginDefaultKey]; }
+    [_installIconView setBannerMargin:clampedBannerMargin];
+    
     [_overlaySlider setMinValue:kMTOverlayImageScalingMin];
     [_overlaySlider setMaxValue:kMTOverlayImageScalingMax];
-    [_overlaySlider setDoubleValue:(scaling >= kMTOverlayImageScalingMin && scaling <= kMTOverlayImageScalingMax) ? scaling : kMTOverlayImageScalingDefault];
+    BOOL rememberOverlayPosition = ([_userDefaults boolForKey:kMTDefaultsRememberOverlayPositionKey]);
+    CGFloat overlayScaling = (rememberOverlayPosition) ? [_userDefaults floatForKey:kMTDefaultsOverlayScalingKey] : kMTOverlayImageScalingDefault;
+    CGFloat clampedScaling = fminf(fmaxf(overlayScaling, kMTOverlayImageScalingMin), kMTOverlayImageScalingMax);
+    if (fabs(overlayScaling - clampedScaling) > FLT_EPSILON) { [_userDefaults setFloat:kMTOverlayImageScalingDefault forKey:kMTDefaultsOverlayScalingKey]; }
+    [_installIconView setOverlayImageScalingFactor:clampedScaling];
+    
+    // restore the position of the overlay image
+    if (rememberOverlayPosition) {
+        
+        NSString *storedPositionString = [_userDefaults stringForKey:kMTDefaultsOverlayPositionKey];
+        
+        if (storedPositionString) {
+            
+            NSPoint storedPosition = NSPointFromString(storedPositionString);
+            if (storedPosition.x > 0 && storedPosition.y > 0) { [_installIconView setOverlayPosition:storedPosition]; }
+        }
+    }
 
     [_installIconView setDelegate:self];
     [_installIconView setAccessibilityChildren:nil];
+    [_installIconView setApplyIconShape:[_userDefaults boolForKey:kMTDefaultsRenderImagesInIconShapeKey]];
+    [_installIconView setUsesOldIconShape:[_userDefaults boolForKey:kMTDefaultsUseOldIconShapeKey]];
+    [_installIconView setDrawBannerInIconShape:[_userDefaults boolForKey:kMTDefaultsDrawBannerInIconShapeKey]];
     
-    // enable the correct position button
+    // enable the correct button for the banner position
     [self enablePositionButtonAtIndex:[_userDefaults integerForKey:kMTDefaultsPositionDefaultKey]];
     
-#pragma mark bindings
+#pragma mark - Bindings
     
     NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [[MTColorValueTransformer alloc] init], NSValueTransformerBindingOption,
@@ -106,6 +152,36 @@
                        options:colorBindingOptions
     ];
     
+    [_overlaySlider bind:NSValueBinding
+                toObject:_installIconView
+             withKeyPath:@"overlayImageScalingFactor"
+                 options:nil
+    ];
+    
+    [_textMarginSlider bind:NSValueBinding
+                   toObject:_installIconView
+                withKeyPath:@"bannerTextMargin"
+                    options:nil
+    ];
+    
+    [_bannerAngleSlider bind:NSValueBinding
+                    toObject:_installIconView
+                 withKeyPath:@"bannerAngle"
+                     options:nil
+    ];
+    
+    [_bannerHeightSlider bind:NSValueBinding
+                    toObject:_installIconView
+                 withKeyPath:@"bannerHeight"
+                     options:nil
+    ];
+    
+    [_bannerMarginSlider bind:NSValueBinding
+                    toObject:_installIconView
+                 withKeyPath:@"bannerMargin"
+                     options:nil
+    ];
+    
     [_savedBannersController bind:NSContentArrayBinding
                          toObject:_defaultsController
                       withKeyPath:[@"values." stringByAppendingString:kMTDefaultsSavedBannersKey]
@@ -119,7 +195,7 @@
     ];
     [self.savedBannersController setSortDescriptors:[NSArray arrayWithObject:initialSortDescriptor]];
 
-#pragma mark notifications
+#pragma mark - Notifications
 
     // get notified if the image changed
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -173,9 +249,24 @@
                                                object: nil
     ];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(copyIcon:)
+                                                 name:kMTNotificationNameCopyIcon
+                                               object:nil
+    ];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(iconShapeSettingsChanged:)
+                                                 name:kMTNotificationNameIconShapeSettings
+                                               object:nil
+    ];
+    
     // update the slider's tooltips
     [self updateTextMarginSliderToolTip:nil];
     [self updateOverlaySliderToolTip:nil];
+    [self updateBannerAngleSliderToolTip:nil];
+    [self updateBannerHeightSliderToolTip:nil];
+    [self updateBannerMarginSliderToolTip:nil];
 }
 
 - (BOOL)applyBannerWithDictionary:(NSDictionary*)bannerDict
@@ -206,20 +297,24 @@
             
             NSUInteger bannerPosition = [[bannerDict valueForKey:kMTDefaultsBannerPositionKey] integerValue];
             [_installIconView setBannerPosition:(MTBannerPosition)bannerPosition];
-            [_userDefaults setInteger:bannerPosition forKey:kMTDefaultsPositionDefaultKey];
             
             // If the banner was saved with an older version of the application that does
-            // not support the margin attribute, we will display the text with a default
-            // margin to make sure the banner looks the same as in the old version.
+            // not support one or more of the following attributes, we will use the default
+            // values to make sure the banner looks the same as in the old version.
             CGFloat textMargin = kMTBannerTextMarginDefault;
+            CGFloat bannerAngle = kMTBannerAngleDefault;
+            CGFloat bannerHeight = kMTBannerHeightDefault;
+            CGFloat bannerMargin = kMTBannerMarginDefault;
             
-            if ([bannerDict objectForKey:kMTDefaultsBannerTextMarginKey]) {
-                
-                textMargin = [[bannerDict valueForKey:kMTDefaultsBannerTextMarginKey] floatValue];
-            }
+            if ([bannerDict objectForKey:kMTDefaultsBannerTextMarginKey]) { textMargin = [[bannerDict valueForKey:kMTDefaultsBannerTextMarginKey] floatValue]; }
+            if ([bannerDict objectForKey:kMTDefaultsBannerAngleKey]) { bannerAngle = [[bannerDict valueForKey:kMTDefaultsBannerAngleKey] floatValue]; }
+            if ([bannerDict objectForKey:kMTDefaultsBannerHeightKey]) { bannerHeight = [[bannerDict valueForKey:kMTDefaultsBannerHeightKey] floatValue]; }
+            if ([bannerDict objectForKey:kMTDefaultsBannerMarginKey]) { bannerMargin = [[bannerDict valueForKey:kMTDefaultsBannerMarginKey] floatValue]; }
                 
             [_installIconView setBannerTextMargin:textMargin];
-            [_userDefaults setFloat:textMargin forKey:kMTDefaultsTextMarginDefaultKey];
+            [_installIconView setBannerAngle:bannerAngle];
+            [_installIconView setBannerHeight:bannerHeight];
+            [_installIconView setBannerMargin:bannerMargin];
             
             self.bannerText = [bannerText string];
         }
@@ -367,7 +462,12 @@
     }
 }
 
-#pragma mark NSTableViewDelegate
+- (void)unselectSavedBanner
+{
+    [self.savedBannersController setSelectionIndexes:[NSIndexSet indexSet]];
+}
+
+#pragma mark - NSTableViewDelegate
 
 - (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
 {
@@ -392,10 +492,6 @@
         
         NSDictionary *bannerDict = [[[tableView rowViewAtRow:selectedRow makeIfNecessary:NO] viewAtColumn:0] objectValue];
         [self applyBannerWithDictionary:bannerDict];
-        
-    } else {
-        
-        [_installIconView setBannerAttributes:nil];
     }
 }
 
@@ -423,21 +519,21 @@
     return NO;
 }
 
-#pragma mark NSTextFieldDelegate
+#pragma mark - NSTextFieldDelegate
 
 - (void)controlTextDidChange:(NSNotification *)notification
 {
     NSTextField *textField = [notification object];
-    
+
     if (textField == _bannerTextField) {
 
         // clear the array controllers current selection and update the banner
-        [_savedBannersController setSelectionIndexes:[NSIndexSet indexSet]];
+        [self unselectSavedBanner];
         [self updateBanner];
     }
 }
 
-#pragma mark IBActions
+#pragma mark - IBActions
 
 - (IBAction)selectRow:(id)sender
 {
@@ -475,6 +571,9 @@
                                         bannerData, kMTDefaultsBannerDataKey,
                                         [NSNumber numberWithInteger:[_userDefaults integerForKey:kMTDefaultsPositionDefaultKey]], kMTDefaultsBannerPositionKey,
                                         [NSNumber numberWithFloat:[_userDefaults floatForKey:kMTDefaultsTextMarginDefaultKey]], kMTDefaultsBannerTextMarginKey,
+                                        [NSNumber numberWithFloat:[_userDefaults floatForKey:kMTDefaultsBannerAngleDefaultKey]], kMTDefaultsBannerAngleKey,
+                                        [NSNumber numberWithFloat:[_userDefaults floatForKey:kMTDefaultsBannerHeightDefaultKey]], kMTDefaultsBannerHeightKey,
+                                        [NSNumber numberWithFloat:[_userDefaults floatForKey:kMTDefaultsBannerMarginDefaultKey]], kMTDefaultsBannerMarginKey,
                                         nil
             ];
             
@@ -511,14 +610,13 @@
     if (clickedRow >= 0) {
         
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"IsDefault = %@", [NSNumber numberWithBool:YES]];
-        
         NSMutableArray *arrangedObjects = [self mutableArrayValueForKeyPath:@"savedBannersController.arrangedObjects"];
         
         for (NSMutableDictionary *dict in [arrangedObjects filteredArrayUsingPredicate:predicate]) {
             [dict removeObjectForKey:kMTDefaultsBannerIsDefaultKey];
         }
-        
-        if ([[sender title] isEqualToString:NSLocalizedString(@"setDefaultBanner", nil)]) {
+
+        if ([sender state] == NSControlStateValueOff) {
             
             NSMutableDictionary *bannerDict = [arrangedObjects objectAtIndex:clickedRow];
             [bannerDict setValue:[NSNumber numberWithBool:YES] forKey:kMTDefaultsBannerIsDefaultKey];
@@ -531,18 +629,14 @@
 }
 
 - (IBAction)removeSavedBanner:(id)sender
-{
-    NSInteger selectedRow = [_savedBannersTable selectedRow];
-    
+{    
     // we remove either all banners or just the one
     // the user selected
     if ([sender tag] == 3000) {
         
         NSRange range = NSMakeRange(0, [[_savedBannersController arrangedObjects] count]);
         [_savedBannersController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        
-        if (selectedRow >= 0) { [_installIconView setBannerAttributes:nil]; }
-        
+                
     } else {
         
         NSInteger clickedRow = [_savedBannersTable clickedRow];
@@ -550,8 +644,6 @@
         if (clickedRow >= 0 && clickedRow < [[_savedBannersController arrangedObjects] count]) {
             
             [_savedBannersController removeObjectAtArrangedObjectIndex:clickedRow];
-            
-            if (clickedRow == selectedRow) { [_installIconView setBannerAttributes:nil]; }
         }
     }
     
@@ -560,13 +652,17 @@
 
 - (IBAction)updateBannerPosition:(id)sender
 {
-    [_userDefaults setInteger:[sender tag] forKey:kMTDefaultsPositionDefaultKey];
-    [self enablePositionButtonAtIndex:[sender tag]];
+    NSInteger position = [sender tag];
+    
+    [_userDefaults setInteger:position forKey:kMTDefaultsPositionDefaultKey];
+    [self enablePositionButtonAtIndex:position];
+    [self unselectSavedBanner];
     [self updateBanner];
 }
 
 - (IBAction)changeBannerColor:(id)sender
 {
+    [self unselectSavedBanner];
     [self updateBanner];
 }
 
@@ -578,20 +674,26 @@
 
     [_userDefaults setObject:selectedFontFace forKey:kMTDefaultsSelectedFontKey];
     
+    [self unselectSavedBanner];
     [self updateBanner];
 }
 
 - (IBAction)switchColors:(id)sender
 {
+    // switch the color well's colors
     NSColor *bannerColor = [_bannerColorWell color];
     NSColor *bannerTextColor = [_bannerTextColorWell color];
+    [_bannerColorWell setColor:bannerTextColor];
+    [_bannerTextColorWell setColor:bannerColor];
     
+    // update the user defaults
     MTColorValueTransformer *valueTransformer = [[MTColorValueTransformer alloc] init];
-    [_defaultsController setValue:[valueTransformer reverseTransformedValue:bannerTextColor]
-                       forKeyPath:[@"values." stringByAppendingString:kMTDefaultsBannerColorKey]];
-    [_defaultsController setValue:[valueTransformer reverseTransformedValue:bannerColor]
-                       forKeyPath:[@"values." stringByAppendingString:kMTDefaultsBannerTextColorKey]];
+    NSNumber *transformedBannerColor = [valueTransformer reverseTransformedValue:[_bannerColorWell color]];
+    NSNumber *transformedBannerTextColor = [valueTransformer reverseTransformedValue:[_bannerTextColorWell color]];
+    [_userDefaults setInteger:[transformedBannerColor integerValue] forKey:kMTDefaultsBannerColorKey];
+    [_userDefaults setInteger:[transformedBannerTextColor integerValue] forKey:kMTDefaultsBannerTextColorKey];
     
+    [self unselectSavedBanner];
     [self updateBanner];
 }
 
@@ -612,19 +714,91 @@
     [percentFormatter setMultiplier:@100];
     [_textMarginSlider setToolTip:[NSString localizedStringWithFormat:NSLocalizedString(@"textMarginSliderTooltip", nil), [percentFormatter stringFromNumber:[NSNumber numberWithDouble:[_textMarginSlider doubleValue]]]]];
     
-    [_userDefaults setFloat:[_textMarginSlider doubleValue] forKey:kMTDefaultsTextMarginDefaultKey];
+    if (sender) {
+        
+        [_userDefaults setFloat:[_installIconView bannerTextMargin] forKey:kMTDefaultsTextMarginDefaultKey];
+        [self unselectSavedBanner];
+    }
 }
 
-#pragma mark NSNotification handlers
+- (IBAction)updateBannerAngleSliderToolTip:(id)sender
+{
+    CGFloat bannerAngle = [_installIconView bannerAngle];
+    
+    NSMeasurement *measurement = [[NSMeasurement alloc] initWithDoubleValue:bannerAngle
+                                                                       unit:[NSUnitAngle degrees]
+    ];
+    NSMeasurementFormatter *angleFormatter = [[NSMeasurementFormatter alloc] init];
+    [[angleFormatter numberFormatter] setMinimumFractionDigits:0];
+    [[angleFormatter numberFormatter] setMaximumFractionDigits:0];
+    [angleFormatter setUnitStyle:NSFormattingUnitStyleShort];
+    
+    NSString *angleString = [angleFormatter stringFromMeasurement:measurement];
+    [_bannerAngleSlider setToolTip:[NSString localizedStringWithFormat:NSLocalizedString(@"bannerAngleSliderTooltip", nil), angleString]];
+        
+    if (sender) {
+        
+        [_userDefaults setFloat:bannerAngle forKey:kMTDefaultsBannerAngleDefaultKey];
+        [self unselectSavedBanner];
+    }
+}
+
+- (IBAction)updateBannerHeightSliderToolTip:(id)sender
+{
+    NSNumberFormatter *percentFormatter = [[NSNumberFormatter alloc] init];
+    [percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [percentFormatter setMaximumFractionDigits:1];
+    [percentFormatter setMultiplier:@100];
+    [_bannerHeightSlider setToolTip:[NSString localizedStringWithFormat:NSLocalizedString(@"bannerHeightSliderTooltip", nil), [percentFormatter stringFromNumber:[NSNumber numberWithDouble:[_bannerHeightSlider doubleValue]]]]];
+    
+    if (sender) {
+        
+        [_userDefaults setFloat:[_installIconView bannerHeight] forKey:kMTDefaultsBannerHeightDefaultKey];
+        [self unselectSavedBanner];
+    }
+}
+
+- (IBAction)updateBannerMarginSliderToolTip:(id)sender
+{
+    NSNumberFormatter *percentFormatter = [[NSNumberFormatter alloc] init];
+    [percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [percentFormatter setMaximumFractionDigits:1];
+    [percentFormatter setMultiplier:@100];
+    [_bannerMarginSlider setToolTip:[NSString localizedStringWithFormat:NSLocalizedString(@"bannerMarginSliderTooltip", nil), [percentFormatter stringFromNumber:[NSNumber numberWithDouble:[_bannerMarginSlider doubleValue]]]]];
+    
+    if (sender) {
+        
+        [_userDefaults setFloat:[_installIconView bannerMargin] forKey:kMTDefaultsBannerMarginDefaultKey];
+        [self unselectSavedBanner];
+    }
+}
+
+- (IBAction)clearTextField:(id)sender
+{
+    // clear the array controllers current selection and update the banner
+    [self unselectSavedBanner];
+    [self updateBanner];
+}
+
+#pragma mark - NSNotification handlers
 
 - (void)imageChanged:(NSNotification*)aNotification
 {
     if (![[aNotification object] isEqualTo:self]) {
 
-        NSURL *imageURL = [[aNotification userInfo] objectForKey:kMTNotificationKeyImageURL];
-        NSImage *image = [NSImage imageWithFileAtURL:imageURL];
+        NSDictionary *userInfo = [aNotification userInfo];
+        NSImage *image = [userInfo objectForKey:kMTNotificationKeyImage];
         
-        if ([image isValid]) { [_installIconView setImage:image]; }
+        if ([image isValid]) {
+            
+            BOOL isApplication = [[userInfo valueForKey:kMTNotificationKeyIsAppBundle] boolValue];
+            [_installIconView setIsAppBundle:isApplication];
+            [_installIconView setUsesOldIconShape:[_userDefaults boolForKey:kMTDefaultsUseOldIconShapeKey]];
+            [_installIconView setDrawBannerInIconShape:(!isApplication && [_userDefaults boolForKey:kMTDefaultsDrawBannerInIconShapeKey])];
+            [_installIconView setImage:image];
+            
+            [self updateBanner];
+        }
     }
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"IsDefault == %@", [NSNumber numberWithBool:YES]];
@@ -639,10 +813,20 @@
 
 - (void)overlayImageChanged:(NSNotification*)aNotification
 {
-    NSURL *imageURL = [[aNotification userInfo] objectForKey:kMTNotificationKeyImageURL];
-    NSImage *image = [NSImage imageWithFileAtURL:imageURL];
+    NSImage *image = [[aNotification userInfo] objectForKey:kMTNotificationKeyImage];
     
-    if ([image isValid]) { [_installIconView setOverlayImage:image]; }
+    if ([image isValid]) {
+        
+        [_installIconView setOverlayImage:image];
+        
+        // reset size and position
+        if (![_userDefaults boolForKey:kMTDefaultsRememberOverlayPositionKey]) {
+            
+            [_installIconView setOverlayImageScalingFactor:kMTOverlayImageScalingDefault];
+            [_installIconView setOverlayPosition:NSMakePoint(1, 1)];
+        }
+    }
+    
     [self updateOverlaySliderToolTip:nil];
 }
 
@@ -659,8 +843,7 @@
 {
     if ([_userDefaults boolForKey:kMTDefaultsRememberOverlayPositionKey]) {
         
-        NSNumber *imageScaling = [NSNumber numberWithFloat:[_installIconView overlayImageScalingFactor]];
-        [_userDefaults setObject:imageScaling forKey:kMTDefaultsOverlayScalingKey];
+        [_userDefaults setFloat:[_installIconView overlayImageScalingFactor] forKey:kMTDefaultsOverlayScalingKey];
     }
 }
 
@@ -676,8 +859,6 @@
 
     if (textLength > 0) {
         
-        self.bannerText = [_bannerText substringToIndex:textLength - 1];
-        dispatch_async(dispatch_get_main_queue(), ^{ [self updateBanner]; });
         NSBeep();
         
         // we only change the text color if not already changed
@@ -705,10 +886,15 @@
             
             NSInteger outputSize = [_userDefaults integerForKey:kMTDefaultsOutputSizeKey];
             
-            MTIconSet *iconSet = [[MTIconSet alloc] init];
-            [iconSet setInstallIcon:[NSImage imageWithView:[_installIconView icon] size:NSMakeSize(outputSize, outputSize)]];
-            [iconSet setFileNamePrefix:[userInfo objectForKey:kMTNotificationKeyFileNamePrefix]];
-            [iconSet writeToFolder:path createFolder:NO animatedOnly:NO completionHandler:nil];
+            [NSImage imageWithView:[_installIconView icon]
+                              size:NSMakeSize(outputSize, outputSize)
+                 completionHandler:^(NSImage *image) {
+                
+                MTIconSet *iconSet = [[MTIconSet alloc] init];
+                [iconSet setInstallIcon:image];
+                [iconSet setFileNamePrefix:[userInfo objectForKey:kMTNotificationKeyFileNamePrefix]];
+                [iconSet writeToFolder:path createFolder:NO animatedOnly:NO completionHandler:nil];
+            }];
         }
     }
 }
@@ -730,29 +916,80 @@
     });
 }
 
-#pragma mark MTDropViewDelegate
-
-- (void)view:(MTDropView*)view didChangeImageAtURL:(NSURL *)url
+- (void)copyIcon:(NSNotification*)aNotification
 {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:kMTDefaultsMainWindowSelectedTabKey] == 0) {
+        
+        [NSImage imageWithView:[_installIconView icon]
+                          size:NSMakeSize(kMTOutputSizeMax, kMTOutputSizeMax)
+             completionHandler:^(NSImage *image) {
+            
+            NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+            [pasteboard clearContents];
+            [pasteboard writeObjects:[NSArray arrayWithObject:image]];
+        }];
+    }
+}
+
+- (void)iconShapeSettingsChanged:(NSNotification*)aNotification
+{
+    BOOL renderInIconShape = [_userDefaults boolForKey:kMTDefaultsRenderImagesInIconShapeKey];
+    
+    [_installIconView setApplyIconShape:renderInIconShape];
+    [_installIconView setUsesOldIconShape:[_userDefaults boolForKey:kMTDefaultsUseOldIconShapeKey]];
+    [_installIconView setDrawBannerInIconShape:(renderInIconShape && [_userDefaults boolForKey:kMTDefaultsDrawBannerInIconShapeKey] && ![_installIconView isAppBundle])];
+    [_installIconView setImage:[_installIconView unmodifiedImage]];
+   
+    [self updateBanner];
+}
+
+#pragma mark - MTDropViewDelegate
+
+- (void)view:(MTDropView*)view didChangeImage:(NSImage *)image applicationBundle:(BOOL)application
+{
+    [_installIconView setDrawBannerInIconShape:(!application && [_userDefaults boolForKey:kMTDefaultsDrawBannerInIconShapeKey])];
+    [self updateBanner];
+    
     // post notification
     [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
                                                         object:self
-                                                      userInfo:[NSDictionary dictionaryWithObject:url
-                                                                                           forKey:kMTNotificationKeyImageURL
+                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                image, kMTNotificationKeyImage,
+                                                                [NSNumber numberWithBool:application], kMTNotificationKeyIsAppBundle,
+                                                                nil
                                                                ]
     ];
 }
 
-#pragma mark NSMenuItemValidation
+- (void)view:(MTDropView *)view hasBeenClickedAtLocation:(NSPoint)location
+{
+    if (@available(macOS 15.1, *)) {
+        
+        if (![_installIconView image]) {
+            
+            // post notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameShowImagePlayground
+                                                                object:self
+                                                              userInfo:nil
+            ];
+        }
+        
+    } else {
+        
+        return;
+    }
+}
+
+#pragma mark - NSMenuItemValidation
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
-    BOOL enable = YES;
+    BOOL enableItem = YES;
     
     if ([menuItem tag] >= 1000) {
         
         NSInteger clickedRow = [_savedBannersTable clickedRow];
-        enable = (clickedRow >= 0);
+        enableItem = (clickedRow >= 0);
         BOOL hideAll = ([[_savedBannersController content] count] == 0);
         
         if ([menuItem tag] == 1000) {
@@ -762,9 +999,9 @@
                 NSDictionary *bannerDict = [[_savedBannersController arrangedObjects] objectAtIndex:clickedRow];
                 
                 if ([bannerDict objectForKey:kMTDefaultsBannerIsDefaultKey] && [[bannerDict valueForKey:kMTDefaultsBannerIsDefaultKey] boolValue]) {
-                    [menuItem setTitle:NSLocalizedString(@"unsetDefaultBanner", nil)];
+                    [menuItem setState:NSControlStateValueOn];
                 } else {
-                    [menuItem setTitle:NSLocalizedString(@"setDefaultBanner", nil)];
+                    [menuItem setState:NSControlStateValueOff];
                 }
             }
             
@@ -776,12 +1013,12 @@
             
         } else if ([menuItem tag] == 3000) {
             
-            enable = YES;
+            enableItem = YES;
             [menuItem setAlternate:(hideAll || [_savedBannersTable clickedRow] >= 0)];
         }
     }
     
-    return enable;
+    return enableItem;
 }
 
 - (void)dealloc

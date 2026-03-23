@@ -1,13 +1,13 @@
 /*
     MTIconSetViewController.m
-    Copyright 2022-2025 SAP SE
-     
+    Copyright 2016-2026 SAP SE
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-     
+
     http://www.apache.org/licenses/LICENSE-2.0
-     
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,19 +17,26 @@
 
 #import "MTIconSetViewController.h"
 #import "MTSavePanelAccessoryController.h"
-#import "Constants.h"
+#import "Icons-Swift.h"
+#import "MTGroupDefaults.h"
 #import <UniformTypeIdentifiers/UTCoreTypes.h>
 
 @interface MTIconSetViewController ()
-@property (weak) IBOutlet NSButton *saveButton;
-
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
-@property (nonatomic, strong, readwrite) NSUserDefaultsController *defaultsController;
 @property (nonatomic, strong, readwrite) MTSavePanelAccessoryController *accessoryController;
 @property (nonatomic, strong, readwrite) NSImage *currentImage;
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
 @property (nonatomic, strong, readwrite) NSWindowController *settingsWindowController;
+
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 150100
+@property (nonatomic, strong, readwrite) MTImagePlayground *imagePlayground API_AVAILABLE(macos(15.1));
+#endif
 @end
+
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 150100
+@interface MTIconSetViewController (ImageGenerationDelegate) <ImageGenerationViewControllerDelegate>
+@end
+#endif
 
 @implementation MTIconSetViewController
 
@@ -37,29 +44,7 @@
     
     [super viewDidLoad];
     
-    // register defaults
-    _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"7R5ZEU67FQ.corp.sap.Icons"];
-    _defaultsController = [[NSUserDefaultsController alloc] initWithDefaults:_userDefaults initialValues:nil];
-
-    NSDictionary *defaultSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithInteger:kMTOutputSizeDefault], kMTDefaultsOutputSizeKey,
-                                     [NSNumber numberWithDouble:kMTAnimationDurationDefault], kMTDefaultsAnimationDurationKey,
-                                     [NSNumber numberWithBool:YES], kMTDefaultsAutoImageSizeKey,
-                                     [NSNumber numberWithBool:YES], kMTDefaultsAutoOutputSizeKey,
-                                     [NSNumber numberWithInteger:kMTBannerColorDefault], kMTDefaultsBannerColorKey,
-                                     [NSNumber numberWithInteger:kMTBannerTextColorDefault], kMTDefaultsBannerTextColorKey,
-                                     [NSNumber numberWithBool:YES], kMTDefaultsSaveInstallIconKey,
-                                     [NSNumber numberWithBool:YES], kMTDefaultsSaveUninstallIconKey,
-                                     [NSNumber numberWithBool:YES], kMTDefaultsSaveAnimatedUninstallIconKey,
-                                     [NSNumber numberWithInt:0], kMTDefaultsPositionDefaultKey,
-                                     [NSNumber numberWithBool:NO], kMTDefaultsUsePrefixKey,
-                                     [NSNumber numberWithBool:NO], kMTDefaultsRememberOverlayPositionKey,
-                                     [NSNumber numberWithFloat:kMTBannerTextMarginDefault], kMTDefaultsTextMarginDefaultKey,
-                                     nil
-                                     ];
-    [_userDefaults registerDefaults:defaultSettings];
-    
-#pragma mark notifications
+    _userDefaults = [MTGroupDefaults sharedDefaults];
     
     // get notified if one of the images changed
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -67,23 +52,31 @@
                                                  name:kMTNotificationNameImageChanged
                                                object:nil
     ];
+    
+    // get noticed if Image Playground should be shown
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showImagePlayground:)
+                                                 name:kMTNotificationNameShowImagePlayground
+                                               object:nil
+    ];
 }
+
+- (void)dealloc
+{
+    // remove our observers
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kMTNotificationNameImageChanged object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kMTNotificationNameShowImagePlayground object:nil];
+}
+
+#pragma mark Notifications
 
 - (void)imageChanged:(NSNotification*)aNotification
 {
-    NSURL *imageURL = [[aNotification userInfo] objectForKey:kMTNotificationKeyImageURL];
-    NSImage *image = [NSImage imageWithFileAtURL:imageURL];
-    
-    if ([image isValid]) {
-        
-        // make sure our save button is enabled as soon
-        // as we got a (new) source image
-        [_saveButton setEnabled:YES];
-        
-        _currentImage = image;
-        _imageURL = imageURL;
-    }
+    NSImage *image = [[aNotification userInfo] objectForKey:kMTNotificationKeyImage];
+    if ([image isValid]) { self.currentImage = image; }
 }
+
+#pragma mark NSMenuItemValidation
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
@@ -92,17 +85,32 @@
     // view is also enabled
     BOOL enableItem = YES;
     
-    if ([menuItem tag] == 2000 || [menuItem tag] == 1500) {
-        enableItem = [_saveButton isEnabled];
+    // Add Overlay, Save & Copy Icon
+    if ([menuItem tag] == 1500 || [menuItem tag] == 2000 || [menuItem tag] == 4000) {
+        
+        enableItem = (_currentImage != nil);
+        
+    // Image Playground
+    } else if ([menuItem tag] == 3000) {
+        
+        if (@available(macOS 15.1, *)) {
+            
+            enableItem = YES;
+            
+        } else {
+            
+            enableItem = NO;
+        }
+        
+    // Paste Image
+    } else if ([menuItem tag] == 5000) {
+        
+        // check clipboard contents
+        NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+        enableItem = ([pasteboard canReadObjectForClasses:[NSArray arrayWithObject:[NSImage class]] options:nil]);
     }
     
     return enableItem;
-}
-
-- (void)dealloc
-{
-    // remove our observer
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kMTNotificationNameImageChanged object:nil];
 }
 
 #pragma mark IBActions
@@ -114,24 +122,30 @@
     [panel setCanChooseDirectories:NO];
     [panel setAllowsMultipleSelection:NO];
     [panel setCanCreateDirectories:NO];
-    [panel setAllowedContentTypes:[NSArray arrayWithObjects:UTTypeImage, UTTypeApplicationBundle, nil]];
+    [panel setAllowedContentTypes:[NSArray arrayWithObjects:UTTypeImage, UTTypePDF, UTTypeApplicationBundle, nil]];
     [panel setPrompt:NSLocalizedString(@"openButton", nil)];
     [panel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger result) {
         
         if (result == NSModalResponseOK) {
             
-            NSImage *sourceImage = [NSImage imageWithFileAtURL:[panel URL]];
+            NSURL *imageURL = [panel URL];
+            NSImage *image = [NSImage imageWithFileAtURL:imageURL];
         
-            if ([sourceImage isValid]) {
+            if ([image isValid]) {
+                
+                id utiValue = nil;
+                [imageURL getResourceValue:&utiValue forKey:NSURLTypeIdentifierKey error:nil];
+                BOOL isApplication = [utiValue isEqualTo:[UTTypeApplicationBundle identifier]];
                 
                 // post notifications so the install and uninstall
                 // views can update the source image
-                
                 [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
                                                                     object:self
-                                                                  userInfo:([sourceImage isValid]) ? [NSDictionary dictionaryWithObject:[panel URL]
-                                                                                                                                 forKey:kMTNotificationKeyImageURL
-                                                                                                     ] : nil
+                                                                  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                            image, kMTNotificationKeyImage,
+                                                                            [NSNumber numberWithBool:isApplication], kMTNotificationKeyIsAppBundle,
+                                                                            nil
+                                                                           ]
                 ];
             }
         }
@@ -145,7 +159,7 @@
     [panel setCanChooseDirectories:NO];
     [panel setAllowsMultipleSelection:NO];
     [panel setCanCreateDirectories:NO];
-    [panel setAllowedContentTypes:[NSArray arrayWithObject:UTTypeImage]];
+    [panel setAllowedContentTypes:[NSArray arrayWithObjects:UTTypeImage, UTTypePDF, nil]];
     [panel setPrompt:NSLocalizedString(@"openButton", nil)];
     [panel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger result) {
         
@@ -155,12 +169,12 @@
         
             if ([sourceImage isValid]) {
                 
-                // post notifications so the install and uninstall
+                // post a notification so the install and uninstall
                 // views can update the source image
                 [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameOverlayImageChanged
                                                                     object:self
-                                                                  userInfo:([sourceImage isValid]) ? [NSDictionary dictionaryWithObject:[panel URL]
-                                                                                                                                 forKey:kMTNotificationKeyImageURL
+                                                                  userInfo:([sourceImage isValid]) ? [NSDictionary dictionaryWithObject:sourceImage
+                                                                                                                                 forKey:kMTNotificationKeyImage
                                                                                                      ] : nil
                 ];
             }
@@ -209,7 +223,9 @@
                         fileNamePrefix = [[self->_imageURL lastPathComponent] stringByDeletingPathExtension];
                     }
                     
-                    [userInfo setObject:fileNamePrefix forKey:kMTNotificationKeyFileNamePrefix];
+                    if (fileNamePrefix) {
+                        [userInfo setObject:fileNamePrefix forKey:kMTNotificationKeyFileNamePrefix];
+                    }
                 }
 
                 [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameSaveIcon
@@ -231,25 +247,74 @@
     }];
 }
 
-#pragma mark IBActions
-
-- (IBAction)openGitHub:(id)sender
+- (IBAction)showImagePlayground:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kMTGitHubURL]];
-}
-
-- (IBAction)showSettingsWindow:(id)sender
-{
-    if (!_settingsWindowController) {
+    if (@available(macOS 15.1, *)) {
         
-        NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-        _settingsWindowController = [storyboard instantiateControllerWithIdentifier:@"corp.sap.Icons.SettingsController"];
+        if (!_imagePlayground) {
+            
+            _imagePlayground = [[MTImagePlayground alloc] init];
+            [_imagePlayground setDelegate:self];
+        }
+        
+        [_imagePlayground showWithPresenter:self];
     }
-    
-    [_settingsWindowController showWindow:nil];
-    [[_settingsWindowController window] makeKeyAndOrderFront:nil];
-    
-    [NSApp activateIgnoringOtherApps:YES];
 }
+
+- (IBAction)copyIcon:(id)sender
+{
+    // post a notification so the current view
+    // can copy the icon to the clipboard
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameCopyIcon
+                                                        object:self
+                                                      userInfo:nil
+    ];
+}
+
+- (IBAction)pasteImage:(id)sender
+{
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    NSImage *image = [[NSImage alloc] initWithPasteboard:pasteboard];
+    
+    if ([image isValid]) {
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
+                                                            object:self
+                                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                    image, kMTNotificationKeyImage,
+                                                                    [NSNumber numberWithBool:NO], kMTNotificationKeyIsAppBundle,
+                                                                    nil
+                                                                    ]
+        ];
+    }
+}
+
+#pragma mark - ImageGenerationViewControllerDelegate
+
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 150100
+- (void)imagePlaygroundViewController:(ImagePlaygroundViewController*)controller didCreateImageAt:(NSURL*)imageURL
+{
+    if (@available(macOS 15.1, *)) {
+        
+        NSImage *image = [[NSImage alloc] initWithContentsOfURL:imageURL];
+        
+        // delete the image file as we don't need it anymore
+        [[NSFileManager defaultManager] removeItemAtURL:imageURL error:nil];
+        
+        if ([image isValid]) {
+                
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
+                                                                object:self
+                                                              userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                        image, kMTNotificationKeyImage,
+                                                                        [NSNumber numberWithBool:NO], kMTNotificationKeyIsAppBundle,
+                                                                        nil
+                                                                        ]
+            ];
+        }
+    }
+}
+#endif
 
 @end
+

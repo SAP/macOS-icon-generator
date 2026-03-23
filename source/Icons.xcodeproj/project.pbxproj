@@ -8,13 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AD0577D8276A1F9B00B6032F /* MTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0577D7276A1F9B00B6032F /* MTImage.m */; };
-		AD14712327EDAE7300F0F4E0 /* Icons.app in Resources */ = {isa = PBXBuildFile; fileRef = ADFBC31A1D15E1E400A5011F /* Icons.app */; };
+		AD08BC322EF164B2007B93A4 /* MTImagePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08BC312EF164B2007B93A4 /* MTImagePlayground.swift */; };
+		AD08BC5B2EF19061007B93A4 /* MTIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08BC5A2EF19061007B93A4 /* MTIconView.m */; };
 		AD14AF8127BF83FD00089D32 /* MTInstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */; };
 		AD14AF8227BF83FD00089D32 /* MTInstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */; };
 		AD14AF8327BF83FD00089D32 /* MTInstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */; };
 		AD1583BC27CBF1A3000B1886 /* MTColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1583BB27CBF1A3000B1886 /* MTColorWell.m */; };
-		AD1675922C52307B007DB0B3 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */; };
+		AD1675922C52307B007DB0B3 /* Release-InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1675902C52307B007DB0B3 /* Release-InfoPlist.xcstrings */; };
 		AD1DB83C2AD7ED8000E130D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */; };
+		AD2392232F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2392222F112CB400DE51D3 /* MTDeleteBadgeView.m */; };
+		AD2392242F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2392222F112CB400DE51D3 /* MTDeleteBadgeView.m */; };
+		AD2392252F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2392222F112CB400DE51D3 /* MTDeleteBadgeView.m */; };
+		AD2392262F11608900DE51D3 /* MTColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */; };
+		AD24390D2F0C212100433FCF /* MTClearableTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD24390C2F0C212100433FCF /* MTClearableTextFieldCell.m */; };
+		AD2439102F0C21FD00433FCF /* MTClearableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AD24390F2F0C21FD00433FCF /* MTClearableTextField.m */; };
+		AD2439112F0C21FD00433FCF /* MTClearableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AD24390F2F0C21FD00433FCF /* MTClearableTextField.m */; };
+		AD2439122F0C21FD00433FCF /* MTClearableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AD24390F2F0C21FD00433FCF /* MTClearableTextField.m */; };
+		AD29A7FF2F1A765700D7DC38 /* MTIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08BC5A2EF19061007B93A4 /* MTIconView.m */; };
+		AD29A8002F1A765700D7DC38 /* MTIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08BC5A2EF19061007B93A4 /* MTIconView.m */; };
 		AD315E132C4E6FF600CE3C43 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD315E122C4E6FF600CE3C43 /* InfoPlist.xcstrings */; };
 		AD315E162C4E6FF600CE3C43 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */; };
 		AD3AE6AD2C4FBBB000D1FA31 /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3AE6AC2C4FBBB000D1FA31 /* MTTabViewController.m */; };
@@ -23,6 +34,9 @@
 		AD4425DC278C548D0027E5C1 /* ActionRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4425DB278C548D0027E5C1 /* ActionRequestHandler.m */; };
 		AD4425E1278C548D0027E5C1 /* Make Icon Set.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD4425E6278C6C120027E5C1 /* MTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0577D7276A1F9B00B6032F /* MTImage.m */; };
+		AD4470592F2A401600CB168D /* MTGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4470582F2A401600CB168D /* MTGroupDefaults.m */; };
+		AD44705A2F2A401600CB168D /* MTGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4470582F2A401600CB168D /* MTGroupDefaults.m */; };
+		AD44705B2F2A401600CB168D /* MTGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4470582F2A401600CB168D /* MTGroupDefaults.m */; };
 		AD4E858B2C50F4DB00239344 /* MTSavePanelAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */; };
 		AD4E858E2C50FF8700239344 /* MTSavePanelAccessoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */; };
 		AD58682427C929D20082CC42 /* MTInstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58682327C929D20082CC42 /* MTInstallViewController.m */; };
@@ -43,7 +57,6 @@
 		AD7BAFF72C53B2630019A1F8 /* MTSettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAFF62C53B2630019A1F8 /* MTSettingsTabViewController.m */; };
 		AD7BAFFA2C53B32C0019A1F8 /* MTSettingsGeneralController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAFF92C53B32C0019A1F8 /* MTSettingsGeneralController.m */; };
 		AD7F09712C7CF7A700145AD2 /* MTMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7F09702C7CF7A700145AD2 /* MTMainWindowController.m */; };
-		AD86B09B27EA276100BF600A /* IconsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD86B09A27EA276100BF600A /* IconsUITests.m */; };
 		AD90AEBD27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBE27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
 		AD90AEBF27BFF0B80099797A /* MTUninstallIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */; };
@@ -51,7 +64,9 @@
 		AD98394A27C23A9D00F871DD /* MTIconSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98394927C23A9D00F871DD /* MTIconSetViewController.m */; };
 		AD9EE94527C2A41200B89FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9EE94327C2A41200B89FDE /* Main.storyboard */; };
 		ADB156F52C78DEC6009B5472 /* icons_cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADCCBE7C2770FBE300F0582F /* icons_cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		ADB953392F0FC88E003316DA /* MTColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */; };
 		ADC8278227C194DD004B3C82 /* MTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8278127C194DD004B3C82 /* MTColor.m */; };
+		ADC92C9B2F0D71AA0078D6B1 /* MTProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC92C992F0D71AA0078D6B1 /* MTProcessInfo.m */; };
 		ADC9AF882C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
 		ADC9AF892C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
 		ADC9AF8A2C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */; };
@@ -61,9 +76,12 @@
 		ADD3247527C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
 		ADD3247627C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
 		ADD3247727C0F0510061B4C4 /* MTIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3247427C0F0510061B4C4 /* MTIconSet.m */; };
+		ADDF26E72EF8653300370818 /* MTSettingsComposingController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDF26E62EF8653300370818 /* MTSettingsComposingController.m */; };
 		ADE6870327BEAE3600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
 		ADE6870427BEAE3600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
 		ADE6870527BEB20600CE2707 /* MTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6870227BEAE3600CE2707 /* MTBannerView.m */; };
+		ADE8911D2F0BD8C900DA9440 /* AppIcon-Beta.icon in Resources */ = {isa = PBXBuildFile; fileRef = ADE8911C2F0BD8C900DA9440 /* AppIcon-Beta.icon */; };
+		ADE891282F0BDACC00DA9440 /* Beta-InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ADE891262F0BDACC00DA9440 /* Beta-InfoPlist.xcstrings */; };
 		ADEF31402C7C724E006F1813 /* MTTableOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */; };
 		ADFBC31F1D15E1E400A5011F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBC31E1D15E1E400A5011F /* AppDelegate.m */; };
 		ADFBC3221D15E1E400A5011F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBC3211D15E1E400A5011F /* main.m */; };
@@ -78,13 +96,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AD4425D4278C548D0027E5C1;
 			remoteInfo = "Make Icon Set";
-		};
-		AD86B09E27EA276100BF600A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADFBC3121D15E1E400A5011F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADFBC3191D15E1E400A5011F;
-			remoteInfo = Icons;
 		};
 		ADCCBE832770FC5500F0582F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -131,13 +142,22 @@
 /* Begin PBXFileReference section */
 		AD0577D6276A1F9B00B6032F /* MTImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTImage.h; sourceTree = "<group>"; };
 		AD0577D7276A1F9B00B6032F /* MTImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTImage.m; sourceTree = "<group>"; };
+		AD08BC312EF164B2007B93A4 /* MTImagePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTImagePlayground.swift; sourceTree = "<group>"; };
+		AD08BC592EF19061007B93A4 /* MTIconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTIconView.h; sourceTree = "<group>"; };
+		AD08BC5A2EF19061007B93A4 /* MTIconView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTIconView.m; sourceTree = "<group>"; };
 		AD14AF7F27BF83FD00089D32 /* MTInstallIconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTInstallIconView.h; sourceTree = "<group>"; };
 		AD14AF8027BF83FD00089D32 /* MTInstallIconView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTInstallIconView.m; sourceTree = "<group>"; };
 		AD1583BA27CBF1A3000B1886 /* MTColorWell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTColorWell.h; sourceTree = "<group>"; };
 		AD1583BB27CBF1A3000B1886 /* MTColorWell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTColorWell.m; sourceTree = "<group>"; };
-		AD1675912C52307B007DB0B3 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/InfoPlist.xcstrings; sourceTree = "<group>"; };
+		AD1675912C52307B007DB0B3 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = "mul.lproj/Release-InfoPlist.xcstrings"; sourceTree = "<group>"; };
 		AD1DB83D2AD7ED8000E130D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
 		AD1DB83F2AD7ED8100E130D2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AD2392212F112CB400DE51D3 /* MTDeleteBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTDeleteBadgeView.h; sourceTree = "<group>"; };
+		AD2392222F112CB400DE51D3 /* MTDeleteBadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTDeleteBadgeView.m; sourceTree = "<group>"; };
+		AD24390B2F0C212100433FCF /* MTClearableTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTClearableTextFieldCell.h; sourceTree = "<group>"; };
+		AD24390C2F0C212100433FCF /* MTClearableTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTClearableTextFieldCell.m; sourceTree = "<group>"; };
+		AD24390E2F0C21FD00433FCF /* MTClearableTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTClearableTextField.h; sourceTree = "<group>"; };
+		AD24390F2F0C21FD00433FCF /* MTClearableTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTClearableTextField.m; sourceTree = "<group>"; };
 		AD2A39E31E5F2BA500A68CA5 /* Icons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icons.entitlements; sourceTree = "<group>"; };
 		AD315E122C4E6FF600CE3C43 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		AD315E142C4E6FF600CE3C43 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
@@ -149,6 +169,8 @@
 		AD4425DA278C548D0027E5C1 /* ActionRequestHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionRequestHandler.h; sourceTree = "<group>"; };
 		AD4425DB278C548D0027E5C1 /* ActionRequestHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionRequestHandler.m; sourceTree = "<group>"; };
 		AD4425DE278C548D0027E5C1 /* Make_Icon_Set.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Make_Icon_Set.entitlements; sourceTree = "<group>"; };
+		AD4470572F2A401600CB168D /* MTGroupDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGroupDefaults.h; sourceTree = "<group>"; };
+		AD4470582F2A401600CB168D /* MTGroupDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGroupDefaults.m; sourceTree = "<group>"; };
 		AD4E858A2C50F4DB00239344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MTSavePanelAccessory.xib; sourceTree = "<group>"; };
 		AD4E858C2C50FF8700239344 /* MTSavePanelAccessoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSavePanelAccessoryController.h; sourceTree = "<group>"; };
 		AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSavePanelAccessoryController.m; sourceTree = "<group>"; };
@@ -156,7 +178,7 @@
 		AD58682327C929D20082CC42 /* MTInstallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTInstallViewController.m; sourceTree = "<group>"; };
 		AD58682627C92F170082CC42 /* MTUninstallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUninstallViewController.h; sourceTree = "<group>"; };
 		AD58682727C92F170082CC42 /* MTUninstallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTUninstallViewController.m; sourceTree = "<group>"; };
-		AD589D27278B53D8001BFB84 /* closebox.pdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = closebox.pdf.h; sourceTree = "<group>"; };
+		AD589D27278B53D8001BFB84 /* DeleteBadge.svg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteBadge.svg.h; sourceTree = "<group>"; };
 		AD59698227C38572008ED2D4 /* MTTextColorValueTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTextColorValueTransformer.h; sourceTree = "<group>"; };
 		AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTextColorValueTransformer.m; sourceTree = "<group>"; };
 		AD5B5B4B2C514EAD009BC228 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/MTSavePanelAccessory.xcstrings; sourceTree = "<group>"; };
@@ -178,8 +200,6 @@
 		AD7BAFF92C53B32C0019A1F8 /* MTSettingsGeneralController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsGeneralController.m; sourceTree = "<group>"; };
 		AD7F096F2C7CF7A700145AD2 /* MTMainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMainWindowController.h; sourceTree = "<group>"; };
 		AD7F09702C7CF7A700145AD2 /* MTMainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTMainWindowController.m; sourceTree = "<group>"; };
-		AD86B09827EA276100BF600A /* IconsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD86B09A27EA276100BF600A /* IconsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconsUITests.m; sourceTree = "<group>"; };
 		AD90AEBB27BFF0B80099797A /* MTUninstallIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUninstallIconView.h; sourceTree = "<group>"; };
 		AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUninstallIconView.m; sourceTree = "<group>"; };
 		AD9473DE2E4B813A0064C895 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
@@ -189,6 +209,8 @@
 		ADA3B75D27722F2C00726835 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		ADC8278027C194DD004B3C82 /* MTColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTColor.h; path = Icons/Classes/MTColor.h; sourceTree = SOURCE_ROOT; };
 		ADC8278127C194DD004B3C82 /* MTColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTColor.m; path = Icons/Classes/MTColor.m; sourceTree = SOURCE_ROOT; };
+		ADC92C982F0D71AA0078D6B1 /* MTProcessInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTProcessInfo.h; sourceTree = "<group>"; };
+		ADC92C992F0D71AA0078D6B1 /* MTProcessInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTProcessInfo.m; sourceTree = "<group>"; };
 		ADC9AF862C4E94CD003FEDD3 /* MTOverlayImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTOverlayImageView.h; sourceTree = "<group>"; };
 		ADC9AF872C4E94CD003FEDD3 /* MTOverlayImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTOverlayImageView.m; sourceTree = "<group>"; };
 		ADCCBE7C2770FBE300F0582F /* icons_cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icons_cli; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,8 +220,13 @@
 		ADCF04BF2C6CC722009FA2B2 /* MTPopupButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPopupButtonCell.m; sourceTree = "<group>"; };
 		ADD3247327C0F0510061B4C4 /* MTIconSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTIconSet.h; sourceTree = "<group>"; };
 		ADD3247427C0F0510061B4C4 /* MTIconSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTIconSet.m; sourceTree = "<group>"; };
+		ADDF26E52EF8653300370818 /* MTSettingsComposingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSettingsComposingController.h; sourceTree = "<group>"; };
+		ADDF26E62EF8653300370818 /* MTSettingsComposingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsComposingController.m; sourceTree = "<group>"; };
 		ADE6870127BEAE3600CE2707 /* MTBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBannerView.h; sourceTree = "<group>"; };
 		ADE6870227BEAE3600CE2707 /* MTBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBannerView.m; sourceTree = "<group>"; };
+		ADE8911C2F0BD8C900DA9440 /* AppIcon-Beta.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AppIcon-Beta.icon"; sourceTree = "<group>"; };
+		ADE891272F0BDACC00DA9440 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = "mul.lproj/Beta-InfoPlist.xcstrings"; sourceTree = "<group>"; };
+		ADE891292F0BDC4400DA9440 /* Beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Beta-Info.plist"; sourceTree = "<group>"; };
 		ADEF313E2C7C724E006F1813 /* MTTableOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTableOverlayView.h; sourceTree = "<group>"; };
 		ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTableOverlayView.m; sourceTree = "<group>"; };
 		ADFBC31A1D15E1E400A5011F /* Icons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icons.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,20 +234,13 @@
 		ADFBC31E1D15E1E400A5011F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ADFBC3211D15E1E400A5011F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADFBC3231D15E1E400A5011F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ADFBC3281D15E1E400A5011F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADFBC3281D15E1E400A5011F /* Release-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Release-Info.plist"; sourceTree = "<group>"; };
 		ADFD19BC27C7ED1F003C6D64 /* MTTableRowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTTableRowView.h; sourceTree = "<group>"; };
 		ADFD19BD27C7ED1F003C6D64 /* MTTableRowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTTableRowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AD4425D2278C548D0027E5C1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD86B09527EA276100BF600A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,16 +273,24 @@
 				ADE6870227BEAE3600CE2707 /* MTBannerView.m */,
 				AD7B8CDD278F0C4F004561C1 /* MTBundle.h */,
 				AD7B8CDE278F0C4F004561C1 /* MTBundle.m */,
+				AD24390E2F0C21FD00433FCF /* MTClearableTextField.h */,
+				AD24390F2F0C21FD00433FCF /* MTClearableTextField.m */,
+				AD24390B2F0C212100433FCF /* MTClearableTextFieldCell.h */,
+				AD24390C2F0C212100433FCF /* MTClearableTextFieldCell.m */,
 				ADC8278027C194DD004B3C82 /* MTColor.h */,
 				ADC8278127C194DD004B3C82 /* MTColor.m */,
-				AD61C09527C676D0004823B5 /* MTColorValueTransformer.h */,
-				AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */,
 				AD1583BA27CBF1A3000B1886 /* MTColorWell.h */,
 				AD1583BB27CBF1A3000B1886 /* MTColorWell.m */,
+				AD2392212F112CB400DE51D3 /* MTDeleteBadgeView.h */,
+				AD2392222F112CB400DE51D3 /* MTDeleteBadgeView.m */,
 				AD7A690927BF72430079F8B5 /* MTDropView.h */,
 				AD7A690A27BF72430079F8B5 /* MTDropView.m */,
+				AD4470572F2A401600CB168D /* MTGroupDefaults.h */,
+				AD4470582F2A401600CB168D /* MTGroupDefaults.m */,
 				ADD3247327C0F0510061B4C4 /* MTIconSet.h */,
 				ADD3247427C0F0510061B4C4 /* MTIconSet.m */,
+				AD08BC592EF19061007B93A4 /* MTIconView.h */,
+				AD08BC5A2EF19061007B93A4 /* MTIconView.m */,
 				AD0577D6276A1F9B00B6032F /* MTImage.h */,
 				AD0577D7276A1F9B00B6032F /* MTImage.m */,
 				AD14AF7F27BF83FD00089D32 /* MTInstallIconView.h */,
@@ -279,8 +307,6 @@
 				ADEF313F2C7C724E006F1813 /* MTTableOverlayView.m */,
 				ADFD19BC27C7ED1F003C6D64 /* MTTableRowView.h */,
 				ADFD19BD27C7ED1F003C6D64 /* MTTableRowView.m */,
-				AD59698227C38572008ED2D4 /* MTTextColorValueTransformer.h */,
-				AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */,
 				AD90AEBB27BFF0B80099797A /* MTUninstallIconView.h */,
 				AD90AEBC27BFF0B80099797A /* MTUninstallIconView.m */,
 			);
@@ -308,6 +334,8 @@
 				AD58682327C929D20082CC42 /* MTInstallViewController.m */,
 				AD4E858C2C50FF8700239344 /* MTSavePanelAccessoryController.h */,
 				AD4E858D2C50FF8700239344 /* MTSavePanelAccessoryController.m */,
+				ADDF26E52EF8653300370818 /* MTSettingsComposingController.h */,
+				ADDF26E62EF8653300370818 /* MTSettingsComposingController.m */,
 				AD78D8F22C85A317005C3FC6 /* MTSettingsExtensionController.h */,
 				AD78D8F32C85A317005C3FC6 /* MTSettingsExtensionController.m */,
 				AD7BAFF82C53B32C0019A1F8 /* MTSettingsGeneralController.h */,
@@ -322,14 +350,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		AD86B09927EA276100BF600A /* IconsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AD86B09A27EA276100BF600A /* IconsUITests.m */,
-			);
-			path = IconsUITests;
-			sourceTree = "<group>";
-		};
 		AD8F8A912769DD1A00B8A33E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,14 +357,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ADC92C9A2F0D71AA0078D6B1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADC92C982F0D71AA0078D6B1 /* MTProcessInfo.h */,
+				ADC92C992F0D71AA0078D6B1 /* MTProcessInfo.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		ADCCBE7D2770FBE300F0582F /* icons_cli */ = {
 			isa = PBXGroup;
 			children = (
+				ADC92C9A2F0D71AA0078D6B1 /* Classes */,
 				ADCCBE882771FAF100F0582F /* icons_cli-Info.plist */,
-				AD589D27278B53D8001BFB84 /* closebox.pdf.h */,
+				AD589D27278B53D8001BFB84 /* DeleteBadge.svg.h */,
 				ADCCBE7E2770FBE300F0582F /* main.m */,
 			);
 			path = icons_cli;
+			sourceTree = "<group>";
+		};
+		ADDF09C02EF07CC20044A5B8 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				AD08BC312EF164B2007B93A4 /* MTImagePlayground.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		ADE854812EEB136C00D93253 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				AD61C09527C676D0004823B5 /* MTColorValueTransformer.h */,
+				AD61C09627C676D0004823B5 /* MTColorValueTransformer.m */,
+				AD59698227C38572008ED2D4 /* MTTextColorValueTransformer.h */,
+				AD59698327C38572008ED2D4 /* MTTextColorValueTransformer.m */,
+			);
+			path = "Value Transformers";
 			sourceTree = "<group>";
 		};
 		ADFBC3111D15E1E400A5011F = {
@@ -353,7 +402,6 @@
 				ADFBC31C1D15E1E400A5011F /* Icons */,
 				ADCCBE7D2770FBE300F0582F /* icons_cli */,
 				AD4425D7278C548D0027E5C1 /* Make Icon Set */,
-				AD86B09927EA276100BF600A /* IconsUITests */,
 				ADFBC31B1D15E1E400A5011F /* Products */,
 				AD8F8A912769DD1A00B8A33E /* Frameworks */,
 			);
@@ -365,7 +413,6 @@
 				ADFBC31A1D15E1E400A5011F /* Icons.app */,
 				ADCCBE7C2770FBE300F0582F /* icons_cli */,
 				AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */,
-				AD86B09827EA276100BF600A /* IconsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,31 +420,28 @@
 		ADFBC31C1D15E1E400A5011F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				AD0577D9276A3DFB00B6032F /* Classes */,
-				AD58682527C929DF0082CC42 /* View Controllers */,
-				AD2A39E31E5F2BA500A68CA5 /* Icons.entitlements */,
 				ADFBC31D1D15E1E400A5011F /* AppDelegate.h */,
 				ADFBC31E1D15E1E400A5011F /* AppDelegate.m */,
-				AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */,
-				AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */,
-				ADFBC3231D15E1E400A5011F /* Assets.xcassets */,
 				AD9473DE2E4B813A0064C895 /* AppIcon.icon */,
+				ADE8911C2F0BD8C900DA9440 /* AppIcon-Beta.icon */,
+				ADFBC3231D15E1E400A5011F /* Assets.xcassets */,
+				ADE891292F0BDC4400DA9440 /* Beta-Info.plist */,
+				ADE891262F0BDACC00DA9440 /* Beta-InfoPlist.xcstrings */,
+				AD0577D9276A3DFB00B6032F /* Classes */,
+				ADA3B75D27722F2C00726835 /* Constants.h */,
+				AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */,
+				AD2A39E31E5F2BA500A68CA5 /* Icons.entitlements */,
+				AD315E152C4E6FF600CE3C43 /* Localizable.xcstrings */,
+				ADFBC3211D15E1E400A5011F /* main.m */,
 				AD9EE94327C2A41200B89FDE /* Main.storyboard */,
 				AD4E85892C50F4DB00239344 /* MTSavePanelAccessory.xib */,
-				ADFBC3281D15E1E400A5011F /* Info.plist */,
-				AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */,
-				ADFBC3201D15E1E400A5011F /* Supporting Files */,
+				ADFBC3281D15E1E400A5011F /* Release-Info.plist */,
+				AD1675902C52307B007DB0B3 /* Release-InfoPlist.xcstrings */,
+				ADDF09C02EF07CC20044A5B8 /* Swift */,
+				ADE854812EEB136C00D93253 /* Value Transformers */,
+				AD58682527C929DF0082CC42 /* View Controllers */,
 			);
 			path = Icons;
-			sourceTree = "<group>";
-		};
-		ADFBC3201D15E1E400A5011F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ADA3B75D27722F2C00726835 /* Constants.h */,
-				ADFBC3211D15E1E400A5011F /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,24 +463,6 @@
 			productName = "Make Icon Set";
 			productReference = AD4425D5278C548D0027E5C1 /* Make Icon Set.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		AD86B09727EA276100BF600A /* IconsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AD86B0A227EA276100BF600A /* Build configuration list for PBXNativeTarget "IconsUITests" */;
-			buildPhases = (
-				AD86B09427EA276100BF600A /* Sources */,
-				AD86B09527EA276100BF600A /* Frameworks */,
-				AD86B09627EA276100BF600A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AD86B09F27EA276100BF600A /* PBXTargetDependency */,
-			);
-			name = IconsUITests;
-			productName = IconsUITests;
-			productReference = AD86B09827EA276100BF600A /* IconsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		ADCCBE7B2770FBE300F0582F /* icons_cli */ = {
 			isa = PBXNativeTarget;
@@ -483,21 +509,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = "SAP SE";
 				TargetAttributes = {
 					AD4425D4278C548D0027E5C1 = {
 						CreatedOnToolsVersion = 13.2.1;
-					};
-					AD86B09727EA276100BF600A = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = ADFBC3191D15E1E400A5011F;
 					};
 					ADCCBE7B2770FBE300F0582F = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					ADFBC3191D15E1E400A5011F = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 2620;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -524,7 +547,6 @@
 				ADFBC3191D15E1E400A5011F /* Icons */,
 				ADCCBE7B2770FBE300F0582F /* icons_cli */,
 				AD4425D4278C548D0027E5C1 /* Make Icon Set */,
-				AD86B09727EA276100BF600A /* IconsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -538,21 +560,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD86B09627EA276100BF600A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD14712327EDAE7300F0F4E0 /* Icons.app in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ADFBC3181D15E1E400A5011F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AD1DB83C2AD7ED8000E130D2 /* Credits.rtf in Resources */,
-				AD1675922C52307B007DB0B3 /* InfoPlist.xcstrings in Resources */,
+				AD1675922C52307B007DB0B3 /* Release-InfoPlist.xcstrings in Resources */,
 				AD4E858B2C50F4DB00239344 /* MTSavePanelAccessory.xib in Resources */,
+				ADE891282F0BDACC00DA9440 /* Beta-InfoPlist.xcstrings in Resources */,
+				ADE8911D2F0BD8C900DA9440 /* AppIcon-Beta.icon in Resources */,
 				AD9473DF2E4B813A0064C895 /* AppIcon.icon in Resources */,
 				AD315E162C4E6FF600CE3C43 /* Localizable.xcstrings in Resources */,
 				ADFBC3241D15E1E400A5011F /* Assets.xcassets in Resources */,
@@ -569,23 +585,20 @@
 			files = (
 				ADC9AF892C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
 				AD7B8CE1278F0C59004561C1 /* MTBundle.m in Sources */,
+				AD44705A2F2A401600CB168D /* MTGroupDefaults.m in Sources */,
 				AD90AEBF27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
 				AD3C4A6E2C63C35B0015E1C3 /* MTColor.m in Sources */,
+				AD2392242F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */,
 				AD3C4A6D2C63C33C0015E1C3 /* MTAttributedString.m in Sources */,
 				AD14AF8327BF83FD00089D32 /* MTInstallIconView.m in Sources */,
+				ADB953392F0FC88E003316DA /* MTColorValueTransformer.m in Sources */,
 				AD7A690D27BF72430079F8B5 /* MTDropView.m in Sources */,
 				AD4425E6278C6C120027E5C1 /* MTImage.m in Sources */,
 				AD4425DC278C548D0027E5C1 /* ActionRequestHandler.m in Sources */,
 				ADD3247727C0F0510061B4C4 /* MTIconSet.m in Sources */,
+				AD29A8002F1A765700D7DC38 /* MTIconView.m in Sources */,
+				AD2439112F0C21FD00433FCF /* MTClearableTextField.m in Sources */,
 				ADE6870527BEB20600CE2707 /* MTBannerView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD86B09427EA276100BF600A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD86B09B27EA276100BF600A /* IconsUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,15 +607,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7B8CE0278F0C58004561C1 /* MTBundle.m in Sources */,
+				AD2392262F11608900DE51D3 /* MTColorValueTransformer.m in Sources */,
 				ADC9AF8A2C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
+				ADC92C9B2F0D71AA0078D6B1 /* MTProcessInfo.m in Sources */,
 				AD90AEBE27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
+				AD2392232F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */,
 				AD14AF8227BF83FD00089D32 /* MTInstallIconView.m in Sources */,
 				AD709B6A27C69F2E00D81465 /* MTAttributedString.m in Sources */,
 				AD7A690C27BF72430079F8B5 /* MTDropView.m in Sources */,
 				ADCCBE872771DDB200F0582F /* MTImage.m in Sources */,
 				ADCCBE7F2770FBE300F0582F /* main.m in Sources */,
 				ADD3247627C0F0510061B4C4 /* MTIconSet.m in Sources */,
+				AD4470592F2A401600CB168D /* MTGroupDefaults.m in Sources */,
+				AD29A7FF2F1A765700D7DC38 /* MTIconView.m in Sources */,
 				ADC8278227C194DD004B3C82 /* MTColor.m in Sources */,
+				AD2439122F0C21FD00433FCF /* MTClearableTextField.m in Sources */,
 				ADE6870427BEAE3600CE2707 /* MTBannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,8 +632,10 @@
 			files = (
 				AD6AE2582C63ABAE001A9A50 /* MTTableCellView.m in Sources */,
 				AD7A690B27BF72430079F8B5 /* MTDropView.m in Sources */,
+				AD2392252F112CB400DE51D3 /* MTDeleteBadgeView.m in Sources */,
 				AD98394A27C23A9D00F871DD /* MTIconSetViewController.m in Sources */,
 				AD1583BC27CBF1A3000B1886 /* MTColorWell.m in Sources */,
+				ADDF26E72EF8653300370818 /* MTSettingsComposingController.m in Sources */,
 				AD7F09712C7CF7A700145AD2 /* MTMainWindowController.m in Sources */,
 				AD7B8CDF278F0C4F004561C1 /* MTBundle.m in Sources */,
 				AD0577D8276A1F9B00B6032F /* MTImage.m in Sources */,
@@ -623,11 +644,14 @@
 				AD78D8F42C85A317005C3FC6 /* MTSettingsExtensionController.m in Sources */,
 				AD58682927C92F170082CC42 /* MTUninstallViewController.m in Sources */,
 				ADC9AF882C4E94CD003FEDD3 /* MTOverlayImageView.m in Sources */,
+				AD08BC5B2EF19061007B93A4 /* MTIconView.m in Sources */,
 				AD61C09727C676D0004823B5 /* MTColorValueTransformer.m in Sources */,
+				AD44705B2F2A401600CB168D /* MTGroupDefaults.m in Sources */,
 				AD4E858E2C50FF8700239344 /* MTSavePanelAccessoryController.m in Sources */,
 				ADCF04C02C6CC722009FA2B2 /* MTPopupButtonCell.m in Sources */,
 				AD61C09827C678C7004823B5 /* MTColor.m in Sources */,
 				AD7BAFFA2C53B32C0019A1F8 /* MTSettingsGeneralController.m in Sources */,
+				AD2439102F0C21FD00433FCF /* MTClearableTextField.m in Sources */,
 				AD14AF8127BF83FD00089D32 /* MTInstallIconView.m in Sources */,
 				AD59698427C38572008ED2D4 /* MTTextColorValueTransformer.m in Sources */,
 				ADFBC3221D15E1E400A5011F /* main.m in Sources */,
@@ -635,10 +659,12 @@
 				ADE6870327BEAE3600CE2707 /* MTBannerView.m in Sources */,
 				AD58682427C929D20082CC42 /* MTInstallViewController.m in Sources */,
 				ADFBC31F1D15E1E400A5011F /* AppDelegate.m in Sources */,
+				AD24390D2F0C212100433FCF /* MTClearableTextFieldCell.m in Sources */,
 				ADD3247527C0F0510061B4C4 /* MTIconSet.m in Sources */,
 				AD90AEBD27BFF0B80099797A /* MTUninstallIconView.m in Sources */,
 				AD709B6927C69F2E00D81465 /* MTAttributedString.m in Sources */,
 				AD3AE6AD2C4FBBB000D1FA31 /* MTTabViewController.m in Sources */,
+				AD08BC322EF164B2007B93A4 /* MTImagePlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,11 +676,6 @@
 			target = AD4425D4278C548D0027E5C1 /* Make Icon Set */;
 			targetProxy = AD4425DF278C548D0027E5C1 /* PBXContainerItemProxy */;
 		};
-		AD86B09F27EA276100BF600A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADFBC3191D15E1E400A5011F /* Icons */;
-			targetProxy = AD86B09E27EA276100BF600A /* PBXContainerItemProxy */;
-		};
 		ADCCBE842770FC5500F0582F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ADCCBE7B2770FBE300F0582F /* icons_cli */;
@@ -663,12 +684,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD1675902C52307B007DB0B3 /* InfoPlist.xcstrings */ = {
+		AD1675902C52307B007DB0B3 /* Release-InfoPlist.xcstrings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AD1675912C52307B007DB0B3 /* mul */,
 			);
-			name = InfoPlist.xcstrings;
+			name = "Release-InfoPlist.xcstrings";
 			sourceTree = "<group>";
 		};
 		AD1DB83E2AD7ED8000E130D2 /* Credits.rtf */ = {
@@ -698,6 +719,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		ADE891262F0BDACC00DA9440 /* Beta-InfoPlist.xcstrings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADE891272F0BDACC00DA9440 /* mul */,
+			);
+			name = "Beta-InfoPlist.xcstrings";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -713,7 +742,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 565;
+				CURRENT_PROJECT_VERSION = 691;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -722,14 +751,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Make Icon Set";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
@@ -752,7 +781,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 565;
+				CURRENT_PROJECT_VERSION = 691;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -761,67 +790,20 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make Icon Set/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Make Icon Set";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-			};
-			name = Release;
-		};
-		AD86B0A027EA276100BF600A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.IconsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = Icons;
-			};
-			name = Debug;
-		};
-		AD86B0A127EA276100BF600A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.IconsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = Icons;
 			};
 			name = Release;
 		};
@@ -837,14 +819,14 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 143;
+				CURRENT_PROJECT_VERSION = 197;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
@@ -865,20 +847,194 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 143;
+				CURRENT_PROJECT_VERSION = 197;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		ADE8911E2F0BD98B00DA9440 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = "Release Beta";
+		};
+		ADE8911F2F0BD98B00DA9440 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Icons/Icons.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 691;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					AppIcon.icon,
+					"Release-InfoPlist.xcstrings",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Icons/Beta-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Icons;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
+				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
+				PRODUCT_NAME = Icons;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = "Release Beta";
+		};
+		ADE891202F0BD98B00DA9440 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 197;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/icons_cli/icons_cli-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons.cli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = "Release Beta";
+		};
+		ADE891212F0BD98B00DA9440 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Make Icon Set/Make_Icon_Set.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 691;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Make Icon Set/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Icon Set";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "corp.sap.Icons.Make-Icon-Set";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = "Release Beta";
 		};
 		ADFBC3291D15E1E400A5011F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -995,6 +1151,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
@@ -1003,15 +1160,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Icons/Icons.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 565;
+				CURRENT_PROJECT_VERSION = 691;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
@@ -1022,23 +1182,30 @@
 				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"AppIcon-Beta.icon",
+					"Beta-InfoPlist.xcstrings",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Icons/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_FILE = "Icons/Release-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Icons;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -1046,15 +1213,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Icons/Icons.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 565;
+				CURRENT_PROJECT_VERSION = 691;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
@@ -1065,23 +1235,29 @@
 				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"AppIcon-Beta.icon",
+					"Beta-InfoPlist.xcstrings",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Icons/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_FILE = "Icons/Release-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Icons;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2016-2026 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.2.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 2.3.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.Icons;
 				PRODUCT_NAME = Icons;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -1093,15 +1269,7 @@
 			buildConfigurations = (
 				AD4425E3278C548D0027E5C1 /* Debug */,
 				AD4425E4278C548D0027E5C1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AD86B0A227EA276100BF600A /* Build configuration list for PBXNativeTarget "IconsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD86B0A027EA276100BF600A /* Debug */,
-				AD86B0A127EA276100BF600A /* Release */,
+				ADE891212F0BD98B00DA9440 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1111,6 +1279,7 @@
 			buildConfigurations = (
 				ADCCBE802770FBE300F0582F /* Debug */,
 				ADCCBE812770FBE300F0582F /* Release */,
+				ADE891202F0BD98B00DA9440 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1120,6 +1289,7 @@
 			buildConfigurations = (
 				ADFBC3291D15E1E400A5011F /* Debug */,
 				ADFBC32A1D15E1E400A5011F /* Release */,
+				ADE8911E2F0BD98B00DA9440 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1129,6 +1299,7 @@
 			buildConfigurations = (
 				ADFBC32C1D15E1E400A5011F /* Debug */,
 				ADFBC32D1D15E1E400A5011F /* Release */,
+				ADE8911F2F0BD98B00DA9440 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,25 +1,25 @@
 /*
-     MTInstallIconView.h
-     Copyright 2022-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTInstallIconView.h
+    Copyright 2016-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTDropView.h"
 #import "MTBannerView.h"
 #import "MTOverlayImageView.h"
 
-@interface MTInstallIconView : MTDropView <MTOverlayImageViewDelegate>
+@interface MTInstallIconView : MTDropView <MTOverlayImageViewDelegate, NSCopying>
 
 /*!
  @property      overlayImageScalingFactor
@@ -65,6 +65,34 @@
                 and values above 0.4 are interpreted as 0.4.
 */
 @property (nonatomic, assign) CGFloat bannerTextMargin;
+
+/*!
+ @property      bannerHeight
+ @abstract      Specifies the height of the banner as a percentage of the height of the icon view.
+ @discussion    The value of this property is CGFloat.
+*/
+@property (nonatomic, assign) CGFloat bannerHeight;
+
+/*!
+ @property      bannerAngle
+ @abstract      Specifies the angle of the banner.
+ @discussion    The value of this property is CGFloat.
+*/
+@property (nonatomic, assign) CGFloat bannerAngle;
+
+/*!
+ @property      bannerMargin
+ @abstract      Specifies the margin between the banner and the corner as a percentage of the height of the icon view.
+ @discussion    The value of this property is CGFloat.
+*/
+@property (nonatomic, assign) CGFloat bannerMargin;
+
+/*!
+ @property      drawBannerInIconShape
+ @abstract      Specifies whether or not to draw the banner into an icon shape.
+ @discussion    The value of this property is boolean.
+*/
+@property (nonatomic, assign) BOOL drawBannerInIconShape;
 
 /*!
  @method        setImage:
