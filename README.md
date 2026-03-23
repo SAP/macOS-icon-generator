@@ -28,6 +28,8 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 ❌ No graphic skills needed
 
+🌅 Image Playground integration to create icons from scratch
+
 ⌨️ Command line for automation
 
 💻 For macOS 13 and newer
