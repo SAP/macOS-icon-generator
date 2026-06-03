@@ -8,7 +8,7 @@
 
 **The easiest way to create customized icons for your app!**
 
-_Icons_ is an application for macOS which enables you to create standardized app icons in PNG format. No graphic skills are needed! Just drag and drop your desired image into the application to create a full icon set, including installer and uninstaller icon, as well as an animated version of the uninstaller icon!
+_Icons_ is an application for macOS which enables you to create standardized app icons in PNG format. No graphic skills are needed! Just drag and drop your desired image into the application to create a full icon set, including installer and uninstaller icon, as well as an animated version of the uninstaller icon.
 
 For Mac administrators: When working in multiple environments, e.g. development, test and production environments, the _Icons_ app helps you to keep track of your app versions, by giving the option to add banners to the icons. The _Icons_ can be used for any management tools like Jamf Pro or the open source Munki software installation tool.
 
