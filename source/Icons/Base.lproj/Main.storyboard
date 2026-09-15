@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="25094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vfv-Qb-xk8">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="25094"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,16 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="bEO-Dp-n6G" id="tL5-2F-Tc2"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Check for Updates" secondaryImage="arrow.3.trianglepath" catalog="system" tag="9000" hidden="YES" id="RY2-UN-TVl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="aLQ-YH-ukq" id="5ae-nk-arj"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="3lx-T4-V0i"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="Nny-mn-GoN">
                                             <connections>
-                                                <action selector="showSettingsWindow:" target="bEO-Dp-n6G" id="MXX-3W-74o"/>
+                                                <action selector="showSettingsWindow:" target="aLQ-YH-ukq" id="lrR-xg-wCZ"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aX7-mV-e6h"/>
@@ -183,7 +189,7 @@
                                         <menuItem title="Icons on GitHub" secondaryImage="network" catalog="system" id="iNf-9M-sqD" userLabel="Icons on GitHub">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openGitHub:" target="bEO-Dp-n6G" id="bbA-7E-1dT"/>
+                                                <action selector="openGitHub:" target="aLQ-YH-ukq" id="Jef-qf-6i3"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -198,7 +204,7 @@
                 <customObject id="aLQ-YH-ukq" customClass="AppDelegate"/>
                 <customObject id="bEO-Dp-n6G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="-484"/>
+            <point key="canvasLocation" x="-141" y="-636"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="uLl-s9-Cnp">
@@ -2115,7 +2121,8 @@ If you do not want this and would rather have the extension create icon sets wit
         </scene>
     </scenes>
     <resources>
-        <image name="apple.image.playground" catalog="system" width="16" height="15"/>
+        <image name="apple.image.playground" catalog="system" width="17" height="17"/>
+        <image name="arrow.3.trianglepath" catalog="system" width="17" height="16"/>
         <image name="arrow.up.forward.square" catalog="system" width="15" height="14"/>
         <image name="checkmark" catalog="system" width="14" height="13"/>
         <image name="gearshape" catalog="system" width="16" height="16"/>

@@ -2122,6 +2122,24 @@
         }
       }
     },
+    "RY2-UN-TVl.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates\"; ObjectID = \"RY2-UN-TVl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach Updates suchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check for Updates"
+          }
+        }
+      }
+    },
     "rZY-vV-Lp9.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Font\"; ObjectID = \"rZY-vV-Lp9\";",
       "extractionState" : "extracted_with_value",

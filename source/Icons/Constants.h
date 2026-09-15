@@ -150,6 +150,7 @@
 
 // NSNotification user info keys
 #define kMTNotificationKeyImage                 @"Image"
+#define kMTNotificationKeyImageURL              @"ImageURL"
 #define kMTNotificationKeyIsAppBundle           @"IsAppBundle"
 #define kMTNotificationKeyFileNamePrefix        @"FileNamePrefix"
 #define kMTNotificationKeyFolderPath            @"FolderPath"

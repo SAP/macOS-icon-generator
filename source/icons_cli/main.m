@@ -81,7 +81,7 @@
                 
                 NSString *argExcludeFromCreation = [appArguments excludeFromCreation];
                 
-#pragma mark Install icon
+#pragma mark - Install icon
                 
                 MTInstallIconView *installIconView = nil;
                 
@@ -140,7 +140,7 @@
                     [self writeConsole:@"Skipping creation of install icon"];
                 }
                 
-#pragma mark Uninstall icon
+#pragma mark - Uninstall icon
                 
                 MTUninstallIconView *uninstallIconView = nil;
                 CGFloat argAnimationDuration = ([argExcludeFromCreation containsString:@"a"]) ? 0 : [appArguments animationDuration];

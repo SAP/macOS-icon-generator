@@ -28,14 +28,15 @@
 @optional
 
 /*!
- @method        view:didChangeImage:applicationBundle:
+ @method        view:didChangeImage:atURL:applicationBundle:
  @abstract      Called whenever the view's source image has changed.
  @param         view The MTDropView instance whose source image has changed.
  @param         image A reference to the new image object.
+ @param         url The image url.
  @param         application A boolean specifying if the image came from an app bundle or not.
  @discussion    Delegates receive this message whenever the view's source image has changed.
  */
-- (void)view:(MTDropView*)view didChangeImage:(NSImage*)image applicationBundle:(BOOL)application;
+- (void)view:(MTDropView*)view didChangeImage:(NSImage*)image atURL:(NSURL*)url applicationBundle:(BOOL)application;
 
 /*!
  @method        view:hasBeenClickedAtLocation:

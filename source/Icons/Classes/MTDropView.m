@@ -147,7 +147,7 @@
     }
 }
 
-#pragma mark dragging methods
+#pragma mark - dragging methods
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
@@ -157,7 +157,7 @@
     NSPasteboard *pboard = [sender draggingPasteboard];
     NSArray *supportedFileTypes = [NSArray arrayWithObjects:UTTypeImage, UTTypePDF, UTTypeApplicationBundle, nil];
 
-    if ([[pboard types] containsObject:NSPasteboardTypeFileURL]) {
+    if ([[pboard pasteboardItems] count] == 1 && [[pboard types] containsObject:NSPasteboardTypeFileURL]) {
         
         NSURL *imageURL = [NSURL URLFromPasteboard:pboard];
         imageURL = [imageURL URLByResolvingSymlinksInPath];
@@ -179,7 +179,7 @@
                 }
             }
 
-            if (isSupported){
+            if (isSupported) {
                 
                 dragOperation = NSDragOperationCopy;
                 _highlight = YES;
@@ -235,8 +235,8 @@
         
         [self setImage:currentImage];
         
-        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImage:applicationBundle:)]) {
-            [_delegate view:self didChangeImage:[currentImage copy] applicationBundle:_isAppBundle];
+        if (_delegate && [_delegate respondsToSelector:@selector(view:didChangeImage:atURL:applicationBundle:)]) {
+            [_delegate view:self didChangeImage:[currentImage copy] atURL:imageURL applicationBundle:_isAppBundle];
         }
                 
         [self setNeedsDisplay:YES];

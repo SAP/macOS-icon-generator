@@ -471,7 +471,7 @@
 
 #pragma mark - MTDropViewDelegate
 
-- (void)view:(MTDropView*)view didChangeImage:(NSImage *)image applicationBundle:(BOOL)application
+- (void)view:(MTDropView*)view didChangeImage:(NSImage *)image atURL:(NSURL*)url applicationBundle:(BOOL)application
 {
     [self updateScalingSliderToolTip:nil];
 
@@ -483,6 +483,7 @@
                                                         object:self
                                                       userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                 image, kMTNotificationKeyImage,
+                                                                url, kMTNotificationKeyImageURL,
                                                                 [NSNumber numberWithBool:application], kMTNotificationKeyIsAppBundle,
                                                                 nil
                                                                ]

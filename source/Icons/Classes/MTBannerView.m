@@ -157,7 +157,7 @@ static MTPolygon polygonCentroid(MTPolygon *pts, int n)
 
     if ([[_bannerText string] length] > 0) {
         
-#pragma mark banner drawing
+#pragma mark - banner drawing
         
         // calculate size and position of the banner
         NSRect viewBounds = [self bounds];
@@ -256,7 +256,7 @@ static MTPolygon polygonCentroid(MTPolygon *pts, int n)
             [[NSBezierPath bezierPathWithRect:viewBounds] addClip];
         }
 
-#pragma mark text drawing
+#pragma mark - text drawing
 
         // create a polygon from the visible banner
         NSPoint rp[4] = {

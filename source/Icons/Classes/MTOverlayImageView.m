@@ -62,7 +62,7 @@
     return viewOrigin;
 }
 
-#pragma mark NSDraggingSession
+#pragma mark - NSDraggingSession
 
 - (NSDragOperation)draggingSession:(NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context
 {

@@ -49,7 +49,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Copyright © 2016-2026 SAP SE. All rights reserved."
           }
         }

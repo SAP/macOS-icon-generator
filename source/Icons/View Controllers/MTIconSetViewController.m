@@ -68,15 +68,21 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kMTNotificationNameShowImagePlayground object:nil];
 }
 
-#pragma mark Notifications
+#pragma mark - Notifications
 
 - (void)imageChanged:(NSNotification*)aNotification
 {
     NSImage *image = [[aNotification userInfo] objectForKey:kMTNotificationKeyImage];
-    if ([image isValid]) { self.currentImage = image; }
+    
+    if ([image isValid]) {
+        
+        NSURL *imageURL = [[aNotification userInfo] objectForKey:kMTNotificationKeyImageURL];
+        
+        self.imageURL = imageURL;
+        self.currentImage = image; }
 }
 
-#pragma mark NSMenuItemValidation
+#pragma mark - NSMenuItemValidation
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
@@ -113,7 +119,7 @@
     return enableItem;
 }
 
-#pragma mark IBActions
+#pragma mark - IBActions
 
 - (IBAction)openFile:(id)sender
 {
@@ -143,6 +149,7 @@
                                                                     object:self
                                                                   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                             image, kMTNotificationKeyImage,
+                                                                            imageURL, kMTNotificationKeyImageURL,
                                                                             [NSNumber numberWithBool:isApplication], kMTNotificationKeyIsAppBundle,
                                                                             nil
                                                                            ]
@@ -222,7 +229,7 @@
                     if (!fileNamePrefix && self->_imageURL) {
                         fileNamePrefix = [[self->_imageURL lastPathComponent] stringByDeletingPathExtension];
                     }
-                    
+
                     if (fileNamePrefix) {
                         [userInfo setObject:fileNamePrefix forKey:kMTNotificationKeyFileNamePrefix];
                     }
@@ -282,6 +289,7 @@
                                                             object:self
                                                           userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                     image, kMTNotificationKeyImage,
+                                                                    [NSURL URLWithString:@"Clipboard"], kMTNotificationKeyImageURL,
                                                                     [NSNumber numberWithBool:NO], kMTNotificationKeyIsAppBundle,
                                                                     nil
                                                                     ]
@@ -307,6 +315,7 @@
                                                                 object:self
                                                               userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                         image, kMTNotificationKeyImage,
+                                                                        [NSURL URLWithString:@"Playground"], kMTNotificationKeyImageURL,
                                                                         [NSNumber numberWithBool:NO], kMTNotificationKeyIsAppBundle,
                                                                         nil
                                                                         ]

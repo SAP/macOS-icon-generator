@@ -345,7 +345,7 @@
     return [[self copy] containerView];
 }
 
-#pragma mark MTOverlayImageViewDelegate
+#pragma mark - MTOverlayImageViewDelegate
 
 - (void)view:(MTOverlayImageView *)view didEndDraggingAtPoint:(NSPoint)point
 {

@@ -18,6 +18,7 @@
 #import "AppDelegate.h"
 #import "MTImage.h"
 #import "Constants.h"
+#import "MTUpdateChecker.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong, readwrite) NSWindowController *settingsWindowController;
@@ -36,9 +37,11 @@
         // views can update the source image
         [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameImageChanged
                                                             object:self
-                                                          userInfo:([sourceImage isValid]) ? [NSDictionary dictionaryWithObject:sourceImage
-                                                                                                                         forKey:kMTNotificationKeyImage
-                                                                                             ] : nil
+                                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                        sourceImage, kMTNotificationKeyImage,
+                                                                        droppedFile, kMTNotificationKeyImageURL,
+                                                                        nil
+                                                                       ]
         ];
     }
 }
@@ -48,7 +51,7 @@
     return YES;
 }
 
-#pragma mark IBActions
+#pragma mark - IBActions
 
 - (IBAction)openGitHub:(id)sender
 {
@@ -67,6 +70,36 @@
     [[_settingsWindowController window] makeKeyAndOrderFront:nil];
     
     [NSApp activateIgnoringOtherApps:YES];
+}
+
+- (IBAction)checkForUpdates:(id)sender
+{
+    MTUpdateChecker *updateChecker = [[MTUpdateChecker alloc] initWithBundleIdentifier:kMTUpdateCheckerBundleIdentifier];
+    [updateChecker launch];
+}
+
+#pragma mark - NSMenuItemValidation
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+    BOOL enableItem = YES;
+    
+    if ([menuItem tag] == 9000) {
+        
+        enableItem = !([[NSUserDefaults standardUserDefaults] objectIsForcedForKey:kMTDefaultsUpdateCheckDisabledKey] &&
+                       [[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsUpdateCheckDisabledKey]);
+        
+        // if update checking has not been disabled, we check if the Patcher app is installed
+        if (enableItem) {
+            
+            MTUpdateChecker *updateChecker = [[MTUpdateChecker alloc] initWithBundleIdentifier:kMTUpdateCheckerBundleIdentifier];
+            enableItem = [updateChecker isAvailable];
+        }
+        
+        [menuItem setHidden:!enableItem];
+    }
+    
+    return enableItem;
 }
 
 @end

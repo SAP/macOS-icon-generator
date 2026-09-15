@@ -54,7 +54,7 @@
         [[_outputSizeMenu menu] addItem:menuItem];
     }
     
-#pragma mark bindings
+#pragma mark - bindings
     
     [_saveInstallIconCheckbox bind:NSValueBinding
                           toObject:_defaultsController
@@ -179,7 +179,7 @@
     return selected;
 }
 
-#pragma mark NSMenuDelegate
+#pragma mark - NSMenuDelegate
 
 - (void)menuWillOpen:(NSMenu*)menu
 {
