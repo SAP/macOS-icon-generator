@@ -32,7 +32,7 @@ For Mac administrators: When working in multiple environments, e.g. development,
 
 ⌨️ Command line for automation
 
-💻 For macOS 13 and newer
+💻 Runs on macOS 13 and newer
 
 <br/>
 
